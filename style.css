@@ -1,3 +1,56 @@
+:root {
+    --main-dark-color: seagreen;
+    --main-light-color: lightgreen;
+    --main-light-text-color: beige;
+}
+
 * {
     font-family: sans-serif;
+}
+
+#flex-main {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    flex: 0 0 100px;
+    color: var(--main-light-text-color);
+    background-color: var(--main-dark-color);
+    padding-left: 20%;
+}
+
+header > h1 {
+    font-size: 100px;
+}
+
+#flex-middle {
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+nav {
+    flex: 1 1 30%;
+    min-width: 100px;
+}
+
+article {
+    flex: 1 1 auto;
+    background-color: var(--main-light-color);
+}
+
+article > p {
+    background-color: white;
+    opacity: 80%;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+footer {
+    flex: 0 0 50px;
+    padding-left: 20px;
+    color: var(--main-light-text-color);
+    background-color: var(--main-dark-color);
 }
