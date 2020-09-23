@@ -39,5 +39,24 @@ article {
     background-color: white;
     padding: 8px 32px 8px 32px;
     border-radius: 10px;
-    margin: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
+    width: 70%;
+    max-width: 800px;
+}
+
+table {
+    margin: auto;
+}
+
+th, td {
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px 10px 5px 10px;
+}
+
+.call-to-action {
+    color: darkorange;
+    font-weight: bold;
 }
