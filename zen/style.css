@@ -8,8 +8,8 @@
 }
 
 @font-face {
-    font-family: HennyPenny;
-    src: url("fonts/HennyPenny-Regular.ttf");
+    font-family: Raleway-Black;
+    src: url("fonts/Raleway-Black.ttf");
 }
 
 * {
@@ -29,14 +29,29 @@ body {
     background-size: cover;
 }
 
-p {
-    opacity: 100%;
+h1 {
+    color: white;
+    text-transform: uppercase;
+    font-family: Raleway-Black, "Arial Black", sans-serif;
+    font-size: 10pc;
+    width: 10pc;
+    position: fixed;
+    left: -0.3pc;
+    bottom: -2.5pc;
+    margin: 0;
+    padding: 0;
 }
 
-h1 {
-    font-family: HennyPenny, sans-serif;
-    font-size: 4.5pc;
-    text-align: center;
+.page-wrapper {
+    background-color: var(--color-dark-ghost);
+    position: fixed;
+    left: 22pc;
+    bottom: 10pc;
+    min-width: 32pc;
+    /* add max height? */
+    margin: 2pc 4pc 0 0;
+    padding: 2pc;
+    overflow: auto;
 }
 
 a:link {
@@ -49,14 +64,6 @@ a:visited {
 
 a:hover, a:focus, a:active {
     color: lawngreen;
-}
-
-.page-wrapper {
-    max-width: 50%;
-    width: 800px;
-    background-color: var(--color-dark-ghost);
-    margin: 0 auto 0 auto;
-    padding: 2%;
 }
 
 .sidebar {
