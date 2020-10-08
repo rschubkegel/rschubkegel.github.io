@@ -51,7 +51,7 @@ h1 {
     letter-spacing: min(6vh, 6vw);
     word-wrap: break-word;
     position: absolute;
-    width: min(68vh, 75vw);
+    width: min(70vh, 75vw);
     left: -1vmin;
     top: -5.3vmin;
     margin: 0;
