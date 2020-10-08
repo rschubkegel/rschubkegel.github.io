@@ -33,11 +33,13 @@ h1 {
     color: white;
     text-transform: uppercase;
     font-family: Raleway-Black, "Arial Black", sans-serif;
-    font-size: 10pc;
-    width: 10pc;
+    font-size: 16vmax;
+    letter-spacing: 5vmax;
+    word-wrap: break-word;
     position: fixed;
-    left: -0.3pc;
-    bottom: -2.5pc;
+    width: 64vmax;
+    left: -1vmax;
+    bottom: -4vmax;
     margin: 0;
     padding: 0;
 }
@@ -45,13 +47,25 @@ h1 {
 .page-wrapper {
     background-color: var(--color-dark-ghost);
     position: fixed;
-    left: 22pc;
-    bottom: 10pc;
-    min-width: 32pc;
-    /* add max height? */
-    margin: 2pc 4pc 0 0;
-    padding: 2pc;
-    overflow: auto;
+    left: 50vmax;
+    bottom: 0;
+    width: auto;
+    margin: 0;
+    padding: 2%;
+}
+
+@media screen and (min-aspect-ratio: 5 / 4) {
+    h1 {
+        font-size: 20vmin;
+        letter-spacing: 6vmin;
+        width: 64vmin;
+        left: -1vmin;
+        bottom: -5vmin;
+    }
+
+    .page-wrapper {
+        left: 64vmin;
+    }
 }
 
 a:link {
