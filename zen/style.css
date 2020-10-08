@@ -26,34 +26,62 @@ body {
     margin: 0;
     padding: 0;
     background: var(--color-dark-ghost) url("imgs/falls-1.jpg") no-repeat fixed center;
+    /*background: var(--color-dark-ghost);*/
     background-size: cover;
+}
+
+.page-wrapper {
+    position: absolute;
+    display: grid;
+    grid-template-rows: 100vh auto auto auto auto;
+    grid-row-gap: 10vh;
 }
 
 h1 {
     color: white;
     text-transform: uppercase;
     font-family: Raleway-Black, "Arial Black", sans-serif;
-    font-size: 16vmax;
-    letter-spacing: 5vmax;
+    font-size: 23.5vh;
+    letter-spacing: 6vh;
     word-wrap: break-word;
-    position: fixed;
-    width: 64vmax;
-    left: -1vmax;
-    bottom: -4vmax;
+    position: absolute;
+    width: 70vh;
+    left: -1vmin;
+    top: -5.3vmin;
     margin: 0;
     padding: 0;
 }
 
-.page-wrapper {
-    background-color: var(--color-dark-ghost);
-    position: fixed;
-    left: 50vmax;
-    bottom: 0;
-    width: auto;
-    margin: 0;
-    padding: 2%;
+#zen-summary {
+    background: url("imgs/falls-2.jpg") no-repeat fixed center;
+    /* TODO */
 }
 
+#zen-summary > p {
+    visibility: hidden;
+
+}
+
+.intro, .main, .sidebar {
+    grid-column: 0;
+    background-color: var(--color-dark-ghost);
+    margin: 0 10vmin 0 10vmin;
+    padding: 1vmin 5vmin 3vmin 5vmin;
+}
+
+.intro {
+    grid-row: 2;
+}
+
+.main {
+    grid-row: 3;
+}
+
+.sidebar {
+    grid-row: 4;
+}
+
+/*
 @media screen and (min-aspect-ratio: 5 / 4) {
     h1 {
         font-size: 20vmin;
@@ -67,6 +95,7 @@ h1 {
         left: 64vmin;
     }
 }
+*/
 
 a:link {
     color: mediumseagreen;
