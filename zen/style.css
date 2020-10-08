@@ -32,8 +32,9 @@ body {
 
 .page-wrapper {
     position: absolute;
+    width: 100%;
     display: grid;
-    grid-template-rows: 100vh auto auto auto auto;
+    grid-template-rows: 100vh auto auto auto;
     grid-template-columns: 98vw;
     grid-row-gap: 10vh;
     justify-items: center;
@@ -53,7 +54,7 @@ h1 {
     position: absolute;
     width: min(70vh, 75vw);
     left: -1vmin;
-    top: -5.3vmin;
+    top: -5vmin;
     margin: 0;
     padding: 0;
 }
@@ -131,7 +132,4 @@ a:visited {
 
 a:hover, a:focus, a:active {
     color: lawngreen;
-}
-
-.sidebar {
 }

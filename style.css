@@ -1,5 +1,5 @@
 :root {
-    --standard-width: 600px;
+    --standard-width: 60vmin;
 }
 
 * {
@@ -9,7 +9,7 @@
 }
 
 #logo {
-    margin: 32px;
+    margin: 2pc;
 }
 
 body {
@@ -18,6 +18,11 @@ body {
 
 h1, h2, h3 {
     color: whitesmoke;
+    font-size: max(2pc, 4vmin);
+}
+
+p {
+    font-size: max(1pc, 2vmin);
 }
 
 a {
