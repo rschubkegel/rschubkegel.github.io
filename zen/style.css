@@ -25,41 +25,63 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: var(--color-dark-ghost) url("imgs/falls-1.jpg") no-repeat fixed center;
-    /*background: var(--color-dark-ghost);*/
+    background: var(--color-dark-ghost) url("imgs/falls-2.jpg") no-repeat fixed center;
     background-size: cover;
+    display: grid;
 }
 
 .page-wrapper {
     position: absolute;
     display: grid;
     grid-template-rows: 100vh auto auto auto auto;
+    grid-template-columns: 98vw;
     grid-row-gap: 10vh;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
+/* a big bold title */
 h1 {
     color: white;
     text-transform: uppercase;
     font-family: Raleway-Black, "Arial Black", sans-serif;
-    font-size: 23.5vh;
-    letter-spacing: 6vh;
+    font-size: min(23.5vh, 25vw);
+    letter-spacing: min(6vh, 6vw);
     word-wrap: break-word;
     position: absolute;
-    width: 70vh;
+    width: min(68vh, 75vw);
     left: -1vmin;
     top: -5.3vmin;
     margin: 0;
     padding: 0;
 }
 
-#zen-summary {
-    background: url("imgs/falls-2.jpg") no-repeat fixed center;
-    /* TODO */
+header > h2 {
+    visibility: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 
+/* the image to the right of the title */
+#zen-summary {
+    background-image: url("imgs/falls-1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 10vh;
+    height: 80vh;
+    left: 70vh;
+    width: calc(100vw - 80vh);
+    margin: 0 10vw 0 0;
+}
+
+/* a cheat-y way to get another img on the page */
 #zen-summary > p {
     visibility: hidden;
-
 }
 
 .intro, .main, .sidebar {
@@ -67,6 +89,8 @@ h1 {
     background-color: var(--color-dark-ghost);
     margin: 0 10vmin 0 10vmin;
     padding: 1vmin 5vmin 3vmin 5vmin;
+    width: 70%;
+    max-width: 40pc;
 }
 
 .intro {
@@ -81,21 +105,21 @@ h1 {
     grid-row: 4;
 }
 
-/*
-@media screen and (min-aspect-ratio: 5 / 4) {
+/* if the screen is to narrow... */
+@media screen and (max-aspect-ratio: 5 / 4) {
+    /* make the title centered */
     h1 {
-        font-size: 20vmin;
-        letter-spacing: 6vmin;
-        width: 64vmin;
-        left: -1vmin;
-        bottom: -5vmin;
+        left: calc(50% - (min(68vh, 75vw) / 2.2));
+        /* viewport height - height of title - offset*/
+        top: calc(42vh - (min(23.5vh, 25vw) * 2));
     }
 
-    .page-wrapper {
-        left: 64vmin;
+    /* remove the additional img */
+    #zen-summary {
+        visibility: hidden;
+        left: 0;
     }
 }
-*/
 
 a:link {
     color: mediumseagreen;
