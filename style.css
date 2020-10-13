@@ -1,24 +1,36 @@
 :root {
     --standard-width: 60vmin;
+    --dark-color: #303030;
+    --light-color: #CBEBD8;
+    --highlight-color: whitesmoke;
+    --link-color: lightgreen;
+    --header-size: max(2pc, 4vmin);
 }
 
 * {
     font-family: Consolas, sans-serif;
-    text-align: center;
-    color: #CBEBD8;
+    color: var(--light-color);
+    /*text-align: center;*/
+}
+
+hr {
+    width: var(--standard-width);
 }
 
 #logo {
-    margin: 2pc;
+    display: block;
+    /*margin: 2pc auto 2pc auto;*/
+    margin-top: 2pc;
 }
 
 body {
-    background-color: #303030;
+    background-color: var(--dark-color);
 }
 
 h1, h2, h3 {
-    color: whitesmoke;
-    font-size: max(2pc, 4vmin);
+    color: var(--highlight-color);
+    font-size: var(--header-size);
+    /*margin-left: var(--header-size);*/
 }
 
 p {
@@ -26,7 +38,7 @@ p {
 }
 
 a {
-    color: lightgreen;
+    color: var(--link-color);
 }
 
 #body-container {
@@ -37,8 +49,4 @@ a {
 .centered {
     width: var(--standard-width);
     margin: auto;
-}
-
-hr {
-    width: var(--standard-width);
 }
