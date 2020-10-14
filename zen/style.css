@@ -25,7 +25,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: var(--color-dark-ghost) url("imgs/falls-2.jpg") no-repeat fixed center;
+    background: var(--color-dark-ghost) url("imgs/falls-1.jpg") no-repeat fixed center;
     background-size: cover;
     display: grid;
 }
@@ -35,7 +35,7 @@ body {
     width: 100%;
     display: grid;
     grid-template-rows: 100vh auto auto auto;
-    grid-template-columns: 98vw;
+    grid-template-columns: 50% 50%;
     grid-row-gap: 10vh;
     justify-items: center;
     align-items: center;
@@ -73,6 +73,7 @@ header > h2 {
     background-position: center;
     background-size: cover;
     position: absolute;
+    transform: scale(-1, -1);
     top: 10vh;
     height: 80vh;
     left: 70vh;
@@ -95,15 +96,15 @@ header > h2 {
 }
 
 .intro {
-    grid-row: 2;
+    grid-area: 2 / 1 / span 1 / span 1;
 }
 
 .main {
-    grid-row: 3;
+    grid-area: 2 / 2 / span 2 / span 1;
 }
 
 .sidebar {
-    grid-row: 4;
+    grid-area: 3 / 1 / span 1 / span 1;
 }
 
 /* if the screen is to narrow... */
