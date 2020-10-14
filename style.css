@@ -58,7 +58,7 @@ hr {
 #logo {
     display: block;
     height: 12vh;
-    min-height: 4pc;
+    min-height: 64px;
     margin: 2pc auto 2pc auto;
 }
 
