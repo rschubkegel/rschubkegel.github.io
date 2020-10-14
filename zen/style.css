@@ -1,5 +1,5 @@
 :root {
-    --color-dark-ghost: rgba(48, 48, 48, 0.85);
+    --color-dark-ghost: rgba(48, 48, 48, 0.9);
 }
 
 @font-face {
@@ -33,10 +33,7 @@ body {
 .page-wrapper {
     position: absolute;
     width: 100%;
-    display: grid;
-    grid-template-rows: 100vh auto auto auto;
-    grid-template-columns: 50% 50%;
-    grid-row-gap: 10vh;
+    top: 100vh;
     justify-items: center;
     align-items: center;
     justify-content: center;
@@ -54,7 +51,7 @@ h1 {
     position: absolute;
     width: min(70vh, 75vw);
     left: -1vmin;
-    top: -5vmin;
+    top: -105vmin;
     margin: 0;
     padding: 0;
 }
@@ -67,7 +64,7 @@ header > h2 {
 }
 
 /* the image to the right of the title */
-#zen-summary {
+.extra1 {
     background-image: url("imgs/falls-1.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -81,30 +78,12 @@ header > h2 {
     margin: 0 10vw 0 0;
 }
 
-/* a cheat-y way to get another img on the page */
-#zen-summary > p {
-    visibility: hidden;
-}
-
-.intro, .main, .sidebar {
-    grid-column: 0;
+.page-wrapper > * {
     background-color: var(--color-dark-ghost);
-    margin: 0 10vmin 0 10vmin;
+    margin: 10vmin auto 10vmin auto;
     padding: 1vmin 5vmin 3vmin 5vmin;
     width: 70%;
     max-width: 40pc;
-}
-
-.intro {
-    grid-area: 2 / 1 / span 1 / span 1;
-}
-
-.main {
-    grid-area: 2 / 2 / span 2 / span 1;
-}
-
-.sidebar {
-    grid-area: 3 / 1 / span 1 / span 1;
 }
 
 /* if the screen is to narrow... */
@@ -113,11 +92,11 @@ header > h2 {
     h1 {
         left: calc(50% - (min(68vh, 75vw) / 2.2));
         /* viewport height - height of title - offset*/
-        top: calc(42vh - (min(23.5vh, 25vw) * 2));
+        top: calc(-100vh + (42vh - (min(23.5vh, 25vw) * 2)));
     }
 
     /* remove the additional img */
-    #zen-summary {
+    .extra1 {
         visibility: hidden;
         left: 0;
     }
