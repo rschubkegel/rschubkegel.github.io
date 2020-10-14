@@ -1,16 +1,43 @@
+@font-face {
+    font-family: Major-Mono;
+    src: url("_fonts/MajorMonoDisplay-Regular.ttf");
+}
+
+@font-face {
+    font-family: Source-Code-Display;
+    src: url("_fonts/SourceCodePro-Black.ttf");
+}
+
+@font-face {
+    font-family: Source-Code-Regular;
+    src: url("_fonts/SourceCodePro-Regular.ttf");
+}
+
 :root {
-    --standard-width: 60vmin;
+    --standard-width: 50vw;
     --dark-color: #303030;
     --light-color: #CBEBD8;
     --highlight-color: whitesmoke;
     --link-color: lightgreen;
-    --header-size: max(2pc, 4vmin);
+    --header-size: max(1.5pc, 4vmin);
+    --paragraph-size: max(0.75pc, 2vmin);
 }
 
 * {
-    font-family: Consolas, sans-serif;
+    font-family: Source-Code-Regular, sans-serif;
     color: var(--light-color);
-    /*text-align: center;*/
+    line-height: 1.5em;
+}
+
+#portfolio {
+    font-family: Source-Code-Display, "Source Code Pro", sans-serif;
+    font-size: 9vh;
+    opacity: 20%;
+    letter-spacing: 0.6em;
+    position: fixed;
+    transform: rotate(-90deg);
+    top: 32vh;
+    left: -4em;
 }
 
 hr {
@@ -19,8 +46,8 @@ hr {
 
 #logo {
     display: block;
-    /*margin: 2pc auto 2pc auto;*/
-    margin-top: 2pc;
+    width: 15vmin;
+    margin: 5vmin 0 5vmin 0;
 }
 
 body {
@@ -34,7 +61,7 @@ h1, h2, h3 {
 }
 
 p {
-    font-size: max(1pc, 2vmin);
+    font-size: var(--paragraph-size);
 }
 
 a {
@@ -44,9 +71,7 @@ a {
 #body-container {
     display: flex;
     flex-direction: column;
-}
-
-.centered {
     width: var(--standard-width);
-    margin: auto;
+    margin-left: 26vh;
+    margin-right: auto;
 }
