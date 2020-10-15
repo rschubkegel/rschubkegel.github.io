@@ -14,7 +14,8 @@
 }
 
 :root {
-    --standard-width: 50vw;
+    --centered-width: 70vw;
+    --max-width: min(85vh, 80vw);
     --dark-color: #303030;
     --light-color: #CBEBD8;
     --highlight-color: whitesmoke;
@@ -37,17 +38,40 @@
     position: fixed;
     transform: rotate(-90deg);
     top: 32vh;
-    left: -4em;
+    left: -4.2em;
+}
+
+#body-container {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--max-width);
+    margin: 0 23vh 0 23vh;
+    /*margin: 0 auto 0 auto;*/
 }
 
 hr {
-    width: var(--standard-width);
+    width: 100%;
+    max-width: var(--max-width);
+    opacity: 50%;
 }
 
 #logo {
     display: block;
-    width: 15vmin;
-    margin: 5vmin 0 5vmin 0;
+    height: 12vh;
+    min-height: 64px;
+    margin: 2pc auto 2pc auto;
+}
+
+@media screen and (max-aspect-ratio: 4 / 5) {
+    #portfolio {
+        visibility: hidden;
+    }
+
+    #body-container {
+        width: var(--centered-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 body {
@@ -57,7 +81,6 @@ body {
 h1, h2, h3 {
     color: var(--highlight-color);
     font-size: var(--header-size);
-    /*margin-left: var(--header-size);*/
 }
 
 p {
@@ -66,12 +89,4 @@ p {
 
 a {
     color: var(--link-color);
-}
-
-#body-container {
-    display: flex;
-    flex-direction: column;
-    width: var(--standard-width);
-    margin-left: 26vh;
-    margin-right: auto;
 }
