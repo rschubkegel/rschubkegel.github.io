@@ -1,0 +1,8 @@
+{
+  "name": "rschubkegel.github.io",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "animejs": "^3.2.1"
+  }
+}
