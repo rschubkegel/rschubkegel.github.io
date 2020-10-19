@@ -1,16 +1,16 @@
 @font-face {
     font-family: Major-Mono;
-    src: url("_fonts/MajorMonoDisplay-Regular.ttf");
+    src: url("fonts/MajorMonoDisplay-Regular.ttf");
 }
 
 @font-face {
     font-family: Source-Code-Display;
-    src: url("_fonts/SourceCodePro-Black.ttf");
+    src: url("fonts/SourceCodePro-Black.ttf");
 }
 
 @font-face {
     font-family: Source-Code-Regular;
-    src: url("_fonts/SourceCodePro-Regular.ttf");
+    src: url("fonts/SourceCodePro-Regular.ttf");
 }
 
 :root {
