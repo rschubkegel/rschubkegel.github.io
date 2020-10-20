@@ -1,39 +1,31 @@
 "use strict";
 
-let curLetter = 'A';
+const ALIVE = 'X';
+const DEAD = '.';
+const BOARD_SIZE = 32;
+const FOREGROUND_COLOR = "#7ae570";
+const BACKGROUND_COLOR = "#4a514b";
 
-// initialize header movement
+// called on load
 function start() {
     console.log("start called");
-    let header = $("<a></a>");
-    addToElement(header);
-    $("body").append(header);
-    growElement(header);
-    header.click(function(){ addToElement(header) });
-}
 
-function growElement(e) {
-    console.log("increasing header font size");
-    e.animate(
-        {fontSize: "+=30px"},
-        "slow",
-        function(){ shrinkElement(e)} );
-}
+    // add board
+    console.log("adding characters to board");
+    let board = $("#board");
+    let content = "";
+    for (let y = 0; y < BOARD_SIZE; y++)
+    {
+        for (let y = 0; y < BOARD_SIZE; y++)
+        {
+            content += DEAD;
+        }
+        content += "\n";
+    }
+    board.html(content);
 
-function shrinkElement(e) {
-    console.log("decreasing header font size");
-    e.animate(
-        {fontSize: "-=30px"},
-        "slow",
-        function(){ growElement(e)} );
-}
-
-function addToElement(e) {
-    console.log("adding to element");
-    e.append(curLetter);
-
-    // change current letter
-    let curASCII = curLetter.charCodeAt(0);
-    curASCII++;
-    curLetter = String.fromCharCode(curASCII);
+    // set color
+    console.log("setting color");
+    $(".foreground").css("color", FOREGROUND_COLOR);
+    $(".background").css("background-color", BACKGROUND_COLOR);
 }
