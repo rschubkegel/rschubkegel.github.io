@@ -47,6 +47,7 @@ function start() {
         content += "\n";
     }
     board.html(content);
+    board.css("user-select", "none");
 
     // resize characters
     let fontSize = "calc(" + BOARD_SIZE + " / " + BOARD_TILE_COUNT + ")";
