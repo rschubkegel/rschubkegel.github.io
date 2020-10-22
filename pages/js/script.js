@@ -10,11 +10,16 @@ const BACKGROUND_COLOR = "#4a514b";
 const TILE_ID_FORMAT = "tile-x-y";
 
 // board is a table of boolean states
-let gameBoard;
+let curGameBoard;
+let nextGameBoard;
 
 // called on load
 function start() {
     console.log("start called");
+
+    // initialize tables of states
+    curGameBoard = [];
+    nextGameBoard = [];
 
     // set up CSS
     console.log("setting up CSS");
@@ -44,7 +49,9 @@ function start() {
     });
     for (let y = 0; y < BOARD_TILE_COUNT; y++)
     {
-        //gameBoard.add([]);
+        // add empty "column" to game boards
+        curGameBoard.add([]);
+        nextGameBoard.add([]);
 
         // add div (row) to contain tiles
         let div = $("<div></div>");
@@ -56,7 +63,9 @@ function start() {
 
         for (let x = 0; x < BOARD_TILE_COUNT; x++)
         {
-            //gameBoard[y].add(false);
+            // add state to board
+            curGameBoard[y].add(false);
+            nextGameBoard[y].add(false);
 
             // add button to represent tile on board
             let b = $("<button></button>");
