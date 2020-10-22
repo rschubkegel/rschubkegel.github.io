@@ -1,12 +1,16 @@
 "use strict";
 
-const ALIVE = 'X';
-const DEAD = ".";
+const ALIVE_COLOR = "rgb(0, 255, 0)";
+const DEAD_COLOR = "rgb(0, 0, 0)";
 const BOARD_TILE_COUNT = 32;
 const BOARD_SIZE = "60vmin";
+const TILE_SIZE = "calc(" + BOARD_SIZE + " / " + BOARD_TILE_COUNT + ")";
 const FOREGROUND_COLOR = "#7ae570";
 const BACKGROUND_COLOR = "#4a514b";
 const TILE_ID_FORMAT = "tile-x-y";
+
+// board is a table of boolean states
+let gameBoard;
 
 // called on load
 function start() {
@@ -33,30 +37,47 @@ function start() {
     // add board
     console.log("adding characters to board");
     let board = $("#board");
-    let content = "";
+    board.css({
+        width: BOARD_SIZE,
+        display: "flex",
+        flexDirection: "column"
+    });
     for (let y = 0; y < BOARD_TILE_COUNT; y++)
     {
+        //gameBoard.add([]);
+
+        // add div (row) to contain tiles
+        let div = $("<div></div>");
+        div.css({
+            display: "flex",
+            flexDirection: "row"
+        });
+        board.append(div);
+
         for (let x = 0; x < BOARD_TILE_COUNT; x++)
         {
-            content += "<span class=\"tile\" id=\""
-                + getTileId(x, y)
-                + "\">"
-                + DEAD
-                + "</span>";
+            //gameBoard[y].add(false);
+
+            // add button to represent tile on board
+            let b = $("<button></button>");
+            b.attr("class", "tile ui-button ui-widget ui-corner-all");
+            b.attr("id", getTileId(x, y));
+            b.css({
+                width: TILE_SIZE,
+                height: TILE_SIZE,
+                backgroundColor: DEAD_COLOR
+            });
+            div.append(b);
         }
-        content += "\n";
+        //content += "\n";
     }
-    board.html(content);
-    board.css("user-select", "none");
 
     // resize characters
-    let fontSize = "calc(" + BOARD_SIZE + " / " + BOARD_TILE_COUNT + ")";
-    board.css({
-        "font-size": fontSize,
-        "letter-spacing": "0.5em",
-        "text-align": "center",
-        "cursor": "pointer",
-    });
+    // board.css({
+    //     fontSize: FONT_SIZE,
+    //     letterSpacing: "0.6em",
+    //     textAlign: "center",
+    // });
 
     // set colors
     console.log("setting color");
@@ -71,13 +92,13 @@ function start() {
 }
 
 // called when a span with class="tile" is clicked
-function tileClicked(span) {
+function tileClicked(button) {
 
     // toggle this tile
-    toggleChar(span);
+    toggleColor(button);
 
     // get tile location on board
-    let spanIndices = getSpanIndices(span);
+    let spanIndices = getButtonIndices(button);
     let x = spanIndices[0];
     let y = spanIndices[1];
 
@@ -92,22 +113,23 @@ function tileClicked(span) {
     for (let i = 0; i < adjacentTiles.length; i++) {
         if (adjacentTiles[i] != null)
         {
-            toggleChar(adjacentTiles[i]);
+            toggleColor(adjacentTiles[i]);
         }
     }
 }
 
-// if the specified span's character is dead, make it alive, and vice versa
-function toggleChar(span) {
-    console.log("toggling " + span.attr("id"))
-    let curChar = span.html();
-    if (curChar === ALIVE) {
-        curChar = DEAD;
+// toggle color of the tile
+function toggleColor(button) {
+    //console.log("toggling " + button.attr("id"))
+    let c = button.css("background-color");
+    if (c === DEAD_COLOR)
+    {
+        button.css("background-color", ALIVE_COLOR);
     }
-    else {
-        curChar = ALIVE;
+    else
+    {
+        button.css("background-color", DEAD_COLOR);
     }
-    span.html(curChar);
 }
 
 // adds leading zeroes to ensure number becomes string of specified length
@@ -129,20 +151,18 @@ function getTileId(x, y) {
 }
 
 // returns indices of tile span
-function getSpanIndices(span) {
-    let id = span.attr("id");
+function getButtonIndices(button) {
+    let id = button.attr("id");
     let x = id.substr(5, 2);
     let y = id.substr(8, 2);
-    console.log("un-cast indices of span are " + x + ", " + y);
     x = Number(x);
     y = Number(y);
-    console.log("cast indices of span are " + x + ", " + y);
     return [x, y];
 }
 
 // returns state of specified tile (DEAD or ALIVE)
 function getTile(x, y) {
-    console.log("getting tile at " + x + ", " + y);
+    //console.log("getting tile at " + x + ", " + y);
     return $("#" + getTileId(x, y));
 }
 
@@ -153,6 +173,6 @@ function isValidIndex(i) {
     {
         result = false;
     }
-    console.log("index " + i + " is " + (result ? "" : "not") + " valid");
+    //console.log("index " + i + " is " + (result ? "" : "not") + " valid");
     return result;
 }
