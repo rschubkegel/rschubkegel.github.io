@@ -3,25 +3,33 @@
 const BOARD_TILE_COUNT = 16;
 const BOARD_SIZE = "60vmin";
 const TILE_SIZE = "calc(" + BOARD_SIZE + " / " + BOARD_TILE_COUNT + ")";
-const FOREGROUND_COLOR = "rgb(122, 230, 112)";
-const BACKGROUND_COLOR = "#4a514b";
-const ACCENT_COLOR = "#92a083";
-const CONTRAST_COLOR = "rgb(40,55,42)";
+const COLOR_FOREGROUND = "rgb(122, 230, 112)";
+const COLOR_ACCENT = "#92a083";
+const COLOR_BACKGROUND = "#4a514b";
+const COLOR_CONTRAST = "rgb(40,55,42)";
 const TILE_ID_FORMAT = "tile-x-y";
+const COUNTER_FORMAT = "Iteration: x";
 
 // board is a table of boolean states
-let buttonBoard;
+let htmlBoard;
 let curGameBoard;
 let nextGameBoard;
+let mouseDown;
+let timedTick;
+let tickCount;
+let tickCounter;
 
 // called on load
 function start() {
     console.log("start called");
 
-    // initialize tables of states
-    buttonBoard = [];
+    // initialize variables
+    htmlBoard = [];
     curGameBoard = [];
     nextGameBoard = [];
+    mouseDown = false;
+    timedTick = null;
+    tickCount = 1;
 
     // set up CSS
     console.log("setting up CSS");
@@ -30,6 +38,7 @@ function start() {
         "padding": "0",
         "font-family": "monospace",
         //"outline": "red solid 1px",
+        draggable: "false"
     });
     $("#page-wrapper").css({
         "display": "flex",
@@ -46,6 +55,16 @@ function start() {
     });
     $(".side-pane").css("flex", "1 1 20%");
 
+    // add tick counter
+    tickCounter = $("<p></p>");
+    tickCounter.attr("id", "tick-counter");
+    tickCounter.css({
+        fontSize: "large",
+        color: COLOR_FOREGROUND
+    });
+    tickCounter.html(COUNTER_FORMAT.replace("x", "1"));
+    centerPane.prepend(tickCounter);
+
     // add board
     console.log("adding characters to board");
     let board = $("#board");
@@ -56,7 +75,7 @@ function start() {
     });
     for (let y = 0; y < BOARD_TILE_COUNT; y++) {
         // add empty "column" to game boards
-        buttonBoard.push([]);
+        htmlBoard.push([]);
         curGameBoard.push([]);
         nextGameBoard.push([]);
 
@@ -70,51 +89,101 @@ function start() {
 
         for (let x = 0; x < BOARD_TILE_COUNT; x++) {
             // add button to represent tile on board
-            let b = $("<button></button>");
-            b.attr("class", "tile ui-button ui-widget ui-corner-all");
-            b.attr("id", getTileButtonId(x, y));
-            b.css({
+            let tile = $("<div></div>");
+            tile.attr("class", "tile");
+            tile.attr("id", getTileId(x, y));
+            tile.css({
                 width: TILE_SIZE,
                 height: TILE_SIZE,
-                backgroundColor: CONTRAST_COLOR,
-                border: "1px solid " + ACCENT_COLOR,
-                borderRadius: "0"
+                backgroundColor: COLOR_CONTRAST,
+                border: "1px solid " + COLOR_ACCENT
             });
-            div.append(b);
+
+            // register clicks
+            tile.mousedown(function() {
+                tileClicked($(this));
+                mouseDown = true;
+            });
+            tile.mouseup(function() { mouseDown = false; });
+            tile.mouseover(function() {
+                if (mouseDown) {
+                    tileClicked($(this));
+                }
+            });
+
+            // add to DOM
+            div.append(tile);
 
             // add state to board
-            buttonBoard[y].push(b);
+            htmlBoard[y].push(tile);
             curGameBoard[y].push(false);
             nextGameBoard[y].push(false);
         }
         //content += "\n";
     }
 
-    // register board clicks
-    console.log("registering clicks");
-    $(".tile").click(function() {
-        tileClicked($(this));
-    });
-
     // add board controls
-    let tickButton = $("<button>Next Iteration</button>");
-    tickButton.css({
-        width: BOARD_SIZE,
-    })
-    tickButton.click(tick);
-    centerPane.append(tickButton);
+    let controls = $("<div></div>");
+    controls.attr("id", "controls");
+    controls.css({
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        width: BOARD_SIZE
+    });
+    centerPane.append(controls);
 
-    // resize characters
-    // board.css({
-    //     fontSize: FONT_SIZE,
-    //     letterSpacing: "0.6em",
-    //     textAlign: "center",
-    // });
+    let buttonCss = {
+        fontFamily: "monospace",
+        fontSize: "large",
+        textDecoration: "none",
+        padding: "1ex",
+        margin: "1ex",
+        backgroundColor: COLOR_BACKGROUND,
+        color: COLOR_FOREGROUND,
+        border: "solid 1px " + COLOR_CONTRAST,
+        cursor: "pointer",
+        width: "6em"
+    };
+
+    let play = $("<button>Play</button>");
+    play.click(function() {
+        if (!timedTick)
+        {
+            tick();
+            timedTick = setInterval(tick, 500);
+        }
+    });
+    controls.append(play);
+
+    let pause = $("<button>Pause</button>");
+    pause.click(function() {
+        if (timedTick) {
+            clearInterval(timedTick);
+            timedTick = null;
+        }
+    });
+    controls.append(pause);
+
+    let tickButton = $("<button>Step</button>");
+    tickButton.click(tick);
+    controls.append(tickButton);
+
+    let buttons = $("button");
+    buttons.css(buttonCss);
+    buttons.mouseenter(function() {
+        $(this).css("border-color", COLOR_ACCENT);
+        $(this).animate({ fontSize: "xx-large" }, 200);
+    });
+    buttons.mouseout(function() {
+        $(this).css("border-color", COLOR_CONTRAST);
+        $(this).animate({ fontSize: "large" }, 200);
+    });
 
     // set colors
     console.log("setting color");
-    $(".foreground").css("color", FOREGROUND_COLOR);
-    $(".background").css("background-color", BACKGROUND_COLOR);
+    $(".foreground").css("color", COLOR_FOREGROUND);
+    $(".background").css("background-color", COLOR_BACKGROUND);
 }
 
 // loops through all states, calculates next tick's state
@@ -154,9 +223,13 @@ function tick() {
     for (let y = 0; y < curGameBoard.length; y++) {
         for (let x = 0; x < curGameBoard.length; x++) {
             curGameBoard[y][x] = nextGameBoard[y][x];
-            setButtonColor(buttonBoard[y][x], curGameBoard[y][x])
+            setElementColor(htmlBoard[y][x], curGameBoard[y][x])
         }
     }
+
+    // update tick counter
+    tickCount++;
+    tickCounter.html(COUNTER_FORMAT.replace("x", tickCount));
 }
 
 // returns an array of dictionaries, each with an x and y value
@@ -175,13 +248,13 @@ function getAdjacentIndices(x, y) {
 }
 
 // called when a span with class="tile" is clicked
-function tileClicked(button) {
+function tileClicked(tile) {
 
     // get tile location on board
-    let buttonPos = getButtonIndices(button);
+    let position = getTileIndices(tile);
 
     // toggle this tile
-    setButtonColor(button, toggleTile(buttonPos.x, buttonPos.y));
+    setElementColor(tile, toggleTile(position.x, position.y));
 }
 
 // toggles the state on the board
@@ -191,14 +264,14 @@ function toggleTile(x, y) {
 }
 
 // toggle color of the tile
-function setButtonColor(button, state) {
+function setElementColor(element, state) {
     //console.log("toggling " + button.attr("id"))
-    if (button == null) {
+    if (element == null) {
         console.error("button null!")
     }
     else {
-        let c = state ? FOREGROUND_COLOR : CONTRAST_COLOR;
-        button.css("background-color", c);
+        let c = state ? COLOR_FOREGROUND : COLOR_CONTRAST;
+        element.css("background-color", c);
     }
 }
 
@@ -212,27 +285,27 @@ function addLeadingZeros(num, len) {
 }
 
 // returns the correctly formatted id of a tile at the given indices
-function getTileButtonId(x, y) {
+function getTileId(x, y) {
     return TILE_ID_FORMAT
         .replace("x", addLeadingZeros(x, 2))
         .replace("y", addLeadingZeros(y, 2));
 }
 
 // returns indices of tile span
-function getButtonIndices(button) {
+function getTileIndices(button) {
     let id = button.attr("id");
     let x = id.substr(5, 2);
     let y = id.substr(8, 2);
     return {"x": Number(x), "y": Number(y)};
 }
 
-// returns html button at given indices
-function getTileButton(x, y) {
+// returns html element at given indices
+function getTile(x, y) {
     //console.log("getting tile at " + x + ", " + y);
     let result = null;
     if (isValidIndex(x, y)) {
         // result = $("#" + getTileId(x, y))
-        result = buttonBoard[y][x];
+        result = htmlBoard[y][x];
     }
     return result;
 }
