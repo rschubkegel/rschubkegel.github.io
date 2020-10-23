@@ -18,6 +18,7 @@ let mouseDown;
 let timedTick;
 let tickCount;
 let tickCounter;
+let interval;
 
 // called on load
 function start() {
@@ -30,6 +31,7 @@ function start() {
     mouseDown = false;
     timedTick = null;
     tickCount = 1;
+    interval = 250;
 
     // set up CSS
     console.log("setting up CSS");
@@ -133,25 +135,12 @@ function start() {
     });
     centerPane.append(controls);
 
-    let buttonCss = {
-        fontFamily: "monospace",
-        fontSize: "large",
-        textDecoration: "none",
-        padding: "1ex",
-        margin: "1ex",
-        backgroundColor: COLOR_BACKGROUND,
-        color: COLOR_FOREGROUND,
-        border: "solid 1px " + COLOR_CONTRAST,
-        cursor: "pointer",
-        width: "6em"
-    };
-
     let play = $("<button>Play</button>");
     play.click(function() {
         if (!timedTick)
         {
             tick();
-            timedTick = setInterval(tick, 500);
+            timedTick = setInterval(tick, interval);
         }
     });
     controls.append(play);
@@ -169,18 +158,45 @@ function start() {
     tickButton.click(tick);
     controls.append(tickButton);
 
-    let buttons = $("button");
-    buttons.css(buttonCss);
-    buttons.mouseenter(function() {
-        $(this).css("border-color", COLOR_ACCENT);
-        $(this).animate({ fontSize: "xx-large" }, 200);
+    let buttonStyle = {
+        fontFamily: "monospace",
+        fontSize: "large",
+        padding: "1ex",
+        margin: "1ex",
+        color: COLOR_FOREGROUND,
+        backgroundColor: COLOR_CONTRAST,
+        border: "solid 1px " + COLOR_ACCENT,
+        cursor: "pointer",
+        width: "6em"
+    };
+
+    let intervalTime = $("<input type='text' id='interval-time'>");
+    intervalTime.attr("value", interval);
+    intervalTime.css({
+        fontFamily: "monospace",
+        fontSize: "large",
+        padding: "1ex",
+        margin: "1ex",
+        color: COLOR_FOREGROUND,
+        backgroundColor: COLOR_CONTRAST,
+        border: "solid 1px " + COLOR_ACCENT,
     });
-    buttons.mouseout(function() {
-        $(this).css("border-color", COLOR_CONTRAST);
-        $(this).animate({ fontSize: "large" }, 200);
+    intervalTime.change(function() {
+        // TODO validate input
+        interval = $(this).val();
+    });
+    controls.append(intervalTime);
+
+    $("button").css(buttonStyle);
+    let inputs = $("button,input");
+    inputs.mouseenter(function() {
+        $(this).css("border-color", COLOR_FOREGROUND);
+    });
+    inputs.mouseout(function() {
+        $(this).css("border-color", COLOR_ACCENT);
     });
 
-    // set colors
+    // set page colors
     console.log("setting color");
     $(".foreground").css("color", COLOR_FOREGROUND);
     $(".background").css("background-color", COLOR_BACKGROUND);
