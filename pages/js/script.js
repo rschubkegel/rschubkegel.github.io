@@ -1,14 +1,11 @@
 "use strict";
 
-const BOARD_TILE_COUNT = 16;
+const BOARD_TILE_COUNT = 32;
 const BOARD_SIZE = "60vmin";
 const TILE_SIZE = "calc(" + BOARD_SIZE + " / " + BOARD_TILE_COUNT + ")";
-const COLOR_FOREGROUND = "rgb(122, 230, 112)";
-const COLOR_ACCENT = "#92a083";
-const COLOR_BACKGROUND = "#4a514b";
-const COLOR_CONTRAST = "rgb(40,55,42)";
 const TILE_ID_FORMAT = "tile-x-y";
 const COUNTER_FORMAT = "Iteration: x";
+const STATE_FORMAT = "State: <span class='x'>x</span>";
 
 // board is a table of boolean states
 let htmlBoard;
@@ -17,7 +14,8 @@ let nextGameBoard;
 let mouseDown;
 let timedTick;
 let tickCount;
-let tickCounter;
+let tickText;
+let stateText;
 let interval;
 
 // called on load
@@ -33,48 +31,22 @@ function start() {
     tickCount = 1;
     interval = 250;
 
-    // set up CSS
-    console.log("setting up CSS");
-    $("*").css({
-        "margin": "0",
-        "padding": "0",
-        "font-family": "monospace",
-        //"outline": "red solid 1px",
-        draggable: "false"
-    });
-    $("#page-wrapper").css({
-        "display": "flex",
-        "flex-direction": "row",
-        "align-items": "center",
-        "width": "100vw",
-        "height": "100vh",
-    });
-    let centerPane = $(".center-pane");
-    centerPane.css({
-        flex: "1 1 " + BOARD_SIZE,
-        display: "flex",
-        flexDirection: "column"
-    });
-    $(".side-pane").css("flex", "1 1 20%");
+    // add state indicator
+    stateText = $("#state-text");
+    setStateHtml("stopped");
 
     // add tick counter
-    tickCounter = $("<p></p>");
-    tickCounter.attr("id", "tick-counter");
-    tickCounter.css({
-        fontSize: "large",
-        color: COLOR_FOREGROUND
-    });
-    tickCounter.html(COUNTER_FORMAT.replace("x", "1"));
-    centerPane.prepend(tickCounter);
+    tickText = $("#iteration-text");
+    resetTickCounter();
+
+    // add text
+    let boardText = $("#board-text");
+    boardText.append(stateText);
+    boardText.append(tickText);
 
     // add board
     console.log("adding characters to board");
     let board = $("#board");
-    board.css({
-        width: BOARD_SIZE,
-        display: "flex",
-        flexDirection: "column"
-    });
     for (let y = 0; y < BOARD_TILE_COUNT; y++) {
         // add empty "column" to game boards
         htmlBoard.push([]);
@@ -85,7 +57,8 @@ function start() {
         let div = $("<div></div>");
         div.css({
             display: "flex",
-            flexDirection: "row"
+            flexDirection: "row",
+            justifyContent: "center"
         });
         board.append(div);
 
@@ -96,10 +69,9 @@ function start() {
             tile.attr("id", getTileId(x, y));
             tile.css({
                 width: TILE_SIZE,
-                height: TILE_SIZE,
-                backgroundColor: COLOR_CONTRAST,
-                border: "1px solid " + COLOR_ACCENT
+                height: TILE_SIZE
             });
+            setElementColor(tile, false);
 
             // register clicks
             tile.mousedown(function() {
@@ -124,86 +96,41 @@ function start() {
         //content += "\n";
     }
 
-    // add board controls
-    let controls = $("<div></div>");
-    controls.attr("id", "controls");
-    controls.css({
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        width: BOARD_SIZE
-    });
-    centerPane.append(controls);
+    // register button actions
+    $("#start-button").click(startSimulation);
+    $("#stop-button").click(stopSimulation);
+    $("#step-button").click(tick);
+    $("#reset-button").click(resetSim);
 
-    let play = $("<button>Play</button>");
-    play.click(function() {
-        if (!timedTick)
-        {
-            tick();
-            timedTick = setInterval(tick, interval);
-        }
+    //data validation for iteration interval input
+    $("#interval-input").change(function(){
+        updateInterval($(this).val());
     });
-    controls.append(play);
+}
 
-    let pause = $("<button>Pause</button>");
-    pause.click(function() {
-        if (timedTick) {
-            clearInterval(timedTick);
-            timedTick = null;
-        }
-    });
-    controls.append(pause);
+function startSimulation() {
+    if (!timedTick)
+    {
+        tick();
+        timedTick = setInterval(tick, interval);
+        setStateHtml("running")
+    }
+}
 
-    let tickButton = $("<button>Step</button>");
-    tickButton.click(tick);
-    controls.append(tickButton);
-
-    let buttonStyle = {
-        fontFamily: "monospace",
-        fontSize: "large",
-        padding: "1ex",
-        margin: "1ex",
-        color: COLOR_FOREGROUND,
-        backgroundColor: COLOR_CONTRAST,
-        border: "solid 1px " + COLOR_ACCENT,
-        cursor: "pointer",
-        width: "6em"
-    };
-
-    let intervalTime = $("<input type='text' id='interval-time'>");
-    intervalTime.attr("value", interval);
-    intervalTime.css({
-        fontFamily: "monospace",
-        fontSize: "large",
-        padding: "1ex",
-        margin: "1ex",
-        color: COLOR_FOREGROUND,
-        backgroundColor: COLOR_CONTRAST,
-        border: "solid 1px " + COLOR_ACCENT,
-    });
-    intervalTime.change(function() {
-        // TODO validate input
-        interval = $(this).val();
-    });
-    controls.append(intervalTime);
-
-    $("button").css(buttonStyle);
-    let inputs = $("button,input");
-    inputs.mouseenter(function() {
-        $(this).css("border-color", COLOR_FOREGROUND);
-    });
-    inputs.mouseout(function() {
-        $(this).css("border-color", COLOR_ACCENT);
-    });
-
-    // set page colors
-    console.log("setting color");
-    $(".foreground").css("color", COLOR_FOREGROUND);
-    $(".background").css("background-color", COLOR_BACKGROUND);
+function stopSimulation() {
+    if (timedTick) {
+        clearInterval(timedTick);
+        timedTick = null;
+        setStateHtml("stopped")
+    }
 }
 
 // loops through all states, calculates next tick's state
 function tick() {
+
+    // track whether any changes to board were made
+    let changed = false;
+
     // store entire next board of states before updating actual board
     for (let y = 0; y < curGameBoard.length; y++) {
         for (let x = 0; x < curGameBoard.length; x++) {
@@ -222,30 +149,106 @@ function tick() {
                 }
             }
 
-            // store in next board variable
+            // determine next state
             if (curState) {
+
+                // if this tile was alive...
                 nextState =
                     liveNeighborCount === 2
                     || liveNeighborCount === 3;
             }
             else {
+
+                // if this tile was dead...
                 nextState = liveNeighborCount === 3;
             }
+
+            // was the state changed?
+            if (curState !== nextState) {
+                changed = true;
+            }
+
+            // update next game board
             nextGameBoard[y][x] = nextState;
         }
     }
 
-    // update actual board
+    // if any changes happened in the simulation, update board and iteration
+    if (changed) {
+
+        // update board
+        for (let y = 0; y < curGameBoard.length; y++) {
+            for (let x = 0; x < curGameBoard.length; x++) {
+                curGameBoard[y][x] = nextGameBoard[y][x];
+                setElementColor(htmlBoard[y][x], curGameBoard[y][x])
+            }
+        }
+
+        // update tick counter
+        incrementTickCounter();
+    }
+
+    // if no changes happened this iteration, pause simulation
+    else {
+        // stopSimulation();
+    }
+}
+
+function resetSim() {
+
+    // clear the board
     for (let y = 0; y < curGameBoard.length; y++) {
         for (let x = 0; x < curGameBoard.length; x++) {
-            curGameBoard[y][x] = nextGameBoard[y][x];
-            setElementColor(htmlBoard[y][x], curGameBoard[y][x])
+            curGameBoard[y][x] = nextGameBoard[y][x] = false;
+            setElementColor(htmlBoard[y][x], false);
         }
     }
 
-    // update tick counter
-    tickCount++;
-    tickCounter.html(COUNTER_FORMAT.replace("x", tickCount));
+    // reset counter
+    resetTickCounter();
+
+    stopSimulation();
+}
+
+// if value = 1, tickCount incremented, else tickCount reset to 1
+function setTickCounter(value) {
+    tickCount = value;
+    tickText.html(COUNTER_FORMAT.replace("x", tickCount));
+}
+
+function incrementTickCounter() {
+    setTickCounter(tickCount + 1);
+}
+
+function resetTickCounter() {
+    setTickCounter(1);
+}
+
+function setStateHtml(state) {
+    stateText.html(STATE_FORMAT.replace(
+        "x", state).replace(
+            "x", state));
+}
+
+function updateInterval(millis) {
+
+    // validate interval
+    if (millis < 1) {
+        millis = 1;
+    }
+    else if (millis > 10000) {
+        millis = 10000;
+    }
+
+    // set simulation milliseconds
+    interval = millis;
+
+    // see if simulation event needs to be re-registered
+    if (timedTick)
+    {
+        stopSimulation();
+        startSimulation();
+    }
 }
 
 // returns an array of dictionaries, each with an x and y value
@@ -283,11 +286,11 @@ function toggleTile(x, y) {
 function setElementColor(element, state) {
     //console.log("toggling " + button.attr("id"))
     if (element == null) {
-        console.error("button null!")
+        console.error("element null!")
     }
     else {
-        let c = state ? COLOR_FOREGROUND : COLOR_CONTRAST;
-        element.css("background-color", c);
+        element.addClass(state ? "alive" : "dead");
+        element.removeClass(state ? "dead" : "alive");
     }
 }
 
@@ -313,17 +316,6 @@ function getTileIndices(button) {
     let x = id.substr(5, 2);
     let y = id.substr(8, 2);
     return {"x": Number(x), "y": Number(y)};
-}
-
-// returns html element at given indices
-function getTile(x, y) {
-    //console.log("getting tile at " + x + ", " + y);
-    let result = null;
-    if (isValidIndex(x, y)) {
-        // result = $("#" + getTileId(x, y))
-        result = htmlBoard[y][x];
-    }
-    return result;
 }
 
 // returns true if index is valid x or y index on board, false otherwise

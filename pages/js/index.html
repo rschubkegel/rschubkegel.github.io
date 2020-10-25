@@ -9,12 +9,21 @@
 </head>
 <body onload="start()">
     <script src="script.js"></script>
-    <div id="page-wrapper" class="background">
-        <div class="side-pane"></div>
-        <div class="center-pane">
-            <div id="board" class="foreground"></div>
+    <div id="page-wrapper">
+        <h1>Conway's Game of Life</h1>
+        <div id="board-text">
+            <p id="state-text"></p>
+            <p id="iteration-text"></p>
         </div>
-        <div class="side-pane"></div>
+        <div id="board"></div>
+        <div id="board-controls">
+            <button id="start-button">Start</button>
+            <button id="stop-button">Stop</button>
+            <button id="step-button">Step</button>
+            <button id="reset-button">Reset</button>
+            <label for="interval-input">Iteration (ms):</label>
+            <input id="interval-input" type="number" value="250" max="5000" min="10" step="10">
+        </div>
     </div>
 </body>
 </html>
