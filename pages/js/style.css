@@ -1,11 +1,12 @@
 :root {
-    --color-foreground: rgb(188, 239, 173);
+    --color-foreground: rgb(170, 243, 161);
     --color-accent: rgb(145, 155, 130);
     --color-background: rgb(75, 80, 75);
     --color-contrast: rgb(40, 55, 42);
     --color-running: rgb(52, 205, 40);
     --color-stopped: rgb(227, 140, 129);
     --standard-font-size: max(2.2vmin, 8pt);
+    --tile-border-width: 1px;
 }
 
 * {
@@ -19,6 +20,7 @@
 
 body {
     background-color: var(--color-background);
+    height: 100vh;
 }
 
 h1 {
@@ -77,9 +79,22 @@ p {
 }
 
 .tile {
-    border-style: solid;
+    border-style: dashed;
     border-color: var(--color-accent);
-    border-width: 1px 0 0 1px;
+    border-width: var(--tile-border-width) 0 0 var(--tile-border-width);
+}
+
+.tile.right-border {
+    border-right-width: var(--tile-border-width);
+}
+
+.tile.bottom-border {
+    border-bottom-width: var(--tile-border-width);
+}
+
+.tile:hover {
+    border-style: solid;
+    /*border-color: var(--color-running);*/
 }
 
 .tile.alive {

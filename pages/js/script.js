@@ -1,6 +1,6 @@
 "use strict";
 
-const BOARD_TILE_COUNT = 32;
+const BOARD_TILE_COUNT = 16;
 const BOARD_SIZE = "60vmin";
 const TILE_SIZE = "calc(" + BOARD_SIZE + " / " + BOARD_TILE_COUNT + ")";
 const TILE_ID_FORMAT = "tile-x-y";
@@ -65,13 +65,20 @@ function start() {
         for (let x = 0; x < BOARD_TILE_COUNT; x++) {
             // add button to represent tile on board
             let tile = $("<div></div>");
-            tile.attr("class", "tile");
+            let borderClass = "";
+            if (x === BOARD_TILE_COUNT - 1) {
+                borderClass += " right-border";
+            }
+            if (y === BOARD_TILE_COUNT - 1) {
+                borderClass += " bottom-border";
+            }
+            tile.attr("class", "tile" + borderClass);
             tile.attr("id", getTileId(x, y));
             tile.css({
                 width: TILE_SIZE,
                 height: TILE_SIZE
             });
-            setElementColor(tile, false);
+            setTileState(tile, false);
 
             // register clicks
             tile.mousedown(function() {
@@ -180,7 +187,7 @@ function tick() {
         for (let y = 0; y < curGameBoard.length; y++) {
             for (let x = 0; x < curGameBoard.length; x++) {
                 curGameBoard[y][x] = nextGameBoard[y][x];
-                setElementColor(htmlBoard[y][x], curGameBoard[y][x])
+                setTileState(htmlBoard[y][x], curGameBoard[y][x])
             }
         }
 
@@ -200,7 +207,7 @@ function resetSim() {
     for (let y = 0; y < curGameBoard.length; y++) {
         for (let x = 0; x < curGameBoard.length; x++) {
             curGameBoard[y][x] = nextGameBoard[y][x] = false;
-            setElementColor(htmlBoard[y][x], false);
+            setTileState(htmlBoard[y][x], false);
         }
     }
 
@@ -273,7 +280,7 @@ function tileClicked(tile) {
     let position = getTileIndices(tile);
 
     // toggle this tile
-    setElementColor(tile, toggleTile(position.x, position.y));
+    setTileState(tile, toggleTile(position.x, position.y));
 }
 
 // toggles the state on the board
@@ -282,8 +289,8 @@ function toggleTile(x, y) {
     return curGameBoard[y][x] = !curGameBoard[y][x];
 }
 
-// toggle color of the tile
-function setElementColor(element, state) {
+// toggle class of the tile
+function setTileState(element, state) {
     //console.log("toggling " + button.attr("id"))
     if (element == null) {
         console.error("element null!")
