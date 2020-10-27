@@ -11,19 +11,31 @@
 <body onload="start()">
     <script src="script.js"></script>
     <div id="page-wrapper">
-        <h1>Conway's Game of Life</h1>
-        <div id="board-text">
-            <p id="state-text"></p>
-            <p id="iteration-text"></p>
+        <div id="info">
+            <h1>Conway's Game of Life</h1>
+            <p>Ruleset from <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Wikipedia page</a></p>
+            <p>Palette from <a href="https://coolors.co" target="_blank">Coolors.co</a></p>
+            <p>Inspiration from <a href="../../index.html" target="_blank">my brain</a></p>
         </div>
-        <div id="board"></div>
-        <div id="board-controls">
-            <button id="start-button">Start</button>
-            <button id="stop-button">Stop</button>
-            <button id="step-button">Step</button>
-            <button id="reset-button">Reset</button>
-            <label for="interval-input">Iteration (ms):</label>
-            <input id="interval-input" type="number" value="250" max="5000" min="10" step="10">
+        <div id="board">
+            <p id="error-resolution">Error: screen must be larger to support simulation.</p>
+            <div id="board-grid"></div>
+            <div id="board-text">
+                <p id="state-text"></p>
+                <p id="iteration-text"></p>
+            </div>
+            <div id="board-controls">
+                <div>
+                    <button id="start-button">Start</button>
+                    <button id="stop-button">Stop</button>
+                    <button id="step-button">Step</button>
+                    <button id="reset-button">Reset</button>
+                </div>
+                <div>
+                    <label for="interval-input">Iteration (ms):</label>
+                    <input id="interval-input" type="number" value="250" step="10">
+                </div>
+            </div>
         </div>
     </div>
 </body>

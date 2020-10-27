@@ -6,6 +6,8 @@ const TILE_SIZE = "calc(" + BOARD_SIZE + " / (" + BOARD_TILE_COUNT + " * 1.1))";
 const TILE_ID_FORMAT = "tile-x-y";
 const COUNTER_FORMAT = "Iteration: x";
 const STATE_FORMAT = "State: <span class='x'>x</span>";
+const MIN_INTERVAL = 50;
+const MAX_INTERVAL = 1000;
 
 // board is a table of boolean states
 let htmlBoard;
@@ -46,7 +48,7 @@ function start() {
 
     // add board
     console.log("adding characters to board");
-    let board = $("#board");
+    let board = $("#board-grid");
     for (let y = 0; y < BOARD_TILE_COUNT; y++) {
         // add empty "column" to game boards
         htmlBoard.push([]);
@@ -66,11 +68,11 @@ function start() {
             // add button to represent tile on board
             let tile = $("<div></div>");
             let borderClass = "";
-            if (x === BOARD_TILE_COUNT - 1) {
-                borderClass += " right-border";
+            if (x === 0) {
+                borderClass += " no-left-border";
             }
-            if (y === BOARD_TILE_COUNT - 1) {
-                borderClass += " bottom-border";
+            if (y === 0) {
+                borderClass += " no-top-border";
             }
             tile.attr("class", "tile" + borderClass);
             tile.attr("id", getTileId(x, y));
@@ -104,21 +106,29 @@ function start() {
     }
 
     // register button actions
-    $("#start-button").click(startSimulation);
+    $("#start-button").click(function() {
+        startSimulation();
+        tick();
+    });
     $("#stop-button").click(stopSimulation);
     $("#step-button").click(tick);
     $("#reset-button").click(resetSim);
 
     //data validation for iteration interval input
-    $("#interval-input").change(function(){
+    let intervalField = $("#interval-input");
+    intervalField.attr("max", MAX_INTERVAL);
+    intervalField.attr("min", MIN_INTERVAL);
+    intervalField.change(function(){
         updateInterval($(this).val());
+    });
+    intervalField.blur(function(){
+        $(this).val(interval);
     });
 }
 
 function startSimulation() {
     if (!timedTick)
     {
-        tick();
         timedTick = setInterval(tick, interval);
         setStateHtml("running")
     }
@@ -240,11 +250,11 @@ function setStateHtml(state) {
 function updateInterval(millis) {
 
     // validate interval
-    if (millis < 1) {
-        millis = 1;
+    if (millis < MIN_INTERVAL) {
+        millis = MIN_INTERVAL;
     }
-    else if (millis > 10000) {
-        millis = 10000;
+    else if (millis > MAX_INTERVAL) {
+        millis = MAX_INTERVAL;
     }
 
     // set simulation milliseconds
