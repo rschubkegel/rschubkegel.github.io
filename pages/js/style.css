@@ -32,7 +32,7 @@ body {
 
 h1 {
     font-size: calc(var(--standard-font-size) * 1.5);
-    padding-bottom: 1ex;
+    padding-bottom: 1.5ex;
     font-weight: bold;
 }
 
