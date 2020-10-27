@@ -2,7 +2,7 @@
 
 const BOARD_TILE_COUNT = 16;
 const BOARD_SIZE = "60vmin";
-const TILE_SIZE = "calc(" + BOARD_SIZE + " / " + BOARD_TILE_COUNT + ")";
+const TILE_SIZE = "calc(" + BOARD_SIZE + " / (" + BOARD_TILE_COUNT + " * 1.1))";
 const TILE_ID_FORMAT = "tile-x-y";
 const COUNTER_FORMAT = "Iteration: x";
 const STATE_FORMAT = "State: <span class='x'>x</span>";

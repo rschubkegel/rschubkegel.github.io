@@ -68,6 +68,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: solid var(--standard-font-size) var(--color-accent);
 }
 
 #board-controls {
@@ -79,8 +80,8 @@ p {
 }
 
 .tile {
-    border-style: dashed;
-    border-color: var(--color-accent);
+    border-style: solid;
+    border-color: var(--color-contrast);
     border-width: var(--tile-border-width) 0 0 var(--tile-border-width);
 }
 
@@ -92,17 +93,12 @@ p {
     border-bottom-width: var(--tile-border-width);
 }
 
-.tile:hover {
-    border-style: solid;
-    /*border-color: var(--color-running);*/
-}
-
 .tile.alive {
     background-color: var(--color-foreground);
 }
 
 .tile.dead {
-    background-color: var(--color-contrast);
+    background-color: var(--color-background);
 }
 
 span.running {
