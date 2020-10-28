@@ -1,12 +1,13 @@
 :root {
-    --color-foreground: #faf9f9;
-    --color-accent: #ffd6ba;
-    --color-background: #89b0ae;
-    --color-contrast: #555b6e;
+    --color-foreground: #F8EBDD;
+    --color-accent: #A1A89F;
+    --color-background: #5C797F;
+    --color-contrast: #103D4A;
     --color-running: #f2cc8f;
     --color-stopped: #f2cc8f;
-    --standard-font-size: max(2.4vmin, 8pt);
-    --tile-border-width: 2px;
+    --standard-font-size: max(2.0vmin, 8pt);
+    --board-width: 60vmin;
+    --board-tile-width: 16;
 }
 
 * {
@@ -20,6 +21,8 @@
 
 body {
     background-color: var(--color-background);
+    /*background-image: url("ocean.jpg");*/
+    /*background-repeat: no-repeat;*/
     height: 100vh;
 }
 
@@ -31,9 +34,9 @@ body {
 }
 
 h1 {
-    font-size: calc(var(--standard-font-size) * 1.5);
-    padding-bottom: 1.5ex;
+    font-size: calc(var(--standard-font-size) * 1.8);
     font-weight: bold;
+    padding-bottom: 1.5ex;
 }
 
 button, input {
@@ -48,6 +51,7 @@ input, label {
 
 button {
     padding: 1ex 2ex;
+    margin: 0 1ex;
     cursor: pointer;
 }
 
@@ -76,8 +80,15 @@ a:hover {
 }
 
 #board {
-    width: 60vmin;
+    width: var(--board-width);
     margin: 2em 2em 0 2em;
+}
+
+#error-resolution {
+    color: var(--color-stopped);
+    position: absolute;
+    visibility: hidden;
+    text-align: center;
 }
 
 #board-grid {
@@ -89,24 +100,30 @@ a:hover {
     user-select: none;
 }
 
-#error-resolution {
-    color: var(--color-stopped);
-    position: absolute;
-    visibility: hidden;
-    text-align: center;
+#board-text {
+    margin-left: 1ex;
 }
 
 #board-controls {
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     margin-top: 1em;
+}
+
+#board-controls > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .tile {
     border-style: solid;
     border-color: var(--color-contrast);
-    border-width: var(--tile-border-width) 0 0 var(--tile-border-width);
+    border-width: 2px 0 0 2px;
     cursor: pointer;
+    width: calc(var(--board-width) / var(--board-tile-width));
+    height: calc(var(--board-width) / var(--board-tile-width));
 }
 
 .tile.no-left-border {
@@ -135,10 +152,26 @@ span.stopped {
     color: var(--color-contrast);
 }
 
+/* 600px minimum for standard tile border size */
+@media (max-height: 600px), (max-width: 600px) {
+    .tile {
+        border-width: 1px 0 0 1px;
+    }
+    button {
+        padding: 1ex 1ex;
+        margin: 0 1ex;
+        cursor: pointer;
+    }
+}
+
 /* 400px minimum */
-@media (max-height: 400px), (max-width: 400px) {
+@media (max-height: 300px), (max-width: 300px) {
     #board {
         visibility: hidden;
+    }
+    .tile {
+        width: 0;
+        height: 0;
     }
     #error-resolution {
         visibility: visible;

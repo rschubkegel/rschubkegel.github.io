@@ -1,8 +1,5 @@
 "use strict";
 
-const BOARD_TILE_COUNT = 16;
-const BOARD_SIZE = "60vmin";
-const TILE_SIZE = "calc(" + BOARD_SIZE + " / (" + BOARD_TILE_COUNT + " * 1.1))";
 const TILE_ID_FORMAT = "tile-x-y";
 const COUNTER_FORMAT = "Iteration: x";
 const STATE_FORMAT = "State: <span class='x'>x</span>";
@@ -10,6 +7,7 @@ const MIN_INTERVAL = 50;
 const MAX_INTERVAL = 1000;
 
 // board is a table of boolean states
+let boardTileCount;
 let htmlBoard;
 let curGameBoard;
 let nextGameBoard;
@@ -25,6 +23,8 @@ function start() {
     console.log("start called");
 
     // initialize variables
+    boardTileCount = getComputedStyle(document.body).getPropertyValue("--board-tile-width");
+    boardTileCount = parseInt(boardTileCount);
     htmlBoard = [];
     curGameBoard = [];
     nextGameBoard = [];
@@ -49,7 +49,7 @@ function start() {
     // add board
     console.log("adding characters to board");
     let board = $("#board-grid");
-    for (let y = 0; y < BOARD_TILE_COUNT; y++) {
+    for (let y = 0; y < boardTileCount; y++) {
         // add empty "column" to game boards
         htmlBoard.push([]);
         curGameBoard.push([]);
@@ -64,7 +64,7 @@ function start() {
         });
         board.append(div);
 
-        for (let x = 0; x < BOARD_TILE_COUNT; x++) {
+        for (let x = 0; x < boardTileCount; x++) {
             // add button to represent tile on board
             let tile = $("<div></div>");
             let borderClass = "";
@@ -76,10 +76,6 @@ function start() {
             }
             tile.attr("class", "tile" + borderClass);
             tile.attr("id", getTileId(x, y));
-            tile.css({
-                width: TILE_SIZE,
-                height: TILE_SIZE
-            });
             setTileState(tile, false);
 
             // register clicks
@@ -338,7 +334,7 @@ function getTileIndices(button) {
 // returns true if index is valid x or y index on board, false otherwise
 function isValidIndex(i) {
     let result = true;
-    if (i < 0 || i >= BOARD_TILE_COUNT) {
+    if (i < 0 || i >= curGameBoard.length) {
         result = false;
     }
     //console.log("index " + i + " is " + (result ? "" : "not") + " valid");
