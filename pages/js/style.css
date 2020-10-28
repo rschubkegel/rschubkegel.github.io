@@ -6,7 +6,7 @@
     --color-running: #f2cc8f;
     --color-stopped: #f2cc8f;
     --standard-font-size: max(2.0vmin, 8pt);
-    --board-width: 60vmin;
+    --board-width: max(60vmin, 256px);
     --board-tile-width: 16;
 }
 
@@ -16,7 +16,6 @@
     font-family: monospace;
     font-size: var(--standard-font-size);
     color: var(--color-foreground);
-    outline: red none 1px;
 }
 
 body {
@@ -29,7 +28,6 @@ body {
 #page-wrapper {
     display: flex;
     flex-direction: row;
-    align-content: center;
     justify-content: left;
 }
 
@@ -76,11 +74,6 @@ a:hover {
 }
 
 #info {
-    margin: 2em;
-}
-
-#board {
-    width: var(--board-width);
     margin: 2em 2em 0 2em;
 }
 
@@ -88,15 +81,21 @@ a:hover {
     color: var(--color-stopped);
     position: absolute;
     visibility: hidden;
-    text-align: center;
+    text-align: left;
+    width: 60vw;
+}
+
+#board {
+    width: var(--board-width);
+    margin: 2em 2em 0 2em;
 }
 
 #board-grid {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: solid var(--standard-font-size) var(--color-accent);
-    margin-bottom: 1em;
+    border: solid 2vmin var(--color-accent);
+    margin-bottom: 1ex;
     user-select: none;
 }
 
@@ -108,7 +107,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    margin-top: 1em;
+    margin: 1em 0;
 }
 
 #board-controls > div {
@@ -157,23 +156,36 @@ span.stopped {
     .tile {
         border-width: 1px 0 0 1px;
     }
-    button {
-        padding: 1ex 1ex;
-        margin: 0 1ex;
-        cursor: pointer;
-    }
 }
 
-/* 400px minimum */
-@media (max-height: 300px), (max-width: 300px) {
+/* 300px minimum for simulation */
+@media (max-height: 420px), (max-width: 256px) {
     #board {
         visibility: hidden;
     }
+
     .tile {
         width: 0;
         height: 0;
     }
+
     #error-resolution {
         visibility: visible;
     }
+}
+
+/* adjust layout depending on screen ration */
+@media (max-aspect-ratio: 5 / 4) {
+    #info {
+        width: min(100%, var(--board-width));
+    }
+
+    #page-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.debug-outline {
+    outline: red solid 1px;
 }
