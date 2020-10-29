@@ -126,7 +126,7 @@ function startSimulation() {
     if (!timedTick)
     {
         timedTick = setInterval(tick, interval);
-        setStateHtml("running")
+        setStateHtml("running");
     }
 }
 
@@ -134,7 +134,7 @@ function stopSimulation() {
     if (timedTick) {
         clearInterval(timedTick);
         timedTick = null;
-        setStateHtml("stopped")
+        setStateHtml("stopped");
     }
 }
 
@@ -241,6 +241,20 @@ function setStateHtml(state) {
     stateText.html(STATE_FORMAT.replace(
         "x", state).replace(
             "x", state));
+
+    // animate state change!
+    let stateSpan = $("#state-text span");
+    console.log(stateSpan);
+    if (stateSpan) {
+        stateSpan.css({
+            opacity: "0",
+            fontSize: "-=4pt"
+        });
+        stateSpan.animate({
+            opacity: "100%",
+            fontSize: "+=4pt"
+        }, 200);
+    }
 }
 
 function updateInterval(millis) {
@@ -302,8 +316,14 @@ function setTileState(element, state) {
         console.error("element null!")
     }
     else {
-        element.addClass(state ? "alive" : "dead");
-        element.removeClass(state ? "dead" : "alive");
+        if (state) {
+            element.addClass("alive");
+            element.removeClass("dead");
+        }
+        else {
+            element.addClass("dead");
+            element.removeClass("alive");
+        }
     }
 }
 

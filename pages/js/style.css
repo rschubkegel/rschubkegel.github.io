@@ -18,7 +18,7 @@
 }
 
 body {
-    background-color: var(--color-contrast);
+    background-color: black;
 }
 
 body > img {
@@ -28,7 +28,7 @@ body > img {
     min-width: 100%;
     min-height: 100%;
     z-index: -1;
-    opacity: 35%;
+    opacity: 50%;
 }
 
 h1 {
