@@ -127,7 +127,7 @@ a:hover {
 
 .tile {
     border-style: solid;
-    border-color: var(--color-contrast);
+    border-color: var(--color-accent);
     border-width: 2px 0 0 2px;
     cursor: pointer;
     width: calc(var(--board-width) / var(--board-tile-width));
@@ -155,7 +155,7 @@ span.running {
 }
 
 span.stopped {
-    color: var(--color-accent);
+    color: var(--color-splash);
 }
 
 /* 600px minimum for standard tile border size */

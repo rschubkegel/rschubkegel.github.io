@@ -120,6 +120,28 @@ function start() {
     intervalField.blur(function(){
         $(this).val(interval);
     });
+
+    // animate when page loads
+    anime({
+        targets: "h1",
+        keyframes: [
+            {translateX: "-=100vw", duration: 0},
+            {translateX: "+=100vw", duration: 1000}
+        ],
+        easing: 'easeOutExpo',
+        delay: 200
+    });
+
+    anime({
+        targets: "#board-grid",
+        keyframes: [
+            {scale: 0, duration: 0},
+            {scale: 0.4, duration: 200},
+            {scale: 0.3, duration: 100},
+            {scale: 1, rotate: "1turn", duration: 1200}
+        ],
+        easing: 'easeOutExpo'
+    });
 }
 
 function startSimulation() {
