@@ -4,9 +4,15 @@
 
 body {
     margin: 0;
-    background-image: url("imgs/dreamy-birds.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+}
+
+#img-background {
+    position: fixed;
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    z-index: -1;
 }
 
 nav {
