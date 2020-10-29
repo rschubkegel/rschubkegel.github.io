@@ -10,34 +10,28 @@
 </head>
 <body onload="start()">
     <script src="script.js"></script>
+    <img src="ocean.jpg" alt="ocean waves">
     <div id="page-wrapper" class="debug-outline">
         <div id="info" class="debug-outline">
             <h1>Conway's Game of Life</h1>
-            <hr>
             <br>
             <p>Ruleset from <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Wikipedia page</a></p>
-            <!--<p>Palette from <a href="https://coolors.co" target="_blank">Coolors.co</a></p>-->
+            <p>Cool patterns at <a href="https://conwaylife.com/wiki/Main_Page" target="_blank">LifeWiki</a></p>
             <p>Inspiration from <a href="../../index.html" target="_blank">my brain</a></p>
         </div>
-        <div id="board" class="debug-outline">
-            <p id="error-resolution">Error: screen must be larger to support simulation.</p>
-            <div id="board-grid"></div>
-            <div id="board-text">
-                <p id="state-text"></p>
-                <p id="iteration-text"></p>
-            </div>
-            <div id="board-controls">
-                <div id="board-controls-buttons">
-                    <button id="start-button">Start</button>
-                    <button id="stop-button">Stop</button>
-                    <button id="step-button">Step</button>
-                    <button id="reset-button">Reset</button>
-                </div>
-                <div id="board-controls-interval">
-                    <label for="interval-input">Iteration (ms):</label>
-                    <input id="interval-input" type="number" value="250" step="10">
-                </div>
-            </div>
+        <p id="error-resolution">Error: screen must be larger to support simulation.</p>
+        <div id="board-grid" class="debug-outline hide-when-small"></div>
+        <div id="board-text" class="debug-outline hide-when-small">
+            <p id="state-text"></p>
+            <p id="iteration-text"></p>
+        </div>
+        <div id="board-controls" class="debug-outline hide-when-small">
+            <button id="start-button">Start</button>
+            <button id="stop-button">Stop</button>
+            <button id="step-button">Step</button>
+            <button id="reset-button">Reset</button>
+            <label for="interval-input" class="debug-outline">Iteration (ms):</label>
+            <input id="interval-input" type="number" value="250" step="10">
         </div>
     </div>
 </body>
