@@ -14,14 +14,15 @@
 }
 
 :root {
-    --centered-width: 70vw;
-    --max-width: min(85vh, 80vw);
+    --centered-width: 70%;
+    --max-width: min(80vw, 40em);
     --dark-color: #303030;
     --light-color: #CBEBD8;
     --highlight-color: whitesmoke;
     --link-color: lightgreen;
-    --header-size: max(1.5pc, 4vmin);
-    --paragraph-size: max(0.75pc, 2vmin);
+    --header-font-size: max(1.5pc, 4vmin);
+    --paragraph-font-size: max(0.75pc, 2vmin);
+    --portfolio-font-size: 9vh;
 }
 
 * {
@@ -32,8 +33,8 @@
 
 #portfolio {
     font-family: Source-Code-Display, "Source Code Pro", sans-serif;
-    font-size: 9vh;
-    opacity: 20%;
+    font-size: var(--portfolio-font-size);
+    opacity: 0;
     letter-spacing: 0.6em;
     position: fixed;
     transform: rotate(-90deg);
@@ -42,10 +43,11 @@
 }
 
 #body-container {
+    font-size: var(--paragraph-font-size);
     display: flex;
     flex-direction: column;
     max-width: var(--max-width);
-    margin: 0 23vh 0 23vh;
+    margin: 0 var(--portfolio-font-size) 0 calc(var(--portfolio-font-size) * 2.5);
     /*margin: 0 auto 0 auto;*/
 }
 
@@ -62,7 +64,24 @@ hr {
     margin: 2pc auto 2pc auto;
 }
 
-@media screen and (max-aspect-ratio: 4 / 5) {
+body {
+    background-color: var(--dark-color);
+}
+
+h1, h2, h3 {
+    color: var(--highlight-color);
+    font-size: var(--header-font-size);
+}
+
+p {
+    font-size: var(--paragraph-font-size);
+}
+
+a {
+    color: var(--link-color);
+}
+
+@media screen and (max-aspect-ratio: 1 / 1) {
     #portfolio {
         visibility: hidden;
     }
@@ -72,21 +91,4 @@ hr {
         margin-left: auto;
         margin-right: auto;
     }
-}
-
-body {
-    background-color: var(--dark-color);
-}
-
-h1, h2, h3 {
-    color: var(--highlight-color);
-    font-size: var(--header-size);
-}
-
-p {
-    font-size: var(--paragraph-size);
-}
-
-a {
-    color: var(--link-color);
 }
