@@ -15,7 +15,7 @@
 
 :root {
     --centered-width: 70%;
-    --max-width: min(80vw, 40em);
+    --max-width: min(80vw, 41em);
     --dark-color: #303030;
     --light-color: #CBEBD8;
     --highlight-color: whitesmoke;
@@ -34,12 +34,14 @@
 #portfolio {
     font-family: Source-Code-Display, "Source Code Pro", sans-serif;
     font-size: var(--portfolio-font-size);
-    opacity: 0;
     letter-spacing: 0.6em;
     position: fixed;
-    transform: rotate(-90deg);
     top: 32vh;
-    left: -4.2em;
+    left: -1.2em;
+    transform: rotate(-90deg);
+
+    /* final values defined in script */
+    opacity: 0;
 }
 
 #body-container {
@@ -47,21 +49,22 @@
     display: flex;
     flex-direction: column;
     max-width: var(--max-width);
-    margin: 0 var(--portfolio-font-size) 0 calc(var(--portfolio-font-size) * 2.5);
-    /*margin: 0 auto 0 auto;*/
+    margin: 0 var(--portfolio-font-size) 3pc calc(var(--portfolio-font-size) * 2.5);
 }
 
 hr {
-    width: 100%;
+    width: 0;
     max-width: var(--max-width);
-    opacity: 50%;
+
+    /* final values defined in script */
+    opacity: 0;
 }
 
 #logo {
     display: block;
-    height: 12vh;
+    height: 12vmin;
     min-height: 64px;
-    margin: 2pc auto 2pc auto;
+    margin: 3pc auto;
 }
 
 body {
@@ -71,6 +74,10 @@ body {
 h1, h2, h3 {
     color: var(--highlight-color);
     font-size: var(--header-font-size);
+
+    /* final values defined in script */
+    margin-left: 3pc;
+    opacity: 0;
 }
 
 p {
