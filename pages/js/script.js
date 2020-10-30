@@ -126,21 +126,22 @@ function start() {
         targets: "h1",
         keyframes: [
             {translateX: "-=100vw", duration: 0},
-            {translateX: "+=100vw", duration: 1000}
+            {translateX: "+=100vw", duration: 1300}
         ],
         easing: 'easeOutExpo',
-        delay: 200
+        delay: 800
     });
 
     anime({
         targets: "#board-grid",
         keyframes: [
-            {scale: 0, duration: 0},
-            {scale: 0.4, duration: 200},
-            {scale: 0.3, duration: 100},
-            {scale: 1, rotate: "1turn", duration: 1200}
+            {scale: 0, rotate: "270deg", duration: 0},
+            {scale: 0.4, duration: 300},
+            {scale: 0.3, rotate: "250deg", duration: 300},
+            {scale: 1, rotate: "360deg", duration: 1300}
         ],
-        easing: 'easeOutExpo'
+        easing: 'easeOutExpo',
+        delay: 200
     });
 }
 
