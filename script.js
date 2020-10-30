@@ -5,7 +5,7 @@ function start() {
     anime({
         targets: "#portfolio",
         opacity: "20%",
-        duration: 5000,
+        duration: 4000,
         left: "-4.2em",
         easing: "easeOutExpo"
     });
