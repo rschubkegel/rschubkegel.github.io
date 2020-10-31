@@ -121,28 +121,33 @@ function start() {
         $(this).val(interval);
     });
 
-    // animate when page loads
-    anime({
-        targets: "h1",
-        keyframes: [
-            {translateX: "-=100vw", duration: 0},
-            {translateX: "+=100vw", duration: 1300}
-        ],
-        easing: 'easeOutExpo',
-        delay: 800
-    });
+    // animate stuff when page loads (but only if we're not on a phone)
+    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
 
-    anime({
-        targets: "#board-grid",
-        keyframes: [
-            {scale: 0, rotate: "270deg", duration: 0},
-            {scale: 0.4, duration: 300},
-            {scale: 0.3, rotate: "250deg", duration: 300},
-            {scale: 1, rotate: "360deg", duration: 1300}
-        ],
-        easing: 'easeOutExpo',
-        delay: 200
-    });
+        // slide in title
+        anime({
+            targets: "h1",
+            keyframes: [
+                {translateX: "-=100vw", duration: 0},
+                {translateX: "+=100vw", duration: 1300}
+            ],
+            easing: 'easeOutExpo',
+            delay: 800
+        });
+
+        // rotate board
+        anime({
+            targets: "#board-grid",
+            keyframes: [
+                {scale: 0, rotate: "270deg", duration: 0},
+                {scale: 0.4, duration: 300},
+                {scale: 0.3, rotate: "250deg", duration: 300},
+                {scale: 1, rotate: "360deg", duration: 1300}
+            ],
+            easing: 'easeOutExpo',
+            delay: 200
+        });
+    }
 }
 
 function startSimulation() {
