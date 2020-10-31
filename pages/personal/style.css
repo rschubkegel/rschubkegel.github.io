@@ -1,3 +1,8 @@
+:root {
+    --color-accent: rgb(60, 85, 40);
+    --color-background: rgba(255, 165, 0, 0.2);
+}
+
 * {
     font-family: "Arial", sans-serif;
     margin: 0;
@@ -17,7 +22,7 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(255, 165, 0, .2);
+    background-color: var(--color-background);
     padding: 1pc 2pc;
 }
 
@@ -31,20 +36,22 @@ nav > div {
     width: 4pc;
     height: 4pc;
     margin-right: 2pc;
+    margin-left: 1pc;
 }
 
 h1 {
-     font-family: "Arial Black", sans-serif;
-     font-size: 24pt;
-     letter-spacing: 3pt;
+    font-family: "Arial Black", sans-serif;
+    font-size: 24pt;
+    letter-spacing: 3pt;
+    text-align: center;
  }
 
 nav > div > a {
     font-family: "Arial Black", sans-serif;
-    font-size: x-large;
-    color: rgb(60, 85, 40);
+    font-size: 18pt;
+    color: var(--color-accent);
     text-decoration: none;
-    padding: 1em;
+    padding: 0 1em;
 }
 
 nav > div > a:hover {
@@ -52,13 +59,33 @@ nav > div > a:hover {
 }
 
 article {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.75);
     padding: 3pc;
     border-radius: 1pc;
     margin: 4pc auto;
-    width: 80%;
-    max-width: 60ex;
+    max-width: min(40pc, calc(80% - 6pc));
 
     font-size: 14pt;
     line-height: 20pt;
+}
+
+@media (max-width: 60pc) {
+    nav {
+        justify-content: center;
+    }
+
+    h1 {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+
+    nav > div > a {
+        padding: 0 2vw;
+    }
+
+    #icon {
+        /*margin: 0;*/
+        margin-right: 5vw;
+    }
 }
