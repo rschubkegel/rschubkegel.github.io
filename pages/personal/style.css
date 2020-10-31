@@ -1,6 +1,6 @@
 :root {
     --color-accent: rgb(60, 85, 40);
-    --color-background: rgba(255, 165, 0, 0.2);
+    --color-nav: rgba(255, 165, 0, 0.2);
 }
 
 * {
@@ -22,7 +22,7 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--color-background);
+    background-color: var(--color-nav);
     padding: 1pc 2pc;
 }
 
@@ -49,13 +49,8 @@ h1 {
 nav > div > a {
     font-family: "Arial Black", sans-serif;
     font-size: 18pt;
-    color: var(--color-accent);
     text-decoration: none;
     padding: 0 1em;
-}
-
-nav > div > a:hover {
-    color: black;
 }
 
 article {
@@ -67,6 +62,21 @@ article {
 
     font-size: 14pt;
     line-height: 20pt;
+}
+
+a {
+    color: var(--color-accent);
+}
+
+a:hover {
+    color: black;
+}
+
+table, th, td {
+    padding: 6pt 12pt;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse;
 }
 
 @media (max-width: 60pc) {

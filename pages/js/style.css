@@ -2,7 +2,7 @@
     --color-foreground: #d5ffea;
     --color-accent: #59C9A5;
     --color-splash: #e78482;
-    --color-background: #496251;
+    --color-nav: #496251;
     --color-contrast: #263f4a;
     --standard-font-size: max(2.2vmin, 8pt);
     --board-width: min(80vh, 60vw);
@@ -101,7 +101,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--color-background);
+    background-color: var(--color-nav);
     border: solid var(--standard-font-size) var(--color-contrast);
     user-select: none;
     touch-action: manipulation;
@@ -147,7 +147,7 @@ a:hover {
 }
 
 .tile.dead {
-    background-color: var(--color-background);
+    background-color: var(--color-nav);
 }
 
 span.running {
