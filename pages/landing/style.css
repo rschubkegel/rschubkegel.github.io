@@ -37,7 +37,6 @@
     letter-spacing: 0.6em;
     position: fixed;
     top: 32vh;
-    left: -1.2em;
     transform: rotate(-90deg);
 
     /* final values defined in script */
@@ -49,7 +48,13 @@
     display: flex;
     flex-direction: column;
     max-width: var(--max-width);
-    margin: 0 var(--portfolio-font-size) 3pc calc(var(--portfolio-font-size) * 2.5);
+    margin: 0 var(--portfolio-font-size) 3pc calc(var(--portfolio-font-size) * 2);
+}
+
+#body-container > div {
+
+    /* final values defined in script */
+    opacity: 0;
 }
 
 hr {

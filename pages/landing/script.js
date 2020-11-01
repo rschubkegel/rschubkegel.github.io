@@ -1,12 +1,15 @@
 function start() {
     console.log("initializing webpage");
 
+    let baseDuration = 1000;
+
     // fade in the portfolio banner
     anime({
         targets: "#portfolio",
-        opacity: "20%",
-        duration: 4000,
-        left: "-4.2em",
+        keyframes: [
+            { left: "-5em", duration: 0 },
+            { opacity: "20%", left: "-3.5em", duration: baseDuration * 4 }
+        ],
         easing: "easeOutExpo"
     });
 
@@ -22,7 +25,7 @@ function start() {
         targets: "h1, h2, h3",
         marginLeft: "0",
         opacity: "100%",
-        duration: 1000,
+        duration: baseDuration,
         easing: "easeOutCubic"
     });
 
@@ -31,7 +34,15 @@ function start() {
         targets: "hr",
         width: "100%",
         opacity: "50%",
-        duration: 1000,
+        duration: baseDuration,
         easing: "easeOutBounce"
+    });
+
+    // fade in everything else
+    anime({
+        targets: "#body-container > div",
+        opacity: "100%",
+        duration: baseDuration,
+        easing: "easeInOutExpo"
     });
 }
