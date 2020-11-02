@@ -1,5 +1,9 @@
 :root {
+    --size-font-header: 25vmin;
     --color-dark-ghost: rgba(48, 48, 48, 0.9);
+    --color-link-default: mediumseagreen;
+    --color-link-visited: olivedrab;
+    --color-link-hover: lawngreen;
 }
 
 @font-face {
@@ -12,22 +16,35 @@
     src: url("fonts/Raleway-Black.ttf");
 }
 
+/* page defaults */
 * {
     color: antiquewhite;
     font-family: Raleway, sans-serif;
-}
-
-html {
     margin: 0;
     padding: 0;
 }
 
+/* background image */
 body {
-    margin: 0;
-    padding: 0;
     background: var(--color-dark-ghost) url("imgs/falls-1.jpg") no-repeat fixed center;
     background-size: cover;
-    display: grid;
+}
+
+/* a big bold title */
+h1 {
+    color: white;
+    text-transform: uppercase;
+    font-family: Raleway-Black, "Arial Black", sans-serif;
+    font-size: var(--size-font-header);
+    letter-spacing: 0.3em;
+    line-height: 1em;
+    word-wrap: break-word;
+    width: 3em;
+    position: absolute;
+    left: 0.1em;
+    top: -4em;
+    margin: 0;
+    padding: 0;
 }
 
 .page-wrapper {
@@ -40,22 +57,7 @@ body {
     align-content: center;
 }
 
-/* a big bold title */
-h1 {
-    color: white;
-    text-transform: uppercase;
-    font-family: Raleway-Black, "Arial Black", sans-serif;
-    font-size: min(23.5vh, 25vw);
-    letter-spacing: min(6vh, 6vw);
-    word-wrap: break-word;
-    position: absolute;
-    width: min(70vh, 75vw);
-    left: -1vmin;
-    top: -105vmin;
-    margin: 0;
-    padding: 0;
-}
-
+/* effectively remove subtitle */
 header > h2 {
     visibility: hidden;
     position: fixed;
@@ -78,6 +80,7 @@ header > h2 {
     margin: 0 10vw 0 0;
 }
 
+/* all elements within the page wrapper */
 .page-wrapper > * {
     background-color: var(--color-dark-ghost);
     margin: 10vmin auto 10vmin auto;
@@ -86,13 +89,30 @@ header > h2 {
     max-width: 40pc;
 }
 
+a:link {
+    color: var(--color-link-default);
+}
+
+a:visited {
+    color: var(--color-link-visited);
+}
+
+a:hover, a:focus, a:active {
+    color: var(--color-link-hover);
+}
+
 /* if the screen is to narrow... */
-@media screen and (max-aspect-ratio: 5 / 4) {
+@media screen and (max-aspect-ratio: 4 / 3) {
+
     /* make the title centered */
     h1 {
+
+        /* horizontal centering... */
         left: calc(50% - (min(68vh, 75vw) / 2.2));
-        /* viewport height - height of title - offset*/
-        top: calc(-100vh + (42vh - (min(23.5vh, 25vw) * 2)));
+
+        /* vertical centering... */
+        /* TODO fix this  */
+        top: calc(50vh - 100vh);
     }
 
     /* remove the additional img */
@@ -100,16 +120,4 @@ header > h2 {
         visibility: hidden;
         left: 0;
     }
-}
-
-a:link {
-    color: mediumseagreen;
-}
-
-a:visited {
-    color: olivedrab;
-}
-
-a:hover, a:focus, a:active {
-    color: lawngreen;
 }
