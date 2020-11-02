@@ -7,8 +7,8 @@ function start() {
     anime({
         targets: "#portfolio",
         keyframes: [
-            { left: "-5em", duration: 0 },
-            { opacity: "20%", left: "-3.5em", duration: baseDuration * 4 }
+            { left: "-50vh", duration: 0 },
+            { opacity: "20%", left: "-41vh", duration: baseDuration * 4 }
         ],
         easing: "easeOutExpo"
     });

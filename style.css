@@ -14,14 +14,14 @@
 }
 
 :root {
-    --centered-width: 70%;
     --max-width: min(80vw, 41em);
+    --min-width: 250px;
     --dark-color: #303030;
     --light-color: #CBEBD8;
     --highlight-color: whitesmoke;
     --link-color: lightgreen;
-    --header-font-size: max(1.5pc, 4vmin);
-    --paragraph-font-size: max(0.75pc, 2vmin);
+    --header-font-size: max(14pt, 4vmin);
+    --paragraph-font-size: max(10pt, 2vmin);
     --portfolio-font-size: 9vh;
 }
 
@@ -29,6 +29,9 @@
     font-family: Source-Code-Regular, sans-serif;
     color: var(--light-color);
     line-height: 1.5em;
+    margin: 0;
+    padding: 0;
+    /*border: 1px solid red;*/
 }
 
 #portfolio {
@@ -36,8 +39,9 @@
     font-size: var(--portfolio-font-size);
     letter-spacing: 0.6em;
     position: fixed;
-    top: 32vh;
+    top: calc(var(--portfolio-font-size) * 4.6);
     transform: rotate(-90deg);
+    z-index: -1;
 
     /* final values defined in script */
     opacity: 0;
@@ -48,7 +52,8 @@
     display: flex;
     flex-direction: column;
     max-width: var(--max-width);
-    margin: 0 var(--portfolio-font-size) 3pc calc(var(--portfolio-font-size) * 2);
+    min-width: var(--min-width);
+    margin: 3pc auto 3pc calc(var(--portfolio-font-size) * 2);
 }
 
 #body-container > div {
@@ -60,6 +65,8 @@
 hr {
     width: 0;
     max-width: var(--max-width);
+    min-width: var(--min-width);
+    margin: var(--paragraph-font-size) 0;
 
     /* final values defined in script */
     opacity: 0;
@@ -69,7 +76,7 @@ hr {
     display: block;
     height: 12vmin;
     min-height: 64px;
-    margin: 3pc auto;
+    margin: 0 auto 3pc auto;
 }
 
 body {
@@ -93,13 +100,21 @@ a {
     color: var(--link-color);
 }
 
-@media screen and (max-aspect-ratio: 1 / 1) {
+/* Spotify player */
+iframe {
+    margin-top: 1em;
+    width: max(var(--min-width), 50%);
+    height: 400px;
+}
+
+/* screen is too narrow for standard view */
+@media screen and (max-aspect-ratio: 6 / 5) {
     #portfolio {
         visibility: hidden;
     }
 
     #body-container {
-        width: var(--centered-width);
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
