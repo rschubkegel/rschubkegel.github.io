@@ -39,22 +39,12 @@ h1 {
     letter-spacing: 0.3em;
     line-height: 1em;
     word-wrap: break-word;
-    width: 3em;
+    width: 3.2em;
     position: absolute;
     left: 0.1em;
     top: -4em;
     margin: 0;
     padding: 0;
-}
-
-.page-wrapper {
-    position: absolute;
-    width: 100%;
-    top: 100vh;
-    justify-items: center;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
 }
 
 /* effectively remove subtitle */
@@ -78,6 +68,16 @@ header > h2 {
     left: 70vh;
     width: calc(100vw - 80vh);
     margin: 0 10vw 0 0;
+}
+
+.page-wrapper {
+    position: absolute;
+    width: 100%;
+    top: 100vh;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 /* all elements within the page wrapper */
@@ -111,13 +111,19 @@ a:hover, a:focus, a:active {
         left: calc(50% - (min(68vh, 75vw) / 2.2));
 
         /* vertical centering... */
-        /* TODO fix this  */
-        top: calc(50vh - 100vh);
+        /* TODO actually center this! */
+        top: calc(var(--size-font-header) * -4);/*calc(50vh - 100vh);*/
     }
 
     /* remove the additional img */
     .extra1 {
         visibility: hidden;
         left: 0;
+    }
+
+    /* move page wrapper to bottom of title */
+    /* TODO change to just below viewport (top: -100vh;)*/
+    .page-wrapper {
+        top: calc(var(--size-font-header) * 4);
     }
 }
