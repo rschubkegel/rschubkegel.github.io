@@ -44,7 +44,13 @@ h1 {
     font-size: 24pt;
     letter-spacing: 3pt;
     text-align: center;
- }
+}
+
+h2 {
+    font-size: 20pt;
+    letter-spacing: 2pt;
+    padding-bottom: 1ex;
+}
 
 nav > div > a {
     font-family: "Arial Black", sans-serif;
