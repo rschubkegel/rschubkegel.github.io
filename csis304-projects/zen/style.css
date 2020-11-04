@@ -3,8 +3,8 @@
     --size-font-header-3: calc(var(--size-font-normal) * 1.5);
     --size-font-normal: min(15pt, max(1.2vw, 12pt));
     --color-dark-ghost: rgba(48, 48, 48, 0.9);
-    --color-link-default: mediumseagreen;
-    --color-link-visited: olivedrab;
+    --color-link-default: rgb(60, 180, 100);
+    --color-link-visited: var(--color-link-default);
     --color-link-hover: lawngreen;
 }
 
@@ -123,6 +123,10 @@ p {
 
 li {
     margin-bottom: 0.2ex;
+}
+
+a {
+    text-decoration: none;
 }
 
 a:link {
