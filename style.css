@@ -14,120 +14,83 @@
 }
 
 :root {
-    --max-paragraph-width: min(80vw, 41em);
-    --max-container-width: min(80%, calc(var(--max-paragraph-width) * 1.6));
-    --min-width: 250px;
-    --dark-color: #303030;
-    --light-color: #CBEBD8;
-    --highlight-color: whitesmoke;
-    --link-color: lightgreen;
-    --header-font-size: max(14pt, 4vmin);
-    --paragraph-font-size: max(10pt, 2vmin);
-    --portfolio-font-size: 9vh;
+    --size-max-wrapper-width: calc(var(--size-font-paragraph) * 40);
+    --color-darkest: #303030;
+    --color-light: #CBEBD8;
+    --color-splash: lightgreen;
+    --color-lightest: whitesmoke;
+    --size-font-header: 18pt;
+    --size-font-paragraph: 14pt;
 }
 
+/* defaults for all elements */
 * {
     font-family: Source-Code-Regular, sans-serif;
-    color: var(--light-color);
+    color: var(--color-light);
     line-height: 1.5em;
     margin: 0;
     padding: 0;
-}
 
-#portfolio {
-    font-family: Source-Code-Display, "Source Code Pro", sans-serif;
-    font-size: var(--portfolio-font-size);
-    letter-spacing: 0.6em;
-    position: fixed;
-    top: calc(var(--portfolio-font-size) * 4.6);
-    transform: rotate(-90deg);
-    z-index: -1;
-
-    /* final values defined in script */
-    opacity: 0;
-}
-
-#body-container {
-    font-size: var(--paragraph-font-size);
-    display: flex;
-    flex-direction: column;
-    max-width: var(--max-container-width);
-    min-width: var(--min-width);
-    margin: 3pc auto 3pc auto;/*calc(var(--portfolio-font-size) * 2);*/
+    /* to copy/paste for debugging */
     border: 0 red solid;
 }
 
-#body-container > div {
+/* background */
+body {
+    background-color: var(--color-darkest);
+}
+
+/* container for all main body elements */
+#wrapper {
+    font-size: var(--size-font-paragraph);
+
+    display: flex;
+    flex-direction: column;
+    max-width: var(--size-max-wrapper-width);
+    padding: var(--size-font-header) calc(var(--size-font-header) * 2);
+    margin: auto;
+}
+
+#wrapper > div {
+    margin: 1em 0;
+
     /* final values defined in script */
     opacity: 0;
 }
 
 hr {
-    max-width: var(--max-paragraph-width);
-    /*min-width: var(--min-width);*/
-    margin: var(--paragraph-font-size) auto;
+    /*margin: var(--size-font-paragraph) auto;*/
 
     /* final values defined in script */
-    width: 0;
     opacity: 0;
 }
 
-#logo {
-    display: block;
-    height: 12vmin;
-    min-height: 64px;
-    margin: 0 auto 3pc auto;
-}
-
-body {
-    background-color: var(--dark-color);
-}
-
+/* headers */
 h1, h2, h3 {
-    color: var(--highlight-color);
-    text-align: center;
-    margin: auto;
+    color: var(--color-lightest);
+    max-width: var(--size-max-wrapper-width);
+    margin-bottom: calc(var(--size-font-header) * 0.5);
 
     /* final values defined in script */
     opacity: 0;
 }
 
 h1 {
-    font-size: calc(var(--header-font-size) * 1.3);
+    font-size: calc(var(--size-font-header) * 2);
 }
 
 h2 {
-    font-size: var(--header-font-size);
+    font-size: calc(var(--size-font-header) * 1.5);
 }
 
+/* paragraphs */
 p {
-    font-size: var(--paragraph-font-size);
-    max-width: var(--max-paragraph-width);
-    /*min-width: var(--min-width);*/
-    margin: 1em auto;
-    text-align: center;
+    font-size: var(--size-font-paragraph);
+    max-width: var(--size-max-wrapper-width);
+    margin-bottom: 1ex;
 }
 
+/* links */
 a {
-    color: var(--link-color);
-}
-
-/* Spotify player */
-iframe {
-    margin-top: 1em;
-    width: max(var(--min-width), 50%);
-    height: 400px;
-}
-
-/* screen is too narrow for standard view */
-@media screen and (max-aspect-ratio: 6 / 5) {
-    #portfolio {
-        visibility: hidden;
-    }
-
-    #body-container {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    color: var(--color-splash);
 }

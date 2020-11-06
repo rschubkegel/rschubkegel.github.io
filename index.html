@@ -4,21 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rylan Schubkegel</title>
-    <link href="style.css" rel="stylesheet" type="text/css"/>
     <link rel="icon"
           type="img/png"
           href="imgs/logo.png"/>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <style>
+        /* only page specific styles here!! */
+
+        /* logo at top of page */
+        #logo {
+            display: block;
+            height: calc(var(--size-font-header) * 4);
+            margin-bottom: var(--size-font-header);
+        }
+
+        /* Spotify player */
+        iframe {
+            margin-top: 1em;
+            width: min(100%, 350px);
+            height: 400px;
+        }
+    </style>
     <script src="lib/anime.min.js"></script>
 </head>
 <body onload="start();">
     <script src="script.js"></script>
-<!--    <p id="portfolio">-->
-<!--        portfolio-->
-<!--    </p>-->
-    <div id="body-container">
+    <div id="wrapper">
         <div>
-            <img src="imgs/logo.png" id="logo" alt="personal logo">
-            <hr>
+            <img id="logo" src="imgs/logo.png" alt="logo">
+<!--            <hr>-->
             <h1>Welcome!</h1>
             <p>
                 Hello, my name is Rylan. I'm a <abbr title="computer science">CS</abbr> student
@@ -29,7 +43,9 @@
         </div>
         <hr>
         <div>
-            <h2>Web Programming</h2>
+            <h2>Website Design</h2>
+            <p>To see a preview of all projects at once, click <a href="csis304-projects/index.html" target="_blank">here</a>.</p>
+            <h3>Web Programming Class</h3>
             <p>
                 The following are school projects from my <abbr title="CSIS 304">web programming</abbr> class. These projects are list in descending order, beginning with the most recently completed.
             </p>
@@ -41,15 +57,14 @@
                 <a href="csis304-projects/personal/index.html" target="_blank">Personal Project</a>
             </p>
         </div>
-        <!--
-        <hr>
+        <!--<hr>
         <div>
             <h2>Typography</h2>
             <p>
                 This <a href="artd220-projects/index.html">page</a> showcases some school projects from my <abbr title="ARTD 220">typography</abbr> class. These were all made in the fall of 2020.
             </p>
-        </div>
-        <hr>
+        </div>-->
+        <!--<hr>
         <div>
             <h2>Graphic Design</h2>
             <p>
@@ -58,8 +73,8 @@
             <p>
                 <em>Coming soon!</em>
             </p>
-        </div>
-        <hr>
+        </div>-->
+        <!--<hr>
         <div>
             <h2>Traditional Art</h2>
             <p>
@@ -68,8 +83,8 @@
             <p>
                 <em>Coming soon!</em>
             </p>
-        </div>
-        <hr>
+        </div>-->
+        <!--<hr>
         <div>
             <h2>Game Design</h2>
             <p>
@@ -78,16 +93,15 @@
             <p>
                 <a href="https://supergobo.itch.io/earth-defense" target="_blank">Earth Defense</a>
             </p>
-        </div>
-        <hr>
+        </div>-->
+        <!--<hr>
         <div>
             <h2>Music</h2>
             <p>
                 My currently published music, representing a small selection of hundreds of original songs.
             </p>
-            <iframe src="https://open.spotify.com/embed/artist/6YrSdl1dy1dDxZETIxW7n5" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        </div>
-        -->
+            <iframe src="https://open.spotify.com/embed/artist/6YrSdl1dy1dDxZETIxW7n5" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>-->
         <hr>
         <div id="contact">
             <h2>Contact</h2>

@@ -26,21 +26,22 @@ function start() {
         keyframes: [
             { opacity: "100%", duration: baseDuration }
         ],
-        easing: "easeOutCubic"
+        easing: "easeOutExpo"
     });
 
     // expand horizontal rules
-    anime({
+    /*anime({
         targets: "hr",
-        width: "100%",
-        opacity: "50%",
-        duration: baseDuration,
+        keyframes: [
+            { width: "0", opacity: "0", duration: 0 },
+            { width: "100%", opacity: "50%", duration: baseDuration }
+        ],
         easing: "easeOutBounce"
-    });
+    });*/
 
     // fade in everything else
     anime({
-        targets: "#body-container > div",
+        targets: "#wrapper > div",
         opacity: "100%",
         duration: baseDuration,
         easing: "easeInOutExpo"

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Website Design</title>
+    <link rel="icon"
+          type="img/png"
+          href="../imgs/logo.png"/>
+    <link href="../style.css" rel="stylesheet" type="text/css"/>
+    <script src="../lib/anime.min.js"></script>
+    <style>
+        /* only page specific styles here!! */
+
+        .website-preview {
+            width: 100%;
+            height: calc(var(--size-max-wrapper-width) / 1.5);
+        }
+    </style>
+</head>
+<body onload="start();">
+    <script src="../script.js"></script>
+    <div id="wrapper">
+        <div>
+            <h2>Web Programming Class</h2>
+            <div>
+                <h3>Interactive JavaScript</h3>
+                <object class="website-preview" type="text/html" data="js/index.html"></object>
+            </div>
+            <hr>
+            <div>
+                <h3>CSS Zen Garden</h3>
+                <object class="website-preview" type="text/html" data="zen/index.html"></object>
+            </div>
+            <hr>
+            <div>
+                <h3>Personal Project</h3>
+                <object class="website-preview" type="text/html" data="personal/index.html"></object>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
