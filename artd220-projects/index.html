@@ -10,13 +10,6 @@
           href="../imgs/logo.png"/>
     <script src="../lib/anime.min.js"></script>
     <style>
-        header {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-
         #images-type-anatomy {
             display: grid;
             grid-template-columns: auto auto auto auto auto;
@@ -34,6 +27,10 @@
             margin: 10%;
         }
 
+        .container-images {
+            margin: 2em;
+        }
+
         img {
             width: 100%;
             height: auto;
@@ -42,21 +39,20 @@
 </head>
 <body onload="start();">
     <script src="../script.js"></script>
-    <p id="portfolio">
-        portfolio
-    </p>
+<!--    <p id="portfolio">-->
+<!--        portfolio-->
+<!--    </p>-->
     <div id="body-container">
         <header>
             <h1>Typography</h1>
-            <a id="back" href="../index.html">back</a>
         </header>
         <hr>
         <div>
             <h2>Type Anatomy</h2>
             <p>
-                Nice description here.
+                The goal of this exercise was to create images using only type. The forms could be cropped, transformed, or stretched, but the essence of the typeface had to be preserved.
             </p>
-            <div id="images-type-anatomy">
+            <div class="container-images" id="images-type-anatomy">
                 <img src="imgs/type-anatomy-grid01.png">
                 <img src="imgs/type-anatomy-grid02.png">
                 <img src="imgs/type-anatomy-grid04.png">
@@ -73,9 +69,9 @@
         <div>
             <h2>Twenty-seventh Letter</h2>
             <p>
-                Nice description here.
+                In this project, we were prompted to create a 27th letter of the alphabet. We were limited to making a new letter-form using the style of an existing typeface. I chose to make a character for silent usages of the letter "p".
             </p>
-            <div id="images-27th-letter">
+            <div class="container-images" id="images-27th-letter">
                 <img src="imgs/twenty-seventh-letter.png">
                 <svg>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.07 404.78">

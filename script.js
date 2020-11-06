@@ -20,12 +20,12 @@ function start() {
         easing: "spring(1, 50, 8, 0)"
     });
 
-    // slide in headers
+    // fade in headers
     anime({
         targets: "h1, h2, h3",
-        marginLeft: "0",
-        opacity: "100%",
-        duration: baseDuration,
+        keyframes: [
+            { opacity: "100%", duration: baseDuration }
+        ],
         easing: "easeOutCubic"
     });
 

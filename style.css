@@ -14,7 +14,8 @@
 }
 
 :root {
-    --max-width: min(80vw, 41em);
+    --max-paragraph-width: min(80vw, 41em);
+    --max-container-width: min(80%, calc(var(--max-paragraph-width) * 1.6));
     --min-width: 250px;
     --dark-color: #303030;
     --light-color: #CBEBD8;
@@ -31,7 +32,6 @@
     line-height: 1.5em;
     margin: 0;
     padding: 0;
-    /*border: 1px solid red;*/
 }
 
 #portfolio {
@@ -51,24 +51,24 @@
     font-size: var(--paragraph-font-size);
     display: flex;
     flex-direction: column;
-    max-width: var(--max-width);
+    max-width: var(--max-container-width);
     min-width: var(--min-width);
-    margin: 3pc auto 3pc calc(var(--portfolio-font-size) * 2);
+    margin: 3pc auto 3pc auto;/*calc(var(--portfolio-font-size) * 2);*/
+    border: 0 red solid;
 }
 
 #body-container > div {
-
     /* final values defined in script */
     opacity: 0;
 }
 
 hr {
-    width: 0;
-    max-width: var(--max-width);
-    min-width: var(--min-width);
-    margin: var(--paragraph-font-size) 0;
+    max-width: var(--max-paragraph-width);
+    /*min-width: var(--min-width);*/
+    margin: var(--paragraph-font-size) auto;
 
     /* final values defined in script */
+    width: 0;
     opacity: 0;
 }
 
@@ -83,11 +83,12 @@ body {
     background-color: var(--dark-color);
 }
 
-h1, h2 {
+h1, h2, h3 {
     color: var(--highlight-color);
+    text-align: center;
+    margin: auto;
 
     /* final values defined in script */
-    margin-left: 3pc;
     opacity: 0;
 }
 
@@ -101,6 +102,10 @@ h2 {
 
 p {
     font-size: var(--paragraph-font-size);
+    max-width: var(--max-paragraph-width);
+    /*min-width: var(--min-width);*/
+    margin: 1em auto;
+    text-align: center;
 }
 
 a {
