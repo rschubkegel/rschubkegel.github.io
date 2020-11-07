@@ -1,11 +1,11 @@
 @font-face {
-    font-family: Major-Mono;
-    src: url("fonts/MajorMonoDisplay-Regular.ttf");
+    font-family: Nunito;
+    src: url("fonts/Nunito-Bold.ttf");
 }
 
 @font-face {
-    font-family: Source-Code-Display;
-    src: url("fonts/SourceCodePro-Black.ttf");
+    font-family: Roboto;
+    src: url("fonts/Roboto-Bold.ttf");
 }
 
 @font-face {
@@ -14,13 +14,13 @@
 }
 
 :root {
-    --size-max-wrapper-width: calc(var(--size-font-paragraph) * 40);
-    --color-darkest: #303030;
+    --color-lightest: whitesmoke;
     --color-light: #CBEBD8;
     --color-splash: lightgreen;
-    --color-lightest: whitesmoke;
-    --size-font-header: 18pt;
+    --color-darkest: #303030;
+    --size-font-header: 17pt;
     --size-font-paragraph: 14pt;
+    --size-max-wrapper-width: calc(var(--size-font-paragraph) * 40);
 }
 
 /* defaults for all elements */
@@ -44,35 +44,25 @@ body {
 #wrapper {
     font-size: var(--size-font-paragraph);
 
-    display: flex;
-    flex-direction: column;
-    max-width: var(--size-max-wrapper-width);
-    padding: var(--size-font-header) calc(var(--size-font-header) * 2);
-    margin: auto;
+    display: grid;
+    grid-template-columns: min(100%, var(--size-max-wrapper-width));
+    align-content: space-between;
+    justify-content: center;
+    grid-gap: calc(var(--size-font-header) / 2);
+    margin: calc(var(--size-font-header) * 1.5);
 }
 
 #wrapper > div {
-    margin: 1em 0;
-
-    /* final values defined in script */
-    opacity: 0;
-}
-
-hr {
-    /*margin: var(--size-font-paragraph) auto;*/
-
-    /* final values defined in script */
+    /* final value defined in script */
     opacity: 0;
 }
 
 /* headers */
 h1, h2, h3 {
+    font-family: Nunito, sans-serif;
+    letter-spacing: 0.1em;
     color: var(--color-lightest);
-    max-width: var(--size-max-wrapper-width);
     margin-bottom: calc(var(--size-font-header) * 0.5);
-
-    /* final values defined in script */
-    opacity: 0;
 }
 
 h1 {
@@ -81,6 +71,10 @@ h1 {
 
 h2 {
     font-size: calc(var(--size-font-header) * 1.5);
+}
+
+h3 {
+    font-size: var(--size-font-header);
 }
 
 /* paragraphs */
