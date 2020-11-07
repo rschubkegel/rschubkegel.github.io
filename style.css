@@ -60,7 +60,7 @@ body {
 /* headers */
 h1, h2, h3 {
     font-family: Nunito, sans-serif;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
     color: var(--color-lightest);
     margin-bottom: calc(var(--size-font-header) * 0.5);
 }
@@ -86,5 +86,12 @@ p {
 
 /* links */
 a {
+    text-decoration: none;
     color: var(--color-splash);
+}
+
+/* abbreviations */
+abbr {
+    text-decoration: none;
+    color: var(--color-lightest);
 }
