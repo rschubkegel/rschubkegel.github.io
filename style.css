@@ -17,6 +17,7 @@
     --color-lightest: whitesmoke;
     --color-light: #CBEBD8;
     --color-splash: #90ee90;
+    --color-error: #db9999;
     --color-darkest: #303030;
     --size-font-header: 17pt;
     --size-font-paragraph: 14pt;
@@ -48,13 +49,21 @@ body {
     grid-template-columns: min(100%, var(--size-max-wrapper-width));
     align-content: space-between;
     justify-content: center;
-    grid-gap: calc(var(--size-font-header) / 2);
+    grid-gap: var(--size-font-header);
     margin: calc(var(--size-font-header) * 1.5);
 }
 
 #wrapper > div {
+    padding-bottom: 1em;
+    border-bottom: 1px var(--color-light) solid;
+
     /* final value defined in script */
     opacity: 0;
+}
+
+#wrapper > :last-child {
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 /* headers */
