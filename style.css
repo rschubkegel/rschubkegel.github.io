@@ -1,11 +1,11 @@
 @font-face {
-    font-family: Major-Mono;
-    src: url("fonts/MajorMonoDisplay-Regular.ttf");
+    font-family: Nunito;
+    src: url("fonts/Nunito-Bold.ttf");
 }
 
 @font-face {
-    font-family: Source-Code-Display;
-    src: url("fonts/SourceCodePro-Black.ttf");
+    font-family: Roboto;
+    src: url("fonts/Roboto-Bold.ttf");
 }
 
 @font-face {
@@ -14,108 +14,93 @@
 }
 
 :root {
-    --max-width: min(80vw, 41em);
-    --min-width: 250px;
-    --dark-color: #303030;
-    --light-color: #CBEBD8;
-    --highlight-color: whitesmoke;
-    --link-color: lightgreen;
-    --header-font-size: max(14pt, 4vmin);
-    --paragraph-font-size: max(10pt, 2vmin);
-    --portfolio-font-size: 9vh;
+    --color-lightest: whitesmoke;
+    --color-light: #CBEBD8;
+    --color-splash: #90ee90;
+    --color-error: #db9999;
+    --color-darkest: #303030;
+    --size-font-header: 17pt;
+    --size-font-paragraph: 14pt;
+    --size-max-wrapper-width: calc(var(--size-font-paragraph) * 40);
 }
 
+/* defaults for all elements */
 * {
     font-family: Source-Code-Regular, sans-serif;
-    color: var(--light-color);
+    color: var(--color-light);
     line-height: 1.5em;
     margin: 0;
     padding: 0;
-    /*border: 1px solid red;*/
+
+    /* to copy/paste for debugging */
+    border: 0 red solid;
 }
 
-#portfolio {
-    font-family: Source-Code-Display, "Source Code Pro", sans-serif;
-    font-size: var(--portfolio-font-size);
-    letter-spacing: 0.6em;
-    position: fixed;
-    top: calc(var(--portfolio-font-size) * 4.6);
-    transform: rotate(-90deg);
-    z-index: -1;
-
-    /* final values defined in script */
-    opacity: 0;
-}
-
-#body-container {
-    font-size: var(--paragraph-font-size);
-    display: flex;
-    flex-direction: column;
-    max-width: var(--max-width);
-    min-width: var(--min-width);
-    margin: 3pc auto 3pc calc(var(--portfolio-font-size) * 2);
-}
-
-#body-container > div {
-
-    /* final values defined in script */
-    opacity: 0;
-}
-
-hr {
-    width: 0;
-    max-width: var(--max-width);
-    min-width: var(--min-width);
-    margin: var(--paragraph-font-size) 0;
-
-    /* final values defined in script */
-    opacity: 0;
-}
-
-#logo {
-    display: block;
-    height: 12vmin;
-    min-height: 64px;
-    margin: 0 auto 3pc auto;
-}
-
+/* background */
 body {
-    background-color: var(--dark-color);
+    background-color: var(--color-darkest);
 }
 
-h1, h2, h3 {
-    color: var(--highlight-color);
-    font-size: var(--header-font-size);
+/* container for all main body elements */
+#wrapper {
+    font-size: var(--size-font-paragraph);
 
-    /* final values defined in script */
-    margin-left: 3pc;
+    display: grid;
+    grid-template-columns: min(100%, var(--size-max-wrapper-width));
+    align-content: space-between;
+    justify-content: center;
+    grid-gap: var(--size-font-header);
+    margin: calc(var(--size-font-header) * 1.5);
+}
+
+#wrapper > div {
+    padding-bottom: 1em;
+    border-bottom: 1px var(--color-light) solid;
+
+    /* final value defined in script */
     opacity: 0;
 }
 
+#wrapper > :last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* headers */
+h1, h2, h3 {
+    font-family: Nunito, sans-serif;
+    letter-spacing: 0.2em;
+    color: var(--color-lightest);
+    margin-bottom: calc(var(--size-font-header) * 0.5);
+}
+
+h1 {
+    font-size: calc(var(--size-font-header) * 2);
+}
+
+h2 {
+    font-size: calc(var(--size-font-header) * 1.5);
+}
+
+h3 {
+    font-size: var(--size-font-header);
+}
+
+/* paragraphs */
 p {
-    font-size: var(--paragraph-font-size);
+    font-size: var(--size-font-paragraph);
+    max-width: var(--size-max-wrapper-width);
+    margin-bottom: 1ex;
 }
 
+/* links */
 a {
-    color: var(--link-color);
+    text-decoration: none;
+    color: var(--color-splash);
 }
 
-/* Spotify player */
-iframe {
-    margin-top: 1em;
-    width: max(var(--min-width), 50%);
-    height: 400px;
-}
-
-/* screen is too narrow for standard view */
-@media screen and (max-aspect-ratio: 6 / 5) {
-    #portfolio {
-        visibility: hidden;
-    }
-
-    #body-container {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+/* abbreviations */
+abbr {
+    text-decoration: none;
+    color: var(--color-lightest);
 }

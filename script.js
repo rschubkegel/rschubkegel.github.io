@@ -2,47 +2,56 @@ function start() {
     console.log("initializing webpage");
 
     let baseDuration = 1000;
+    let baseDelay = 250;
 
     // fade in the portfolio banner
-    anime({
+    /*anime({
         targets: "#portfolio",
         keyframes: [
             { left: "-50vh", duration: 0 },
             { opacity: "20%", left: "-41vh", duration: baseDuration * 4 }
         ],
         easing: "easeOutExpo"
-    });
+    });*/
 
     // rotate icon
     anime({
         targets: "#logo",
-        rotate: "360deg",
-        easing: "spring(1, 50, 8, 0)"
+        keyframes: [
+            { rotate: "180deg", duration: 0 },
+            { rotate: "360deg", duration: baseDuration * 2 }
+        ],
+        easing: "easeOutElastic(1, .5)",
+        delay: baseDelay
     });
 
-    // slide in headers
+    // fade in headers
     anime({
         targets: "h1, h2, h3",
-        marginLeft: "0",
-        opacity: "100%",
-        duration: baseDuration,
-        easing: "easeOutCubic"
+        keyframes: [
+            { marginLeft: "100px", duration: 0 },
+            { marginLeft: "0", duration: baseDuration }
+        ],
+        easing: "easeOutBounce",
+        delay: anime.stagger(100, {start: baseDelay})
     });
 
     // expand horizontal rules
-    anime({
+    /*anime({
         targets: "hr",
-        width: "100%",
-        opacity: "50%",
-        duration: baseDuration,
+        keyframes: [
+            { width: "0", opacity: "0", duration: 0 },
+            { width: "100%", opacity: "50%", duration: baseDuration }
+        ],
         easing: "easeOutBounce"
-    });
+    });*/
 
     // fade in everything else
     anime({
-        targets: "#body-container > div",
+        targets: "#wrapper > div",
         opacity: "100%",
         duration: baseDuration,
-        easing: "easeInOutExpo"
+        easing: "easeInOutExpo",
+        delay: anime.stagger(50)
     });
 }

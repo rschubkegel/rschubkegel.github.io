@@ -1,8 +1,10 @@
 :root {
-    --size-font-header: 25vmin;
+    --size-font-header-1: 25vmin;
+    --size-font-header-3: calc(var(--size-font-normal) * 1.5);
+    --size-font-normal: min(15pt, max(1.2vw, 12pt));
     --color-dark-ghost: rgba(48, 48, 48, 0.9);
-    --color-link-default: mediumseagreen;
-    --color-link-visited: olivedrab;
+    --color-link-default: rgb(60, 180, 100);
+    --color-link-visited: var(--color-link-default);
     --color-link-hover: lawngreen;
 }
 
@@ -35,7 +37,7 @@ h1 {
     color: white;
     text-transform: uppercase;
     font-family: Raleway-Black, "Arial Black", sans-serif;
-    font-size: var(--size-font-header);
+    font-size: var(--size-font-header-1);
     letter-spacing: 0.3em;
     line-height: 1em;
     word-wrap: break-word;
@@ -65,28 +67,66 @@ header > h2 {
     transform: scale(-1, -1);
     top: 10vh;
     height: 80vh;
-    left: calc(var(--size-font-header) * 3.1);
-    width: calc(100vw - (var(--size-font-header) * 3.6));
+    left: calc(var(--size-font-header-1) * 3.1);
+    width: calc(100vw - (var(--size-font-header-1) * 3.6));
     margin: 0 10vw 0 0;
 }
 
 .page-wrapper {
+    font-size: var(--size-font-normal);
+    line-height: 1.5em;
+
     position: absolute;
-    width: 100%;
     top: 100vh;
-    justify-items: center;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+
+    display: grid;
+    grid-template-columns: 30% 60%;
+    justify-content: space-around;
+    align-content: space-between;
 }
 
 /* all elements within the page wrapper */
 .page-wrapper > * {
     background-color: var(--color-dark-ghost);
-    margin: 10vmin auto 10vmin auto;
-    padding: 1vmin 5vmin 3vmin 5vmin;
-    width: 70%;
-    max-width: 40pc;
+    margin: 2em auto;
+    padding: 2em 3em;
+    border-radius: 1ex;
+}
+
+.page-wrapper div {
+    margin-bottom: 2em;
+}
+
+.summary {
+    font-style: italic;
+}
+
+.main {
+    grid-area: 1 / 2 / span 4 / span 1;
+}
+
+.sidebar {
+    grid-area: 2 / 1 / span 2 / span 1;
+}
+
+/* text-level spacing */
+h3 {
+    font-size: var(--size-font-header-3);
+    letter-spacing: 0.8ex;
+    line-height: 1.5em;
+    padding-bottom: 1ex;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+li {
+    margin-bottom: 0.2ex;
+}
+
+a {
+    text-decoration: none;
 }
 
 a:link {
@@ -102,7 +142,7 @@ a:hover, a:focus, a:active {
 }
 
 /* if the screen is to narrow... */
-@media screen and (max-aspect-ratio: 4 / 3) {
+@media screen and (max-aspect-ratio: 8 / 5) {
 
     /* make the title centered */
     h1 {
@@ -111,8 +151,7 @@ a:hover, a:focus, a:active {
         left: calc(50% - (min(68vh, 75vw) / 2.2));
 
         /* vertical centering... */
-        /* TODO actually center this! */
-        top: calc(var(--size-font-header) * -4);/*calc(50vh - 100vh);*/
+        top: calc(var(--size-font-header-1) * -4);/*calc(50vh - 100vh);*/
     }
 
     /* remove the additional img */
@@ -122,8 +161,11 @@ a:hover, a:focus, a:active {
     }
 
     /* move page wrapper to bottom of title */
-    /* TODO change to just below viewport (top: -100vh;)*/
     .page-wrapper {
-        top: calc(var(--size-font-header) * 4);
+        top: calc(var(--size-font-header-1) * 4);
+
+        display: flex;
+        flex-direction: column;
+        padding: calc(var(--size-font-normal) * 2);
     }
 }

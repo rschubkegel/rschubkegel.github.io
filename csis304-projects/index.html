@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Website Design</title>
+    <link rel="icon"
+          type="img/png"
+          href="../imgs/logo.svg"/>
+    <link href="../style.css" rel="stylesheet" type="text/css"/>
+    <script src="../lib/anime.min.js"></script>
+    <style>
+        /* only page specific styles here!! */
+
+        .website-preview {
+            width: 100%;
+            height: calc(var(--size-max-wrapper-width) / 1.5);
+            border: 3px solid var(--color-lightest);
+            margin: 1em 0;
+        }
+
+        .error {
+            visibility: hidden;
+            position: fixed;
+
+            font-size: calc(var(--size-font-paragraph) * 0.8);
+            color: var(--color-error);
+            margin: 1em 0;
+        }
+
+        @media (max-width: 580px) {
+            .website-preview {
+                visibility: hidden;
+                position: fixed;
+            }
+
+            .error {
+                visibility: visible;
+                position: inherit;
+            }
+        }
+    </style>
+</head>
+<body onload="start();">
+    <script src="../script.js"></script>
+    <div id="wrapper">
+        <div id="section-header">
+            <h1><a href="../index.html">Home</a> &gt Website Design</h1>
+        </div>
+        <div id="section-web-design-class">
+            <h2><a href="#section-web-design-class">&gt</a> Web Programming Class</h2>
+            <div id="section-web-design-class-js">
+                <h3><a href="#section-web-design-class-js">&gt</a> Interactive JavaScript</h3>
+                <p>
+                    This is the first class project where JavaScript was required; our page just needed to be modified somehow by a script.
+                </p>
+                <a href="js/index.html" target="_blank">open in new tab</a>
+                <p class="error">Preview not available at this resolution.</p>
+                <object class="website-preview" type="text/html" data="js/index.html"></object>
+            </div>
+            <div id="section-web-design-class-zen">
+                <h3><a href="#section-web-design-class-zen">&gt</a> CSS Zen Garden</h3>
+                <p>
+                    In order to practice using <abbr title="cascading style sheets">CSS</abbr>, we re-styled a pre-existing web page. We were allowed to style the page any way we wanted as long as we did not edit the <abbr title="hyper-text markup language">HTML</abbr> (aside from making relative links absolute).
+                </p>
+                <a href="zen/index.html" target="_blank">open in new tab</a>
+                <p class="error">Preview not available at this resolution.</p>
+                <object class="website-preview" type="text/html" data="zen/index.html"></object>
+            </div>
+            <div id="section-web-design-class-personal">
+                <h3><a href="#section-web-design-class-personal">&gt</a> Personal Project</h3>
+                <p>
+                    The first project of the class required us to include 3 pages, a table, a list, and other basic <abbr title="hyper-text markup language">HTML</abbr> elements.
+                </p>
+                <a href="personal/index.html" target="_blank">open in new tab</a>
+                <p class="error">Preview not available at this resolution.</p>
+                <object class="website-preview" type="text/html" data="personal/index.html"></object>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
