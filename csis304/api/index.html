@@ -10,29 +10,48 @@
     <script src="../../lib/anime.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
-<div>
+<div id="welcome">
     <h1>Trello Web App</h1>
-    <p>The purpose of this app is to allow more complex interaction with the <a>Trello</a> task management service.</p>
+    <p>The purpose of this app is to allow more complex interactions with <a href="https://trello.com/" target="_blank">Trello</a>.</p>
 </div>
 
-<div id="login">
+<div id="account">
 
-    <form onsubmit="return false">
+    <h2>Account Information</h2>
 
-        <label for="key">API key</label>
-        <input type="text" id="key" name="key" value="">
+    <label for="input-key">API key</label>
+    <input type="text" id="input-key" value="">
 
-        <label for="token">Account token</label>
-        <input type="text" id="token" name="token" value="">
-
-        <input onclick="login()" type="submit" value="Submit">
-
-    </form>
+    <label for="input-token">Account token</label>
+    <input type="text" id="input-token" value="">
 
 </div>
+
+<div id="actions">
+
+    <h2>Actions</h2>
+
+    <div>
+
+        <div>
+            <button onclick="getBoards()">Get Boards</button>
+        </div>
+
+        <div>
+            <button onclick="getLists()">Get Lists</button>
+            <label for="input-board-id">Board ID</label>
+            <input type="text" id="input-board-id" value="">
+        </div>
+
+    </div>
+
+</div>
+
+<div id="data"></div>
 
 </body>
 </html>

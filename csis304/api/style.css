@@ -1,0 +1,61 @@
+/* -------- GLOBAL -------- */
+
+:root {
+    --color-error: #b31919;
+}
+
+* {
+    font-family: sans-serif;
+    font-size: 13pt;
+}
+
+/* -------- DIVS -------- */
+
+body {
+    margin: 0;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 1em;
+}
+
+#data {
+    margin: 1ex 0;
+    padding: 1ex;
+    border: 2px solid #f7bc88;
+}
+
+#account {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 1ex;
+}
+
+/* -------- TAG -------- */
+
+h1 {
+    font-size: 20pt;
+}
+
+h2 {
+    font-size: 18pt;
+}
+
+h3, h4, h5, h6 {
+    font-size: 16pt;
+}
+
+input {
+    width: auto;
+}
+
+/* -------- CLASS -------- */
+
+.error {
+    color: var(--color-error);
+}
+
+.closed {
+    color: darkgray;
+    font-style: italic;
+}
