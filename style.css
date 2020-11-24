@@ -21,7 +21,7 @@
     --color-darkest: #303030;
     --size-font-header: 17pt;
     --size-font-paragraph: 14pt;
-    --size-max-wrapper-width: calc(var(--size-font-paragraph) * 40);
+    --size-max-wrapper-width: calc(var(--size-font-paragraph) * 42);
 }
 
 /* defaults for all elements */
