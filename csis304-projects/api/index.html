@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trello Web App</title>
+    <link rel="icon"
+          type="img/png"
+          href="../../imgs/logo.svg"/>
+    <script src="../../lib/anime.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+<div>
+    <h1>Trello Web App</h1>
+    <p>The purpose of this app is to allow more complex interaction with the <a>Trello</a> task management service.</p>
+</div>
+
+<div id="login">
+
+    <form onsubmit="return false">
+
+        <label for="key">API key</label>
+        <input type="text" id="key" name="key" value="bdec1f2e03dc5f6d9ba9a9af0003246c">
+
+        <label for="token">Account token</label>
+        <input type="text" id="token" name="token" value="54b5b44bff2ad31a568e83823e5c49a1461c1726de59a1be57fc4e4f9fcdba1f">
+
+        <input onclick="login()" type="submit" value="Submit">
+
+    </form>
+
+</div>
+
+</body>
+</html>
