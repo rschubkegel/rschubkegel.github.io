@@ -19,16 +19,21 @@ body {
     grid-gap: 1em;
 }
 
-#data {
-    margin: 1ex 0;
-    padding: 1ex;
-    border: 2px solid #f7bc88;
-}
-
 #account {
     display: grid;
     grid-template-columns: auto;
     grid-gap: 1ex;
+}
+
+#actions > div{
+    display: flex;
+    flex-direction: column;
+}
+
+#data {
+    margin: 1ex 0;
+    padding: 1ex;
+    border: 2px solid #f7bc88;
 }
 
 /* -------- TAG -------- */
