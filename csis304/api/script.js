@@ -1,3 +1,11 @@
+/*
+
+    Author: Rylan Schubkegel
+    Email: rschubkegel17@georgefox.edu
+    Desc: Interacts with the Trello public API. Links embedded in page.
+
+ */
+
 /* -------- HTTP REQUESTS -------- */
 
 function getBoards() {
