@@ -10,15 +10,22 @@
     <link href="../style.css" rel="stylesheet" type="text/css"/>
     <script src="../lib/anime.min.js"></script>
     <style>
+
         /* only page specific styles here!! */
 
         #header, #header h1 {
             margin-bottom: 0;
         }
 
+        #section-conference > div {
+            display: grid;
+            grid-template-columns: 55% auto;
+            grid-gap: 4%;
+        }
+
         #section-amendment > div {
             display: grid;
-            grid-template-columns: 36% 60%;
+            grid-template-columns: auto 60%;
             grid-gap: 4%;
         }
 
@@ -33,7 +40,7 @@
         }
 
         #images-27th-letter {
-            grid-template-columns: 45% 45%;
+            grid-template-columns: 50% auto;
             justify-content: space-between;
         }
 
@@ -48,6 +55,13 @@
             width: 100%;
             height: auto;
         }
+
+        @media (max-aspect-ratio: 1 / 1) {
+            #section-conference > div, #section-amendment > div {
+                grid-template-columns: auto;
+            }
+        }
+
     </style>
 </head>
 <body onload="start();">
@@ -56,19 +70,32 @@
         <div id="header">
             <h1><a href="../index.html">Home</a> &gt; Typography</h1>
         </div>
+        <div id="section-conference">
+            <h2><a href="#section-conference">&gt;</a> Conference Branding</h2>
+            <div>
+                <p>
+                    Starting with just the required text for a design conference, I created a logo, poster design, and website layout.
+                    The poster is design is included.
+                </p>
+                <img src="imgs/made-by-humans.png" alt="poster">
+            </div>
+        </div>
         <div id="section-amendment">
             <h2><a href="#section-amendment">&gt;</a> Constitutional Amendment</h2>
             <div>
                 <img src="imgs/amendment.png" alt="poster">
                 <p>
-                    This project encouraged me to research a constitutional amendment of interest and create a poster to raise awareness for it. I chose the fourth amendment and focused on a modern issue it addresses: location privacy. The test is taken directly from Justice Roberts of the Supreme Court when it ruled against using cellular triangulation without a warrant.
+                    This project encouraged me to research a constitutional amendment of interest and create a poster to raise awareness for it.
+                    I chose the fourth amendment and focused on a modern issue it addresses: location privacy.
+                    The test is taken directly from Justice Roberts of the Supreme Court when it ruled against using cellular triangulation without a warrant.
                 </p>
             </div>
         </div>
         <div id="section-type-anatomy">
             <h2><a href="#section-type-anatomy">&gt;</a> Type Anatomy Exercise</h2>
             <p>
-                The goal of this exercise was to create images using only type. The forms could be cropped, transformed, or stretched, but the essence of the typeface had to be preserved.
+                The goal of this exercise was to create images using only type.
+                The forms could be cropped, transformed, or stretched, but the essence of the typeface had to be preserved.
             </p>
             <div class="container-images" id="images-type-anatomy">
                 <img src="imgs/type-anatomy-grid01.png">
@@ -86,7 +113,9 @@
         <div id="section-27th-letter">
             <h2><a href="#section-27th-letter">&gt;</a> Twenty-seventh Letter</h2>
             <p>
-                In this project, we were prompted to create a 27th letter of the alphabet. We were limited to making a new letter-form using the style of an existing typeface. I chose to make a character for silent usages of the letter "p".
+                In this project, we were prompted to create a 27th letter of the alphabet.
+                We were limited to making a new letter-form using the style of an existing typeface.
+                I chose to make a character for silent usages of the letter "p".
             </p>
             <div class="container-images" id="images-27th-letter">
                 <img src="imgs/twenty-seventh-letter.png">
