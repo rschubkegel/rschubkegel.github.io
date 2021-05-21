@@ -4,16 +4,6 @@ function start() {
     let baseDuration = 1000;
     let baseDelay = 250;
 
-    // fade in the portfolio banner
-    /*anime({
-        targets: "#portfolio",
-        keyframes: [
-            { left: "-50vh", duration: 0 },
-            { opacity: "20%", left: "-41vh", duration: baseDuration * 4 }
-        ],
-        easing: "easeOutExpo"
-    });*/
-
     // rotate icon
     anime({
         targets: "#logo",
@@ -29,29 +19,30 @@ function start() {
     anime({
         targets: "h1, h2, h3",
         keyframes: [
-            { marginLeft: "100px", duration: 0 },
+            { marginLeft: "5rem", duration: 0 },
             { marginLeft: "0", duration: baseDuration }
         ],
         easing: "easeOutBounce",
-        delay: anime.stagger(100, {start: baseDelay})
+        delay: anime.stagger(70, {start: baseDelay})
     });
 
     // expand horizontal rules
-    /*anime({
+    anime({
         targets: "hr",
         keyframes: [
             { width: "0", opacity: "0", duration: 0 },
-            { width: "100%", opacity: "50%", duration: baseDuration }
+            { width: "100%", opacity: "100%", duration: baseDuration * 1.2 }
         ],
-        easing: "easeOutBounce"
-    });*/
+        easing: "easeInOutCubic",
+        delay: anime.stagger(50)
+    });
 
-    // fade in everything else
+    // fade in everything
     anime({
         targets: "#wrapper > div",
         opacity: "100%",
         duration: baseDuration,
         easing: "easeInOutExpo",
-        delay: anime.stagger(50)
+        delay: anime.stagger(100)
     });
 }

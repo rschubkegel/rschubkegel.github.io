@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rylan Schubkegel</title>
     <link rel="icon"
           type="img/png"
           href="imgs/logo.svg"/>
-    <link href="style.css" rel="stylesheet" type="text/css"/>
-    <style>
-        /* only page specific styles here!! */
 
-        /* logo at top of page */
-        #logo {
-            display: block;
-            height: calc(var(--size-font-header) * 4);
-            margin-bottom: calc(var(--size-font-header) * 1.5);
+    <!-- CSS styles -->
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+
+    <!-- JS animation library -->
+    <script src="lib/anime.min.js"></script>
+
+    <!-- page specific styles -->
+    <style>
+
+        /* web programming screenshots */
+        #web-programming-screenshots {
+            display:grid;
+            grid-template-columns: auto auto;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        #web-programming-screenshots > a {
+            line-height: 0;
+        }
+
+        #web-programming-screenshots > a > img {
+            width: 100%;
+        }
+
+        @media (max-width: 50rem) {
+            #web-programming-screenshots {
+                grid-template-columns: auto;
+            }
         }
 
         /* Earth Defense */
@@ -31,57 +54,123 @@
             width: min(100%, 350px);
             height: 400px;
         }
+
     </style>
-    <script src="lib/anime.min.js"></script>
+
 </head>
+
+
 <body onload="start();">
+
     <script src="script.js"></script>
+
     <div id="wrapper">
+
+        <!-- logo -->
+        <div style="display: flex; flex-direction: column; justify-content: center; margin-bottom: 3rem;">
+            <a href="index.html" class="boring-link" style="outline: none;"><img id="logo" src="imgs/logo.svg" alt="logo" style="display: block; height: 8rem; margin: auto;"></a>
+        </div>
+
         <div id="section-welcome">
-            <img id="logo" src="imgs/logo.svg" alt="logo">
-            <h1><a href="#section-welcome">&gt;</a> Welcome!</h1>
+
+            <h1>Rylan Schubkegel</h1>
+
             <p>
                 Hello, my name is Rylan. I'm a <abbr title="computer science">CS</abbr> student
                 at <a href="https://www.georgefox.edu/" target="_blank">George Fox University</a>.
                 The purpose of this site is to showcase some of my personal work.
                 If you want to get in touch, feel free to <a href="#section-contact">contact me</a>.
             </p>
+
         </div>
+
+        <hr>
 
         <div id="section-web-design">
-            <h2><a href="#section-web-design">&gt</a> Website Design</h2>
-            <p>To see a preview of all projects at once, click <a href="csis304/index.html">here</a>.</p>
+
+            <h2>Website Design</h2>
+
             <div id="section-web-design-class">
-                <h3><a href="#section-web-design-class">&gt;</a> Web Programming Class</h3>
+
+                <h3></a>Web Design Class <a class="small-link">view</a></h3>
+
                 <p>
-                    The following are school projects from my <abbr title="web programming">CSIS 304</abbr> class. They are listed from most recently completed to least recently completed.
-                </p>
-                <p>
-                    <a href="csis304/api/index.html">Web API Application</a>
-                    <br>
-                    <a href="csis304/js/index.html">Dynamic JavaScript</a>
-                    <br>
-                    <a href="csis304/zen/index.html">CSS Zen Garden</a>
-                    <br>
-                    <a href="csis304/personal/index.html">Personal Project</a>
+                    The following are school projects from <abbr title="web programming">ARTD 270</abbr>,
+                    which focused on <abbr title="user interface">UI</abbr> design, page layout, and usability.
                 </p>
             </div>
+
+            <div id="section-web-programming-class">
+
+                <h3>Web Programming Class <a class="small-link" href="csis304/index.html">view</a></h3>
+
+                <p>
+                    The following are school projects from <abbr title="web programming">CSIS 304</abbr>.
+                    In this class I learned about HTTP requests, HTML, CSS, JavaScript, PHP, REST APIs, and more.
+                    The class also required a landing page for our projects, which has been polished into the website you are now reading.
+                </p>
+
+                <!-- screenshots -->
+                <div id="web-programming-screenshots">
+
+                    <!-- CSS Zen Garden -->
+                    <a class="boring-link" href="csis304/zen/index.html">
+                        <img src="csis304/screenshot-zen.jpg" alt="Screenshot of CSS Zen Garden project">
+                    </a>
+
+                    <!-- Conway's Game of Life -->
+                    <a class="boring-link" href="csis304/js/index.html">
+                        <img src="csis304/screenshot-js.jpg" alt="Screenshot of JavaScript version of Conway's Game of Life">
+                    </a>
+
+                </div>
+            </div>
+
         </div>
 
+        <hr>
+
         <div id="section-graphic-design">
-            <h2><a href="#section-graphic-design">&gt;</a> Graphic Design</h2>
+
+            <h2>Graphic Design</h2>
+
             <div id="section-graphic-design-typography">
-                <h3><a href="#section-graphic-design-typography">&gt</a> Typography Class</h3>
+
+                <h3>Typography Class <a class="small-link" href="artd220/index.html">view</a></h3>
+
                 <p>
-                    <a href="artd220/index.html">This page</a> showcases some school projects from my <abbr title="typography">CSIS 220</abbr> class. All projects were made during the fall 2020 semester.
+                    This page showcases some school projects from <abbr title="typography">CSIS 220</abbr>.
+                    The class explored type anatomy, page layout, hierarchy, and more.
                 </p>
+
+                <!-- projects preview -->
+                <div style="display: grid; grid-template-columns: auto auto auto auto; gap: 1rem; justify-items: center; align-items: center; margin: 1rem 0;">
+                    <img src="artd220/imgs/made-by-humans.png" alt="Art conference poster design" style="width: 100%;">
+                    <img src="artd220/imgs/type-anatomy-grid01.png" alt="" style="width: 100%;">
+                    <img src="artd220/imgs/type-anatomy-grid02.png" alt="" style="width: 100%;">
+                    <img src="artd220/imgs/twenty-seventh-letter.png" alt="Twenty-seventh letter design" style="width: 100%;">
+                </div>
+
             </div>
+
             <div id="section-graphic-design-creative-suite">
-                <h3><a href="#section-graphic-design-creative-suite">&gt</a> Creative Suite Class</h3>
+
+                <h3>Creative Suite Class <a class="small-link" href="artd110/index.html">view</a></h3>
+
                 <p>
-                    <a href="artd110/index.html">This page</a> showcases some school projects from my <abbr title="creative suite">ARTD 110</abbr> class. All projects were made during the fall 2019 semester.
+                    This page showcases some school projects from <abbr title="creative suite">ARTD 110</abbr>.
+                    The class taught the fundamentals of Adobe Creative Cloud using Photoshop, Illustrator, and InDesign.
                 </p>
+
+                <!-- projects preview -->
+                <div style="display: grid; grid-template-columns: auto 21% auto; gap: 1rem; justify-items: center; align-items: center; margin: 1rem 0;">
+                    <img src="artd110/imgs/coasters-3.png" alt="Coasters design" style="width: 100%;">
+                    <img src="artd110/imgs/business-card-1.png" alt="Business card design" style="width: 100%;">
+                    <img src="artd110/imgs/playlist/18.jpg" alt="Spotify playlist design" style="width: 100%;">
+                </div>
+
             </div>
+
         </div>
 
         <!--<hr>
@@ -95,6 +184,7 @@
             </p>
         </div>-->
 
+
         <!--<hr>
         <div id="section-games">
             <h2>Game Design</h2>
@@ -107,28 +197,29 @@
             <iframe src="https://itch.io/embed-upload/2207013?color=29723f" allowfullscreen=""><a href="https://supergobo.itch.io/earth-defense">Play Earth Defense on itch.io</a></iframe>
         </div>-->
 
+
         <!--<div id="section-music">
-            <h2><a href="#section-music">&gt</a> Music</h2>
+            <h2><a href="#section-music">view</a> Music</h2>
             <p>
                 My currently published music, representing a small selection of the hundreds of songs I have composed and produced.
             </p>
             <iframe src="https://open.spotify.com/embed/artist/6YrSdl1dy1dDxZETIxW7n5" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>-->
 
+        <hr>
+
         <div id="section-contact">
-            <h2><a href="#section-contact">&gt;</a> Contact</h2>
-            <p>
-                <!--Email: <a href="mailto:rylanschubkegel@gmail.com">rylanschubkegel@gmail.com</a>
-                <br>-->
-                Email: <a href="mailto:rschubkegel17@georgefox.edu">rschubkegel17@georgefox.edu</a>
-                <br>
-                Cell: <a href="tel:3608401401">360-840-1401</a>
-                <br>
-                LinkedIn: <a href="https://www.linkedin.com/in/rschubkegel/">LinkedIn</a>
-                <br>
-                Handshake: <a href="https://georgefox.joinhandshake.com/users/4215794/">Handshake</a>
-            </p>
+            <h2>Contact</h2>
+            <ul>
+                <li><a href="mailto:rylanschubkegel@gmail.com">rylanschubkegel@gmail.com</a></li>
+                <li><a href="https://www.linkedin.com/in/rschubkegel/">LinkedIn</a></li>
+                <li><a href="https://georgefox.joinhandshake.com/users/4215794/">Handshake</a></li>
+                <li><a href="https://portfolium.com/rschubkegel17/">Portfolium</a></li>
+            </ul>
         </div>
+
+
     </div>
+
 </body>
 </html>

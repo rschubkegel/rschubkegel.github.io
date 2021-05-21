@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Creative Suite Projects</title>
+    <title>Rylan Schubkegel</title>
     <link rel="icon"
           type="img/png"
           href="../imgs/logo.svg"/>
+
+    <!-- CSS styles -->
     <link href="../style.css" rel="stylesheet" type="text/css"/>
+
+    <!-- JS animation library -->
     <script src="../lib/anime.min.js"></script>
+
+    <!-- page specific styles -->
     <style>
 
         /* only page specific styles here!! */
@@ -21,31 +29,31 @@
         #images-business-card {
             display: grid;
             grid-template-columns: 40% auto;
-            grid-gap: calc(var(--size-font-paragraph));
-            margin-top: var(--size-font-header);
+            grid-gap: 1rem;
+            margin: 1rem 0;
         }
 
         /* playlist images */
         #images-playlists {
             display: grid;
             grid-template-columns: auto auto auto auto auto auto auto auto auto;
-            grid-gap: calc(var(--size-font-paragraph) / 2);
-            margin-top: var(--size-font-header);
+            gap: 0.5rem;
+            margin: 1rem 0;
         }
 
         /* coaster images */
         #images-coasters {
             display: grid;
             grid-template-columns: auto auto auto;
-            grid-gap: calc(var(--size-font-paragraph));
-            margin-top: var(--size-font-header);
+            gap: 1rem;
+            margin: 1rem 0;
         }
 
         /* nautical icons */
         #section-nautical-icons > div {
             display: grid;
             grid-template-columns: auto 35%;
-            grid-gap: 4%;
+            grid-gap: 1rem;
         }
 
         img {
@@ -66,93 +74,114 @@
         }
 
     </style>
+
 </head>
+
+
 <body onload="start();">
-<script src="../script.js"></script>
-<div id="wrapper">
 
-    <div id="header">
-        <h1><a href="../index.html">Home</a> &gt; Creative Suite</h1>
-    </div>
+    <script src="../script.js"></script>
 
-    <div id="section-business-card">
-        <h2><a href="#section-business-card">&gt;</a> Business Card</h2>
-        <div>
-            <p>
-                This was a concept I created for a personal business card.
-            </p>
-            <div class="container-images" id="images-business-card">
-                <img src="imgs/business-card-1.png" alt="business card front">
-                <img src="imgs/business-card-2.png" alt="business card back">
+    <div id="wrapper">
+
+        <div id="header">
+
+            <!-- logo -->
+            <div style="display: flex; flex-direction: column; justify-content: center; margin-bottom: 3rem;">
+                <a href="../index.html" class="boring-link" style="outline: none;"><img id="logo" src="../imgs/logo.svg" alt="logo" style="display: block; height: 8rem; margin: auto;"></a>
+            </div>
+
+            <h1>Creative Suite</h1>
+
+        </div>
+
+        <hr>
+
+        <div id="section-business-card">
+            <h2>Business Card</h2>
+            <div>
+                <p>
+                    This was a concept I created for a personal business card.
+                    This project is what inspired me to create a personal logo, which is used on my portfolio site.
+                </p>
+                <div class="container-images" id="images-business-card">
+                    <img src="imgs/business-card-1.png" alt="business card front">
+                    <img src="imgs/business-card-2.png" alt="business card back">
+                </div>
             </div>
         </div>
-    </div>
 
-    <div id="section-playlists">
-        <h2><a href="#section-playlists">&gt;</a> Spotify Playlists</h2>
-        <div>
-            <p>
-                I am a huge fan of music, so I chose to practice my Illustrator skill on a series of cover images for my Spotify playlists.
-                I originally started with 16 images, but as my playlists grew I expanded the project.
-            </p>
-            <div class="container-images" id="images-playlists">
-                <img src="imgs/playlist/01.jpg" alt="playlist cover">
-                <img src="imgs/playlist/02.jpg" alt="playlist cover">
-                <img src="imgs/playlist/03.jpg" alt="playlist cover">
-                <img src="imgs/playlist/04.jpg" alt="playlist cover">
-                <img src="imgs/playlist/05.jpg" alt="playlist cover">
-                <img src="imgs/playlist/06.jpg" alt="playlist cover">
-                <img src="imgs/playlist/07.jpg" alt="playlist cover">
-                <img src="imgs/playlist/08.jpg" alt="playlist cover">
-                <img src="imgs/playlist/09.jpg" alt="playlist cover">
-                <img src="imgs/playlist/10.jpg" alt="playlist cover">
-                <img src="imgs/playlist/11.jpg" alt="playlist cover">
-                <img src="imgs/playlist/12.jpg" alt="playlist cover">
-                <img src="imgs/playlist/13.jpg" alt="playlist cover">
-                <img src="imgs/playlist/14.jpg" alt="playlist cover">
-                <img src="imgs/playlist/15.jpg" alt="playlist cover">
-                <img src="imgs/playlist/16.jpg" alt="playlist cover">
-                <img src="imgs/playlist/17.jpg" alt="playlist cover">
-                <img src="imgs/playlist/18.jpg" alt="playlist cover">
-                <img src="imgs/playlist/19.jpg" alt="playlist cover">
-                <img src="imgs/playlist/20.jpg" alt="playlist cover">
-                <img src="imgs/playlist/21.jpg" alt="playlist cover">
-                <img src="imgs/playlist/22.jpg" alt="playlist cover">
-                <img src="imgs/playlist/23.jpg" alt="playlist cover">
-                <img src="imgs/playlist/24.jpg" alt="playlist cover">
-                <img src="imgs/playlist/25.jpg" alt="playlist cover">
-                <img src="imgs/playlist/26.jpg" alt="playlist cover">
-                <img src="imgs/playlist/27.jpg" alt="playlist cover">
+        <hr>
+
+        <div id="section-playlists">
+            <h2>Spotify Playlists <a class="small-link" href="https://open.spotify.com/user/213u4fxzegwrbttorspgre2gq?si=ab9808ff92e2474e" target="_blank">view</a></h2>
+            <div>
+                <p>
+                    I am a huge fan of music, so I chose to practice my Illustrator skill on a series of cover images for my Spotify playlists.
+                    I originally started with 16 images, but as my playlists grew I expanded the project.
+                </p>
+                <div class="container-images" id="images-playlists">
+                    <img src="imgs/playlist/01.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/02.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/03.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/04.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/05.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/06.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/07.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/08.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/09.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/10.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/11.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/12.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/13.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/14.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/15.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/16.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/17.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/18.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/19.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/20.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/21.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/22.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/23.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/24.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/25.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/26.jpg" alt="playlist cover">
+                    <img src="imgs/playlist/27.jpg" alt="playlist cover">
+                </div>
             </div>
         </div>
-    </div>
 
-    <div id="section-coasters">
-        <h2><a href="#section-coasters">&gt;</a> Coasters</h2>
-        <div>
-            <p>
-                Each student created a set of matching coasters that were then printed on wood using a laser-cutter.
-                I chose to use the same image (the right-most image below) with various quotes related to tea or coffee.
-            </p>
-            <div class="container-images" id="images-coasters">
-                <img src="imgs/coasters-1.png" alt="coaster design">
-                <img src="imgs/coasters-2.png" alt="coaster design">
-                <img src="imgs/coasters-3.png" alt="coaster design">
+        <hr>
+
+        <div id="section-coasters">
+            <h2>Coasters</h2>
+            <div>
+                <p>
+                    Each student created a set of matching coasters that were then printed on wood using a laser-cutter.
+                    I chose to use the same image (the right-most image below) with various quotes related to tea or coffee.
+                </p>
+                <div class="container-images" id="images-coasters">
+                    <img src="imgs/coasters-1.png" alt="coaster design">
+                    <img src="imgs/coasters-2.png" alt="coaster design">
+                    <img src="imgs/coasters-3.png" alt="coaster design">
+                </div>
             </div>
         </div>
-    </div>
 
-    <div id="section-nautical-icons">
-        <h2><a href="#section-nautical-icons">&gt;</a> Nautical Icons</h2>
-        <div>
-            <p>
-                The first project involving Adobe Illustrator, I was tasked with creating a set of icons with a unifying theme.
-                I chose to make cartoony nautical icons, because of my dad's recent interest in sailing.
-            </p>
-            <img src="imgs/nautical-icons.png" alt="nautical icons">
+        <hr>
+
+        <div id="section-nautical-icons">
+            <h2>Nautical Icons</h2>
+            <div>
+                <p>
+                    The first project involving Adobe Illustrator, I was tasked with creating a set of icons with a unifying theme.
+                    I chose to make cartoony nautical icons, because of my dad's recent interest in sailing.
+                </p>
+                <img src="imgs/nautical-icons.png" alt="nautical icons">
+            </div>
         </div>
-    </div>
 
-</div>
+    </div>
 </body>
 </html>

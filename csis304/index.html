@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Website Design</title>
+    <title>Rylan Schubkegel</title>
     <link rel="icon"
           type="img/png"
           href="../imgs/logo.svg"/>
+
+    <!-- CSS styles -->
     <link href="../style.css" rel="stylesheet" type="text/css"/>
+
+    <!-- JS animation library -->
     <script src="../lib/anime.min.js"></script>
+
+    <!-- page specific styles -->
     <style>
         /* only page specific styles here!! */
 
@@ -28,7 +36,7 @@
             margin: 1em 0;
         }
 
-        @media (max-width: 580px) {
+        @media (max-width: 32rem) {
             .website-preview {
                 visibility: hidden;
                 position: fixed;
@@ -40,52 +48,71 @@
             }
         }
     </style>
+
 </head>
+
+
 <body onload="start();">
+
     <script src="../script.js"></script>
+
     <div id="wrapper">
+
         <div id="section-header">
-            <h1><a href="../index.html">Home</a> &gt; Website Design</h1>
+
+            <!-- logo -->
+            <div style="display: flex; flex-direction: column; justify-content: center; margin-bottom: 3rem;">
+                <a href="../index.html" class="boring-link" style="outline: none;"><img id="logo" src="../imgs/logo.svg" alt="logo" style="display: block; height: 8rem; margin: auto;"></a>
+            </div>
+
+            <h1>Website Design</h1>
+
         </div>
-        <div id="section-web-design-class">
-            <h2><a href="#section-web-design-class">&gt;</a> Web Programming Class</h2>
-            <div id="section-web-design-class-api">
-                <h3><a href="#section-web-design-class-api">&gt;</a> Interactive JavaScript</h3>
-                <p>
-                    The final class project had us interact with a web <abbr title="application programming interface">API</abbr>. Since I am a prolific <a href="https://trello.com" target="_blank">Trello</a> user, I chose to work with their interface. This project focused more on back-end development than front-end.
-                </p>
-                <a href="api/index.html" target="_blank">open in new tab</a>
-                <p class="error">Preview not available at this resolution.</p>
-                <object class="website-preview" type="text/html" data="api/index.html"></object>
-            </div>
-            <div id="section-web-design-class-js">
-                <h3><a href="#section-web-design-class-js">&gt;</a> Interactive JavaScript</h3>
-                <p>
-                    This is the first class project where JavaScript was required; our page just needed to be modified somehow by a script.
-                </p>
-                <a href="js/index.html" target="_blank">open in new tab</a>
-                <p class="error">Preview not available at this resolution.</p>
-                <object class="website-preview" type="text/html" data="js/index.html"></object>
-            </div>
-            <div id="section-web-design-class-zen">
-                <h3><a href="#section-web-design-class-zen">&gt;</a> CSS Zen Garden</h3>
-                <p>
-                    In order to practice using <abbr title="cascading style sheets">CSS</abbr>, we re-styled a pre-existing web page. We were allowed to style the page any way we wanted as long as we did not edit the <abbr title="hyper-text markup language">HTML</abbr> (aside from making relative links absolute).
-                </p>
-                <a href="zen/index.html" target="_blank">open in new tab</a>
-                <p class="error">Preview not available at this resolution.</p>
-                <object class="website-preview" type="text/html" data="zen/index.html"></object>
-            </div>
-            <div id="section-web-design-class-personal">
-                <h3><a href="#section-web-design-class-personal">&gt;</a> Personal Project</h3>
-                <p>
-                    The first project of the class required us to include 3 pages, a table, a list, and other basic <abbr title="hyper-text markup language">HTML</abbr> elements.
-                </p>
-                <a href="personal/index.html" target="_blank">open in new tab</a>
-                <p class="error">Preview not available at this resolution.</p>
-                <object class="website-preview" type="text/html" data="personal/index.html"></object>
-            </div>
+
+        <hr>
+
+        <div>
+            <h2>REST API <a class="small-link" href="api/index.html" target="_blank">view</a></h2>
+            <p>
+                The final class project had us interact with a web <abbr title="application programming interface">API</abbr>. Since I am a prolific <a href="https://trello.com" target="_blank">Trello</a> user, I chose to work with their interface. This project focused more on back-end development than front-end.
+            </p>
+            <p class="error">Preview not available at this resolution.</p>
+            <object class="website-preview" type="text/html" data="api/index.html"></object>
         </div>
+
+        <hr>
+
+        <div>
+            <h2>Interactive JavaScript <a class="small-link" href="js/index.html" target="_blank">view</a></h2>
+            <p>
+                This is the first class project where JavaScript was required; our page just needed to be modified somehow by a script.
+            </p>
+            <p class="error">Preview not available at this resolution.</p>
+            <object class="website-preview" type="text/html" data="js/index.html"></object>
+        </div>
+
+        <hr>
+
+        <div>
+            <h2>CSS Zen Garden <a class="small-link" href="zen/index.html" target="_blank">view</a></h2>
+            <p>
+                In order to practice using <abbr title="cascading style sheets">CSS</abbr>, we re-styled a pre-existing web page. We were allowed to style the page any way we wanted as long as we did not edit the <abbr title="hyper-text markup language">HTML</abbr> (aside from making relative links absolute).
+            </p>
+            <p class="error">Preview not available at this resolution.</p>
+            <object class="website-preview" type="text/html" data="zen/index.html"></object>
+        </div>
+
+        <hr>
+
+        <div>
+            <h2> Personal Project <a class="small-link" href="personal/index.html" target="_blank">view</a></h2>
+            <p>
+                The first project of the class required us to include 3 pages, a table, a list, and other basic <abbr title="hyper-text markup language">HTML</abbr> elements.
+            </p>
+            <p class="error">Preview not available at this resolution.</p>
+            <object class="website-preview" type="text/html" data="personal/index.html"></object>
+        </div>
+
     </div>
 </body>
 </html>

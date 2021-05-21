@@ -1,7 +1,4 @@
-@font-face {
-    font-family: Nunito;
-    src: url("fonts/Nunito-Bold.ttf");
-}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 @font-face {
     font-family: Roboto;
@@ -14,14 +11,15 @@
 }
 
 :root {
-    --color-lightest: whitesmoke;
-    --color-light: #CBEBD8;
+    /* https://coolors.co/262626-303030-db9999-90ee90-cbebd8-f5f5f5 */
+    --color-lightest: #f5f5f5;
+    --color-light: #cbebd8;
     --color-splash: #90ee90;
     --color-error: #db9999;
-    --color-darkest: #303030;
-    --size-font-header: 17pt;
-    --size-font-paragraph: 14pt;
-    --size-max-wrapper-width: calc(var(--size-font-paragraph) * 42);
+    --color-dark: #303030;
+    --color-darkest: #262626;
+
+    --size-max-wrapper-width: 42rem;
 }
 
 /* defaults for all elements */
@@ -38,52 +36,51 @@
 
 /* background */
 body {
-    background-color: var(--color-darkest);
+    background-color: var(--color-dark);
 }
 
 /* container for all main body elements */
 #wrapper {
-    font-size: var(--size-font-paragraph);
+    font-size: 1rem;
 
-    display: grid;
-    grid-template-columns: min(100%, var(--size-max-wrapper-width));
-    align-content: space-between;
-    justify-content: center;
-    grid-gap: var(--size-font-header);
-    margin: calc(var(--size-font-header) * 1.5);
+    display: flex;
+    flex-direction: column;
+    max-width: var(--size-max-wrapper-width);
+    margin: auto;
+    padding: 2rem;
 }
 
 #wrapper > div {
-    padding-bottom: 1em;
-    border-bottom: 1px var(--color-light) solid;
-
     /* final value defined in script */
     opacity: 0;
 }
 
-#wrapper > :last-child {
-    padding-bottom: 0;
-    border-bottom: none;
+hr {
+    margin: 1.5rem 0;
+    height: 1px;
+    background-color: var(--color-light);
 }
 
 /* headers */
 h1, h2, h3 {
     font-family: Nunito, sans-serif;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.15em;
     color: var(--color-lightest);
-    margin-bottom: calc(var(--size-font-header) * 0.5);
+    margin-bottom: 1rem;
 }
 
 h1 {
-    font-size: calc(var(--size-font-header) * 2);
+    font-size: 2rem;
 }
 
 h2 {
-    font-size: calc(var(--size-font-header) * 1.5);
+    font-size: 1.5rem;
 }
 
 h3 {
-    font-size: var(--size-font-header);
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-style: italic;
 }
 
 /* paragraphs */
@@ -93,14 +90,51 @@ p {
     margin-bottom: 1ex;
 }
 
+
+/* lists */
+ul {
+    list-style-type: none;
+    line-height: 150%;
+}
+
+li {
+    margin: 0.5rem 0;
+}
+
+
 /* links */
 a {
+    transition: 0.7s;
     text-decoration: none;
     color: var(--color-splash);
+    border-radius: 0.5rem;
+    padding: 0.1rem 0.5rem;
+    background-color: var(--color-darkest);
+    outline: 1px solid var(--color-dark);
 }
+
+a.boring-link {
+    background-color: var(--color-dark);
+    border-radius: 0;
+    padding: 0;
+}
+
+a:hover {
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: var(--color-dark);
+    outline-color: var(--color-splash);
+}
+
+.small-link {
+    font-size: 1rem;
+    font-weight: lighter;
+    letter-spacing: normal;
+    font-style: normal;
+}
+
 
 /* abbreviations */
 abbr {
-    text-decoration: none;
     color: var(--color-lightest);
 }
