@@ -19,8 +19,29 @@
     <style>
 
         /* only page specific styles here!! */
-        #section-redesign img {
+        img {
             width: 100%;
+        }
+
+        .image-container {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+            justify-content: space-between;
+        }
+
+        .half-width {
+            grid-template-columns: auto auto;
+        }
+
+        .two-devices {
+            grid-template-columns: 71% auto;
+        }
+
+        @media (max-aspect-ratio: 1 / 1) {
+            .half-width, .two-devices {
+                grid-template-columns: auto;
+            }
         }
 
     </style>
@@ -62,7 +83,45 @@
                     2) the website is severely outdated and in need of renovation.
                     My design process focused on the potential users of the site and how to help them accomplish their goals.
                 </p>
-                <img src="imgs/project1/mockup-desktop.png" alt="">
+
+                <!-- personas -->
+                <h3>User Personas</h3>
+                <div class="image-container half-width">
+                    <img src="imgs/project1/persona-mark.jpg" alt="">
+                    <img src="imgs/project1/persona-janet.jpg" alt="">
+                </div>
+
+                <!-- user flow -->
+                <h3>User Flow</h3>
+                <div class="image-container">
+                    <img src="imgs/project1/user-flow.jpg" alt="">
+                </div>
+
+                <!-- site map -->
+                <h3>Site Map</h3>
+                <div class="image-container">
+                    <img src="imgs/project1/site-map.jpg" alt="">
+                </div>
+
+                <!-- style tile -->
+                <h3>Style Tile</h3>
+                <div class="image-container">
+                    <img src="imgs/project1/style-tile.png" alt="">
+                </div>
+
+                <!-- wireframes -->
+                <h3>Wireframes</h3>
+                <div class="image-container two-devices">
+                    <img src="imgs/project1/wireframe-desktop.jpg" alt="">
+                    <img src="imgs/project1/wireframe-mobile.jpg" alt="">
+                </div>
+
+                <!-- final mockups -->
+                <h3>Final Mockups</h3>
+                <div class="image-container two-devices">
+                    <img src="imgs/project1/mockup-desktop.png" alt="">
+                    <img src="imgs/project1/mockup-mobile.png" alt="">
+                </div>
             </div>
         </div>
 
