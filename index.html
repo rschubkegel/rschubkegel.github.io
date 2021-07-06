@@ -20,18 +20,18 @@
     <style>
 
         /* web programming screenshots */
-        #web-programming-screenshots {
+        .screenshots {
             display:grid;
             grid-template-columns: auto auto;
             gap: 1rem;
             margin: 1rem 0;
         }
 
-        #web-programming-screenshots > a {
+        .screenshots > a {
             line-height: 0;
         }
 
-        #web-programming-screenshots > a > img {
+        .screenshots > a > img {
             width: 100%;
         }
 
@@ -95,9 +95,24 @@
                 <h3></a>Web Design Class <a class="small-link" href="artd270/index.html">view</a></h3>
 
                 <p>
-                    The following are school projects from <abbr title="web programming">ARTD 270</abbr>,
+                    The following are school projects from <abbr title="web design">ARTD 270</abbr>,
                     which focused on <abbr title="user interface">UI</abbr> design, page layout, and usability.
                 </p>
+
+                <!-- screenshots -->
+                <div class="screenshots">
+
+                    <!-- bagels -->
+                    <a class="boring-link" href="artd270/index.html#section-product-page">
+                        <img src="artd270/imgs/bagels-screenshot.jpg" alt="screenshot of bagels product page">
+                    </a>
+
+                    <!-- style tile -->
+                    <a class="boring-link" href="artd270/index.html#section-redesign">
+                        <img src="artd270/imgs/project1/user-flow.jpg" alt="site map for website redesign">
+                    </a>
+
+                </div>
             </div>
 
             <div id="section-web-programming-class">
@@ -111,7 +126,7 @@
                 </p>
 
                 <!-- screenshots -->
-                <div id="web-programming-screenshots">
+                <div class="screenshots">
 
                     <!-- CSS Zen Garden -->
                     <a class="boring-link" href="csis304/zen/index.html">
@@ -145,10 +160,18 @@
 
                 <!-- projects preview -->
                 <div style="display: grid; grid-template-columns: auto auto auto auto; gap: 1rem; justify-items: center; align-items: center; margin: 1rem 0;">
-                    <img src="artd220/imgs/made-by-humans.png" alt="Art conference poster design" style="width: 100%;">
-                    <img src="artd220/imgs/type-anatomy-grid01.png" alt="" style="width: 100%;">
-                    <img src="artd220/imgs/type-anatomy-grid02.png" alt="" style="width: 100%;">
-                    <img src="artd220/imgs/twenty-seventh-letter.png" alt="Twenty-seventh letter design" style="width: 100%;">
+                    <a href="artd220/index.html#section-conference" style="border-radius: 0; padding: 0; line-height: 0;">
+                        <img src="artd220/imgs/made-by-humans.png" alt="Art conference poster design" style="width: 100%;">
+                    </a>
+                    <a href="artd220/index.html#section-type-anatomy" style="border-radius: 0; padding: 0; line-height: 0;">
+                        <img src="artd220/imgs/type-anatomy-grid01.png" alt="" style="width: 100%;">
+                    </a>
+                    <a href="artd220/index.html#section-type-anatomy" style="border-radius: 0; padding: 0; line-height: 0;">
+                        <img src="artd220/imgs/type-anatomy-grid02.png" alt="" style="width: 100%;">
+                    </a>
+                    <a href="artd220/index.html#section-27th-letter" style="border-radius: 0; padding: 0; line-height: 0;">
+                        <img src="artd220/imgs/twenty-seventh-letter.png" alt="Twenty-seventh letter design" style="width: 100%;">
+                    </a>
                 </div>
 
             </div>
@@ -164,9 +187,15 @@
 
                 <!-- projects preview -->
                 <div style="display: grid; grid-template-columns: auto 21% auto; gap: 1rem; justify-items: center; align-items: center; margin: 1rem 0;">
-                    <img src="artd110/imgs/coasters-3.png" alt="Coasters design" style="width: 100%;">
-                    <img src="artd110/imgs/business-card-1.png" alt="Business card design" style="width: 100%;">
-                    <img src="artd110/imgs/playlist/18.jpg" alt="Spotify playlist design" style="width: 100%;">
+                    <a href="artd110/index.html#section-coasters" style="border-radius: 0; padding: 0; line-height: 0;">
+                        <img src="artd110/imgs/coasters-3.png" alt="Coasters design" style="width: 100%;">
+                    </a>
+                    <a href="artd110/index.html#section-business-card" style="border-radius: 0; padding: 0; line-height: 0;">
+                        <img src="artd110/imgs/business-card-1.png" alt="Business card design" style="width: 100%;">
+                    </a>
+                    <a href="artd110/index.html#section-playlists" style="border-radius: 0; padding: 0; line-height: 0;">
+                        <img src="artd110/imgs/playlist/18.jpg" alt="Spotify playlist design" style="width: 100%;">
+                    </a>
                 </div>
 
             </div>
