@@ -23,6 +23,22 @@
             width: 100%;
         }
 
+        .website-preview {
+            width: 100%;
+            height: calc(var(--size-max-wrapper-width) / 1.5);
+            border: 3px solid var(--color-lightest);
+            margin: 1em 0;
+        }
+
+        .error {
+            visibility: hidden;
+            position: fixed;
+
+            font-size: calc(var(--size-font-paragraph) * 0.8);
+            color: var(--color-error);
+            margin: 1em 0;
+        }
+
         .image-container {
             display: grid;
             gap: 1rem;
@@ -36,6 +52,18 @@
 
         .two-devices {
             grid-template-columns: 71% auto;
+        }
+
+        @media (max-width: 32rem) {
+            .website-preview {
+                visibility: hidden;
+                position: fixed;
+            }
+
+            .error {
+                visibility: visible;
+                position: inherit;
+            }
         }
 
         @media (max-aspect-ratio: 1 / 1) {
@@ -77,7 +105,9 @@
             <h2>Product Page</h2>
             <div>
                 <p>
-                    Add text here....
+                    This was probably my favorite project.
+                    Our task was to create a product launch page, but I requested to make a "product" page for bagels instead of a <em>real</em> product.
+                    Choosing tasty images and adding silly text made this project tons of fun!
                 </p>
 
                 <!-- images -->
@@ -85,14 +115,26 @@
 
         <hr>
 
-        <div id="section-personal-card">
-            <h2>Digital Business Card</h2>
+        <div id="section-virtual-card">
+            <h2>Virtual Card <a class="small-link" href="project2/index.html" target="_blank">view</a></h2>
             <div>
                 <p>
-                    This project was designed to learn/practice <abbr title="hyper-text markup language">HTML</abbr> and <abbr title="cascading style sheets">CSS</abbr>....
+                    This project was designed to learn/practice <abbr title="hyper-text markup language">HTML</abbr> and <abbr title="cascading style sheets">CSS</abbr>.
+                    Everything was coded by hand, so we didn't spend time polishing it (making it responsive, adding transitions, etc.) because the class is geared toward design students.
                 </p>
 
-                <!-- images -->
+                <!-- sketches -->
+                <h3>Initial Sketches</h3>
+                <div class="image-container">
+                    <img src="imgs/project2/sketches.jpg" alt="initial sketches">
+                </div>
+
+                <!-- wireframe and final site -->
+                <h3>Wireframe and Final Website</h3>
+                <div class="image-container half-width">
+                    <img src="imgs/project2/wireframe.jpg" alt="wireframe">
+                    <img src="imgs/project2/website.jpg" alt="final website">
+                </div>
         </div>
 
         <hr>

@@ -1,0 +1,146 @@
+/*
+author: Rylan Schubkegel
+colors: https://coolors.co/3b483b-485747-4a6b47-9ffca9-f6fff7
+*/
+
+/* default page styles */
+
+html {
+    color: #485747;
+    background-color: #F6FFF7;
+    font-size: 15pt;
+}
+
+/* typography */
+
+h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13vh;
+    line-height: 1.8ex;
+}
+
+h2 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 250%;
+    font-weight: 700;
+
+    margin: 0.8rem 0;
+}
+
+h3 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 175%;
+    font-weight: 700;
+
+    margin: 1.2rem 0;
+}
+
+p, a {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 30pt;
+}
+
+p {
+    max-width: 28rem;
+    padding-bottom: 0.5rem;
+}
+
+a {
+    color: #485747;
+    background-color: #9FFCA9;
+    padding: 0.1em 0.2em;
+    border-radius: 0.2em;
+
+    transition: 1s;
+}
+
+a:hover {
+    color: #9FFCA9;
+    background-color: #485747;
+    box-shadow: 0.1em 0.1em 0.3em #A0B59F;
+
+    transition: 100ms;
+}
+
+#section-contact {
+    padding-top: 1em;
+}
+
+/* rotated header */
+
+h1 {
+    position: absolute;
+    bottom: 3.2em;
+    transform: rotateZ(-90deg);
+    transform-origin: 50% 100%;
+}
+
+/* offset introduction and profile picture */
+
+#intro {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    z-index: 10; /* make sure image rendered on top */
+}
+
+#image-profile {
+    max-width: 24rem;
+    margin-top: 1rem;
+
+    border: 2rem solid #485747;
+}
+
+/* article styles */
+
+article {
+    background-color: #485747;
+
+    position: relative;
+    top: 100vh;
+    padding: 3rem;
+}
+
+article h2 {
+    color: #F6FFF7;
+}
+
+article h3 {
+    color: #9FFCA9;
+}
+
+article p {
+    color: #F6FFF7;
+}
+
+article a {
+    color: #9FFCA9;
+    background-color: #4a6b47;
+}
+
+article a:hover {
+    color: #485747;
+    background-color: #9FFCA9;
+    box-shadow: 0.1em 0.1em 0.3em #3B483B;
+}
+
+/* contact section */
+
+#section-contact h2 {
+    margin-bottom: 1.5rem;
+}
+
+#section-contact img {
+    float: left;
+    height: 8rem;
+    margin-right: 1rem;
+}
+
+#section-contact p {
+    padding: 0;
+    margin: 0.5em;
+}
+
+#section-contact a {
+    padding: 0.3em 0.6em;
+}
