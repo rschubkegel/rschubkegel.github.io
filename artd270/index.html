@@ -23,22 +23,6 @@
             width: 100%;
         }
 
-        .website-preview {
-            width: 100%;
-            height: calc(var(--size-max-wrapper-width) / 1.5);
-            border: 3px solid var(--color-lightest);
-            margin: 1em 0;
-        }
-
-        .error {
-            visibility: hidden;
-            position: fixed;
-
-            font-size: calc(var(--size-font-paragraph) * 0.8);
-            color: var(--color-error);
-            margin: 1em 0;
-        }
-
         .image-container {
             display: grid;
             gap: 1rem;
@@ -52,18 +36,6 @@
 
         .two-devices {
             grid-template-columns: 71% auto;
-        }
-
-        @media (max-width: 32rem) {
-            .website-preview {
-                visibility: hidden;
-                position: fixed;
-            }
-
-            .error {
-                visibility: visible;
-                position: inherit;
-            }
         }
 
         @media (max-aspect-ratio: 1 / 1) {
@@ -107,11 +79,15 @@
                 <p>
                     This was probably my favorite project.
                     Our task was to create a product launch page, but I requested to make a "product" page for bagels instead of a <em>real</em> product.
-                    Choosing tasty images and adding silly text made this project tons of fun!
+                    Choosing tasty images and adding silly text made this project tons of fun, but I still learned a lot because we were required
+                    to use <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> to make the final page.
                 </p>
 
-                <!-- page preview -->
-                <object class="website-preview" type="text/html" data="bagels/index.html"></object>
+                <!-- screenshot -->
+                <div class="image-container two-devices">
+                    <img src="imgs/bagels-screenshot.jpg" alt="screenshot of bagels product page">
+                    <img src="imgs/bagels-screenshot-full.png" alt="screenshot of bagels product page">
+                </div>
         </div>
 
         <hr>
