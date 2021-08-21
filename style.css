@@ -145,6 +145,12 @@ a:hover {
     font-style: normal;
 }
 
+a.section-link {
+    background-color: var(--color-dark);
+    padding: 0;
+    outline:none
+}
+
 
 /* abbreviations */
 abbr {

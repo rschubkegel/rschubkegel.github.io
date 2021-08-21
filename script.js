@@ -1,5 +1,10 @@
 // runs when a page loads
 function start() {
+    addSectionLinks();
+    playAnimations();
+}
+
+function playAnimations() {
     let baseDuration = 1000;
     let baseDelay = 250;
 
@@ -48,4 +53,17 @@ function start() {
         easing: "easeInOutExpo",
         delay: anime.stagger(100)
     });
+}
+
+function addSectionLinks() {
+    console.log("Adding links to h2 elements");
+    var headers = document.getElementsByTagName("h2");
+    for (i = 0; i < headers.length; i++) {
+        console.log("Adding link to section " + headers[i].innerHTML);
+        headers[i].innerHTML =
+            '<a href="#'
+            + headers[i].parentElement.id
+            + '" class="section-link">&gt;</a> '
+            + headers[i].innerHTML;
+    }
 }
