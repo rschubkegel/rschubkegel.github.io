@@ -13,9 +13,17 @@ what has happened. Do not expect professional quality code from the website.
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rylan Schubkegel</title>
+    <meta name="description" content="An eclectic portfolio of projects by Rylan Schubkegel, designed and built by yours truly.">
     <link rel="icon"
           type="img/png"
           href="imgs/logo.svg"/>
+
+    <!-- open graph tags -->
+    <meta property="og:title" content="rschubkegel: A Portfolio"/>
+    <meta property="og:url" content="https://rschubkegel.github.io/"/>
+    <meta property="og:image" content="imgs/og-banner"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="An eclectic portfolio of projects by Rylan Schubkegel, designed and built by yours truly."/>
 
     <!-- CSS styles -->
     <link href="style.css" rel="stylesheet" type="text/css"/>
@@ -28,7 +36,7 @@ what has happened. Do not expect professional quality code from the website.
 
         /* web programming screenshots */
         .screenshots {
-            display:grid;
+            display: grid;
             grid-template-columns: auto auto;
             gap: 1rem;
             margin: 1rem 0;
@@ -42,24 +50,24 @@ what has happened. Do not expect professional quality code from the website.
             width: 100%;
         }
 
+        /* Music section */
+        #section-music > div {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 1rem;
+        }
+
+        #section-music iframe {
+            border: 0;
+            width: 100%;
+            height: 26rem;
+        }
+
+        /* responsive design 😎 */
         @media (max-width: 50rem) {
             #web-programming-screenshots {
                 grid-template-columns: auto;
             }
-        }
-
-        /* Earth Defense */
-        #section-games iframe {
-            margin-top: 1em;
-            width: 100%;
-            height: 600px;
-        }
-
-        /* Spotify player */
-        #section-music iframe {
-            margin-top: 1em;
-            width: min(100%, 350px);
-            height: 400px;
         }
 
     </style>
@@ -73,9 +81,8 @@ what has happened. Do not expect professional quality code from the website.
 
     <div id="wrapper">
 
-        <!-- logo -->
-        <div style="display: flex; flex-direction: column; justify-content: center; margin-bottom: 3rem;">
-            <a href="index.html" class="boring-link" style="outline: none;"><img id="logo" src="imgs/logo.svg" alt="logo" style="display: block; height: 8rem; margin: auto;"></a>
+        <div id="logo-container">
+            <img id="logo" src="imgs/logo.svg" alt="logo">
         </div>
 
         <div id="section-welcome">
@@ -209,51 +216,38 @@ what has happened. Do not expect professional quality code from the website.
 
         </div>
 
-        <!--<hr>
-        <div>
-            <h2>Traditional Art</h2>
-            <p>
-                An assortment of personal and professional art projects.
-            </p>
-            <p>
-                <em>Coming soon!</em>
-            </p>
-        </div>-->
+        <hr>
 
-
-        <!--<hr>
-        <div id="section-games">
-            <h2>Game Design</h2>
+        <div id="section-music">
+            <h2>Music</h2>
             <p>
-                My only currently published game.
+                Some of my currently published music, representing a small selection
+                of the hundreds of songs I have composed and produced.
             </p>
-            <p>
-                <a href="https://supergobo.itch.io/earth-defense" target="_blank">Earth Defense</a>
-            </p>
-            <iframe src="https://itch.io/embed-upload/2207013?color=29723f" allowfullscreen=""><a href="https://supergobo.itch.io/earth-defense">Play Earth Defense on itch.io</a></iframe>
-        </div>-->
-
-
-        <!--<div id="section-music">
-            <h2><a href="#section-music">view</a> Music</h2>
-            <p>
-                My currently published music, representing a small selection of the hundreds of songs I have composed and produced.
-            </p>
-            <iframe src="https://open.spotify.com/embed/artist/6YrSdl1dy1dDxZETIxW7n5" allowtransparency="true" allow="encrypted-media"></iframe>
-        </div>-->
+            <div>
+                <iframe id="shoobie" src="https://open.spotify.com/embed/artist/6YrSdl1dy1dDxZETIxW7n5" allowtransparency="true" allow="encrypted-media"></iframe>
+                <iframe id="newbkegels" src="https://bandcamp.com/EmbeddedPlayer/track=1648937181/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://thenewbkegels.bandcamp.com/track/how-deep-the-fathers-love">How Deep the Father&#39;s Love by The Newbkegels</a></iframe>
+            </div>
+        </div>
 
         <hr>
 
         <div id="section-contact">
             <h2>Contact</h2>
             <ul>
-                <li><a href="mailto:rylanschubkegel@gmail.com">rylanschubkegel@gmail.com</a></li>
-                <li><a href="https://www.linkedin.com/in/rschubkegel/">LinkedIn</a></li>
-                <li><a href="https://georgefox.joinhandshake.com/users/4215794/">Handshake</a></li>
-                <li><a href="https://portfolium.com/rschubkegel17/">Portfolium</a></li>
+                <li><a href="mailto:rylanschubkegel@gmail.com" target="_blank">rylanschubkegel@gmail.com</a></li>
+                <li><a href="https://www.linkedin.com/in/rschubkegel/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://georgefox.joinhandshake.com/users/4215794/" target="_blank">Handshake</a></li>
+                <li><a href="https://github.com/rschubkegel/" target="_blank">GitHub</a></li>
+                <li><a href="https://portfolium.com/rschubkegel17/" target="_blank">Portfolium</a></li>
             </ul>
         </div>
 
+        <hr>
+
+        <p>
+            © Rylan Schubkegel 2021
+        </p>
 
     </div>
 

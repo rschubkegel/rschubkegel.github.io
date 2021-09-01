@@ -39,6 +39,18 @@ body {
     background-color: var(--color-dark);
 }
 
+/* logo */
+#logo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+#logo-container > img {
+    display: block; height: 8rem; margin: auto;
+}
+
 /* container for all main body elements */
 #wrapper {
     font-size: 1rem;
@@ -131,6 +143,12 @@ a:hover {
     font-weight: lighter;
     letter-spacing: normal;
     font-style: normal;
+}
+
+a.section-link {
+    background-color: var(--color-dark);
+    padding: 0;
+    outline:none
 }
 
 
