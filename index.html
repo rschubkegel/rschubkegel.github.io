@@ -34,6 +34,14 @@ what has happened. Do not expect professional quality code from the website.
     <!-- page specific styles -->
     <style>
 
+        /* half-width class */
+        .half-width-grid {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 1rem;
+            justify-items: center;
+        }
+
         /* web programming screenshots */
         .screenshots {
             display: grid;
@@ -50,11 +58,30 @@ what has happened. Do not expect professional quality code from the website.
             width: 100%;
         }
 
+        /* servant engineering imgs */
+        #servant-images {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: auto;
+            justify-items: center;
+            align-items: center;
+        }
+
+        #servant-images > div {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: auto auto;
+            justify-items: center;
+            align-items: center;
+        }
+
+        #servant-images img {
+            width: 100%;
+        }
+
         /* Music section */
         #section-music > div {
-            display: grid;
-            grid-template-columns: auto auto;
-            gap: 1rem;
+            margin-top: 1rem;
         }
 
         #section-music iframe {
@@ -67,6 +94,17 @@ what has happened. Do not expect professional quality code from the website.
         @media (max-width: 50rem) {
             #web-programming-screenshots {
                 grid-template-columns: auto;
+            }
+        }
+
+        @media (max-width: 42rem) {
+            .half-width-grid {
+                grid-template-columns: auto;
+            }
+
+            #section-music iframe {
+                height: 28rem;
+                max-width: 22rem;
             }
         }
 
@@ -159,6 +197,43 @@ what has happened. Do not expect professional quality code from the website.
 
         <hr>
 
+        <div id="section-engineering">
+
+            <h2>Engineering Projects</h2>
+
+            <div id="section-engineering-servant">
+
+                <h3>Servant Engineering <a class="small-link" href="https://cs.georgefox.edu/about/research/computer-vision-for-the-visually-impaired/" target="_blank">view</a></h3>
+
+                <div class="half-width-grid">
+                    <div>
+                        <p>
+                            Our team explored the design challenge of helping visually
+                            impaired individuals navigate the world around them.
+                            As part of our human-centered design approach to tackling this challenge,
+                            we developed a high-level user story to frame our design efforts:
+                            "As a visually impaired person, I want to identify common objects
+                            and read text and symbols on signs as I navigate my environment."
+                        </p>
+
+                        <p>
+                            <a href="https://cs.georgefox.edu/about/research/computer-vision-for-the-visually-impaired/" target="_blank">Read More Here</a>
+                        </p>
+                    </div>
+
+                    <div id="servant-images">
+                        <img src="imgs/team-nu-prototype.png" alt="device prototype">
+                        <div>
+                            <img src="imgs/team-nu-detection.png" alt="machine learning card detection">
+                            <img src="imgs/team-nu-qr.png" alt="servant engineering QR code">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
         <div id="section-graphic-design">
 
             <h2>Graphic Design</h2>
@@ -224,7 +299,7 @@ what has happened. Do not expect professional quality code from the website.
                 Some of my currently published music, representing a small selection
                 of the hundreds of songs I have composed and produced.
             </p>
-            <div>
+            <div class="half-width-grid">
                 <iframe id="shoobie" src="https://open.spotify.com/embed/artist/6YrSdl1dy1dDxZETIxW7n5" allowtransparency="true" allow="encrypted-media"></iframe>
                 <iframe id="newbkegels" src="https://bandcamp.com/EmbeddedPlayer/track=1648937181/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://thenewbkegels.bandcamp.com/track/how-deep-the-fathers-love">How Deep the Father&#39;s Love by The Newbkegels</a></iframe>
             </div>
