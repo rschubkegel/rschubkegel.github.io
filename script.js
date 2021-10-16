@@ -1,9 +1,11 @@
-// runs when a page loads
+// to be run when a page loads
 function start() {
     addSectionLinks();
+    addFooter();
     playAnimations();
 }
 
+// animates if not on mobile device 📱
 function playAnimations() {
     let baseDuration = 1000;
     let baseDelay = 250;
@@ -55,6 +57,7 @@ function playAnimations() {
     });
 }
 
+// adds > next to h2 so a section of a page can be linked to 🔗
 function addSectionLinks() {
     console.log("Adding links to h2 elements");
     var headers = document.getElementsByTagName("h2");
@@ -72,6 +75,8 @@ function addSectionLinks() {
     }
 }
 
+// creates a table of conents in the element with id "section-welcome" 📃
+// (indented to be called after start() on homepage)
 function generateTOC() {
     console.log("Generating TOC");
 
@@ -105,4 +110,15 @@ function generateTOC() {
 
     welcomeDiv.appendChild(tocHeader);
     welcomeDiv.appendChild(toc);
+}
+
+// adds copyright footer 🦶
+function addFooter() {
+    console.log("Creating footer");
+
+    var div = document.getElementById("wrapper");
+    var footer = document.createElement("p");
+    footer.innerHTML = "© Rylan Schubkegel 2021";
+    div.appendChild(document.createElement("hr"));
+    div.appendChild(footer);
 }
