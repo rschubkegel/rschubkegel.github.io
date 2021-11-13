@@ -94,8 +94,10 @@ function generateTOC() {
     // generate TOC
     var tocDiv = document.createElement("div");
     tocDiv.id = "section-toc";
-    tocDiv.style.margin = "auto";
-    tocDiv.style.padding = "0 1rem 0";
+
+    // use these lines to center the TOC
+    // tocDiv.style.margin = "auto";
+    // tocDiv.style.padding = "0 1rem 0";
 
     // add header to TOC
     var tocHeader = document.createElement("h2");
