@@ -2,6 +2,7 @@
 function start() {
     addSectionLinks();
     addFooter();
+    generateTOC();
     playAnimations();
 }
 
@@ -80,17 +81,26 @@ function addSectionLinks() {
 function generateTOC() {
     console.log("Generating TOC");
 
-    // add TOC to DOM
+    // add HR to DOM
+    var wrapper = document.getElementById("wrapper");
     var welcomeDiv = document.getElementById("section-welcome");
-    welcomeDiv.appendChild(document.createElement("hr"));
+    var rule = document.createElement("hr");
+    wrapper.insertBefore(rule, welcomeDiv.nextSibling);
+
+    // generate TOC
+    var tocDiv = document.createElement("div");
+    tocDiv.id = "section-toc";
+    tocDiv.style.margin = "auto";
+    tocDiv.style.padding = "0 1rem 0";
+
+    // add header to TOC
     var tocHeader = document.createElement("h2");
     tocHeader.innerHTML = "Table of Contents";
+    tocDiv.appendChild(tocHeader);
+
+    // get all h2 headers in page and link for them
     var toc = document.createElement("ul");
-
-    // get headers
     var headers = document.getElementsByTagName("h2");
-
-    // add link for every h2 element on page
     for (i = 0; i < headers.length; i++) {
 
         // add section link to TOC
@@ -108,8 +118,10 @@ function generateTOC() {
         toc.appendChild(link);
     }
 
-    welcomeDiv.appendChild(tocHeader);
-    welcomeDiv.appendChild(toc);
+    // add list of headers to TOC div
+    tocDiv.appendChild(toc);
+    
+    wrapper.insertBefore(tocDiv, rule.nextSibling);
 }
 
 // adds copyright footer 🦶
