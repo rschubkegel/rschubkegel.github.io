@@ -1,7 +1,6 @@
 // to be run when a page loads
 function start() {
     addSectionLinks();
-    addIcon();
     addFooter();
     //playAnimations();
 }
@@ -134,9 +133,9 @@ function generateTOC() {
 function addFooter() {
     console.log("Creating footer");
 
-    var div = document.getElementById("wrapper");
+    var wrapper = document.getElementById("wrapper");
     var footer = document.createElement("p");
     footer.innerHTML = "© Rylan Schubkegel 2021";
-    div.appendChild(document.createElement("hr"));
-    div.appendChild(footer);
+    wrapper.appendChild(document.createElement("hr"));
+    wrapper.appendChild(footer);
 }
