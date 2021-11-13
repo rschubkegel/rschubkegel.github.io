@@ -1,9 +1,9 @@
 // to be run when a page loads
 function start() {
     addSectionLinks();
+    addIcon();
     addFooter();
-    generateTOC();
-    playAnimations();
+    //playAnimations();
 }
 
 // animates if not on mobile device 📱
@@ -79,13 +79,17 @@ function addSectionLinks() {
 // creates a table of conents in the element with id "section-welcome" 📃
 // (indented to be called after start() on homepage)
 function generateTOC() {
+
+    // only generate TOC on home page
+    var welcome = document.getElementById("section-welcome");
+    if (welcome == null) return;
+
     console.log("Generating TOC");
 
-    // add HR to DOM
+    // generate HR and add it after welcome section
     var wrapper = document.getElementById("wrapper");
-    var welcomeDiv = document.getElementById("section-welcome");
     var rule = document.createElement("hr");
-    wrapper.insertBefore(rule, welcomeDiv.nextSibling);
+    wrapper.insertBefore(rule, welcome.nextSibling);
 
     // generate TOC
     var tocDiv = document.createElement("div");
@@ -95,7 +99,7 @@ function generateTOC() {
 
     // add header to TOC
     var tocHeader = document.createElement("h2");
-    tocHeader.innerHTML = "Table of Contents";
+    tocHeader.innerHTML = "Contents";
     tocDiv.appendChild(tocHeader);
 
     // get all h2 headers in page and link for them
@@ -104,8 +108,7 @@ function generateTOC() {
     for (i = 0; i < headers.length; i++) {
 
         // add section link to TOC
-        var nameIndex = headers[i].innerHTML.search("</a>") + 5;
-        var name = headers[i].innerHTML.substring(nameIndex);
+        var name = headers[i].innerHTML;
         console.log("Adding link for " + name);
 
         var link = document.createElement("li");
@@ -120,7 +123,8 @@ function generateTOC() {
 
     // add list of headers to TOC div
     tocDiv.appendChild(toc);
-    
+
+    // add TOC div
     wrapper.insertBefore(tocDiv, rule.nextSibling);
 }
 

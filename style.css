@@ -83,7 +83,6 @@ body {
 /**************** MAIN CONTAINER ****************/
 #wrapper {
     font-size: 1rem;
-
     display: flex;
     flex-direction: column;
     max-width: var(--size-max-wrapper-width);
@@ -91,10 +90,9 @@ body {
     padding: 2rem;
 }
 
-#wrapper > div {
-    /* final value defined in script */
-    opacity: 0;
-}
+/* #wrapper > div {
+    opacity: 0; final value defined in script
+} */
 
 hr {
     margin: 1.5rem 0;
