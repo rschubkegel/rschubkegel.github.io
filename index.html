@@ -149,10 +149,12 @@ what has happened. Do not expect professional quality code from the website.
 </head>
 
 
+<!-- html body -->
 <body onload="start();generateTOC();">
 
     <script src="script.js"></script>
 
+    <!-- all sections go in here -->
     <div id="wrapper">
 
         <div id="logo-container">
@@ -169,6 +171,68 @@ what has happened. Do not expect professional quality code from the website.
                 The purpose of this site is to showcase some of my personal work.
                 If you want to get in touch, feel free to <a href="#section-contact">contact me</a>.
             </p>
+
+        </div>
+
+        <hr>
+
+        <div id="section-engineering">
+
+            <h2>Engineering Projects</h2>
+
+            <div id="section-senior-design">
+
+                <h3>Senior Design</h3>
+
+                <div class="half-width-grid">
+                    <div>
+                        <p>
+                            I am currently the team manager of 6 students
+                            working with Daimler Trucks of North America.
+                            Our project is researching the usefulness of
+                            using the Microsoft Hololens for the truck
+                            servicing intake process.
+
+                            We are developing a proof of concept in <abbr title="mixed-reality">MR</abbr>
+                            using Unity and Microsoft's <abbr title="mixed-reality toolkit">MRTK</abbr>.
+                        </p>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column;">
+                        <img src="imgs/senior-design-cube.jpg" alt="mixed-reality text project" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+
+            <div id="section-engineering-servant">
+
+                <h3>Servant Engineering <a class="small-link" href="https://cs.georgefox.edu/about/research/computer-vision-for-the-visually-impaired/" target="_blank">view</a></h3>
+
+                <div class="half-width-grid">
+                    <div>
+                        <p>
+                            Our team explored the design challenge of helping visually
+                            impaired individuals navigate the world around them.
+                            As part of our human-centered design approach to tackling this challenge,
+                            we developed a high-level user story to frame our design efforts:
+                            "As a visually impaired person, I want to identify common objects
+                            and read text and symbols on signs as I navigate my environment."
+                        </p>
+
+                        <p>
+                            <a href="https://cs.georgefox.edu/about/research/computer-vision-for-the-visually-impaired/" target="_blank">Read More Here</a>
+                        </p>
+                    </div>
+
+                    <div id="servant-images">
+                        <img src="imgs/team-nu-prototype.png" alt="device prototype">
+                        <div>
+                            <img src="imgs/team-nu-detection.png" alt="machine learning card detection">
+                            <img src="imgs/team-nu-qr.png" alt="servant engineering QR code">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
@@ -233,37 +297,39 @@ what has happened. Do not expect professional quality code from the website.
 
         <hr>
 
-        <div id="section-engineering">
-
-            <h2>Engineering Projects</h2>
-
-            <div id="section-engineering-servant">
-
-                <h3>Servant Engineering <a class="small-link" href="https://cs.georgefox.edu/about/research/computer-vision-for-the-visually-impaired/" target="_blank">view</a></h3>
-
-                <div class="half-width-grid">
+        <div id="section-game-dev">
+            <h2>Game Development</h2>
+            <div>
+                <div>
+                    <p>
+                        One of my passions is game development, which unites several of my other hobbies.
+                        I love game jams and small indie projects.
+                        You can see all my published games on <a href="https://supergobo.itch.io/" target="_blank">my itch.io page</a>.
+                        <br><br>
+                        My most notable game is an entry for <a href="https://ldjam.com/", target="_blank">Ludum Dare</a> 43, a 48-hour game making competition.
+                        Out of a total of 761 competition entries,
+                        my game <em>Judgement of a Priest</em>
+                        placed 27th for audio and 39th for graphics.
+                    </p>
                     <div>
-                        <p>
-                            Our team explored the design challenge of helping visually
-                            impaired individuals navigate the world around them.
-                            As part of our human-centered design approach to tackling this challenge,
-                            we developed a high-level user story to frame our design efforts:
-                            "As a visually impaired person, I want to identify common objects
-                            and read text and symbols on signs as I navigate my environment."
-                        </p>
-
-                        <p>
-                            <a href="https://cs.georgefox.edu/about/research/computer-vision-for-the-visually-impaired/" target="_blank">Read More Here</a>
-                        </p>
+                        <a href="ldj.am/$128630" target="_blank" class="boring-link no-line-height">
+                            <img src="https://static.jam.vg/raw/0db/e1/z/1c666.jpg" alt="screenshot of Judgement of a Priest" style="width: 100%;" />
+                        </a>
+                        <a href="ldj.am/$128630" target="_blank" class="boring-link no-line-height">
+                            <img src="https://static.jam.vg/raw/0db/e1/z/1c667.jpg" alt="screenshot of Judgement of a Priest" style="width: 100%;" />
+                        </a>
                     </div>
-
-                    <div id="servant-images">
-                        <img src="imgs/team-nu-prototype.png" alt="device prototype">
-                        <div>
-                            <img src="imgs/team-nu-detection.png" alt="machine learning card detection">
-                            <img src="imgs/team-nu-qr.png" alt="servant engineering QR code">
-                        </div>
-                    </div>
+                </div>
+                <div>
+                    <a href="https://supergobo.itch.io/bok-bok-beats" class="boring-link no-line-height">
+                        <img src="https://img.itch.zone/aW1hZ2UvMjE1Mjc5LzMzNTgzMjkucG5n/347x500/CspeR3.png" alt="screenshot of Earth Defense" style="width: 100%;" />
+                    </a>
+                    <a href="https://supergobo.itch.io/earth-defense" class="boring-link no-line-height">
+                        <img src="https://img.itch.zone/aW1hZ2UvODYxMjA4LzQ4Mzc0NzMucG5n/347x500/tP0SWc.png" alt="screenshot of Bok Bok Beats" style="width: 100%;" />
+                    </a>
+                    <a href="https://supergobo.itch.io/cave-runner" class="boring-link no-line-height">
+                        <img src="imgs/cave-runner.png" alt="screenshot of Cave Runner" style="width: 100%;" />
+                    </a>
                 </div>
             </div>
         </div>
@@ -325,45 +391,6 @@ what has happened. Do not expect professional quality code from the website.
 
             </div>
 
-        </div>
-
-        <hr>
-
-        <div id="section-game-dev">
-            <h2>Game Development</h2>
-            <div>
-                <div>
-                    <p>
-                        One of my passions is game development, which unites several of my other hobbies.
-                        I love game jams and small indie projects.
-                        You can see all my published games on <a href="https://supergobo.itch.io/" target="_blank">my itch.io page</a>.
-                        <br><br>
-                        My most notable game is an entry for <a href="https://ldjam.com/", target="_blank">Ludum Dare</a> 43, a 48-hour game making competition.
-                        Out of a total of 761 competition entries,
-                        my game <em>Judgement of a Priest</em>
-                        placed 27th for audio and 39th for graphics.
-                    </p>
-                    <div>
-                        <a href="ldj.am/$128630" target="_blank" class="boring-link no-line-height">
-                            <img src="https://static.jam.vg/raw/0db/e1/z/1c666.jpg" alt="screenshot of Judgement of a Priest" style="width: 100%;" />
-                        </a>
-                        <a href="ldj.am/$128630" target="_blank" class="boring-link no-line-height">
-                            <img src="https://static.jam.vg/raw/0db/e1/z/1c667.jpg" alt="screenshot of Judgement of a Priest" style="width: 100%;" />
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <a href="https://supergobo.itch.io/bok-bok-beats" class="boring-link no-line-height">
-                        <img src="https://img.itch.zone/aW1hZ2UvMjE1Mjc5LzMzNTgzMjkucG5n/347x500/CspeR3.png" alt="screenshot of Earth Defense" style="width: 100%;" />
-                    </a>
-                    <a href="https://supergobo.itch.io/earth-defense" class="boring-link no-line-height">
-                        <img src="https://img.itch.zone/aW1hZ2UvODYxMjA4LzQ4Mzc0NzMucG5n/347x500/tP0SWc.png" alt="screenshot of Bok Bok Beats" style="width: 100%;" />
-                    </a>
-                    <a href="https://supergobo.itch.io/cave-runner" class="boring-link no-line-height">
-                        <img src="imgs/cave-runner.png" alt="screenshot of Cave Runner" style="width: 100%;" />
-                    </a>
-                </div>
-            </div>
         </div>
 
         <hr>
