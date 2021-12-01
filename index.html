@@ -79,6 +79,29 @@ what has happened. Do not expect professional quality code from the website.
             width: 100%;
         }
 
+        /* game development - general grid stuff */
+        #section-game-dev div {
+            display: grid;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        /* game dev - text/photos */
+        #section-game-dev > div > div:first-child {
+            grid-template-columns: auto auto;
+        }
+
+        /* game dev - text/photos - photos */
+        #section-game-dev > div > div:first-child div {
+            grid-template-columns: auto;
+        }
+
+        /* game dev - triple photos */
+        #section-game-dev > div > div:last-child {
+            grid-template-columns: auto auto auto;
+            margin-top: 1rem;
+        }
+
         /* Music section */
         #section-music > div {
             margin-top: 1rem;
@@ -92,6 +115,8 @@ what has happened. Do not expect professional quality code from the website.
 
         /* responsive design 😎 */
         @media (max-width: 50rem) {
+
+            /* collapse grid into single column */
             #web-programming-screenshots {
                 grid-template-columns: auto;
             }
@@ -106,6 +131,17 @@ what has happened. Do not expect professional quality code from the website.
                 height: 28rem;
                 max-width: 22rem;
             }
+
+            /* game dev - text/photos */
+            #section-game-dev > div > div:first-child {
+                grid-template-columns: auto;
+            }
+
+            /* game dev - text/photos - photos */
+            #section-game-dev > div > div:first-child div {
+                grid-template-columns: auto auto;
+            }
+
         }
 
     </style>
@@ -276,19 +312,58 @@ what has happened. Do not expect professional quality code from the website.
 
                 <!-- projects preview -->
                 <div style="display: grid; grid-template-columns: auto 21% auto; gap: 1rem; justify-items: center; align-items: center; margin: 1rem 0;">
-                    <a href="artd110/index.html#section-coasters" style="border-radius: 0; padding: 0; line-height: 0;">
+                    <a href="artd110/index.html#section-coasters" class="boring-link no-line-height">
                         <img src="artd110/imgs/coasters-3.png" alt="Coasters design" style="width: 100%;">
                     </a>
-                    <a href="artd110/index.html#section-business-card" style="border-radius: 0; padding: 0; line-height: 0;">
+                    <a href="artd110/index.html#section-business-card" class="boring-link no-line-height">
                         <img src="artd110/imgs/business-card-1.png" alt="Business card design" style="width: 100%;">
                     </a>
-                    <a href="artd110/index.html#section-playlists" style="border-radius: 0; padding: 0; line-height: 0;">
+                    <a href="artd110/index.html#section-playlists" class="boring-link no-line-height">
                         <img src="artd110/imgs/playlist/18.jpg" alt="Spotify playlist design" style="width: 100%;">
                     </a>
                 </div>
 
             </div>
 
+        </div>
+
+        <hr>
+
+        <div id="section-game-dev">
+            <h2>Game Development</h2>
+            <div>
+                <div>
+                    <p>
+                        One of my passions is game development, which unites several of my other hobbies.
+                        I love game jams and small indie projects.
+                        You can see all my published games on <a href="https://supergobo.itch.io/" target="_blank">my itch.io page</a>.
+                        <br><br>
+                        My most notable game is an entry for <a href="https://ldjam.com/", target="_blank">Ludum Dare</a> 43, a 48-hour game making competition.
+                        Out of a total of 761 competition entries,
+                        my game <em>Judgement of a Priest</em>
+                        placed 27th for audio and 39th for graphics.
+                    </p>
+                    <div>
+                        <a href="ldj.am/$128630" target="_blank" class="boring-link no-line-height">
+                            <img src="https://static.jam.vg/raw/0db/e1/z/1c666.jpg" alt="screenshot of Judgement of a Priest" style="width: 100%;" />
+                        </a>
+                        <a href="ldj.am/$128630" target="_blank" class="boring-link no-line-height">
+                            <img src="https://static.jam.vg/raw/0db/e1/z/1c667.jpg" alt="screenshot of Judgement of a Priest" style="width: 100%;" />
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://supergobo.itch.io/bok-bok-beats" class="boring-link no-line-height">
+                        <img src="https://img.itch.zone/aW1hZ2UvMjE1Mjc5LzMzNTgzMjkucG5n/347x500/CspeR3.png" alt="screenshot of Earth Defense" style="width: 100%;" />
+                    </a>
+                    <a href="https://supergobo.itch.io/earth-defense" class="boring-link no-line-height">
+                        <img src="https://img.itch.zone/aW1hZ2UvODYxMjA4LzQ4Mzc0NzMucG5n/347x500/tP0SWc.png" alt="screenshot of Bok Bok Beats" style="width: 100%;" />
+                    </a>
+                    <a href="https://supergobo.itch.io/cave-runner" class="boring-link no-line-height">
+                        <img src="imgs/cave-runner.png" alt="screenshot of Cave Runner" style="width: 100%;" />
+                    </a>
+                </div>
+            </div>
         </div>
 
         <hr>
