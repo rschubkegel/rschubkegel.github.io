@@ -11,21 +11,43 @@
 }
 
 :root {
-    /* https://coolors.co/262626-303030-db9999-90ee90-cbebd8-f5f5f5 */
-    --color-lightest: #f5f5f5;
-    --color-light: #cbebd8;
-    --color-splash: #90ee90;
-    --color-error: #db9999;
-    --color-dark: #303030;
-    --color-darkest: #262626;
-
+    color-scheme: light dark;
     --size-max-wrapper-width: 42rem;
 }
+
+
+/**************** COLORS ****************/
+@media (prefers-color-scheme: light) {
+    :root {
+        /* https://coolors.co/333e28-5f6a4e-34b234-db9999-e9e9e2-c2c2a3 */
+        --text-primary: #333E28;
+        --text-secondary: #5F6A4E;
+        --splash-color: #34B234;
+        --error-color: #DB9999;
+        --background-primary: #E9E9E2;
+        --background-secondary: #C2C2A3;
+        --link-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* https://coolors.co/262626-303030-db9999-90ee90-cbebd8-f5f5f5 */
+        --text-primary: #f5f5f5;
+        --text-secondary: #cbebd8;
+        --splash-color: #90ee90;
+        --error-color: #db9999;
+        --background-primary: #303030;
+        --background-secondary: #262626;
+        --link-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
 
 /* defaults for all elements */
 * {
     font-family: Source-Code-Regular, sans-serif;
-    color: var(--color-light);
+    color: var(--text-secondary);
     line-height: 1.6em;
     margin: 0;
     padding: 0;
@@ -34,27 +56,33 @@
     border: 0 red solid;
 }
 
-/* background */
+
+/**************** BACKGROUND ****************/
 body {
-    background-color: var(--color-dark);
+    background-color: var(--background-primary);
 }
 
-/* logo */
+
+/**************** LOGO ****************/
 #logo-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin: 1.5rem 0 2rem;
 }
 
-#logo-container > img {
-    display: block; height: 8rem; margin: auto;
+#logo-container > svg {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    margin: auto;
+    fill: var(--splash-color);
 }
 
-/* container for all main body elements */
+
+/**************** MAIN CONTAINER ****************/
 #wrapper {
     font-size: 1rem;
-
     display: flex;
     flex-direction: column;
     max-width: var(--size-max-wrapper-width);
@@ -62,22 +90,22 @@ body {
     padding: 2rem;
 }
 
-#wrapper > div {
-    /* final value defined in script */
-    opacity: 0;
-}
+/* #wrapper > div {
+    opacity: 0; final value defined in script
+} */
 
 hr {
     margin: 1.5rem 0;
     height: 1px;
-    background-color: var(--color-light);
+    background-color: var(--text-secondary);
 }
 
-/* headers */
+
+/**************** HEADERS ****************/
 h1, h2, h3 {
     font-family: Nunito, sans-serif;
     letter-spacing: 0.15em;
-    color: var(--color-lightest);
+    color: var(--text-primary);
     margin-bottom: 1rem;
 }
 
@@ -103,30 +131,20 @@ p {
 }
 
 
-/* lists */
-ul {
-    list-style-type: none;
-    line-height: 150%;
-}
-
-li {
-    margin: 0.5rem 0;
-}
-
-
-/* links */
+/**************** LINKS ****************/
 a {
     transition: 0.7s;
     text-decoration: none;
-    color: var(--color-splash);
+    color: var(--splash-color);
     border-radius: 0.5rem;
     padding: 0.1rem 0.5rem;
-    background-color: var(--color-darkest);
-    outline: 1px solid var(--color-dark);
+    background-color: var(--link-color);
+    outline: 1px solid var(--background-primary);
+    text-shadow: 1px 0 2px rgba(0, 0, 0, 0.2);
 }
 
 a.boring-link {
-    background-color: var(--color-dark);
+    background-color: var(--background-primary);
     border-radius: 0;
     padding: 0;
 }
@@ -134,8 +152,8 @@ a.boring-link {
 a:hover {
     transition: 0.2s;
     cursor: pointer;
-    background-color: var(--color-dark);
-    outline-color: var(--color-splash);
+    background-color: var(--background-primary);
+    outline-color: var(--splash-color);
 }
 
 .small-link {
@@ -146,15 +164,26 @@ a:hover {
 }
 
 a.section-link {
-    background-color: var(--color-dark);
+    background-color: var(--background-primary);
     padding: 0;
     outline:none
 }
 
 
-/* abbreviations */
+/**************** LISTS ****************/
+ul {
+    list-style-type: none;
+    line-height: 150%;
+}
+
+li {
+    margin: 0.5rem 0;
+}
+
+
+/**************** ABBREVIATIONS ****************/
 abbr {
-    color: var(--color-lightest);
+    color: var(--text-primary);
 }
 
 

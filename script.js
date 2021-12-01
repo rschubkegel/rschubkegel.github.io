@@ -2,7 +2,7 @@
 function start() {
     addSectionLinks();
     addFooter();
-    playAnimations();
+    //playAnimations();
 }
 
 // animates if not on mobile device 📱
@@ -78,24 +78,38 @@ function addSectionLinks() {
 // creates a table of conents in the element with id "section-welcome" 📃
 // (indented to be called after start() on homepage)
 function generateTOC() {
+
+    // only generate TOC on home page
+    var welcome = document.getElementById("section-welcome");
+    if (welcome == null) return;
+
     console.log("Generating TOC");
 
-    // add TOC to DOM
-    var welcomeDiv = document.getElementById("section-welcome");
-    welcomeDiv.appendChild(document.createElement("hr"));
+    // generate HR and add it after welcome section
+    var wrapper = document.getElementById("wrapper");
+    var rule = document.createElement("hr");
+    wrapper.insertBefore(rule, welcome.nextSibling);
+
+    // generate TOC
+    var tocDiv = document.createElement("div");
+    tocDiv.id = "section-toc";
+
+    // use these lines to center the TOC
+    // tocDiv.style.margin = "auto";
+    // tocDiv.style.padding = "0 1rem 0";
+
+    // add header to TOC
     var tocHeader = document.createElement("h2");
-    tocHeader.innerHTML = "Table of Contents";
+    tocHeader.innerHTML = "Contents";
+    tocDiv.appendChild(tocHeader);
+
+    // get all h2 headers in page and link for them
     var toc = document.createElement("ul");
-
-    // get headers
     var headers = document.getElementsByTagName("h2");
-
-    // add link for every h2 element on page
     for (i = 0; i < headers.length; i++) {
 
         // add section link to TOC
-        var nameIndex = headers[i].innerHTML.search("</a>") + 5;
-        var name = headers[i].innerHTML.substring(nameIndex);
+        var name = headers[i].innerHTML;
         console.log("Adding link for " + name);
 
         var link = document.createElement("li");
@@ -108,17 +122,20 @@ function generateTOC() {
         toc.appendChild(link);
     }
 
-    welcomeDiv.appendChild(tocHeader);
-    welcomeDiv.appendChild(toc);
+    // add list of headers to TOC div
+    tocDiv.appendChild(toc);
+
+    // add TOC div
+    wrapper.insertBefore(tocDiv, rule.nextSibling);
 }
 
 // adds copyright footer 🦶
 function addFooter() {
     console.log("Creating footer");
 
-    var div = document.getElementById("wrapper");
+    var wrapper = document.getElementById("wrapper");
     var footer = document.createElement("p");
     footer.innerHTML = "© Rylan Schubkegel 2021";
-    div.appendChild(document.createElement("hr"));
-    div.appendChild(footer);
+    wrapper.appendChild(document.createElement("hr"));
+    wrapper.appendChild(footer);
 }
