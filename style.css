@@ -71,7 +71,7 @@ body {
     margin: 1.5rem 0 2rem;
 }
 
-#logo-container > svg {
+#logo-container svg {
     display: block;
     width: 10rem;
     height: 10rem;
