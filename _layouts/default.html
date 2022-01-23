@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="img/png" href="{{ site.baseurl }}/assets/images/favicon.ico"/>
+    <title>
+      {% if page.title %}{{ page.title }} | {% endif %}
+      {{ site.title }}
+      {% unless page.title %}: A Portfolio{% endunless %}
+    </title>
+    <meta name="description" content={{ site.description }}>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      {% include logo.html %}
+      {{ content }}
+      <footer>© Rylan Schubkegel 2021</footer>
+    </div>
+  </body>
+</html>

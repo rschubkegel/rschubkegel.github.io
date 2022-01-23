@@ -1,0 +1,7 @@
+title: rschubkegel
+description: "An eclectic portfolio of projects by Rylan Schubkegel, designed and built by yours truly."
+baseurl: #/jekyll-rschubkegel
+
+sass:
+  sass_dir: _sass
+  style: compressed
