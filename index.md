@@ -16,23 +16,29 @@ Hello, my name is Rylan. I'm a CS student at George Fox University. The purpose 
 
 ### Senior Design
 
-I am currently the team manager of 6 students working with Daimler Trucks of North America. Our project is researching the usefulness of using the Microsoft Hololens for the truck servicing intake process. We are developing a proof of concept in MR using Unity and Microsoft's <abbr title="mixed reality toolkit">MRTK</abbr>.
+I am currently the team manager of 6 students working with Daimler Trucks of North America. We were tasked with researching the utility of the Microsoft Hololens for the Daimler's truck servicing intake process. We are developing a proof of concept in <abbr title="mixed reality">MR</abbr> using Unity and Microsoft's <abbr title="mixed reality toolkit">MRTK</abbr>.
 
-![real hand holding virtual cube]({{ site.baseurl }}/assets/images/engr/senior-design-cube.jpg)
+![real hand holding virtual cube]({{ site.baseurl }}/assets/images/engr/senior/cube.jpg)
+
+<div class="row align-items-center">
+  <div class="col-sm-6">
+    <img src="{{ site.baseurl }}/assets/images/engr/senior/user-flow.png" alt="user flow"/>
+  </div>
+  <div class="col-sm-6">
+    <img src="{{ site.baseurl }}/assets/images/engr/senior/sketch_1_3_2.jpg" alt="UI sketch"/>
+  </div>
+</div>
 
 ### Servant Engineering
 
 Our team explored the design challenge of helping visually impaired individuals navigate the world around them. As part of our human-centered design approach to tackling this challenge, we developed a high-level user story to frame our design efforts: "As a visually impaired person, I want to identify common objects and read text and symbols on signs as I navigate my environment." [Read more here.](https://cs.georgefox.edu/about/research/computer-vision-for-the-visually-impaired/)
 
-<div class="row">
-  <div class="col-sm-4">
-    <img src="{{ site.baseurl }}/assets/images/engr/team-nu-qr.png" alt="QR code to project presentation"/>
+<div class="row align-items-center">
+  <div class="col-sm-6">
+    <img src="{{ site.baseurl }}/assets/images/engr/servant/prototype.png" alt="low-fidelity prototype"/>
   </div>
-  <div class="col-sm-4">
-    <img src="{{ site.baseurl }}/assets/images/engr/team-nu-prototype.png" alt="low-fidelity prototype"/>
-  </div>
-  <div class="col-sm-4">
-    <img src="{{ site.baseurl }}/assets/images/engr/team-nu-detection.png" alt="playing card dection via computer vision"/>
+  <div class="col-sm-6">
+    <img src="{{ site.baseurl }}/assets/images/engr/servant/detection.png" alt="playing card dection via computer vision"/>
   </div>
 </div>
 
@@ -50,7 +56,7 @@ In search of a lightweight static site generator, I looked at both [Hugo](https:
 
 The following are school projects from ARTD 270, which focused on <abbr title="user interface">UI</abbr> design, page layout, and usability.
 
-<div class="row">
+<div class="row align-items-center">
   <div class="col-sm-6">
     <img src="{{ site.baseurl }}/assets/images/web-design/bagels-banner.jpg" alt="product page about bagels"/>
   </div>
@@ -64,7 +70,7 @@ The following are school projects from ARTD 270, which focused on <abbr title="u
 The following are school projects from CSIS 304. In this class I learned about HTTP requests, HTML, CSS, JavaScript, PHP, REST APIs, and more. The class also required a landing page for our projects, [which has been revamped into the website you are now reading](#portfolio-site).
 
 
-<div class="row">
+<div class="row align-items-center">
   <div class="col-sm-6">
     <img src="{{ site.baseurl }}/assets/images/web-programming/zen.jpg" alt="CSS Zen garden"/>
   </div>
@@ -79,7 +85,7 @@ The following are school projects from CSIS 304. In this class I learned about H
 
 This page showcases some school projects from ARTD 220. The class explored type anatomy, page layout, hierarchy, and more.
 
-<div class="row">
+<div class="row align-items-center">
   <div class="col-sm-3">
     <img src="{{ site.baseurl }}/assets/images/typography/made-by-humans.jpg" alt="poster design"/>
   </div>
@@ -98,15 +104,15 @@ This page showcases some school projects from ARTD 220. The class explored type 
 
 This page showcases some school projects from ARTD 110. The class taught the fundamentals of Adobe Creative Cloud using Photoshop, Illustrator, and InDesign.
 
-<div class="row">
-  <div class="col-sm-3">
+<div class="row align-items-center">
+  <div class="col-6 col-sm-3">
     <img src="{{ site.baseurl }}/assets/images/creative-suite/coasters-1.png" alt="coaster design"/>
   </div>
-  <div class="col-sm-6">
-    <img src="{{ site.baseurl }}/assets/images/creative-suite/business-card-2.png" alt="business card design"/>
-  </div>
-  <div class="col-sm-3">
+  <div class="col-6 col-sm-3 order-sm-last">
     <img src="{{ site.baseurl }}/assets/images/creative-suite/playlist/18.jpg" alt="playlist cover"/>
+  </div>
+  <div class="col-sm-6 pt-3 pt-sm-0">
+    <img src="{{ site.baseurl }}/assets/images/creative-suite/business-card-2.png" alt="business card design"/>
   </div>
 </div>
 
