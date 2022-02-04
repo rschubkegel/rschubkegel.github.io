@@ -28,6 +28,57 @@ My most notable game is an entry for [Ludum Dare](https://ldjam.com/) 43, a 48-h
   </div>
 </div>
 
+## Animation
+
+Aside from game graphics, I've created animations for a few different classes in high school and college. Here is a collection of some of my favorites.
+
+<!-- GIFs made with https://ezgif.com/ -->
+
+<div class="row align-items-center">
+  <div class="col-4 mb-3">
+    <img src="{{ site.baseurl }}/assets/images/animations/walk-cycle.gif" alt="physical hand-drawn walk cycle">
+  </div>
+  <div class="col-4 mb-3">
+    <img src="{{ site.baseurl }}/assets/images/animations/zoetrope.gif" alt="physical hand-drawn paper airpline zoetrope">
+  </div>
+  <div class="col-4 mb-3">
+    <img src="{{ site.baseurl }}/assets/images/animations/circle-boogie.gif" alt="digital hand-drawn horror circle boogie">
+  </div>
+</div>
+
+<div class="row align-items-center">
+  <div class="col-12 col-md-5 mb-3">
+    <img src="{{ site.baseurl }}/assets/images/animations/six-ft-apart.gif" alt="stop-motion animation">
+  </div>
+  <div class="col-12 col-md-7 mb-3">
+    <img src="{{ site.baseurl }}/assets/images/animations/jack-in-the-box.gif" alt="digital hand-drawn character scared by a jack-in-the-box">
+  </div>
+</div>
+
+<div class="row align-items-center">
+  <div class="col-4 col-md-2 mb-3">
+    <img src="{{ site.baseurl }}/assets/images/animations/fire.gif" alt="">
+  </div>
+  <div class="col-8 col-md-4 mb-3">
+    <img src="{{ site.baseurl }}/assets/images/animations/fire-paper.gif" alt="">
+  </div>
+  <div class="col-12 col-md-6 mb-3">
+    <img src="{{ site.baseurl }}/assets/images/animations/explosion.gif" alt="">
+  </div>
+</div>
+
+<div class="row align-items-center">
+  <div class="col-7 col-md-4 mb-3">
+    <img src="{{ site.baseurl }}/assets/images/animations/bunny.gif" alt="">
+  </div>
+  <div class="col-5 col-md-4 mb-3">
+    <img src="{{ site.baseurl }}/assets/images/animations/monty-python.gif" alt="">
+  </div>
+  <div class="col-12 col-md-4 mb-3">
+    <img src="{{ site.baseurl }}/assets/images/animations/wave.gif" alt="">
+  </div>
+</div>
+
 ## Music Production
 
 Some of my currently published music, representing a small selection of hundreds of songs I have made. I started producing as a young teenager under the alias [Shoobie Doobie](https://open.spotify.com/embed/artist/6YrSdl1dy1dDxZETIxW7n5) (a nickname my coach gave me when I played baseball). Most recently I have begun producing music with my wife under the alias [The Newbkegels](https://thenewbkegels.bandcamp.com).
