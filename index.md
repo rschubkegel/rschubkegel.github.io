@@ -67,7 +67,7 @@ The following are school projects from ARTD 270, which focused on <abbr title="u
 
 ### Web Programming Class <a class="header-link" href="{{ site.baseurl }}/csis304">view page</a>
 
-The following are school projects from CSIS 304. In this class I learned about HTTP requests, HTML, CSS, JavaScript, PHP, REST APIs, and more. The class also required a landing page for our projects, [which has been revamped into the website you are now reading](#portfolio-site).
+The following are school projects from CSIS 304. In this class I learned about HTTP requests, HTML, CSS, JavaScript, PHP, REST APIs, and more. The class also required a landing page for our projects, [which has been revamped into the website you are now reading](#portfolio-site-view-source).
 
 
 <div class="row align-items-center">
