@@ -7,6 +7,10 @@ title: "Hobbies"
 
 # Hobbies
 
+- [Game Development](#game-development)
+- [Animation](#animation)
+- [Music Production](#music-production)
+
 ## Game Development
 
 One of my passions is game development, which unites several of my other hobbies. I love game jams and small indie projects. You can see all my published games on [my itch.io page](https://supergobo.itch.io/).

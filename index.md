@@ -4,12 +4,12 @@ layout: default
 
 # Rylan Schubkegel
 
-Hello, my name is Rylan. I'm a CS student at George Fox University. The purpose of this site is to showcase some of my personal work. If you want to get in touch, feel free to [contact me](#contact).
+Hello, my name is Rylan. I'm a <abbr title="computer science">CS</abbr> student at [George Fox University](https://www.georgefox.edu/). The purpose of this site is to showcase some of my personal work. If you want to get in touch, feel free to [contact me](#contact).
 
 - [Engineering Projects](#engineering-projects)
 - [Web Design](#web-design)
 - [Graphic Design](#graphic-design)
-- [Hobbies <a class="header-link" href="{{ site.baseurl }}/hobbies">view page</a>](#hobbies-view-page)
+- [Hobbies](#hobbies)
 - [Contact](#contact)
 
 ## Engineering Projects
@@ -44,7 +44,9 @@ Our team explored the design challenge of helping visually impaired individuals 
 
 ## Web Design
 
-### Portfolio Site <a class="header-link" href="https://github.com/rschubkegel/rschubkegel.github.io">view source</a>
+### Portfolio Site
+
+<a class="header-link" href="https://github.com/rschubkegel/rschubkegel.github.io">view source</a>
 
 This website started out as a landing page for projects made in my [CSIS 304 class]({{ site.baseurl }}/csis304). I kept adding to it until it became a monolithic collection of HTML tags, inline CSS, and sluggish JavaScript. After copy/pasting HTML headers for months, I resolved to find a more sustainable and elegant way to build my portfolio site.
 
@@ -52,7 +54,9 @@ I first looked at [Next.js](https://nextjs.org/), a JavaScript framework built o
 
 In search of a lightweight static site generator, I looked at both [Hugo](https://gohugo.io/) and [Jekyll](https://jekyllrb.com/). I chose to use Jekyll since that's what my host service, [GitHub pages](https://pages.github.com/), is built on. Jekyll retains the beauty of templating while encouring the use of other features like [Markdown](https://daringfireball.net/projects/markdown/) blogging and [Liquid](https://github.com/Shopify/liquid/wiki) processing. Feel free to [check out the source code](https://github.com/rschubkegel/rschubkegel.github.io) for the current version of this site.
 
-### Web Design Class <a class="header-link" href="{{ site.baseurl }}/artd270">view page</a>
+### Web Design Class
+
+<a class="header-link" href="{{ site.baseurl }}/artd270">view page</a>
 
 The following are school projects from ARTD 270, which focused on <abbr title="user interface">UI</abbr> design, page layout, and usability.
 
@@ -65,7 +69,9 @@ The following are school projects from ARTD 270, which focused on <abbr title="u
   </div>
 </div>
 
-### Web Programming Class <a class="header-link" href="{{ site.baseurl }}/csis304">view page</a>
+### Web Programming Class
+
+<a class="header-link" href="{{ site.baseurl }}/csis304">view page</a>
 
 The following are school projects from CSIS 304. In this class I learned about HTTP requests, HTML, CSS, JavaScript, PHP, REST APIs, and more. The class also required a landing page for our projects, [which has been revamped into the website you are now reading](#portfolio-site-view-source).
 
@@ -81,7 +87,9 @@ The following are school projects from CSIS 304. In this class I learned about H
 
 ## Graphic Design
 
-### Typography Class <a class="header-link" href="{{ site.baseurl }}/artd220">view page</a>
+### Typography Class
+
+<a class="header-link" href="{{ site.baseurl }}/artd220">view page</a>
 
 This page showcases some school projects from ARTD 220. The class explored type anatomy, page layout, hierarchy, and more.
 
@@ -100,7 +108,9 @@ This page showcases some school projects from ARTD 220. The class explored type 
   </div>
 </div>
 
-### Creative Suite Class <a class="header-link" href="{{ site.baseurl }}/artd110">view page</a>
+### Creative Suite Class
+
+<a class="header-link" href="{{ site.baseurl }}/artd110">view page</a>
 
 This page showcases some school projects from ARTD 110. The class taught the fundamentals of Adobe Creative Cloud using Photoshop, Illustrator, and InDesign.
 
@@ -116,7 +126,9 @@ This page showcases some school projects from ARTD 110. The class taught the fun
   </div>
 </div>
 
-## Hobbies <a class="header-link" href="{{ site.baseurl }}/hobbies">view page</a>
+## Hobbies
+
+<a class="header-link" href="{{ site.baseurl }}/hobbies">view page</a>
 
 I have numerous other creative hobbies such as game design, animation, music production, painting, etc. For more of my personal projects, check out [this page]({{ site.baseurl }}/hobbies).
 
