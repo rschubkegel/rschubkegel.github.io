@@ -15,6 +15,9 @@ $colors-light: (
 );
 
 body {
+  display: flex;
+  font-size: 13pt;
+  line-height: 1.8em;
   background-attachment: fixed;
   background-size: cover;
   background-position: bottom;
@@ -28,13 +31,10 @@ body {
     background-color: map-get($map: $colors-light, $key: "bg-mild");
     background-image: url("../images/bg-waves-light.svg");
   }
-  display: flex;
-  font-size: 13pt;
-  line-height: 1.8em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0.5rem 0;
+  margin: 0.6rem 0;
   @media (prefers-color-scheme: dark) {
     color: map-get($map: $colors-dark, $key: "fg-bold");
   }
@@ -90,6 +90,25 @@ img {
     @media (prefers-color-scheme: light) {
       fill: map-get($map: $colors-light, $key: "splash");
     }
+  }
+  // uncomment below to animate logo 🙂
+  // path {
+  //   stroke-dasharray: 1000;
+  //   stroke-dashoffset: 1000;
+  //   animation: dash 6s linear forwards;
+  //   stroke-width: 0.2rem;
+  //   @media (prefers-color-scheme: dark) {
+  //     stroke: map-get($map: $colors-dark, $key: "bg-bold");
+  //   }
+  //   @media (prefers-color-scheme: light) {
+  //     stroke: map-get($map: $colors-light, $key: "bg-bold");
+  //   }
+  // }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 
