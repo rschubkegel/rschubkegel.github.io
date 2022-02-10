@@ -15,13 +15,18 @@ $colors-light: (
 );
 
 body {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: bottom;
   @media (prefers-color-scheme: dark) {
     color: map-get($map: $colors-dark, $key: "fg-mild");
     background-color: map-get($map: $colors-dark, $key: "bg-mild");
+    background-image: url("../images/bg-waves-dark.svg");
   }
   @media (prefers-color-scheme: light) {
     color: map-get($map: $colors-light, $key: "fg-mild");
     background-color: map-get($map: $colors-light, $key: "bg-mild");
+    background-image: url("../images/bg-waves-light.svg");
   }
   display: flex;
   font-size: 13pt;
@@ -79,6 +84,14 @@ img {
 }
 
 .container {
+  @media (prefers-color-scheme: dark) {
+    background-color: map-get($map: $colors-dark, $key: "bg-mild");
+    box-shadow: 0 0 2rem map-get($map: $colors-dark, $key: "bg-mild");
+  }
+  @media (prefers-color-scheme: light) {
+    background-color: map-get($map: $colors-light, $key: "bg-mild");
+    box-shadow: 0 0 2rem map-get($map: $colors-light, $key: "bg-mild");
+  }
   max-width: $max-width;
   padding: 2rem;
 }
