@@ -4,13 +4,12 @@ layout: default
 
 # Rylan Schubkegel
 
-Hello, my name is Rylan. I'm a <abbr title="computer science">CS</abbr> student at [George Fox University](https://www.georgefox.edu/). The purpose of this site is to showcase some of my personal work. If you want to get in touch, feel free to [contact me](#contact).
+Hello, my name is Rylan. I'm a <abbr title="computer science">CS</abbr> student at [George Fox University](https://www.georgefox.edu/). The purpose of this site is to showcase some of my personal work.
 
 - [Engineering Projects](#engineering-projects)
 - [Web Design](#web-design)
 - [Graphic Design](#graphic-design)
 - [Hobbies](#hobbies)
-- [Contact](#contact)
 
 ## Engineering Projects
 
@@ -131,9 +130,3 @@ This page showcases some school projects from ARTD 110. The class taught the fun
 <a class="header-link" href="{{ site.baseurl }}/hobbies">view page</a>
 
 I have numerous other creative hobbies such as game design, animation, music production, painting, etc. For more of my personal projects, check out [this page]({{ site.baseurl }}/hobbies).
-
-## Contact
-
-- [rylanschubkegel@gmail.com](mailto:rylanschubkegel@gmail.com)
-- [LinkedIn](https://www.linkedin.com/in/rschubkegel/)
-- [GitHub](https://github.com/rschubkegel/)
