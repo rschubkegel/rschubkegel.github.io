@@ -55,31 +55,31 @@ Aside from game graphics, I've created animations for a few different classes in
     <img src="{{ site.baseurl }}/assets/images/animations/six-ft-apart.gif" alt="stop-motion animation">
   </div>
   <div class="col-12 col-md-7 mb-3">
-    <img src="{{ site.baseurl }}/assets/images/animations/jack-in-the-box.gif" alt="digital hand-drawn character scared by a jack-in-the-box">
+    <img src="{{ site.baseurl }}/assets/images/animations/jack-in-the-box.gif" alt="digital hand-drawn character scared by a jack-in-the-box animation">
   </div>
 </div>
 
 <div class="row align-items-center">
   <div class="col-4 col-md-2 mb-3">
-    <img src="{{ site.baseurl }}/assets/images/animations/fire.gif" alt="">
+    <img src="{{ site.baseurl }}/assets/images/animations/fire.gif" alt="digital hand-drawn fire animation">
   </div>
   <div class="col-8 col-md-4 mb-3">
-    <img src="{{ site.baseurl }}/assets/images/animations/fire-paper.gif" alt="">
+    <img src="{{ site.baseurl }}/assets/images/animations/fire-paper.gif" alt="physical paper fire animation">
   </div>
   <div class="col-12 col-md-6 mb-3">
-    <img src="{{ site.baseurl }}/assets/images/animations/explosion.gif" alt="">
+    <img src="{{ site.baseurl }}/assets/images/animations/explosion.gif" alt="digital hand-drawn explosion animation">
   </div>
 </div>
 
 <div class="row align-items-center">
   <div class="col-7 col-md-4 mb-3">
-    <img src="{{ site.baseurl }}/assets/images/animations/bunny.gif" alt="">
+    <img src="{{ site.baseurl }}/assets/images/animations/bunny.gif" alt="digital hand-drawn bunny animation">
   </div>
   <div class="col-5 col-md-4 mb-3">
-    <img src="{{ site.baseurl }}/assets/images/animations/monty-python.gif" alt="">
+    <img src="{{ site.baseurl }}/assets/images/animations/monty-python.gif" alt="digital hand-drawn lip-sync character animation">
   </div>
   <div class="col-12 col-md-4 mb-3">
-    <img src="{{ site.baseurl }}/assets/images/animations/wave.gif" alt="">
+    <img src="{{ site.baseurl }}/assets/images/animations/wave.gif" alt="digital hand-drawn waving character animation">
   </div>
 </div>
 

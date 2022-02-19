@@ -130,3 +130,12 @@ This page showcases some school projects from ARTD 110. The class taught the fun
 <a class="header-link" href="{{ site.baseurl }}/hobbies">view page</a>
 
 I have numerous other creative hobbies such as game design, animation, music production, painting, etc. For more of my personal projects, check out [this page]({{ site.baseurl }}/hobbies).
+
+<div class="row align-items-center">
+  <div class="col-6">
+    <img src="{{ site.baseurl }}/assets/images/games/ED.png" alt="Earth Defense game"/>
+  </div>
+  <div class="col-6">
+    <img src="{{ site.baseurl }}/assets/images/animations/explosion.gif" alt="explosion animation"/>
+  </div>
+</div>

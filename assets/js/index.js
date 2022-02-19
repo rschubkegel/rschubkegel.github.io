@@ -28,6 +28,7 @@ function add_id_copy_listeners_to_headers() {
       let t = `${window.location.href}#${header.id}`;
       navigator.clipboard.writeText(t);
       console.log(`Copied "${t}" to clipboard`);
+      // header.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     };
   });
 }
