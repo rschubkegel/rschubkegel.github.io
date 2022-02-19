@@ -18,6 +18,8 @@ body {
   display: flex;
   font-size: 13pt;
   line-height: 1.8em;
+
+  // SVG background
   background-attachment: fixed;
   background-size: cover;
   background-position: bottom;
@@ -34,7 +36,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0.6rem 0;
+  margin: 0.7rem 0;
   @media (prefers-color-scheme: dark) {
     color: map-get($map: $colors-dark, $key: "fg-bold");
   }
@@ -50,7 +52,7 @@ a {
   @media (prefers-color-scheme: light) {
     color: map-get($map: $colors-light, $key: "splash");
   }
-  transition: 2s ease-out;
+  transition: color 2s ease-out;
 }
 
 a:hover {
@@ -60,7 +62,16 @@ a:hover {
   @media (prefers-color-scheme: light) {
     color: map-get($map: $colors-light, $key: "fg-bold");
   }
-  transition: none;
+  transition: color 500ms;
+}
+
+abbr:hover {
+  @media (prefers-color-scheme: dark) {
+    color: map-get($map: $colors-dark, $key: "fg-bold");
+  }
+  @media (prefers-color-scheme: light) {
+    color: map-get($map: $colors-light, $key: "fg-bold");
+  }
 }
 
 ul {
@@ -70,7 +81,23 @@ ul {
 
 img {
   width: 100%;
-  padding: 0.25rem 0;
+  margin: 0.25rem 0;
+}
+
+footer i {
+  transition: transform ease-out 50ms;
+  transform: rotate(0.0turn);
+}
+
+footer i:hover {
+  // animate!
+  @keyframes shake {
+    from { transform: rotate(0.0turn); }
+    25% { transform: rotate(0.02turn); }
+    75% { transform: rotate(-0.02turn); }
+    to { transform: rotate(0.0turn); }
+  }
+  animation: shake 200ms cubic-bezier(.55, 0, .45, 1) forwards;
 }
 
 .logo {
@@ -81,7 +108,8 @@ img {
     color: map-get($map: $colors-light, $key: "fg-mild");
   }
   div {
-    min-width: 12rem;
+    min-width: 8rem;
+    max-width: 12rem;
     @media (prefers-color-scheme: dark) {
       fill: map-get($map: $colors-dark, $key: "splash");
     }
@@ -89,24 +117,29 @@ img {
       fill: map-get($map: $colors-light, $key: "splash");
     }
   }
-  // uncomment below to animate logo 🙂
-  // path {
-  //   stroke-dasharray: 750;
-  //   stroke-dashoffset: 750;
-  //   animation: dash 2s ease-in-out alternate infinite;
-  //   stroke-width: 3px;
-  //   @media (prefers-color-scheme: dark) {
-  //     stroke: map-get($map: $colors-dark, $key: "bg-bold");
-  //   }
-  //   @media (prefers-color-scheme: light) {
-  //     stroke: map-get($map: $colors-light, $key: "bg-bold");
-  //   }
-  // }
-}
 
-@keyframes dash {
-  to {
+  // uncomment below to animate logo 🙂
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  path {
+    @media (prefers-color-scheme: dark) {
+      stroke: map-get($map: $colors-dark, $key: "fg-bold");
+    }
+    @media (prefers-color-scheme: light) {
+      stroke: map-get($map: $colors-light, $key: "fg-bold");
+    }
+    stroke-linejoin: miter;
+    stroke-width: 3px;
+    stroke-dasharray: 750;
+    stroke-dashoffset: 750;
+    transition: stroke-dashoffset 1s ease-in-out;
+  }
+  :hover path {
     stroke-dashoffset: 0;
+    transition: stroke-dashoffset 2s ease-in-out 0.5s;
   }
 }
 
@@ -128,6 +161,7 @@ img {
 }
 
 .header-link {
+  vertical-align: middle;
   display: inline-block;
   font-size: 55%;
   text-decoration: dotted;
@@ -141,8 +175,15 @@ img {
   border-radius: 0.5em;
   padding: 0.2em 0.4em;
   margin-left: 0.5rem;
+  transition: transform 500ms ease-out;
 }
 
-ul .header-link {
-  display: none;
+.header-link:hover {
+  // animate!
+  @keyframes bounce {
+    from { transform: translateY(0em); }
+    25% { transform: translateY(-0.2em); transform: scale(1.1); }
+    to { transform: translateY(0em); }
+  }
+  animation: bounce 250ms ease-out forwards;
 }
