@@ -15,7 +15,7 @@ Hello, my name is Rylan. I'm a <abbr title="computer science">CS</abbr> student 
 
 ### Senior Design
 
-I am currently the team manager of 6 students working with Daimler Trucks of North America. We were tasked with researching the utility of the Microsoft Hololens for the Daimler's truck servicing intake process. We are developing a proof of concept in <abbr title="mixed reality">MR</abbr> using Unity and Microsoft's <abbr title="mixed reality toolkit">MRTK</abbr>.
+I am currently the team manager of 6 students working with [Daimler Trucks of North America](https://northamerica.daimlertruck.com/) to research the utility of [Microsoft's Hololens 2](https://www.microsoft.com/en-us/hololens/hardware) for Daimler's servicing intake process. We are developing small-scale text input applications in <abbr title="mixed reality">MR</abbr> using [Unity](https://unity.com/) and Microsoft's <abbr title="mixed reality toolkit">MRTK</abbr>. By having users test these applications we will derive insights about the unique user experience of the Hololens headset, providing our client with valuable information about the efficacy of MR in their truck servicing process.
 
 ![real hand holding virtual cube]({{ site.baseurl }}/assets/images/engr/senior/cube.jpg)
 
