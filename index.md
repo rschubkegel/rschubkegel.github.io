@@ -45,14 +45,14 @@ Our team explored the design challenge of helping visually impaired individuals 
 
 This class was my first encounter with <abbr title="human-computer interactions">HCI</abbr>, an <abbr title="information systems">IS</abbr> subset of human-centered engineering. My final project was to explore an <abbr title="alternative and augmented communication">AAC</abbr> problem and/or solution of my interest. I chose to research _audio visualization for the deaf and hard of hearing_ by reading relavent literature, creating a high-level design of a <abbr title="head-mounted display">HMD</abbr> device, and examining a recent study by the University of Washington.
 
-<div class="row align-items-center">
-  <div class="col-3">
+<div class="row align-items-center justify-content-center">
+  <div class="col-4">
     <img src="{{ site.baseurl }}/assets/images/engr/hci/hci_paper_1.jpg" alt="audio visualization research paper page 1"/>
   </div>
-  <div class="col-3">
+  <div class="col-4">
     <img src="{{ site.baseurl }}/assets/images/engr/hci/hci_paper_2.jpg" alt="audio visualization research paper page 2"/>
   </div>
-  <div class="col-3">
+  <div class="col-4">
     <img src="{{ site.baseurl }}/assets/images/engr/hci/hci_paper_3.jpg" alt="audio visualization research paper page 3"/>
   </div>
 </div>
