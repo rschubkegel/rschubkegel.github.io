@@ -15,20 +15,40 @@ title: "Hobbies"
 
 One of my passions is game development, which unites several of my other hobbies. I love game jams and small indie projects. You can see all my published games on [my itch.io page](https://supergobo.itch.io/).
 
+My most recent game, [The Creature](https://supergobo.itch.io/the-creature), was made with two friends. It was completed in a week for the [Week Sauce Game Jam](https://itch.io/jam/weeksauce-3).
+
 My most notable game is an entry for [Ludum Dare](https://ldjam.com/) 43, a 48-hour game making competition. Out of a total of 761 competition entries, my game _Judgement of a Priest_ placed 27th for audio and 39th for graphics.
 
-<div class="row">
-  <div class="col-sm-6">
-    <img src="{{ site.baseurl }}/assets/images/games/priest-1.jpg" alt="screenshot of jam game Judgement of a Priest"/>
+<div class="row align-items-center">
+  <div class="col-6 col-sm-4">
+    <a href="https://supergobo.itch.io/the-creature" target="_blank">
+      <img src="{{ site.baseurl }}/assets/images/games/creature-1.png" alt="screenshot of The Creature"/>
+    </a>
   </div>
-  <div class="col-sm-6">
-    <img src="{{ site.baseurl }}/assets/images/games/ED.png" alt="screenshot of game Earth Defense"/>
+  <div class="col-6 col-sm-4">
+    <a href="https://supergobo.itch.io/the-creature" target="_blank">
+      <img src="{{ site.baseurl }}/assets/images/games/creature-2.png" alt="screenshot of The Creature"/>
+    </a>
   </div>
-  <div class="col-sm-6">
-    <img src="{{ site.baseurl }}/assets/images/games/BBB.png" alt="screenshot of jam game Bok Bok Beats"/>
+  <div class="col-6 col-sm-4">
+    <a href="https://supergobo.itch.io/judgement-of-a-priest?secret=y8iE62XuowSe3dRCjaB3YANzE8" target="_blank">
+      <img src="{{ site.baseurl }}/assets/images/games/priest-1.jpg" alt="screenshot of Judgement of a Priest"/>
+    </a>
   </div>
-  <div class="col-sm-6">
-    <img src="{{ site.baseurl }}/assets/images/games/CR.png" alt="screenshot of game Cave Runner"/>
+  <div class="col-6 col-sm-4">
+    <a href="https://supergobo.itch.io/earth-defense" target="_blank">
+      <img src="{{ site.baseurl }}/assets/images/games/ED.png" alt="screenshot of Earth Defense"/>
+    </a>
+  </div>
+  <div class="col-6 col-sm-4">
+    <a href="https://supergobo.itch.io/bok-bok-beats" target="_blank">
+      <img src="{{ site.baseurl }}/assets/images/games/BBB.png" alt="screenshot of Bok Bok Beats"/>
+    </a>
+  </div>
+  <div class="col-6 col-sm-4">
+    <a href="https://supergobo.itch.io/cave-runner" target="_blank">
+      <img src="{{ site.baseurl }}/assets/images/games/CR.png" alt="screenshot of Cave Runner"/>
+    </a>
   </div>
 </div>
 
