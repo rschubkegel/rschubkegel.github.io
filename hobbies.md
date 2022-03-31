@@ -22,12 +22,12 @@ My most notable game is an entry for [Ludum Dare](https://ldjam.com/) 43, a 48-h
 <div class="row align-items-center">
   <div class="col-6 col-sm-4">
     <a href="https://supergobo.itch.io/the-creature" target="_blank">
-      <img src="{{ site.baseurl }}/assets/images/games/creature-1.png" alt="screenshot of The Creature"/>
+      <img src="{{ site.baseurl }}/assets/images/games/creature-1.PNG" alt="screenshot of The Creature"/>
     </a>
   </div>
   <div class="col-6 col-sm-4">
     <a href="https://supergobo.itch.io/the-creature" target="_blank">
-      <img src="{{ site.baseurl }}/assets/images/games/creature-2.png" alt="screenshot of The Creature"/>
+      <img src="{{ site.baseurl }}/assets/images/games/creature-2.PNG" alt="screenshot of The Creature"/>
     </a>
   </div>
   <div class="col-6 col-sm-4">
