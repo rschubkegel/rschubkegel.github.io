@@ -187,3 +187,32 @@ footer i:hover {
   }
   animation: bounce 250ms ease-out forwards;
 }
+
+.copy-notification {
+  visibility: hidden;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 0.4rem 1rem;
+  border-radius: 0.5em;
+  border-width: 0.2em;
+  border-style: solid;
+  @media (prefers-color-scheme: dark) {
+    background-color: map-get($map: $colors-dark, $key: "splash");
+    border-color: map-get($map: $colors-dark, $key: "bg-mild");
+  }
+  @media (prefers-color-scheme: light) {
+    background-color: map-get($map: $colors-light, $key: "splash");
+    border-color: map-get($map: $colors-light, $key: "bg-mild");
+  }
+  p {
+    font-size: 85%;
+    margin: 0;
+    @media (prefers-color-scheme: dark) {
+      color: map-get($map: $colors-dark, $key: "bg-bold");
+    }
+    @media (prefers-color-scheme: light) {
+      color: map-get($map: $colors-light, $key: "bg-bold");
+    }
+  }
+}
