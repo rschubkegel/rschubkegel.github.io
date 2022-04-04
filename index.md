@@ -59,6 +59,21 @@ This class was my first encounter with <abbr title="human-computer interactions"
 
 ## Web Design
 
+### Voluntime
+
+Voluntime is 1st place winner of George Fox University's second annual Code Jam, a 30-hour coding competition. Voluntime is a platform that connects volunteers to service events, allowing people to easily find ways to help their community. I designed the front-end in [Figma](https://www.figma.com/) and implemented it using [React](https://reactjs.org/) and [Material UI](https://mui.com/).
+
+Check out the [Voluntime website](https://volunti.me/) or the [Code Jam competition submission](https://devpost.com/software/top-secret-team-3-project-title).
+
+<div class="row align-items-center">
+  <div class="col-6">
+    <img src="{{ site.baseurl }}/assets/images/web-design/voluntime1.jpg" alt="Voluntime screenshot"/>
+  </div>
+  <div class="col-6">
+    <img src="{{ site.baseurl }}/assets/images/web-design/voluntime2.jpg" alt="Voluntime screenshot"/>
+  </div>
+</div>
+
 ### Portfolio Site
 
 <a class="header-link" href="https://github.com/rschubkegel/rschubkegel.github.io">view source</a>
