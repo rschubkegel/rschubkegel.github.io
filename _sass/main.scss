@@ -29,7 +29,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0.7rem 0;
+  margin: 1rem 0;
   @media (prefers-color-scheme: dark) {
     color: map-get($map: $colors-dark, $key: "fg-bold");
   }
@@ -91,6 +91,16 @@ footer i:hover {
     to { transform: rotate(0.0turn); }
   }
   animation: shake 200ms cubic-bezier(.55, 0, .45, 1) forwards;
+}
+
+hr {
+  border-top-width: 2px;
+  @media (prefers-color-scheme: dark) {
+    background-color: map-get($map: $colors-dark, $key: "bg-bold");
+  }
+  @media (prefers-color-scheme: light) {
+    background-color: lighten(map-get($map: $colors-light, $key: "fg-mild"), $amount: 50%);
+  }
 }
 
 .bgSVG {
