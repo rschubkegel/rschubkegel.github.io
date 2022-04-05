@@ -10,8 +10,8 @@ $colors-light: (
   "fg-bold": #272e21,
   "fg-mild": #40423c,
   "splash":  #307230,
-  "bg-mild": #fcfffc,
-  "bg-bold": #fcfffc,
+  "bg-mild": #fafcfa,
+  "bg-bold": #fefffe,
 );
 
 body {
@@ -167,11 +167,9 @@ hr {
 .container {
   @media (prefers-color-scheme: dark) {
     background-color: map-get($map: $colors-dark, $key: "bg-mild");
-    box-shadow: 0 0 2rem map-get($map: $colors-dark, $key: "bg-bold");
   }
   @media (prefers-color-scheme: light) {
     background-color: map-get($map: $colors-light, $key: "bg-mild");
-    box-shadow: 0 0 2rem map-get($map: $colors-light, $key: "bg-bold");
   }
   max-width: $max-width;
   padding: 3rem;
