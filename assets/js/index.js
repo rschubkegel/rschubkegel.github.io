@@ -2,9 +2,30 @@
  * Do stuff when document loads.
  */
 window.addEventListener("load", function () {
-  appendSectionLinksToHeaders();
   addCopyListenersToHeaders();
+  appendSectionLinksToHeaders();
 });
+
+/**
+ * Copies a page link with #id of the header that's been clicked.
+ * Adds a span tag to contain click callbacks to current text, not anything
+ * added to header later.
+ */
+function addCopyListenersToHeaders() {
+  let h_selectors = "h2, h3, h4, h5, h6";
+  Array.from(document.querySelectorAll(h_selectors)).forEach((header) => {
+    let span = document.createElement("span");
+    span.innerHTML = header.innerHTML;
+    header.innerHTML = "";
+    header.appendChild(span);
+    span.onclick = () => {
+      let t = `${window.location.href.replace(location.hash,"")}#${header.id}`;
+      navigator.clipboard.writeText(t);
+      header.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      showCopiedMessage("copy-notification");
+    };
+  });
+}
 
 /**
  * Re-parents any .header-link nodes
@@ -19,25 +40,10 @@ function appendSectionLinksToHeaders() {
 }
 
 /**
- * Copies a page link with #id of the header that's been clicked.
- */
-function addCopyListenersToHeaders() {
-  let h_selectors = "h2, h3, h4, h5, h6";
-  Array.from(document.querySelectorAll(h_selectors)).forEach((header) => {
-    header.onclick = () => {
-      let t = `${window.location.href.replace(location.hash,"")}#${header.id}`;
-      navigator.clipboard.writeText(t);
-      header.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-      showCopiedMessage(t);
-    };
-  });
-}
-
-/**
  * Shows DOM element to notify user that URL was copied to clipboard.
  */
 function showCopiedMessage(message) {
-  fade("copy-notification", 1, 0, 2000, new Date().getTime());
+  fade(message, 1, 0, 2000, new Date().getTime());
 }
 
 // https://blog.abhranil.net/2011/11/03/simplest-javascript-fade-animation/
