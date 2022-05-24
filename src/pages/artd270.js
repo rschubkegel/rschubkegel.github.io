@@ -15,7 +15,6 @@ const contents = [
 const ARTD270 = () => {
   return (
     <Layout>
-      { <TableOfContents title='Projects' containers={ contents } /> }
       <div className='flex-col'>
         { contents.map( e => (e) ) }
       </div>

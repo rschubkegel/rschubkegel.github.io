@@ -37,7 +37,6 @@ const IndexPage = () => {
           I would love to connect!
         </p>
       </div>
-      { <TableOfContents containers={ contents } /> }
       <div className='flex-col'>
         { contents.map( e => (e) ) }
       </div>

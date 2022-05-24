@@ -17,7 +17,6 @@ const HobbiesPage = () => {
   return (
     <Layout>
       <h1><Link to='/'>Home</Link> &gt; Hobbies</h1>
-      {<TableOfContents title="Projects" containers={contents} />}
       <div className="flex-col">{contents.map((e) => e)}</div>
     </Layout>
   );
