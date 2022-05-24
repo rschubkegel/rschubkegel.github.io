@@ -8,10 +8,9 @@ import artd270 from '../components/project-containers/artd270';
 import hololens from '../components/project-containers/hololens';
 import arGlasses from '../components/project-containers/arGlasses';
 import hobbies from '../components/project-containers/hobbies';
-import TableOfContents from '../components/tableOfContents';
 
 const contents = [
-  <ProjectContainer level={2} title='Wed Development'>
+  <ProjectContainer level={2} title='Web Development'>
     { voluntime(3) }
     { portfolio(3) }
     { artd270(3) }
@@ -27,7 +26,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <div>
-        <h1 style={{ textAlign: 'center' }}>
+        <h1>
         Hello, my name is Rylan 👋
         </h1>
         <p>

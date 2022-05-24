@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import Layout from "../components/layout";
-import TableOfContents from "../components/tableOfContents";
 
 import GameDevContainer from "../components/project-containers/gameDev";
 import AnimationContainer from "../components/project-containers/animation";

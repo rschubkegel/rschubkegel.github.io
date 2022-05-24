@@ -4,7 +4,6 @@ import Layout from '../components/layout';
 import productPage from '../components/project-containers/productPage';
 import virtualCard from '../components/project-containers/virtualCard';
 import websiteRedesign from '../components/project-containers/holySee';
-import TableOfContents from '../components/tableOfContents';
 
 const contents = [
   websiteRedesign(),
