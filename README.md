@@ -1,3 +1,3 @@
-# Rylan Schubkegel's Personal Portfolio
+# Portfolio Website
 
-This portfolio has gone through several iterations, from raw HTML/CSS/JavaScript to [Next.js](https://nextjs.org/) to [Jekyll](https://jekyllrb.com/). Read more about my process [here](https://rschubkegel.github.io/#portfolio-site).
+This website went through several iterations, including plain HTML, CSS, & JS, Jekyll & Markdown, and now Gatsby.js & React.js. Old code is archived in the `html` and `jekyll` branches.
