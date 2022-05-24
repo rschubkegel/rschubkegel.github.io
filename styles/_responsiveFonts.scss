@@ -1,0 +1,23 @@
+@import "./breakpoints.scss";
+
+body {
+  font-size: 13pt;
+}
+
+@media (max-width: $break-md) {
+  body {
+    font-size: 12pt;
+  }
+}
+
+@media (max-width: $break-sm) {
+  body {
+    font-size: 11pt;
+  }
+}
+
+@media (max-width: $break-xs) {
+  body {
+    font-size: 10pt;
+  }
+}

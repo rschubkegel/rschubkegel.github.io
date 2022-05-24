@@ -1,0 +1,24 @@
+@import "./mixins.scss";
+
+.typographyPreview {
+  @include basicGrid;
+  grid-template-columns: auto auto auto auto;
+  align-items: center;
+  align-content: center;
+  row-gap: 0;
+}
+
+.creativeSuitePreview {
+  @include basicGrid;
+  grid-template-columns: auto 21% auto;
+  align-items: center;
+}
+
+@media (max-width: 42rem) {
+  .typographyPreview, .creativeSuitePreview {
+    grid-template-columns: auto auto;
+    div {
+      max-height: 50vw;
+    }
+  }
+}

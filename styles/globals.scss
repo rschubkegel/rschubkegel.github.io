@@ -1,0 +1,187 @@
+@import "./colors.scss";
+@import "./mixins.scss";
+@import "./responsiveFonts.scss";
+@import "./breakpoints.scss";
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Bold.ttf");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SourceCodePro";
+  src: url("/fonts/SourceCodePro-Regular.ttf");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("/fonts/Nunito-VariableFont_wght.ttf");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: $bg-strong;
+  color: $fg-mild;
+  line-height: 1.8em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2em;
+  font-family: Nunito, sans-serif;
+  color: $fg-strong;
+  /* offset-x | offset-y | blur-radius | color */
+  text-shadow: 2px 3px 2px $bg-strong;
+}
+
+h1 {
+  font-size: 2.2em;
+}
+
+h2 {
+  font-size: 1.8em;
+  padding-bottom: 0.6em;
+  border-bottom: solid 1px $fg-mild;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+p {
+  font-family: SourceCodePro, serif;
+  margin: 0;
+}
+
+a {
+  font-family: SourceCodePro, sans-serif;
+  text-decoration: none;
+  color: $splash;
+  text-shadow: -1px 2px 1px $bg-strong;
+  display: inline-block;
+  padding: 0 0.4em;
+  transition-duration: 500ms;
+}
+
+a:hover {
+  background-color: $bg-strong;
+  border-radius: 0.3em;
+  transition-duration: 50ms;
+}
+
+.viewLink {
+  display: inline-block;
+  font-family: Roboto, sans-serif;
+  font-size: 60%;
+  font-weight: 300;
+  margin-left: 0.5em;
+  padding: 0.15em .1em;
+  // border: 1px dashed $splash;
+  a {
+    font-family: inherit;
+    color: $splash;
+  }
+  a:hover {
+    color: $fg-strong;
+  }
+}
+
+hr {
+  width: 100%;
+  color: $fg-mild;
+  border: solid 1px;
+  /* offset-x | offset-y | blur-radius | color */
+  box-shadow: 0 0 1em $splash;
+}
+
+footer {
+  font-size: 80%;
+}
+
+.content {
+  max-width: 40rem;
+  padding: 4rem;
+  margin: auto;
+  background-color: $bg-mild;
+  box-shadow: 0 0 3em $bg-mild;
+}
+
+.centerDiv {
+  @include centerFlex;
+}
+
+.gridColumn {
+  @include gridColumn;
+}
+
+.tableOfContents {
+  display: flex;
+  flex-direction: column;
+  a {
+    display: block;
+  }
+}
+
+.imgGrid {
+  @include basicGrid;
+}
+
+.oneCol {
+  grid-template-columns: auto;
+}
+
+.twoCol {
+  grid-template-columns: auto auto;
+}
+
+.threeCol {
+  grid-template-columns: auto auto auto;
+}
+
+.textByImg {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 60% auto;
+}
+
+.textByImgRev {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: auto 60%;
+}
+
+@media (max-width: $break-md) {
+  .imgGrid, .twoCol, .threeCol, .textByImg, .textByImgRev {
+    grid-template-columns: auto;
+  }
+
+  .hideWhenSmall {
+    display: none;
+  }
+
+  .content {
+    padding: 4rem 3rem 3rem;
+  }
+}
+
+@media (max-width: $break-sm) {
+  .content {
+    padding: 3rem 2rem 2rem;
+  }
+}
+
+@media (max-width: $break-xs) {
+  .content {
+    padding: 3rem 1rem 1rem;
+  }
+}

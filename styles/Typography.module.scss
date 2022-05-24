@@ -1,0 +1,16 @@
+@import "./mixins.scss";
+@import "./breakpoints.scss";
+
+.anatomyImgs {
+  @include gridColumn;
+  grid-template-columns: repeat(5, auto);
+  gap: 0;
+}
+
+@media (max-width: $break-xs) {
+  .anatomyImgs {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    grid-template-columns: repeat(2, auto);
+  }
+}

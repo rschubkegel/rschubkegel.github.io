@@ -1,0 +1,60 @@
+@import "./mixins.scss";
+@import "./breakpoints.scss";
+
+.bizCards {
+  @include gridColumn;
+  grid-template-columns: 40% 60%;
+}
+
+.playlistImgs {
+  @include gridColumn;
+  grid-template-columns: repeat(9, auto);
+  gap: 0.5rem;
+}
+
+.coastersImgs {
+  @include gridColumn;
+  grid-template-columns: repeat(3, auto);
+}
+
+@media (max-width: $break-md) {
+  .bizCards {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  .playlistImgs {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media (max-width: $break-sm) {
+  .bizCards {
+    grid-template-columns: inherit;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  .playlistImgs {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: $break-xs) {
+  .bizCards {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .playlistImgs {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .coastersImgs {
+    grid-template-columns: auto auto;
+    gap: 0.5rem;
+    .unimportant {
+      display: none;
+    }
+  }
+}

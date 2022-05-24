@@ -1,0 +1,26 @@
+@import "./colors.scss";
+@import "./mixins.scss";
+
+@keyframes slowRotate {
+  0% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+.logo {
+  @include centerFlex;
+  svg {
+    display: block;
+    max-width: 10rem;
+    max-height: 10rem;
+    margin: 0 auto 1rem;
+    fill: $splash;
+    animation: slowRotate 3s ease-in-out 0s infinite forwards;
+  }
+}
