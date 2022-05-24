@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trello Web App</title>
+    <link rel="icon"
+          type="img/png"
+          href="../../imgs/logo.svg"/>
+    <script src="../../lib/anime.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div id="welcome">
+    <h1>Trello Web App</h1>
+    <p>The purpose of this app is to interact with <a href="https://trello.com/" target="_blank">Trello</a>.</p>
+    <p>In order to user this service, you must provide a <a href="https://trello.com/app-key" target="_blank">Trello API key</a> and an API account token. For instructions on how to access these, please visit <a href="https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction#authentication-and-authorization" target="_blank">Trello's API introduction page</a>.</p>
+</div>
+
+<div id="account">
+
+    <h2>Account Information</h2>
+
+    <div>
+        <label for="input-key">API key</label>
+        <input type="text" id="input-key" class="input-key" value="">
+    </div>
+
+    <div>
+        <label for="input-token">Account token</label>
+        <input type="text" id="input-token" class="input-token" value="">
+    </div>
+
+</div>
+
+<div id="actions">
+
+    <h2>Actions</h2>
+
+    <div>
+        <button onclick="getBoards()">Get Boards</button>
+    </div>
+
+    <div>
+        <button onclick="getLists()">Get Lists</button>
+
+        <div>
+            <label for="input-board-id">Board ID</label>
+            <input type="text" id="input-board-id" class="input-board-id" value="">
+        </div>
+    </div>
+
+    <div>
+        <button onclick="addCard()">Add Card</button>
+
+        <div>
+            <label for="input-card-name">Card Name</label>
+            <input type="text" id="input-card-name" class="input-card-name" value="">
+        </div>
+
+        <div>
+            <label for="input-card-desc">Card Description</label>
+            <input type="text" id="input-card-desc" class="input-card-desc" value="">
+        </div>
+
+        <div>
+            <label for="input-list-id">List ID</label>
+            <input type="text" id="input-list-id" class="input-list-id" value="">
+        </div>
+
+        <div>
+            <label for="input-card-labels">Card Label IDs</label>
+            <input type="text" id="input-card-labels" class="input-card-labels" value="">
+        </div>
+
+        <div>
+            <label for="input-card-due">Card Due Date</label>
+            <input type="date" id="input-card-due" class="input-card-due" value="">
+        </div>
+    </div>
+
+</div>
+
+<div id="data">
+    <h2>Trello Data</h2>
+    <div>
+        <p>Please perform an action to see more.</p>
+    </div>
+</div>
+
+</body>
+</html>

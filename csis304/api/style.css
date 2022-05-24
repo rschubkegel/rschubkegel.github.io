@@ -1,0 +1,87 @@
+/* -------- GLOBAL -------- */
+
+:root {
+    --color-background: #f7f9ff;
+    --color-error: #b31919;
+    --color-success: #258f1b;
+    --color-input: #74a6f8;
+    --color-output: #ffa557;
+    --color-headers: #2f4f4f;
+}
+
+* {
+    font-family: sans-serif;
+    font-size: 13pt;
+}
+
+/* -------- DIVS -------- */
+
+body {
+    width: 90%;
+    max-width: 38em;
+    margin: auto;
+    padding: 1em;
+
+    background-color: var(--color-background);
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 1ex;
+}
+
+#account, #actions, #actions > div {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 1ex;
+}
+
+#actions > div, #account > div {
+    border: 1px var(--color-input) solid;
+    padding: 1ex;
+}
+
+#data > div {
+    padding: 1ex;
+    border: 1px solid var(--color-output);
+}
+
+/* -------- TAG -------- */
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-headers);
+}
+
+h1 {
+    font-size: 175%;
+}
+
+h2 {
+    font-size: 145%;
+}
+
+h3, h4, h5, h6 {
+    font-size: 120%;
+}
+
+input {
+    width: auto;
+}
+
+#actions button {
+    width: 8em;
+}
+
+/* -------- CLASS -------- */
+
+.success {
+    color: var(--color-success);
+}
+
+.error {
+    color: var(--color-error);
+}
+
+.closed {
+    color: darkgray;
+    font-style: italic;
+}

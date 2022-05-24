@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rylan Schubkegel</title>
+    <link rel="icon"
+          type="img/png"
+          href="../imgs/logo.svg"/>
+
+    <!-- CSS styles -->
+    <link href="../style.css" rel="stylesheet" type="text/css"/>
+
+    <!-- JS animation library -->
+    <script src="../lib/anime.min.js"></script>
+
+    <style>
+
+        /* only page specific styles here!! */
+
+        #header, #header h1 {
+            margin-bottom: 0;
+        }
+
+        #section-conference > div {
+            display: grid;
+            grid-template-columns: 55% auto;
+            grid-gap: 4%;
+        }
+
+        #section-amendment > div {
+            display: grid;
+            grid-template-columns: auto 60%;
+            grid-gap: 4%;
+        }
+
+        .container-images {
+            display: grid;
+            grid-gap: var(--size-font-paragraph);
+            margin-top: var(--size-font-header);
+        }
+
+        #images-type-anatomy {
+            grid-template-columns: auto auto auto auto auto;
+        }
+
+        #images-27th-letter {
+            grid-template-columns: 50% auto;
+            justify-content: space-between;
+        }
+
+        svg {
+            fill: var(--color-light);
+            width: 80%;
+            height: 80%;
+            margin: 10%;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-aspect-ratio: 1 / 1) {
+            #section-conference > div, #section-amendment > div {
+                grid-template-columns: auto;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body onload="start();">
+
+    <script src="../script.js"></script>
+
+    <div id="wrapper">
+
+
+        <!------------------------ LOGO ------------------------>
+
+        <div id="logo-container">
+            <!-- logo SVG inline so color can be responsive -->
+            <svg id="logo" viewBox="0 0 220 220"> <path d="M74.58,177.36v25.86H48.72a25.88,25.88,0,0,1-25.86-25.86V128.82c0-7.89-3.39-14.28-11.28-14.28H0V88.68H11.58c7.89,0,11.28-6.39,11.28-14.28V25.86A25.88,25.88,0,0,1,48.72,0V88.68a12.94,12.94,0,0,1-12.93,12.93,12.94,12.94,0,0,1,12.93,12.93v48.68a14.14,14.14,0,0,0,14.14,14.14Z"/> <path d="M127.3,114.38C129.53,119,169.58,203,169.58,203H143.72l-37.43-79.5c-5.63-10.78-8.71-9.19-31.71-9.19V88.5h47.5c11.93,0,23.45,3.18,23.45-31.41s-10.19-31.42-23.45-31.42H74.58V0h47.5c29,0,47.5,4.09,47.5,57.09C169.58,115.91,142.18,114.38,127.3,114.38Z"/> </svg>
+        </div>
+
+
+        <div id="header">
+
+            <h1>Typography</h1>
+
+            <p>
+                This page showcases some school projects from <abbr title="typography">ARTD 220</abbr>.
+                The class explored type anatomy, page layout, hierarchy, and more.
+                All projects were completed during the fall 2019 semester.
+            </p>
+
+        </div>
+
+        <hr>
+
+        <div id="section-conference">
+            <h2>Conference Branding</h2>
+            <div>
+                <p>
+                    Starting with just the required text for a design conference, I created a logo, poster design, and website layout
+                    (only the poster is included). I found the background image on <a href="https://www.pexels.com/" target="_blank">Pexels</a>,
+                    my typical source of high quality photos.
+                </p>
+                <img src="imgs/made-by-humans.png" alt="poster">
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="section-amendment">
+            <h2>Constitutional Amendment</h2>
+            <div>
+                <img src="imgs/amendment.png" alt="poster">
+                <p>
+                    This project encouraged me to research a constitutional amendment of interest and create a poster to raise awareness for it.
+                    I chose the fourth amendment and focused on a modern issue it addresses: location privacy.
+                    The text is taken directly from Justice Roberts of the Supreme Court when it ruled against using cellular triangulation without a warrant.
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="section-type-anatomy">
+            <h2>Type Anatomy Exercise</h2>
+            <p>
+                The goal of this exercise was to create images using only type.
+                The forms could be cropped, transformed, or stretched, but the essence of the typeface had to be preserved.
+            </p>
+            <div class="container-images" id="images-type-anatomy">
+                <img src="imgs/type-anatomy-grid01.png">
+                <img src="imgs/type-anatomy-grid02.png">
+                <img src="imgs/type-anatomy-grid04.png">
+                <img src="imgs/type-anatomy-grid03.png">
+                <img src="imgs/type-anatomy-grid06.png">
+                <img src="imgs/type-anatomy-grid05.png">
+                <img src="imgs/type-anatomy-grid07.png">
+                <img src="imgs/type-anatomy-grid08.png">
+                <img src="imgs/type-anatomy-grid10.png">
+                <img src="imgs/type-anatomy-grid09.png">
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="section-27th-letter">
+            <h2>Twenty-seventh Letter</h2>
+            <p>
+                In this project, we were prompted to create a 27th letter of the alphabet.
+                We were limited to making a new letter-form using the style of an existing typeface.
+                I chose to make a character for silent usages of the letter "p".
+            </p>
+            <div class="container-images" id="images-27th-letter">
+                <img src="imgs/twenty-seventh-letter.png">
+                <svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.07 404.78">
+                        <g id="Layer_1" data-name="Layer 1">
+                            <path class="cls-1"
+                                  d="M262.62,105.68Q255,83,236.59,74.6t-33.34-3.45a25.74,25.74,0,0,0-14.9,12.52,22.45,22.45,0,0,0-1.81,18.68c3.82,11.5,15.23,17.37,34.2,17.7,12.81.29,20.65,4.56,23.4,12.77q4.94,14.84-8.29,42.2c-.29.58-.58,1.15-.86,1.73a125.09,125.09,0,0,1-11.05,18.19,74.72,74.72,0,0,1-12.48,13.67,85.8,85.8,0,0,1-18,11.7,123.27,123.27,0,0,1-15.85,6.4c-6,1.85-12.11,3.37-18.27,4.68-2.83.58-5.67,1.15-8.54,1.65V65.24c.2-17.2.66-28.12,1.4-32.89,1-6.32,4.06-11,9.31-14s14.79-4.51,28.74-4.51V0H150.66L108.2,19.26l-2.17,1c-5.46,2.51-10.88,5.09-16.3,7.8C52.53,46.68,13,70.21,3,114.18c-5.3,23.32-4,48.36,6.85,69.34A101.45,101.45,0,0,0,20.22,199.7,112.49,112.49,0,0,0,33.48,214Q65,242.33,107.75,246.26v74q0,41.21-1.07,49.76a23.8,23.8,0,0,1-7.51,14.74c-4.31,4.11-13.55,6.16-27.79,6.16h-9v13.84H191.06V390.94c-14.25,0-23.94-1.56-29.15-4.68a19.4,19.4,0,0,1-9.49-14q-1.66-9.36-1.64-52V245.15a192.54,192.54,0,0,0,44.46-11.29,99.49,99.49,0,0,0,25.29-14.74A125.59,125.59,0,0,0,259.09,164Q271,130.76,262.62,105.68ZM64.89,210.41c-13.59-15.93-24.18-34-24.47-75.29C40.25,107,60.21,68.73,94.94,43.52c15.4-6.45,12.81,10.26,12.81,38V233.32Q81.08,229.51,64.89,210.41Z"/>
+                        </g>
+                    </svg>
+                </svg>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

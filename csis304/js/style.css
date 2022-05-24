@@ -1,0 +1,224 @@
+:root {
+    --color-foreground: #d5ffea;
+    --color-accent: #59C9A5;
+    --color-splash: #ff9796;
+    --color-nav: #496251;
+    --color-contrast: #263f4a;
+    --standard-font-size: min(16pt, max(2.2vmin, 10pt));
+    --board-width: min(80vh, 60vw);
+    --board-tile-width: 24;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    font-size: var(--standard-font-size);
+    color: var(--color-foreground);
+}
+
+body {
+    background-color: black;
+}
+
+body > img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    opacity: 40%;
+}
+
+h1 {
+    font-size: calc(var(--standard-font-size) * 1.8);
+    font-weight: bold;
+    padding-bottom: 1.5ex;
+    border-width: 0 0 0.2ex 0;
+    border-style: solid;
+    border-color: var(--color-accent);
+}
+
+button, input {
+    background-color: var(--color-contrast);
+    border: solid 1px var(--color-splash);
+    height: 3em;
+}
+
+input {
+    padding: 0 1em;
+}
+
+label {
+    align-self: center;
+}
+
+button {
+    padding: 1ex 2ex;
+    cursor: pointer;
+    /*width: 6em;*/
+}
+
+button:hover, input:hover {
+    border-color: var(--color-accent);
+}
+
+p {
+    padding: 0.5ex 0;
+}
+
+a, a:visited {
+    color: var(--color-splash);
+    text-decoration-line: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: var(--color-accent);
+    font-weight: normal;
+}
+
+#page-wrapper {
+    display: grid;
+    justify-content: center;
+    grid-gap: 2em;
+    margin: 2em;
+}
+
+#info {
+    max-width: var(--board-width);
+}
+
+#error-resolution {
+    grid-area: 1 / 2 / span 1 / span 1;
+    color: var(--color-splash);
+    visibility: hidden;
+    text-align: left;
+    max-width: var(--board-width);
+    font-weight: bold;
+}
+
+#board-grid {
+    grid-area: 1 / 2 / span 4 / span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-nav);
+    border: solid var(--standard-font-size) var(--color-contrast);
+    user-select: none;
+    touch-action: manipulation;
+    /*width: var(--board-width);*/
+}
+
+#board-text {
+    grid-area: 3 / 1 / span 1 / span 1;
+    max-width: var(--board-width);
+}
+
+#board-controls {
+    grid-area: 2 / 1 / span 1 / span 1;
+    max-width: var(--board-width);
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 1em;
+}
+
+#board-controls > label, #board-controls > input {
+    grid-column-end: span 2;
+}
+
+.tile {
+    border-style: solid;
+    border-color: var(--color-accent);
+    border-width: 2px 0 0 2px;
+    cursor: pointer;
+    width: calc(var(--board-width) / var(--board-tile-width));
+    height: calc(var(--board-width) / var(--board-tile-width));
+}
+
+.tile.no-left-border {
+    border-left-width: 0;
+}
+
+.tile.no-top-border {
+    border-top-width: 0;
+}
+
+.tile.alive {
+    background-color: var(--color-foreground);
+}
+
+.tile.dead {
+    background-color: var(--color-nav);
+}
+
+span {
+    font-weight: bold;
+}
+
+span.running {
+    color: var(--color-accent);
+}
+
+span.stopped {
+    color: var(--color-splash);
+}
+
+/* 600px minimum for standard tile border size */
+@media (max-height: 600px), (max-width: 600px) {
+    .tile {
+        border-width: 1px 0 0 1px;
+    }
+}
+
+/* 300px minimum for simulation */
+@media (max-height: 420px), (max-width: 320px) {
+    .hide-when-small {
+        visibility: hidden;
+        margin: 0;
+        width: 100%;
+    }
+
+    .tile {
+        width: 0;
+        height: 0;
+    }
+
+    #error-resolution {
+        visibility: visible;
+    }
+}
+
+/* adjust layout depending on screen ration */
+@media (max-aspect-ratio: 10 / 6) {
+    #info {
+        width: min(100%, var(--board-width));
+    }
+
+    #page-wrapper {
+        align-items: center;
+        justify-items: center;
+        /*justify-content: center;*/
+    }
+
+    #error-resolution {
+        grid-area: 2 / 1 / span 1 / span 1;
+    }
+
+    #board-grid {
+        grid-area: 2 / 1 / span 4 / span 1;
+    }
+
+    #board-text {
+        grid-area: 7 / 1 / span 1 / span 1;
+    }
+
+    #board-controls {
+        grid-area: 6 / 1 / span 1 / span 1;
+    }
+}
+
+.debug-outline {
+    /*outline: red solid 1px;*/
+}
