@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
 import Layout from '../components/layout';
 import ProjectContainer from '../components/projectContainer';
 
@@ -40,7 +39,6 @@ const IndexPage = () => {
       <div className='flex-col'>
         { contents.map( e => (e) ) }
       </div>
-      <Link to='/resumes' className='resumes-link'>resumes</Link>
     </Layout>
   );
 };

@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Link } from 'gatsby';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -6,11 +8,21 @@ import '../styles/main.sass';
 
 import logo from '../images/logo.svg';
 
-const Layout = ({ children }) => {
+const ResumesLink = () => {
+  return (
+    <Link to='/resumes' className='resumes-link'>resumes</Link>
+  );
+};
+
+function Layout({ children }) {
+  const [isShown, setIsShown] = useState(false);
+
+  const handleClick = (event) => { setIsShown(true) };
+
   return (
     <div style={{ margin: 'auto' }} className='flex-col flex-centered main-content'>
       <div className='flex-centered'>
-        <img src={ logo } alt='personal logo' className='personal-logo' />
+        <img src={ logo } alt='personal logo' className='personal-logo' onClick={ handleClick }/>
       </div>
       <main style={{ margin: 'auto' }} className='flex-col flex-centered'>
         { children }
@@ -23,6 +35,7 @@ const Layout = ({ children }) => {
         </div>
         <p style={{ margin: 0 }}>© Rylan Schubkegel 2022</p>
       </footer>
+      { isShown && <ResumesLink/> }
     </div>
   );
 };
