@@ -25,6 +25,9 @@ $main-content-width: 35rem
     font-size: nth($header-font-sizes, $i)
     line-height: calc( 100% + calc( calc( 5 - #{$i} ) * 10% ) )
 
+h1
+  text-align: center
+
 h1, h2
   font-weight: 700
 
@@ -36,6 +39,7 @@ body
 
 p
   font-family: 'Lustria', serif
+  text-align: justify
 
 a, a *
   color: $colors-dark-splash
@@ -143,3 +147,17 @@ iframe
     cursor: pointer
     path
       fill: $colors-dark-fg-mild
+
+.resumes-link
+  position: fixed
+  bottom: 0
+  left: 0
+  opacity: 0
+  border: 1px solid $colors-dark-splash
+  transition: 1s
+  min-width: 2rem
+  min-height: 2rem
+  padding: 0.5rem 1rem
+  &:hover
+    opacity: 1
+    transition: 10ms
