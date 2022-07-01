@@ -26,11 +26,11 @@ const MusicContainer = () => {
         <iframe
           title="newkegels-bandcamp"
           id="newbkegels"
-          src="https://bandcamp.com/EmbeddedPlayer/track=1706869695/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
-          seamless=""
+          src="https://bandcamp.com/EmbeddedPlayer/track=1479949913/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+          seamless
         >
-          <a href="https://thenewbkegels.bandcamp.com/track/come-thou-fount">
-            Come Thou Fount by The Newbkegels
+          <a href="https://thenewbkegels.bandcamp.com/track/thank-you-corona">
+            Thank You Corona by Kaylie Houghton, The Newbkegels
           </a>
         </iframe>
       </div>
