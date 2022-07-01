@@ -3,13 +3,15 @@ import { Link } from "gatsby";
 import Layout from "../components/layout";
 
 import GameDevContainer from "../components/project-containers/gameDev";
-import AnimationContainer from "../components/project-containers/animation";
 import MusicContainer from "../components/project-containers/music";
+import PaintingContainer from "../components/project-containers/painting";
+import AnimationContainer from "../components/project-containers/animation";
 
 const contents = [
   GameDevContainer(),
-  AnimationContainer(),
   MusicContainer(),
+  PaintingContainer(),
+  AnimationContainer(),
 ];
 
 const HobbiesPage = () => {
