@@ -1,76 +1,110 @@
 @import "colors"
 @import "fonts"
 
-@mixin small-break
-  @media screen and (max-width: 500px)
+/**** CONSTANTS AND DEFAULTS ****/
+
+@mixin mid-break
+  @media screen and (max-width: 65rem)
     @content
-$base-font-size: 14pt
-$small-font-size: 12pt
-$line-height: 1.6rem
-$header-font-sizes: (180%, 160%, 140%, 120%)
-$main-content-width: 35rem
+
+@mixin small-break
+  @media screen and (max-width: 55rem)
+    @content
 
 *
-  color: $colors-dark-fg-mild
-  line-height: $line-height
+  font-size: 14pt
+  @include mid-break
+    font-size: 13pt
   @include small-break
-    font-size: $small-font-size
-  font-size: $base-font-size
-  margin: 0
+    font-size: 12pt
+  color: $colors-fg-mild
 
-@for $i from 1 through 4
-  h#{$i}
-    color: $colors-dark-fg-bold
-    font-family: 'Amiko', sans-serif
-    font-size: nth($header-font-sizes, $i)
-    line-height: calc( 100% + calc( calc( 5 - #{$i} ) * 10% ) )
 
-h1
-  text-align: center
-
-h1, h2
-  font-weight: 700
-
-h3, h4
-  font-weight: 400
+/**** TAG SELECTORS ****/
 
 body
-  background: $colors-dark-bg-mild
+  background: $colors-bg-bold
+  margin-left: 10rem
+  @include mid-break
+    margin-left: 10rem
+  @include small-break
+    margin-left: 8rem
+  margin-bottom: 6rem
+  margin-right: 6rem
 
-p
-  font-family: 'Lustria', serif
-  text-align: justify
+main
+  max-width: 36rem
 
-a, a *
-  color: $colors-dark-splash
-  font-size: inherit
+h1
+  color: $colors-fg-mild
+  font-family: 'Poppins', sans-serif
+  font-size: 400%
+
+h2
+  color: $colors-bg-mild
+  font-family: 'Bayon', sans-serif
+  font-size: 800%
+  white-space: nowrap
+  overflow: visible
+  position: relative
+  top: 3.5rem
+  left: 0
+  z-index: -1
+  margin: -4rem
+
+h3
+  color: $colors-fg-bold
+  font-family: 'Open Sans', sans-serif
+  font-size: 200%
+  margin: 1rem 0
 
 span
-  color: inherit
   font-size: inherit
 
-hr
-  width: 100%
-  border: 1px solid $colors-dark-bg-bold
-  margin: 0.5rem 0 1rem
+p
+  line-height: 1.6rem
+  font-family: 'Lustria', serif
+
+a
+  color: $colors-splash-bold
+  text-decoration: none
+  &.preview-link
+    background: $colors-bg-bold
+    opacity: 75%
+    font-size: 75%
+    font-family: 'Poppins', sans-serif
+    border-radius: .3rem
+    border: solid 1px $colors-splash-mild
+    padding: .3rem .5rem
+    position: relative
+    left: 1rem
+    top: -.5rem
+    transition: 500ms
+    &:hover
+      background: $colors-splash-mild
+      color: $colors-bg-bold
+      transition: 10ms
 
 footer
-  margin: 1.5rem 0 1rem
+  position: fixed
+  right: 1rem
+  top: 1rem
+  gap: 2rem
+  path
+    fill: $colors-splash-bold
   svg
-    max-width: 2rem
+    opacity: 25%
+    transition: 500ms
+    &:hover
+      opacity: 100%
+      transition: 10ms
 
-iframe
-  border: 0
-  width: 100%
-  height: 22rem
+
+/**** CLASS SELECTORS ****/
 
 [class^="flex-"]
   display: flex
   gap: 1.2rem
-
-.flex-centered
-  justify-content: center
-  align-items: center
 
 .flex-col
   flex-direction: column
@@ -78,86 +112,30 @@ iframe
 .flex-row
   flex-direction: row
 
-.flex-row-responsive
-  flex-direction: row
-  @include small-break
-    flex-direction: column
+.logo
+  position: absolute
+  overflow: hidden
+  top: 5vh
+  transform: translateX(-40vh) translateY(-16vh)
+  opacity: .25
+  width: auto
+  height: 120vh
 
-.main-content
-  max-width: $main-content-width
-  padding: 2rem 2rem
+.intro
+  transform: translateY(20vh)
+  margin-bottom: 60vh
 
-.script
-  font-family: 'Lora', serif
-
-.preview-container-header
-  display: flex
-  flex-direction: row
-  gap: 0.5rem
-  align-items: center
-  margin-bottom: 0.5rem
-  // @include small-break
-  //   display: grid
-  //   svg
-  //     grid-column: 2
-  //     margin: auto
-  //     &.solo
-  //       grid-row: 1 / span 2
-  //       margin-right: 0
-  //   h2, h3
-  //     grid-row: 1 / span 2
-  //   a
-  //     grid-column: 2
-  //     grid-row: 1
-
-.preview-link
-  font-size: 80%
-  text-align: center
-  white-space: nowrap
-  display: inline-block
-  margin-left: 0.5rem
-  $base-padding: 0.1em
-  padding: $base-padding calc( $base-padding * 10 ) calc( $base-padding * 3 )
-  border-radius: 0.5em
-  background: $colors-dark-bg-bold
-  transform: translateY(-0.2em)
-  border: 1px solid $colors-dark-bg-bold
-  transition: 1s
-  &:hover
-    border-color: $colors-dark-splash
-    transition: 10ms
-
-.table-of-contents
-  & > h3
-    text-align: center
-  & > ul
-    list-style-position: outside
-    padding-left: 0
-
-.personal-logo
-  width: 8rem
-  height: auto
-  margin-bottom: 0.5rem
-
-.copy-link-btn
-  max-width: 1.5rem
-  path
-    fill: $colors-dark-bg-bold
-  &:hover
-    cursor: pointer
-    path
-      fill: $colors-dark-fg-mild
+.highlight
+  color: $colors-fg-bold
 
 .resumes-link
+  background: $colors-bg-bold
+  font-family: 'Bayon', sans-serif
   position: fixed
-  top: 0
-  left: 0
+  bottom: 1rem
+  right: 1.5rem
   opacity: 0
-  border: 1px solid $colors-dark-splash
-  transition: 1s
-  min-width: 2rem
-  min-height: 2rem
-  padding: 0.5rem 1rem
+  transition: 1.5s
   &:hover
     opacity: 1
     transition: 10ms

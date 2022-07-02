@@ -10,13 +10,13 @@ const ProjectContainer = ({ level, title, linkText, linkDest, children }) => {
     : <h3 style={{ display: 'inline-block' }}>{ title }</h3>;
   const linkOrNot = linkDest
     ? linkDest.startsWith('http')
-      ? <a href={ linkDest } className='preview-link script'>{ linkText }</a>     // external links use <a>
-      : <Link to={ linkDest } className='preview-link script'>{ linkText }</Link> // internal links use <Link>
+      ? <a href={ linkDest } className='preview-link'>{ linkText }</a>     // external links use <a>
+      : <Link to={ linkDest } className='preview-link'>{ linkText }</Link> // internal links use <Link>
     : null;
   return (
     <div id={ key } key={ key } className='preview-container'>
       <div className='preview-container-header'>
-        <FontAwesomeIcon size='xl' icon={ faLink } className={`copy-link-btn${ linkDest ? '' : ' solo' }`} onClick={ () => {
+        {/* <FontAwesomeIcon size='xl' icon={ faLink } className={`copy-link-btn${ linkDest ? '' : ' solo' }`} onClick={ () => {
           let t = `${ window.location.href.replace(window.location.hash,"") }#${ key }`;
           navigator.clipboard.writeText(t);
           document.getElementById(key).scrollIntoView({
@@ -24,11 +24,10 @@ const ProjectContainer = ({ level, title, linkText, linkDest, children }) => {
             block: 'start',
             inline: 'nearest'
           });
-        }}/>
+        }}/> */}
         { header }
         { linkOrNot }
       </div>
-      { level === 2 ? <hr/> : null }
       <div className='flex-col'>
         { children }
       </div>

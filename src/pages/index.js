@@ -10,7 +10,7 @@ import arGlasses from '../components/project-containers/arGlasses';
 import hobbies from '../components/project-containers/hobbies';
 
 const contents = [
-  <ProjectContainer level={2} title='Web Development'>
+  <ProjectContainer level={2} title='Web Dev'>
     { voluntime(3) }
     { portfolio(3) }
     { artd270(3) }
@@ -25,9 +25,9 @@ const contents = [
 const IndexPage = () => {
   return (
     <Layout>
-      <div>
+      <div className='intro'>
         <h1>
-          Hello, my name is Rylan 👋
+          Hello, I&apos;m <span className='highlight'>Rylan</span>
         </h1>
         <p>
           I&apos;m a passionate programmer, artist, and coffee lover.
