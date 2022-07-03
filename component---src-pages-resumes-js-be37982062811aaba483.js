@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkrschubkegel=self.webpackChunkrschubkegel||[]).push([[535],{2424:function(e,t,n){n.r(t);var l=n(7294),r=n(1597),a=n(5112);t.default=function(){var e=(0,r.K2)("1680880974");return l.createElement(a.Z,null,l.createElement("h1",null,l.createElement(r.rU,{to:"/"},"Home")," > Current Resumes"),e.allFile.nodes.map((function(e){return l.createElement("a",{href:e.relativePath,className:"preview-link",style:{fontSize:"120%"}},e.name)})))}}}]);
-//# sourceMappingURL=component---src-pages-resumes-js-be37982062811aaba483.js.map
