@@ -23,7 +23,9 @@ const contents = [
     { hololens(3) }
     { arGlasses(3) }
   </ProjectContainer>,
-  hobbies(),
+  <ProjectContainer level={2} title='Hobbies' faded>
+    { hobbies() }
+  </ProjectContainer>
 ];
 
 const ResumesLink = () => {

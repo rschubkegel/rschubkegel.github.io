@@ -22,12 +22,14 @@
     "@fortawesome/react-fontawesome": "^0.1.18",
     "gatsby": "^4.14.0",
     "gatsby-plugin-image": "^2.14.1",
+    "gatsby-plugin-react-helmet": "^5.17.0",
     "gatsby-plugin-sass": "^5.14.0",
     "gatsby-plugin-sharp": "^4.14.1",
     "gatsby-source-filesystem": "^4.14.0",
     "gatsby-transformer-remark": "^5.14.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
     "sass": "^1.51.0"
   }
 }

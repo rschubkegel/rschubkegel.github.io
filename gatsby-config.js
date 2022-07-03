@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: "/rschubkegel.gatsby",
   siteMetadata: {
-    title: `rschubkegel`,
+    title: `rschubkegel: A Portfolio`,
     siteUrl: `https://rschubkegel.github.io`
   },
   plugins: [
@@ -9,6 +9,7 @@ module.exports = {
     "gatsby-transformer-remark", 
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-react-helmet",
     {
       resolve: 'gatsby-source-filesystem',
       options: {

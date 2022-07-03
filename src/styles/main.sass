@@ -31,9 +31,12 @@ body
     margin-left: 8rem
   margin-bottom: 6rem
   margin-right: 6rem
+  overflow-x: hidden
+  z-index: -1 // this prevents "faded" headers from being hidden
 
 main
   max-width: 36rem
+  z-index: 0
 
 span
   font-size: inherit
@@ -93,12 +96,11 @@ footer
 
 .logo
   position: absolute
-  overflow: hidden
   top: 5vh
-  transform: translateX(-40vh) translateY(-16vh)
-  opacity: .25
+  left: calc(15vw - 16vh)
+  opacity: .15
   width: auto
-  height: 120vh
+  height: 90vh
   z-index: -2
 
 .intro
