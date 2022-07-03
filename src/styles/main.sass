@@ -96,14 +96,17 @@ footer
       flex-direction: row
       gap: 2.5rem
       justify-content: center
-  path
-    fill: $colors-splash-bold
-  svg
-    opacity: 25%
-    transition: 500ms
-    &:hover
-      opacity: 100%
-      transition: 10ms
+    path
+      fill: $colors-splash-bold
+    svg
+      opacity: 25%
+      transition: 500ms
+      &:hover
+        opacity: 100%
+        transition: 10ms
+      @include mini-break
+        min-width: 3rem
+        min-height: 3rem
 
 iframe
   width: 100%
@@ -113,6 +116,7 @@ iframe
 
 /**** CLASS SELECTORS ****/
 
+// utility flex classes
 [class^="flex-"]
   display: flex
   gap: 1.2rem
@@ -139,12 +143,14 @@ iframe
     opacity: .08
   z-index: -2
 
+// includes hero, subtitle, description, etc.
 .intro
   transform: translateY(20vh)
   margin-bottom: 60vh
   @include mini-break
     transform: translateY(25vh)
 
+// the big, eye-catching text (usually h1)
 .hero
   color: $colors-fg-mild
   font-family: 'Poppins', sans-serif
@@ -156,6 +162,7 @@ iframe
 .highlight
   color: $colors-fg-bold
 
+// hidden until logo is clicked
 .resumes-link
   background: $colors-bg-bold
   font-family: 'Bayon', sans-serif
@@ -168,9 +175,13 @@ iframe
     opacity: 1
     transition: 10ms
 
+// each section header resides in a flexbox div
 .sec-hdr-ctr
+  justify-content: space-between
+  align-items: center
   margin-top: 1rem
 
+// basic section header
 .section-header
   color: $colors-fg-bold
   font-family: 'Open Sans', sans-serif
@@ -178,6 +189,7 @@ iframe
   display: inline-block
   margin: 0
 
+// for sub-sections like the Holy See
 .small-section-header
   color: $colors-fg-bold
   font-family: 'Open Sans', sans-serif
@@ -186,6 +198,7 @@ iframe
   display: inline-block
   margin: 1rem 0
 
+// cool overlapping jazz
 .section-header-faded
   color: $colors-bg-mild
   font-family: 'Bayon', sans-serif
@@ -203,17 +216,20 @@ iframe
   margin: -4rem
   user-select: none
 
+// returns to home page from sub-page
 .return-link
   font-family: 'Bayon', sans-serif
   font-size: 140%
   position: absolute
   transform: translateX(-3rem) translateY(1.75rem) rotate(-.25turn)
   @include mini-break
-    transform: translateX(-2rem) translateY(1.75rem) rotate(-.25turn)
+    transform: translateX(-2.5rem) translateY(.75rem) rotate(-.25turn)
+    opacity: .75
   color: $colors-splash-mild
   &:hover
     color: $colors-splash-bold
 
+// copies link to specific section on page
 .copy-btn
   position: absolute
   transform: translateX(-2.5rem)
