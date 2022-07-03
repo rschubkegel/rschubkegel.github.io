@@ -28,16 +28,13 @@
 
 body
   background: $colors-bg-bold
-  margin-left: 10rem
-  margin-right: 6rem
+  margin-left: 15vw
+  margin-right: 15vw
   margin-bottom: 6rem
-  @include mid-break
-    margin-left: 10rem
-  @include small-break
-    margin-left: 8rem
   @include mini-break
-    margin-left: 2.5rem
-    margin-right: 2.5rem
+    margin-left: 2.8rem
+    margin-right: 2.2rem
+    margin-bottom: 5rem
   overflow-x: hidden
   z-index: -1 // this prevents "faded" headers from being hidden
 
@@ -132,22 +129,29 @@ iframe
   left: calc(15vw - 16vh)
   width: auto
   height: 90vh
+  opacity: .1
   @include mini-break
     width: 120vw
     height: auto
-    top: calc(50vh - 60vw)
+    top: calc(50vh - 70vw)
     left: -10vw
-  opacity: .15
+    transform: rotate(-20deg)
+    opacity: .08
   z-index: -2
 
 .intro
   transform: translateY(20vh)
   margin-bottom: 60vh
+  @include mini-break
+    transform: translateY(25vh)
 
 .hero
   color: $colors-fg-mild
   font-family: 'Poppins', sans-serif
   font-size: 400%
+  @include mini-break
+    font-size: 350%
+    line-height: 4rem
 
 .highlight
   color: $colors-fg-bold
