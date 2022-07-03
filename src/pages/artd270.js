@@ -16,7 +16,8 @@ const ARTD270 = () => {
   return (
     <Layout>
       <div>
-        <h1><Link to='/'>Home</Link> &gt; ARTD 270</h1>
+        <Link className='return-link' to='/'>Home</Link>
+        <h1 className='hero highlight' style={{ marginBottom: '0' }}>ARTD 270</h1>
         <p>
           ARTD 270 focused on interface design, user experience, typography, and layout of web design.
           This is a selection of my favorite projects from the class.

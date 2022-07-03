@@ -1,32 +1,12 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
-import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import '../styles/main.sass';
 
-import logo from '../images/logo.svg';
-
-const ResumesLink = () => {
-  return (
-    <Link to='/resumes' className='resumes-link'>Resumes</Link>
-  );
-};
-
 function Layout({ children }) {
-  const [isShown, setIsShown] = useState(false);
-
-  const handleClick = (event) => { setIsShown(true) };
-
   return (
     <div>
-      <img
-        className='logo'
-        src={ logo }
-        alt='personal logo'
-        onClick={ handleClick }
-      />
       <main>
         { children }
       </main>
@@ -53,7 +33,6 @@ function Layout({ children }) {
         </div>
         <p style={{ display: 'none' }}>© Rylan Schubkegel 2022</p>
       </footer>
-      { isShown && <ResumesLink/> }
     </div>
   );
 };

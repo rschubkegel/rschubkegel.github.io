@@ -9,25 +9,27 @@ const GameDevContainer = () => {
       linkText='ich.io page'
       linkDest='https://supergobo.itch.io/'
     >
-      <p>
-        One of my passions is game development, which unites several of my
-        other hobbies. I love game jams and small indie projects. You can see
-        all my published games on{' '}
-        <a href='https://supergobo.itch.io/'>my itch.io page</a>.
-      </p>
-      <p>
-        My most recent game,{' '}
-        <a href='https://supergobo.itch.io/the-creature'>The Creature</a>, was
-        made with two friends. It was completed in a week for the{' '}
-        <a href='https://itch.io/jam/weeksauce-3'>Week Sauce Game Jam</a>.
-      </p>
-      <p>
-        My most notable game is an entry for{' '}
-        <a href='https://ldjam.com/'>Ludum Dare</a> 43, a 48-hour game making
-        competition. Out of a total of 761 competition entries, my game{' '}
-        <a href='https://supergobo.itch.io/judgement-of-a-priest?secret=y8iE62XuowSe3dRCjaB3YANzE8'>Judgement of a Priest</a> placed 27th for audio and 39th for
-        graphics.
-      </p>
+      <div>
+        <p>
+          One of my passions is game development, which unites several of my
+          other hobbies. I love game jams and small indie projects. You can see
+          all my published games on{' '}
+          <a href='https://supergobo.itch.io/'>my itch.io page</a>.
+        </p>
+        <p>
+          My most recent game,{' '}
+          <a href='https://supergobo.itch.io/the-creature'>The Creature</a>, was
+          made with two friends. It was completed in a week for the{' '}
+          <a href='https://itch.io/jam/weeksauce-3'>Week Sauce Game Jam</a>.
+        </p>
+        <p>
+          My most notable game is an entry for{' '}
+          <a href='https://ldjam.com/'>Ludum Dare</a> 43, a 48-hour game making
+          competition. Out of a total of 761 competition entries, my game{' '}
+          <a href='https://supergobo.itch.io/judgement-of-a-priest?secret=y8iE62XuowSe3dRCjaB3YANzE8'>Judgement of a Priest</a> placed 27th for audio and 39th for
+          graphics.
+        </p>
+      </div>
       <div className='flex-row flex-centered'>
         <a href='https://supergobo.itch.io/the-creature'>
           <StaticImage
