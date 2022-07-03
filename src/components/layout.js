@@ -35,7 +35,7 @@ function Layout({ children }) {
         { children }
       </main>
       <footer>
-        <div className='flex-col'>
+        <div>
           <a
             href='mailto:rylanschubkegel@gmail.com'
             role='button'

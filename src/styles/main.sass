@@ -11,6 +11,10 @@
   @media screen and (max-width: 55rem)
     @content
 
+@mixin mini-break
+  @media screen and (max-width: 500px)
+    @content
+
 *
   font-size: 14pt
   @include mid-break
@@ -25,12 +29,15 @@
 body
   background: $colors-bg-bold
   margin-left: 10rem
+  margin-right: 6rem
+  margin-bottom: 6rem
   @include mid-break
     margin-left: 10rem
   @include small-break
     margin-left: 8rem
-  margin-bottom: 6rem
-  margin-right: 6rem
+  @include mini-break
+    margin-left: 2.5rem
+    margin-right: 2.5rem
   overflow-x: hidden
   z-index: -1 // this prevents "faded" headers from being hidden
 
@@ -55,12 +62,19 @@ a
     opacity: 75%
     font-size: 75%
     font-family: 'Poppins', sans-serif
+    white-space: nowrap
     border-radius: .3rem
     border: solid 1px $colors-splash-mild
     padding: .3rem .5rem
+    height: fit-content
     position: relative
     left: 1rem
     top: -.5rem
+    @include mini-break
+      left: 0
+      top: 0
+      font-size: 85%
+      padding: .5rem .7rem
     transition: 500ms
     &:hover
       background: $colors-splash-mild
@@ -68,10 +82,23 @@ a
       transition: 10ms
 
 footer
-  position: fixed
-  right: 1rem
-  top: 1rem
-  gap: 2rem
+  > div
+    position: fixed
+    right: 1rem
+    top: 1rem
+    gap: 2rem
+    display: flex
+    flex-direction: column
+    gap: 1.2rem
+    @include mini-break
+      position: relative
+      width: 100%
+      top: 0
+      right: 0
+      padding-top: 4rem
+      flex-direction: row
+      gap: 2.5rem
+      justify-content: center
   path
     fill: $colors-splash-bold
   svg
@@ -80,6 +107,11 @@ footer
     &:hover
       opacity: 100%
       transition: 10ms
+
+iframe
+  width: 100%
+  border: 0
+  height: 22rem
 
 
 /**** CLASS SELECTORS ****/
@@ -98,9 +130,14 @@ footer
   position: absolute
   top: 5vh
   left: calc(15vw - 16vh)
-  opacity: .15
   width: auto
   height: 90vh
+  @include mini-break
+    width: 120vw
+    height: auto
+    top: calc(50vh - 60vw)
+    left: -10vw
+  opacity: .15
   z-index: -2
 
 .intro
@@ -127,12 +164,15 @@ footer
     opacity: 1
     transition: 10ms
 
+.sec-hdr-ctr
+  margin-top: 1rem
+
 .section-header
   color: $colors-fg-bold
   font-family: 'Open Sans', sans-serif
   font-size: 200%
   display: inline-block
-  margin: 1rem 0 0
+  margin: 0
 
 .small-section-header
   color: $colors-fg-bold
@@ -146,12 +186,15 @@ footer
   color: $colors-bg-mild
   font-family: 'Bayon', sans-serif
   font-size: 800%
-  display: inline-block
-  white-space: nowrap
-  overflow: visible
   position: relative
   top: 3.5rem
   left: 0
+  @include mini-break
+    font-size: 600%
+    left: 1rem
+  display: inline-block
+  white-space: nowrap
+  overflow: visible
   z-index: -1
   margin: -4rem
   user-select: none
@@ -161,13 +204,18 @@ footer
   font-size: 140%
   position: absolute
   transform: translateX(-3rem) translateY(1.75rem) rotate(-.25turn)
+  @include mini-break
+    transform: translateX(-2rem) translateY(1.75rem) rotate(-.25turn)
   color: $colors-splash-mild
   &:hover
     color: $colors-splash-bold
 
 .copy-btn
   position: absolute
-  transform: translateX(-2.5rem) translateY(1.75rem)
+  transform: translateX(-2.5rem)
+  @include mini-break
+    max-width: 1.5rem
+    transform: translateX(-2rem)
   opacity: .1
   path
     fill: $colors-fg-bold

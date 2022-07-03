@@ -26,7 +26,7 @@ const ProjectContainer = ({ level, title, linkText, linkDest, faded, children })
     }}/>;
   return (
     <div id={ key } key={ key }>
-      <div>
+      <div className='flex-row sec-hdr-ctr' style={{ justifyContent: 'space-between', alignItems: 'center' }}>
         { !faded ? copyButton : null }
         { header }
         { linkOrNot }
