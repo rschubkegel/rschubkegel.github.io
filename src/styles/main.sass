@@ -1,7 +1,7 @@
+/**** CONSTANTS AND DEFAULTS ****/
+
 @import "colors"
 @import "fonts"
-
-/**** CONSTANTS AND DEFAULTS ****/
 
 @mixin mid-break
   @media screen and (max-width: 65rem)
@@ -39,8 +39,10 @@ span
   font-size: inherit
 
 p
-  line-height: 1.6rem
+  line-height: 1.7rem
   font-family: 'Lustria', serif
+  a:hover
+    border-bottom: solid .2rem $colors-bg-mild
 
 a
   color: $colors-splash-bold
@@ -128,7 +130,7 @@ footer
   font-family: 'Open Sans', sans-serif
   font-size: 200%
   display: inline-block
-  margin: 1rem 0
+  margin: 1rem 0 0
 
 .small-section-header
   color: $colors-fg-bold
@@ -150,6 +152,7 @@ footer
   left: 0
   z-index: -1
   margin: -4rem
+  user-select: none
 
 .return-link
   font-family: 'Bayon', sans-serif
@@ -159,3 +162,13 @@ footer
   color: $colors-splash-mild
   &:hover
     color: $colors-splash-bold
+
+.copy-btn
+  position: absolute
+  transform: translateX(-2.5rem) translateY(1.75rem)
+  opacity: .1
+  path
+    fill: $colors-fg-bold
+  &:hover
+    cursor: pointer
+    opacity: 1

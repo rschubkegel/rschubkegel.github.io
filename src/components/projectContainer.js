@@ -14,18 +14,20 @@ const ProjectContainer = ({ level, title, linkText, linkDest, faded, children })
       ? <a href={ linkDest } className='preview-link'>{ linkText }</a>     // external links use <a>
       : <Link to={ linkDest } className='preview-link'>{ linkText }</Link> // internal links use <Link>
     : null;
+  const copyButton =
+    <FontAwesomeIcon size='xl' icon={ faLink } className='copy-btn' onClick={ () => {
+      let t = `${ window.location.href.replace(window.location.hash,"") }#${ key }`;
+      navigator.clipboard.writeText(t);
+      document.getElementById(key).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
+    }}/>;
   return (
     <div id={ key } key={ key }>
       <div>
-        {/* <FontAwesomeIcon size='xl' icon={ faLink } className={`copy-link-btn${ linkDest ? '' : ' solo' }`} onClick={ () => {
-          let t = `${ window.location.href.replace(window.location.hash,"") }#${ key }`;
-          navigator.clipboard.writeText(t);
-          document.getElementById(key).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-            inline: 'nearest'
-          });
-        }}/> */}
+        { !faded ? copyButton : null }
         { header }
         { linkOrNot }
       </div>
