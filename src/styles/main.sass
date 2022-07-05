@@ -135,10 +135,10 @@ iframe
   height: 90vh
   opacity: .1
   @include mini-break
-    width: 120vw
+    width: 60vw
     height: auto
-    top: calc(50vh - 70vw)
-    left: -10vw
+    top: calc(50vh - 30vw)
+    left: 15vw
     transform: rotate(-20deg)
     opacity: .08
   z-index: -2
@@ -186,6 +186,8 @@ iframe
   color: $colors-fg-bold
   font-family: 'Open Sans', sans-serif
   font-size: 200%
+  @include mini-break
+    font-size: 180%
   display: inline-block
   margin: 0
 

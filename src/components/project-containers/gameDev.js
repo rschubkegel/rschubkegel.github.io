@@ -5,7 +5,7 @@ import ProjectContainer from '../projectContainer';
 const GameDevContainer = () => {
   return (
     <ProjectContainer
-      title='Game Development'
+      title='Game Dev'
       linkText='ich.io page'
       linkDest='https://supergobo.itch.io/'
     >
