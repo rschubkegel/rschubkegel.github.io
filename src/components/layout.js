@@ -13,7 +13,7 @@ function Layout({ children }) {
   const { title, siteUrl } = useSiteMetadata();
   return (
     <div>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: 'en' }}>
         <meta charset='utf-8'/>
         <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
         <link rel='canonical' href={ siteUrl } />
@@ -28,6 +28,7 @@ function Layout({ children }) {
           This site represents a small selection of my personal and professional work.
           Feel free to reach out, I would love to connect!
         </desc>
+        <meta name='description' content='A small collection of the personal and professional work of Rylan Schubkegel.' />
         <meta name='author' content='Rylan Schubkegel' />
         <link rel='icon' type='img/svg' href={ logo } />
       </Helmet>
