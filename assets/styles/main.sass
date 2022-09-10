@@ -1,5 +1,6 @@
 @import './colors'
 
+//////// RESET AND GLOBALS ////////
 *
   font-family: inherit
   color: inherit
@@ -10,17 +11,73 @@
 :root
   font-size: 12pt
   color: $fg-mild
-  font-family: Poppins
+  font-family: Poppins, sans-serif
 
+//////// TAG DEFAULTS ////////
 body
   background-color: $bg-bold
 
 @for $index from 1 through 6
   h#{$index}
     color: $fg-bold
+    font-size: #{((6 - $index) * .5) + 1}rem
+    font-weight: 500
+    line-height: 1
 
 p
-  font-family: Lustria
+  font-family: Lustria, serif
+  line-height: 1.6
 
-a:hover
+  a
+    color: $splash-mild
+    border-bottom: .15em solid #0000
+    transition: 500ms
+    &:hover
+      transition: 100ms
+      color: $splash-bold
+      border-bottom-color: transparentize($splash-bold, .5)
+
+a
+  text-decoration: none
+  &:hover
+    color: $fg-bold
+
+
+//////// LAYOUT UTILITY CLASSES ////////
+.flex
+  display: flex
+  &.center
+    justify-content: center
+    align-items: center
+  &.between
+    justify-content: space-between
+  &.col
+    flex-direction: column
+
+.grid
+  display: grid
+  &.center
+    place-items: center
+  @for $index from 1 through 8
+    &.col#{$index}
+      grid-template-columns: repeat(#{$index}, 1fr)
+
+@for $index from 1 through 4
+  .gap#{$index}
+    gap: #{$index}rem
+
+img.full-w
+  width: 100%
+  height: auto
+
+img.full-h
+  width: auto
+  height: 100%
+
+
+//////// COLOR UTILITY CLASSES ////////
+.color-fg-mild
+  color: $fg-mild
+
+.color-fg-bold
   color: $fg-bold

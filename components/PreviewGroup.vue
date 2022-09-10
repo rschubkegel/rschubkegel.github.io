@@ -1,14 +1,42 @@
 <template>
-  <div>
-    <h2><slot name='name'></slot></h2>
+  <div ref='container' class='flex col gap2' style='position: relative'>
+    <div class='header-container'>
+      <h2 ref='header'><slot name='name'></slot></h2>
+    </div>
     <slot></slot>
   </div>
 </template>
 
 <style lang='sass' scoped>
-h2
-  opacity: .25
+.header-container
   font-size: 6rem
-  margin-bottom: -.75em
+  position: absolute
+  top: 0
+  left: -1em
+
+h2
+  writing-mode: vertical-lr
+  white-space: nowrap
+
+  font-size: inherit
+  font-weight: 700
+
+  opacity: .25
   text-transform: uppercase
 </style>
+
+<script>
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
+export default {
+  mounted() {
+    ScrollTrigger.create({
+      trigger: this.$refs.container,
+      pin: this.$refs.header,
+      markers: true
+    })
+  }
+}
+</script>

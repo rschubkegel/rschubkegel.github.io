@@ -1,6 +1,11 @@
 export default {
   components: true,
   target: 'static',
+  build: {
+    transpile: [
+      'gsap'
+    ]
+  },
   css: [
     './assets/styles/main.sass',
     './assets/styles/colors.sass',
@@ -18,5 +23,18 @@ export default {
   },
   fontawesome: {
     component: 'fa'
+  },
+  image: {
+    dir: 'assets/images',
+    presets: {
+      default: {
+        modifiers: {
+          format: 'webp',
+          quality: 90,
+          fit: 'inside',
+          loading: 'lazy'
+        }
+      }
+    }
   }
 }

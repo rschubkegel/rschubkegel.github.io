@@ -17,5 +17,5 @@
 
 <style lang='sass' scoped>
 path
-  fill: $splash-bold
+  fill: $splash-mild
 </style>
