@@ -35,7 +35,8 @@ export default {
     ScrollTrigger.create({
       trigger: this.$refs.container,
       pin: this.$refs.header,
-      markers: true
+      start: 'top-=24 top',
+      end: `bottom-=${this.$refs.header.clientHeight + 24} top`
     })
   }
 }

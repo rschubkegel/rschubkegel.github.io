@@ -1,6 +1,5 @@
 <template>
   <div id='content'>
-    <TheHeader />
     <Nuxt />
     <TheFooter />
   </div>

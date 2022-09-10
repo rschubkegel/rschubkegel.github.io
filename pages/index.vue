@@ -9,6 +9,14 @@
       <p>I'm a passionate programmer, artist, and coffee lover. This site represents a small selection of my personal and professional work. Feel free to reach out via <a href='mailto:rylanschubkegel@gmail.com'>email</a> or <a href='https://github.com/rschubkegel/'>LinkedIn</a>, I would love to connect!</p>
     </section>
 
+    <TheNavbar>
+      <a
+        v-for='header in headers'
+        :key='header.id'
+        @click='scrollTo(header.id)'
+      >{{header.text}}</a>
+    </TheNavbar>
+
     <PreviewGroup class='flex col gap2'>
       <template #name>Web Dev</template>
 
@@ -44,28 +52,28 @@
             <nuxt-img
               preset='default'
               src='/portfolio/nuxt.png'
-              height='100'
+              width='150'
             />
           </a>
           <a href='vuejs.org/'>
             <nuxt-img
               preset='default'
               src='/portfolio/vue.png'
-              height='100'
+              width='150'
             />
           </a>
-          <a href='gatsbyjs.com/'>
+          <a href='greensock.com/'>
             <nuxt-img
               preset='default'
-              src='/portfolio/gatsby.png'
-              height='100'
+              src='/portfolio/greensock.png'
+              width='150'
             />
           </a>
-          <a href='reactjs.org/'>
+          <a href='sass-lang.com/'>
             <nuxt-img
               preset='default'
-              src='/portfolio/react.png'
-              height='100'
+              src='/portfolio/sass.png'
+              width='150'
             />
           </a>
         </div>
@@ -173,10 +181,35 @@
 
 <script>
 import createHeaderIds from '../assets/js/CreateHeaderIds'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 export default {
+  data() {
+    return {
+      headers: []
+    }
+  },
   mounted() {
-    createHeaderIds();
+    this.headers = createHeaderIds([2])
+  },
+  updated() {
+    ScrollTrigger.refresh()
+  },
+  methods: {
+    scrollTo(id) {
+      window.scroll({ top: this.getTop(id) - 54, behavior: 'smooth' })
+    },
+    getTop(id) {
+      let el = document.getElementById(id)
+      let top = 0
+      while (el) {
+        top += el.offsetTop
+        el = el.parentElement
+      }
+      return top
+    }
   }
 }
 </script>
