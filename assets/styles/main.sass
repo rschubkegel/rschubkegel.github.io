@@ -1,0 +1,26 @@
+@import './colors'
+
+*
+  font-family: inherit
+  color: inherit
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+:root
+  font-size: 12pt
+  color: $fg-mild
+  font-family: Poppins
+
+body
+  background-color: $bg-bold
+
+@for $index from 1 through 6
+  h#{$index}
+    color: $fg-bold
+
+p
+  font-family: Lustria
+
+a:hover
+  color: $fg-bold

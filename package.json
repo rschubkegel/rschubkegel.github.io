@@ -2,34 +2,24 @@
   "name": "rschubkegel",
   "version": "1.0.0",
   "private": true,
-  "description": "rschubkegel",
   "author": "Rylan Schubkegel",
-  "keywords": [
-    "gatsby"
-  ],
   "scripts": {
-    "dev": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "deploy": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "nuxt start"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@fortawesome/free-brands-svg-icons": "^6.1.1",
-    "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.1.18",
-    "gatsby": "^4.14.0",
-    "gatsby-plugin-image": "^2.14.1",
-    "gatsby-plugin-react-helmet": "^5.17.0",
-    "gatsby-plugin-sass": "^5.14.0",
-    "gatsby-plugin-sharp": "^4.14.1",
-    "gatsby-source-filesystem": "^4.14.0",
-    "gatsby-transformer-remark": "^5.14.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "sass": "^1.51.0"
+    "gsap": "^3.11.1",
+    "nuxt": "^2.15.8"
+  },
+  "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@nuxt/image": "^0.7.1",
+    "@nuxtjs/fontawesome": "^1.1.2",
+    "@nuxtjs/style-resources": "^1.2.1",
+    "sass": "^1.54.9",
+    "sass-loader": "10"
   }
 }

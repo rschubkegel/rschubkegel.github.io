@@ -1,0 +1,6 @@
+{
+  "include": [
+    "./pages/**/*",
+    "./components/**/*",
+  ]
+}
