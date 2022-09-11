@@ -15,6 +15,7 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxt/image',
     '@nuxtjs/fontawesome',
+    '@nuxt/content',
   ],
   styleResources: {
     sass: [
@@ -32,6 +33,11 @@ export default {
           format: 'webp',
           quality: 90,
           fit: 'inside',
+          loading: 'lazy'
+        }
+      },
+      gif: {
+        modifiers: {
           loading: 'lazy'
         }
       }
