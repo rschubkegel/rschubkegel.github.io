@@ -8,6 +8,7 @@
     "dev": "nuxt",
     "prebuild": "node optimize_images.mjs ./assets/images/ ./static/images/ --clean --resize",
     "build": "nuxt build",
+    "pregenerate": "node optimize_images.mjs ./assets/images/ ./static/images/ --clean --resize",
     "generate": "nuxt generate",
     "start": "nuxt start"
   },
