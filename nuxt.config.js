@@ -10,16 +10,19 @@ export default {
     './assets/styles/main.sass',
     './assets/styles/colors.sass',
     './assets/styles/fonts.sass',
+    './assets/styles/breakpoints.sass',
   ],
   modules: [
     '@nuxtjs/style-resources',
     '@nuxt/image',
     '@nuxtjs/fontawesome',
     '@nuxt/content',
+    'nuxt-mq',
   ],
   styleResources: {
     sass: [
-      './assets/styles/colors.sass'
+      './assets/styles/colors.sass',
+      './assets/styles/breakpoints.sass',
     ]
   },
   fontawesome: {
@@ -42,5 +45,12 @@ export default {
         }
       }
     }
-  }
+  },
+  mq: {
+    breakpoints: {
+      sm: 500,
+      md: 900,
+      lg: Infinity
+    }
+  },
 }

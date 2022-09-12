@@ -49,7 +49,6 @@ export default {
   display: grid
   place-items: center
   gap: 1rem
-  margin-top: 1rem
   :deep(img)
     width: 100%
 </style>
