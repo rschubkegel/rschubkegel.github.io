@@ -76,9 +76,6 @@ export default {
   mounted() {
     this.headers = createHeaderIds([2])
   },
-  updated() {
-    ScrollTrigger.refresh()
-  },
   methods: {
     scrollTo(id) {
       window.scroll({ top: this.getTop(id) - 24, behavior: 'smooth' })

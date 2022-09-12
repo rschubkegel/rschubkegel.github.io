@@ -39,6 +39,13 @@ export default {
     flex-direction: row
     justify-content: space-between
 
+  svg
+    font-size: 1.5rem
+    max-height: 1em
+    color: transparentize($fg-mild, .5)
+    &:hover
+      color: $fg-bold
+
 #footer-copyright
   color: transparentize($fg-mild, .5)
 </style>
