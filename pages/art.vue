@@ -1,0 +1,55 @@
+<template>
+  <main class='flex col gap2'>
+    <div class='page-header-container flex col center between gap1'>
+      <nuxt-link id='home-link' to='/'>Return Home</nuxt-link>
+      <h1>{{title}}</h1>
+    </div>
+
+    <nuxt-content
+      v-for='(p, i) in projects'
+      :key='i'
+      :document='p'
+    />
+  </main>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      title: 'Visual Art'
+    }
+  },
+  async asyncData ({ $content }) {
+    const projects = await $content('art')
+      .sortBy('sortOrder', 'asc')
+      .fetch()
+    return {
+      projects
+    }
+  },
+}
+</script>
+
+<style lang='sass' scoped>
+.page-header-container
+  color: transparentize($fg-bold, .5)
+
+  padding-bottom: 1rem
+  border-bottom: solid 1px currentcolor
+
+  @include break-md
+    flex-direction: row
+
+h1
+  text-transform: uppercase
+
+#home-link
+  font-weight: 300
+  text-transform: lowercase
+
+:deep(.nuxt-content)
+  display: flex
+  flex-direction: column
+  gap: 1rem
+</style>

@@ -1,3 +1,7 @@
+---
+sortOrder: 1
+---
+
 ### Painting
 
 One of my favorite forms of R&R is painting. I've tried watercolor and gouache, but my favorite medium is acrylic. _Occasionally_, I share my work on [Instagram](https://www.instagram.com/theryguydraws/).

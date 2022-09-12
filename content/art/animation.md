@@ -1,3 +1,7 @@
+---
+sortOrder: 3
+---
+
 ### Animations
 
 I love bringing drawings to life through animation. Since it takes so much time, the only chance I've had to create the "illusion of life" has been for school credit.

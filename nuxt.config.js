@@ -17,7 +17,6 @@ export default {
     '@nuxt/image',
     '@nuxtjs/fontawesome',
     '@nuxt/content',
-    'nuxt-mq',
   ],
   styleResources: {
     sass: [
@@ -44,13 +43,6 @@ export default {
           loading: 'lazy'
         }
       }
-    }
-  },
-  mq: {
-    breakpoints: {
-      sm: 500,
-      md: 900,
-      lg: Infinity
     }
   },
 }

@@ -1,5 +1,5 @@
 <template>
-  <main class='flex col gap2'>
+  <main class='flex col gap3'>
     <div class='flex center'>
       <Logo id='logo' />
     </div>
@@ -16,11 +16,10 @@
       >{{header.text}}</a>
     </TheNavbar> -->
 
-    <PreviewGroup>
+    <PreviewGroup to='/web'>
       <template #name>Web Dev</template>
-      <nuxt-content :document='voluntime' />
       <nuxt-content :document='portfolio' />
-      <nuxt-content :document='webDesign' />
+      <nuxt-content :document='voluntime' />
     </PreviewGroup>
 
     <PreviewGroup>
@@ -29,12 +28,12 @@
       <nuxt-content :document='arGlasses' />
     </PreviewGroup>
     
-    <PreviewGroup>
+    <PreviewGroup to='/games'>
       <template #name>Games</template>
       <nuxt-content :document='earthDefense' />
     </PreviewGroup>
 
-    <PreviewGroup>
+    <PreviewGroup to='/art'>
       <template #name>Visual Art</template>
       <nuxt-content :document='painting' />
     </PreviewGroup>
@@ -52,7 +51,6 @@ export default {
     const intro = await $content('intro').fetch()
     const voluntime = await $content('web/voluntime').fetch()
     const portfolio = await $content('web/portfolio').fetch()
-    const webDesign = await $content('web/design').fetch()
     const hololens = await $content('engr/mr-research').fetch()
     const arGlasses = await $content('engr/ar-glasses').fetch()
     const earthDefense = await $content('games/earth-defense').fetch()
@@ -61,7 +59,6 @@ export default {
       intro,
       voluntime,
       portfolio,
-      webDesign,
       hololens,
       arGlasses,
       earthDefense,
