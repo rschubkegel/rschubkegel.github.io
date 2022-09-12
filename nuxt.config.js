@@ -2,6 +2,23 @@ export default {
   components: true,
   target: 'static',
   ssr: false,
+  head: {
+    title: 'rschubkegel | a portfolio',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'rschubkegel.github.io',
+        content: 'The eclectic portfolio of Rylan Schubkegel.'
+      },
+      { property: 'og:url', content: 'https://rschubkegel.github.io/' },
+      { property: 'og:title', content: 'rschubkegel.github.io' },
+      { property: 'og:description', content: 'The eclectic portfolio of Rylan Schubkegel.' },
+      { property: 'og:image', content: '/social-preview.png' },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/logo.svg' }]
+  },
   build: {
     transpile: [
       'gsap'

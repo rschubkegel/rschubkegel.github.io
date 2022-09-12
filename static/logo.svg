@@ -59,14 +59,14 @@
   </defs>
   <style>
     #g823 {
-      fill:#3DD650;
+      fill:#4ea859;
       fill-opacity:1;
       fill-rule:nonzero;
       stroke:none;
     }
     @media (prefers-color-scheme: light) {
       #g823 {
-        fill: #0A7D18;
+        fill: #153f19;
       }
     }
   </style>
