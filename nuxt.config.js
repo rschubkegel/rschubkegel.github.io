@@ -10,7 +10,6 @@ export default {
   css: [
     './assets/styles/main.sass',
     './assets/styles/colors.sass',
-    './assets/styles/fonts.sass',
     './assets/styles/breakpoints.sass',
   ],
   modules: [
