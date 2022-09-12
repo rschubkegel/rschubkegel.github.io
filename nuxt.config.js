@@ -12,9 +12,11 @@ export default {
     './assets/styles/colors.sass',
     './assets/styles/breakpoints.sass',
   ],
+  buildModules: [
+    '@nuxt/image',
+  ],
   modules: [
     '@nuxtjs/style-resources',
-    '@nuxt/image',
     '@nuxtjs/fontawesome',
     '@nuxt/content',
   ],
@@ -35,6 +37,7 @@ export default {
           format: 'webp',
           quality: 90,
           fit: 'inside',
+          width: 800,
           loading: 'lazy'
         }
       },
