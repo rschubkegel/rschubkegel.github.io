@@ -41,6 +41,24 @@ export default {
           loading: 'lazy'
         }
       },
+      sm: {
+        modifiers: {
+          format: 'webp',
+          quality: 90,
+          fit: 'inside',
+          width: 200,
+          loading: 'lazy'
+        }
+      },
+      xs: {
+        modifiers: {
+          format: 'webp',
+          quality: 90,
+          fit: 'inside',
+          width: 100,
+          loading: 'lazy'
+        }
+      },
       gif: {
         modifiers: {
           loading: 'lazy'
