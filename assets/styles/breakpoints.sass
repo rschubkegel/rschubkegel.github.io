@@ -5,3 +5,18 @@
 @mixin break-lg
   @media only screen and (min-width: 900px)
     @content
+
+.show-md, .show-lg
+  display: none
+
+@include break-md
+  .show-md
+    display: unset
+  .hide-md
+    display: none
+
+@include break-lg
+  .show-lg
+    display: unset
+  .hide-lg
+    display: none

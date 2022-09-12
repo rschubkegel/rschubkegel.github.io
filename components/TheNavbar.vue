@@ -1,45 +1,32 @@
 <template>
-  <nav class='flex'>
+  <nav class='flex col gap1'>
+    <span>Contents</span>
     <div ref='links' class='flex col'>
       <slot></slot>
     </div>
   </nav>
 </template>
 
-<script>
-import gsap from 'gsap'
-
-export default {
-  mounted() {
-    if (this.$mq === 'lg') {
-      gsap.to(this.$refs.links, {
-        left: '100%',
-        paddingLeft: '1rem',
-        scrollTrigger: {
-          trigger: 'nav',
-          start: 'top-=24 top',
-          toggleActions: 'play none none reverse'
-        },
-        duration: .5,
-        ease: 'power4.out'
-      })
-    }
-  }
-}
-</script>
-
 <style lang='sass' scoped>
 nav
-  @include break-lg
-    position: sticky
-    top: 2rem
+  width: max-content
+  margin: auto
+
+  span
+    color: transparentize($fg-bold, .5)
+    text-transform: uppercase
+    font-weight: 300
+    text-align: center
+    letter-spacing: .2em
+    // writing-mode: vertical-lr
+    // border-left: 1px solid transparentize($fg-bold, .5)
+    // transform: rotate(.5turn)
 
   div
-    position: relative
-    width: max-content
-    left: 0
-    padding-left: 0
+    gap: .5rem
 
-a.nuxt-link-exact-active
-  color: $fg-bold
+  a
+    cursor: pointer
+    &.nuxt-link-exact-active
+      color: $fg-bold
 </style>

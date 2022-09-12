@@ -1,12 +1,13 @@
 <template>
-  <footer class='flex between'>
-    <div>© Rylan Schubkegel {{new Date().getFullYear()}}</div>
+  <footer id='footer' class='flex col center gap1'>
+    <div id='footer-copyright' class='show-md'>© Rylan Schubkegel {{new Date().getFullYear()}}</div>
     <div class='flex gap1'>
       <a href='https://github.com/rschubkegel/'><fa :icon='faGithub' /></a>
       <a href='https://www.linkedin.com/in/rschubkegel/'><fa :icon='faLinkedin' /></a>
       <a href='https://www.instagram.com/theryguydraws/'><fa :icon='faInstagram' /></a>
       <a href='https://supergobo.itch.io/'><fa :icon='faItchIo' /></a>
     </div>
+    <div id='footer-copyright' class='hide-md'>© Rylan Schubkegel {{new Date().getFullYear()}}</div>
   </footer>
 </template>
 
@@ -32,6 +33,12 @@ export default {
 </script>
 
 <style lang='sass' scoped>
-footer
+#footer
   margin-top: 2rem
+  @include break-md
+    flex-direction: row
+    justify-content: space-between
+
+#footer-copyright
+  color: transparentize($fg-mild, .5)
 </style>

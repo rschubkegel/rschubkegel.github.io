@@ -1,10 +1,10 @@
 <template>
   <main class='flex col gap2'>
     <div class='flex center'>
-      <Logo />
+      <Logo id='logo' />
     </div>
 
-    <section class='flex col gap1'>
+    <section class='flex col'>
       <nuxt-content :document='intro' />
     </section>
 
@@ -16,7 +16,7 @@
       >{{header.text}}</a>
     </TheNavbar>
 
-    <PreviewGroup class='flex col gap2'>
+    <PreviewGroup>
       <template #name>Web Dev</template>
       <nuxt-content :document='voluntime' />
       <nuxt-content :document='portfolio' />
@@ -81,7 +81,7 @@ export default {
   },
   methods: {
     scrollTo(id) {
-      window.scroll({ top: this.getTop(id) - 54, behavior: 'smooth' })
+      window.scroll({ top: this.getTop(id) - 24, behavior: 'smooth' })
     },
     getTop(id) {
       let el = document.getElementById(id)
@@ -95,3 +95,20 @@ export default {
   }
 }
 </script>
+
+<style lang='sass' scoped>
+#logo
+  width: 8rem
+  height: 8rem
+  @include break-md
+    width: 10rem
+    height: 10rem
+  @include break-lg
+    width: 12rem
+    height: 12rem
+
+:deep(.nuxt-content)
+  display: flex
+  flex-direction: column
+  gap: 1rem
+</style>
