@@ -8,13 +8,13 @@
       <nuxt-content :document='intro' />
     </section>
 
-    <TheNavbar>
+    <!-- <TheNavbar>
       <a
         v-for='header in headers'
         :key='header.id'
-        @click='scrollTo(header.id)'
+        :href='`#${header.id}`'
       >{{header.text}}</a>
-    </TheNavbar>
+    </TheNavbar> -->
 
     <PreviewGroup>
       <template #name>Web Dev</template>
