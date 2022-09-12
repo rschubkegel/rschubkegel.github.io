@@ -10,7 +10,7 @@ To learn more, check out the [Code Jam competition submission](https://devpost.c
 
 <image-row>
 
-<nuxt-img preset="default" src="/voluntime/voluntime1.jpg"></nuxt-img>
-<nuxt-img preset="default" src="/voluntime/voluntime2.jpg"></nuxt-img>
+<responsive-img source="/images//voluntime/voluntime1.jpg"></responsive-img>
+<responsive-img source="/images//voluntime/voluntime2.jpg"></responsive-img>
 
 </image-row>

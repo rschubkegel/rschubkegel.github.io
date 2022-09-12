@@ -13,24 +13,24 @@ In college, I took an into animation class and 2D animation class, both of which
 Some of my favorite animations are compiled here for you enjoyment!
 
 <image-row>
-  <nuxt-img src='/animations/walk-cycle.gif'></nuxt-img>
-  <nuxt-img src='/animations/zoetrope.gif'></nuxt-img>
-  <nuxt-img src='/animations/circle-boogie.gif'></nuxt-img>
+  <img src='/images/animations/walk-cycle.gif' alt='' />
+  <img src='/images/animations/zoetrope.gif' alt='' />
+  <img src='/images/animations/circle-boogie.gif' alt='' />
 </image-row>
 
 <image-row>
-  <nuxt-img src='/animations/six-ft-apart.gif'></nuxt-img>
-  <nuxt-img src='/animations/jack-in-the-box.gif'></nuxt-img>
+  <img src='/images/animations/six-ft-apart.gif' alt='' />
+  <img src='/images/animations/jack-in-the-box.gif' alt='' />
 </image-row>
 
 <image-row>
-  <nuxt-img src='/animations/fire-paper.gif'></nuxt-img>
-  <nuxt-img src='/animations/explosion.gif'></nuxt-img>
-  <nuxt-img src='/animations/fire.gif'></nuxt-img>
+  <img src='/images/animations/fire-paper.gif' alt='' />
+  <img src='/images/animations/explosion.gif' alt='' />
+  <img src='/images/animations/fire.gif' alt='' />
 </image-row>
 
 <image-row>
-  <nuxt-img src='/animations/bunny.gif'></nuxt-img>
-  <nuxt-img src='/animations/monty-python.gif'></nuxt-img>
-  <nuxt-img src='/animations/wave.gif'></nuxt-img>
+  <img src='/images/animations/bunny.gif' alt='' />
+  <img src='/images/animations/monty-python.gif' alt='' />
+  <img src='/images/animations/wave.gif' alt='' />
 </image-row>

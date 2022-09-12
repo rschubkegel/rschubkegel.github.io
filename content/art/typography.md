@@ -7,22 +7,22 @@ sortOrder: 2
 ARTD 220 explored type anatomy, page layout, hierarchy, and more.
 
 <image-row>
-  <nuxt-img preset='default' src='/typography/made-by-humans.jpg'></nuxt-img>
-  <nuxt-img preset='default' src='/typography/twenty-seventh-letter.jpg'></nuxt-img>
+  <responsive-img source='/images/typography/made-by-humans.jpg'></responsive-img>
+  <responsive-img source='/images/typography/twenty-seventh-letter.jpg'></responsive-img>
 </image-row>
 
 <image-row>
-  <nuxt-img preset='sm' src='/typography/anatomy/1.png'></nuxt-img>
-  <nuxt-img preset='sm' src='/typography/anatomy/2.png'></nuxt-img>
-  <nuxt-img preset='sm' src='/typography/anatomy/3.png'></nuxt-img>
-  <nuxt-img preset='sm' src='/typography/anatomy/4.png'></nuxt-img>
-  <nuxt-img preset='sm' src='/typography/anatomy/5.png'></nuxt-img>
+  <responsive-img source='/images/typography/anatomy/1.png'></responsive-img>
+  <responsive-img source='/images/typography/anatomy/2.png'></responsive-img>
+  <responsive-img source='/images/typography/anatomy/3.png'></responsive-img>
+  <responsive-img source='/images/typography/anatomy/4.png'></responsive-img>
+  <responsive-img source='/images/typography/anatomy/5.png'></responsive-img>
 </image-row>
 
 <image-row>
-  <nuxt-img preset='sm' src='/typography/anatomy/6.png'></nuxt-img>
-  <nuxt-img preset='sm' src='/typography/anatomy/7.png'></nuxt-img>
-  <nuxt-img preset='sm' src='/typography/anatomy/8.png'></nuxt-img>
-  <nuxt-img preset='sm' src='/typography/anatomy/9.png'></nuxt-img>
-  <nuxt-img preset='sm' src='/typography/anatomy/10.png'></nuxt-img>
+  <responsive-img source='/images/typography/anatomy/6.png'></responsive-img>
+  <responsive-img source='/images/typography/anatomy/7.png'></responsive-img>
+  <responsive-img source='/images/typography/anatomy/8.png'></responsive-img>
+  <responsive-img source='/images/typography/anatomy/9.png'></responsive-img>
+  <responsive-img source='/images/typography/anatomy/10.png'></responsive-img>
 </image-row>

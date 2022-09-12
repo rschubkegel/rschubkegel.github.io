@@ -3,3 +3,6 @@ node_modules/
 .nuxt
 public
 dist
+
+# this will be programatically populated by optimize_images.mjs
+static/images/

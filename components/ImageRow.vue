@@ -24,7 +24,7 @@ export default {
     setGridColumns() {
       // pick a consistent height to calculate by
       const h = 200
-      // get all children (should all be <nuxt-img>)
+      // get all image children
       const images = Array.from(this.$refs.container.children)
       // calculate image ratios
       const ratios = images.map(img => h / img.naturalHeight)

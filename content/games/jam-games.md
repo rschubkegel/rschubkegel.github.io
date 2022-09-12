@@ -9,6 +9,6 @@ I have entered several game jams, which limit the amount of time you are committ
 I have entered several game jams on my own, including the worldwide [Ludum Dare](https://ldjam.com/) where my game, [Judgement of Priest](https://supergobo.itch.io/judgement-of-a-priest?secret=y8iE62XuowSe3dRCjaB3YANzE8), placed 27th for audio and 39th for graphics out of 761 competition entries.
 
 <image-row>
-  <nuxt-img preset="default" src="/games/priest-1.jpg"></nuxt-img>
-  <nuxt-img preset="default" src="/games/BBB.png"></nuxt-img>
+  <responsive-img source="/images//games/priest-1.jpg"></responsive-img>
+  <responsive-img source="/images//games/BBB.png"></responsive-img>
 </image-row>

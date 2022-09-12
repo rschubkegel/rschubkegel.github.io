@@ -9,10 +9,10 @@ What happens when you are a web developer whose family keeps in touch with Zoom 
 The app was built with [React](https://reactjs.org/) on the frontend, a [Node.js](https://nodejs.org/en/) server on the backend, [MongoDB](https://www.mongodb.com/) for the database, and [Heroku](https://www.heroku.com/) for deployment.
 
 <image-row>
-  <nuxt-img preset="default" src="/zoombingo/home.png"></nuxt-img>
-  <nuxt-img preset="default" src="/zoombingo/board.png"></nuxt-img>
+  <responsive-img source="/images//zoombingo/home.png"></responsive-img>
+  <responsive-img source="/images//zoombingo/board.png"></responsive-img>
 </image-row>
 
 <image-row>
-  <nuxt-img preset="default" src="/zoombingo/lobby.png"></nuxt-img>
+  <responsive-img source="/images//zoombingo/lobby.png"></responsive-img>
 </image-row>

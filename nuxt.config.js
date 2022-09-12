@@ -12,9 +12,6 @@ export default {
     './assets/styles/colors.sass',
     './assets/styles/breakpoints.sass',
   ],
-  buildModules: [
-    '@nuxt/image',
-  ],
   modules: [
     '@nuxtjs/style-resources',
     '@nuxtjs/fontawesome',
