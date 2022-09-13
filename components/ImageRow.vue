@@ -19,6 +19,13 @@ export default {
         if (imagesLoaded === imageCount) this.setGridColumns()
       }
     })
+
+    // if component does not have the "expand-md" or "expand-lg" classes,
+    // make its display "grid" by default (doesn't collapse into column)
+    if (!Array.from(this.$refs.container.classList).includes('expand-md')
+    &&  !Array.from(this.$refs.container.classList).includes('expand-lg')) {
+      this.$refs.container.style.display = 'grid'
+    }
   },
   methods: {
     setGridColumns() {
@@ -46,9 +53,19 @@ export default {
 
 <style lang='sass' scoped>
 .img-row-container
-  display: grid
+  display: flex
+  flex-direction: column
+
   place-items: center
   gap: 1rem
   :deep(img)
     width: 100%
+
+  &.expand-md
+    @include break-md
+      display: grid
+
+  &.expand-lg
+    @include break-lg
+      display: grid
 </style>

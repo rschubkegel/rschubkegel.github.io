@@ -6,7 +6,7 @@ I was the team manager of 6 students working with [Daimler Trucks of North Ameri
   <responsive-img source="/images//hololens/cube.jpg"></responsive-img>
 </image-row>
 
-<image-row>
+<image-row class='expand-md'>
   <responsive-img source="/images//hololens/user-flow.png"></responsive-img>
   <responsive-img source="/images//hololens/wireframes.jpg"></responsive-img>
 </image-row>
