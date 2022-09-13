@@ -3,6 +3,7 @@
     :srcset='srcSet'
     :sizes='sizes'
     :alt='alt'
+    loading='lazy'
   />
 </template>
 
