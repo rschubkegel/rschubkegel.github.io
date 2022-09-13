@@ -75,9 +75,17 @@ a
   display: grid
   &.center
     place-items: center
-  @for $index from 1 through 8
+  @for $index from 1 through 10
     &.col#{$index}
       grid-template-columns: repeat(#{$index}, 1fr)
+  @for $index from 2 through 2
+    &.expand-md#{$index}
+        @include break-md
+          grid-template-columns: repeat(#{$index}, 1fr)
+  @for $index from 2 through 2
+    &.expand-lg#{$index}
+        @include break-lg
+          grid-template-columns: repeat(#{$index}, 1fr)
 
 @for $index from 1 through 4
   .gap#{$index}

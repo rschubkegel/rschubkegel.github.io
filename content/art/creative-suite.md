@@ -12,7 +12,7 @@ ARTD 110 taught the fundamentals of Adobe Creative Cloud using Photoshop, Illust
   <responsive-img source='/images/creative-suite/business-card-1.png'></responsive-img>
 </image-row>
 
-<div style='display: grid; grid-template-columns: repeat(9, 1fr);'>
+<div class='grid col9'>
   <responsive-img source='/images/creative-suite/playlist/1.jpg'  style='width: 100%'></responsive-img>
   <responsive-img source='/images/creative-suite/playlist/2.jpg'  style='width: 100%'></responsive-img>
   <responsive-img source='/images/creative-suite/playlist/3.jpg'  style='width: 100%'></responsive-img>

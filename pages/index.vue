@@ -36,6 +36,13 @@
     <PreviewGroup to='/art'>
       <template #name>Visual Art</template>
       <nuxt-content :document='painting' />
+      <nuxt-content :document='typography' />
+    </PreviewGroup>
+
+    <PreviewGroup>
+      <template #name>Music</template>
+      <nuxt-content :document='newbkegels' />
+      <nuxt-content :document='shoobie' />
     </PreviewGroup>
   </main>
 </template>
@@ -55,6 +62,9 @@ export default {
     const arGlasses = await $content('engr/ar-glasses').fetch()
     const earthDefense = await $content('games/earth-defense').fetch()
     const painting = await $content('art/painting').fetch()
+    const typography = await $content('art/typography').fetch()
+    const shoobie = await $content('music/shoobie').fetch()
+    const newbkegels = await $content('music/newbkegels').fetch()
     return {
       intro,
       voluntime,
@@ -63,6 +73,9 @@ export default {
       arGlasses,
       earthDefense,
       painting,
+      typography,
+      shoobie,
+      newbkegels,
     }
   },
   data() {
