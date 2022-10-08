@@ -8,29 +8,22 @@
       <nuxt-content :document='intro' />
     </section>
 
-    <!-- <TheNavbar>
-      <a
-        v-for='header in headers'
-        :key='header.id'
-        :href='`#${header.id}`'
-      >{{header.text}}</a>
-    </TheNavbar> -->
-
     <PreviewGroup to='/web'>
       <template #name>Web Dev</template>
       <nuxt-content :document='portfolio' />
       <nuxt-content :document='voluntime' />
     </PreviewGroup>
 
+    <PreviewGroup to='/games'>
+      <template #name>Games</template>
+      <nuxt-content :document='creatureGames' />
+      <nuxt-content :document='earthDefense' />
+    </PreviewGroup>
+
     <PreviewGroup>
       <template #name>Engineering</template>
       <nuxt-content :document='hololens' />
       <nuxt-content :document='arGlasses' />
-    </PreviewGroup>
-    
-    <PreviewGroup to='/games'>
-      <template #name>Games</template>
-      <nuxt-content :document='earthDefense' />
     </PreviewGroup>
 
     <PreviewGroup to='/art'>
@@ -60,6 +53,7 @@ export default {
     const portfolio = await $content('web/portfolio').fetch()
     const hololens = await $content('engr/mr-research').fetch()
     const arGlasses = await $content('engr/ar-glasses').fetch()
+    const creatureGames = await $content('games/creature-games').fetch()
     const earthDefense = await $content('games/earth-defense').fetch()
     const painting = await $content('art/painting').fetch()
     const typography = await $content('art/typography').fetch()
@@ -71,6 +65,7 @@ export default {
       portfolio,
       hololens,
       arGlasses,
+      creatureGames,
       earthDefense,
       painting,
       typography,
