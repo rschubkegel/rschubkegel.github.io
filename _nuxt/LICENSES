@@ -40,6 +40,13 @@
 
 
 /*!
+ * Vue.js v2.7.10
+ * (c) 2014-2022 Evan You
+ * Released under the MIT License.
+ */
+
+
+/*!
  * Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2022 Fonticons, Inc.
@@ -54,12 +61,5 @@
 /*!
  * vue-no-ssr v1.1.1
  * (c) 2018-present egoist <0x142857@gmail.com>
- * Released under the MIT License.
- */
-
-
-/*!
- * Vue.js v2.7.10
- * (c) 2014-2022 Evan You
  * Released under the MIT License.
  */
