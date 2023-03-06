@@ -2,10 +2,18 @@
   <footer id='footer' class='flex col center gap1'>
     <div id='footer-copyright' class='show-md'>© Rylan Schubkegel {{new Date().getFullYear()}}</div>
     <div class='flex gap1'>
-      <a href='https://github.com/rschubkegel/'><fa :icon='faGithub' /></a>
-      <a href='https://www.linkedin.com/in/rschubkegel/'><fa :icon='faLinkedin' /></a>
-      <a href='https://www.instagram.com/theryguydraws/'><fa :icon='faInstagram' /></a>
-      <a href='https://supergobo.itch.io/'><fa :icon='faItchIo' /></a>
+      <a href='https://github.com/rschubkegel/' target="_blank">
+        <fa :icon='faGithub' size='lg' />
+      </a>
+      <a href='https://www.linkedin.com/in/rschubkegel/' target="_blank">
+        <fa :icon='faLinkedin' size='lg'/>
+      </a>
+      <a href='https://www.instagram.com/theryguydraws/' target="_blank">
+        <fa :icon='faInstagram' size='lg' />
+      </a>
+      <a href='https://supergobo.itch.io/' target="_blank">
+        <fa :icon='faItchIo' size='lg' />
+      </a>
     </div>
     <div id='footer-copyright' class='hide-md'>© Rylan Schubkegel {{new Date().getFullYear()}}</div>
   </footer>
@@ -16,18 +24,10 @@ import { faGithub, faLinkedin, faInstagram, faItchIo } from '@fortawesome/free-b
 
 export default {
   computed: {
-    faGithub() {
-      return faGithub
-    },
-    faLinkedin() {
-      return faLinkedin
-    },
-    faInstagram() {
-      return faInstagram
-    },
-    faItchIo() {
-      return faItchIo
-    },
+    faGithub() { return faGithub },
+    faLinkedin() { return faLinkedin },
+    faInstagram() { return faInstagram },
+    faItchIo() { return faItchIo },
   }
 }
 </script>
@@ -40,12 +40,13 @@ export default {
     justify-content: space-between
 
   svg
-    font-size: 1.5rem
-    max-height: 1em
+    // font-size: 1.5rem
+    // max-height: 1em
     color: transparentize($fg-mild, .5)
     &:hover
       color: $fg-bold
 
 #footer-copyright
   color: transparentize($fg-mild, .5)
+  font-weight: 300
 </style>
