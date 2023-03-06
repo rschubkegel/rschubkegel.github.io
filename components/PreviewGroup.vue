@@ -28,6 +28,13 @@ export default {
   padding-bottom: 1rem
   border-bottom: solid 1px currentcolor
 
+  position: sticky
+  top: 0
+
+  background-color: $bg-bold
+  padding: 1rem 0
+  z-index: 5
+
   @include break-md
     flex-direction: row
 

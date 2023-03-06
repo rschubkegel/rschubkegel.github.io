@@ -1,5 +1,5 @@
 <template>
-  <main class='flex col gap3'>
+  <main class='flex col gap2'>
     <div class='flex center'>
       <Logo id='logo' />
     </div>
