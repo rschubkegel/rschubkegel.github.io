@@ -1,5 +1,5 @@
 ---
-sortOrder: 4
+sortOrder: 20
 ---
 
 ### Web Design Class
@@ -12,6 +12,6 @@ The ARTD 270 class from college focused on UI design, page layout, and usability
 </image-row>
 
 <image-row class='expand-md'>
-  <responsive-img source="/images//artd270/virtual-card-sketches.jpg"></responsive-img>
-  <responsive-img source="/images//artd270/virtual-card-final.jpg" class='show-md'></responsive-img>
+  <responsive-img source="/images/artd270/virtual-card-sketches.jpg"></responsive-img>
+  <responsive-img source="/images/artd270/virtual-card-final.jpg" class='show-md'></responsive-img>
 </image-row>

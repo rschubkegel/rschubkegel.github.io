@@ -20,9 +20,9 @@ if (process.argv.length < 4) {
   exit()
 }
 
-const SRC_DIR = process.argv[2]
+let SRC_DIR = process.argv[2]
 if (!SRC_DIR.endsWith('/')) SRC_DIR += '/'
-const OUT_DIR = process.argv[3]
+let OUT_DIR = process.argv[3]
 if (!OUT_DIR.endsWith('/')) OUT_DIR += '/'
 
 if (!fs.existsSync(SRC_DIR)) {

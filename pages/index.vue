@@ -10,8 +10,8 @@
 
     <PreviewGroup to='/web'>
       <template #name>Web Dev</template>
-      <nuxt-content :document='portfolio' />
-      <nuxt-content :document='voluntime' />
+      <nuxt-content :document='novella' />
+      <nuxt-content :document='phoenix' />
     </PreviewGroup>
 
     <PreviewGroup to='/games'>
@@ -49,8 +49,8 @@ gsap.registerPlugin(ScrollTrigger)
 export default {
   async asyncData ({ $content }) {
     const intro = await $content('intro').fetch()
-    const voluntime = await $content('web/voluntime').fetch()
-    const portfolio = await $content('web/portfolio').fetch()
+    const phoenix = await $content('web/phoenix').fetch()
+    const novella = await $content('web/novella').fetch()
     const hololens = await $content('engr/mr-research').fetch()
     const arGlasses = await $content('engr/ar-glasses').fetch()
     const creatureGames = await $content('games/creature-games').fetch()
@@ -61,8 +61,8 @@ export default {
     const newbkegels = await $content('music/newbkegels').fetch()
     return {
       intro,
-      voluntime,
-      portfolio,
+      phoenix,
+      novella,
       hololens,
       arGlasses,
       creatureGames,
