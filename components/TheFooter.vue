@@ -1,21 +1,20 @@
 <template>
   <footer id='footer' class='flex col center gap1'>
-    <div id='footer-copyright' class='show-md'>© Rylan Schubkegel {{new Date().getFullYear()}}</div>
-    <div class='flex gap1'>
+    <div class='flex gap1 social'>
       <a href='https://github.com/rschubkegel/' target="_blank">
-        <fa :icon='faGithub' size='lg' />
+        <fa :icon='faGithub' style='height: 1.5em' />
       </a>
       <a href='https://www.linkedin.com/in/rschubkegel/' target="_blank">
-        <fa :icon='faLinkedin' size='lg'/>
+        <fa :icon='faLinkedin' style='height: 1.5em' />
       </a>
       <a href='https://www.instagram.com/theryguydraws/' target="_blank">
-        <fa :icon='faInstagram' size='lg' />
+        <fa :icon='faInstagram' style='height: 1.5em' />
       </a>
       <a href='https://supergobo.itch.io/' target="_blank">
-        <fa :icon='faItchIo' size='lg' />
+        <fa :icon='faItchIo' style='height: 1.5em' />
       </a>
     </div>
-    <div id='footer-copyright' class='hide-md'>© Rylan Schubkegel {{new Date().getFullYear()}}</div>
+    <div id='footer-copyright'>© Rylan Schubkegel {{new Date().getFullYear()}}</div>
   </footer>
 </template>
 
@@ -36,12 +35,10 @@ export default {
 #footer
   margin-top: 2rem
   @include break-md
-    flex-direction: row
+    flex-direction: row-reverse
     justify-content: space-between
 
   svg
-    // font-size: 1.5rem
-    // max-height: 1em
     color: transparentize($fg-mild, .5)
     &:hover
       color: $fg-bold
