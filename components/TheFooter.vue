@@ -39,11 +39,11 @@ export default {
     justify-content: space-between
 
   svg
-    color: transparentize($fg-mild, .5)
+    color: var(--color-fg-mild)
     &:hover
-      color: $fg-bold
+      color: var(--color-fg-bold)
 
 #footer-copyright
-  color: transparentize($fg-mild, .5)
+  color: var(--color-fg-mild)
   font-weight: 300
 </style>

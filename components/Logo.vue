@@ -17,5 +17,5 @@
 
 <style lang='sass' scoped>
 path
-  fill: darken($splash-mild, 10%)
+  fill: var(--color-splash-mild)
 </style>
