@@ -8,34 +8,9 @@
       <nuxt-content :document='intro' />
     </section>
 
-    <PreviewGroup to='/web'>
-      <template #name>Web Dev</template>
-      <nuxt-content :document='novella' />
-      <nuxt-content :document='phoenix' />
-    </PreviewGroup>
-
-    <PreviewGroup to='/games'>
-      <template #name>Games</template>
-      <nuxt-content :document='creatureGames' />
-      <nuxt-content :document='earthDefense' />
-    </PreviewGroup>
-
-    <PreviewGroup>
-      <template #name>Engineering</template>
-      <nuxt-content :document='hololens' />
-      <nuxt-content :document='arGlasses' />
-    </PreviewGroup>
-
-    <PreviewGroup to='/art'>
-      <template #name>Visual Art</template>
-      <nuxt-content :document='painting' />
-      <nuxt-content :document='typography' />
-    </PreviewGroup>
-
-    <PreviewGroup>
-      <template #name>Music</template>
-      <nuxt-content :document='newbkegels' />
-      <nuxt-content :document='shoobie' />
+    <PreviewGroup v-for="group in groups" :to='group.href' :key="group.name">
+      <template #name>{{ group.name }}</template>
+      <nuxt-content v-for="(preview, i) in group.previews" :document='preview' :key="i" />
     </PreviewGroup>
   </main>
 </template>
@@ -48,29 +23,48 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default {
   async asyncData ({ $content }) {
-    const intro = await $content('intro').fetch()
-    const phoenix = await $content('web/phoenix').fetch()
-    const novella = await $content('web/novella').fetch()
-    const hololens = await $content('engr/mr-research').fetch()
-    const arGlasses = await $content('engr/ar-glasses').fetch()
-    const creatureGames = await $content('games/creature-games').fetch()
-    const earthDefense = await $content('games/earth-defense').fetch()
-    const painting = await $content('art/painting').fetch()
-    const typography = await $content('art/typography').fetch()
-    const shoobie = await $content('music/shoobie').fetch()
-    const newbkegels = await $content('music/newbkegels').fetch()
     return {
-      intro,
-      phoenix,
-      novella,
-      hololens,
-      arGlasses,
-      creatureGames,
-      earthDefense,
-      painting,
-      typography,
-      shoobie,
-      newbkegels,
+      intro: await $content('intro').fetch(),
+      groups: [
+        {
+          name: 'Web Dev',
+          href: '/web',
+          previews: [
+            await $content('web/phoenix').fetch(),
+            await $content('web/novella').fetch()
+          ]
+        },
+        {
+          name: 'Engineering',
+          previews: [
+            await $content('engr/mr-research').fetch(),
+            await $content('engr/ar-glasses').fetch()
+          ]
+        },
+        {
+          name: 'Games',
+          href: '/games',
+          previews: [
+            await $content('games/creature-games').fetch(),
+            await $content('games/earth-defense').fetch()
+          ]
+        },
+        {
+          name: 'Visual Art',
+          href: '/games',
+          previews: [
+            await $content('art/painting').fetch(),
+            await $content('art/typography').fetch()
+          ]
+        },
+        {
+          name: 'Music',
+          previews: [
+            await $content('music/shoobie').fetch(),
+            await $content('music/newbkegels').fetch()
+          ]
+        }
+      ]
     }
   },
   data() {

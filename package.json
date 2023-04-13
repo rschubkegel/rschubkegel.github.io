@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "author": "Rylan Schubkegel",
+  "license": "MIT",
   "scripts": {
     "optimize": "node optimize_images.mjs ./assets/images/ ./static/images/ --clean --resize",
     "dev": "nuxt",
