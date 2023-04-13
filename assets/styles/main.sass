@@ -12,17 +12,17 @@
 
 :root
   font-size: 12pt
-  color: $fg-mild
+  color: var(--color-fg-mild)
   font-family: Poppins, Arial, Helvetica, sans-serif
 
 //////// TAG DEFAULTS ////////
 body
-  background-color: $bg-bold
+  background-color: var(--color-bg-bold)
 
 @for $index from 1 through 6
   h#{$index}
     font-size: #{((6 - $index) * .3) + 1}rem
-    color: $fg-bold
+    color: var(--color-fg-bold)
     font-weight: 500
     line-height: 1
 
@@ -37,18 +37,18 @@ p
   line-height: 1.6
 
   a
-    color: $splash-mild
-    border-bottom: .15em solid #0000
+    color: var(--color-splash-mild)
+    border-bottom: .15em solid transparent
     transition: 500ms
     &:hover
       transition: 100ms
-      color: $splash-bold
-      border-bottom-color: transparentize($splash-bold, .5)
+      color: var(--color-splash-bold)
+      border-bottom-color: var(--color-splash-mild)
 
 a
   text-decoration: none
   &:hover
-    color: $fg-bold
+    color: var(--color-fg-bold)
 
 
 //////// GLOBAL ID STYLES ////////
@@ -102,7 +102,7 @@ img.full-h
 
 //////// COLOR UTILITY CLASSES ////////
 .color-fg-mild
-  color: $fg-mild
+  color: var(--color-fg-mild)
 
 .color-fg-bold
-  color: $fg-bold
+  color: var(--color-fg-bold)

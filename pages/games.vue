@@ -33,7 +33,7 @@ export default {
 
 <style lang='sass' scoped>
 .page-header-container
-  color: transparentize($fg-bold, .5)
+  color: var(--color-fg-mild)
 
   padding-bottom: 1rem
   border-bottom: solid 1px currentcolor

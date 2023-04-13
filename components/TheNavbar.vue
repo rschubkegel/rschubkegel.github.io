@@ -13,14 +13,11 @@ nav
   margin: auto
 
   span
-    color: transparentize($fg-bold, .5)
+    color: var(--color-fg-mild)
     text-transform: uppercase
     font-weight: 300
     text-align: center
     letter-spacing: .2em
-    // writing-mode: vertical-lr
-    // border-left: 1px solid transparentize($fg-bold, .5)
-    // transform: rotate(.5turn)
 
   div
     gap: .5rem
@@ -28,5 +25,5 @@ nav
   a
     cursor: pointer
     &.nuxt-link-exact-active
-      color: $fg-bold
+      color: var(--color-fg-bold)
 </style>

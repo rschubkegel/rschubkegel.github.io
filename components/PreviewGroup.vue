@@ -24,14 +24,14 @@ export default {
 
 <style lang='sass' scoped>
 .group-header-container
-  color: transparentize($fg-bold, .5)
+  color: var(--color-fg-mild)
   padding-bottom: 1rem
   border-bottom: solid 1px currentcolor
 
   position: sticky
   top: 0
 
-  background-color: $bg-bold
+  background-color: var(--color-bg-bold)
   padding: 1rem 0
   z-index: 5
 
