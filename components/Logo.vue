@@ -4,7 +4,7 @@
       viewBox='0 0 220 255'
       width='220'
       height='255'
-      :class="{ hidden: taps >= TAP_THRESHOLD }">
+      :class="{ hidden: (taps % TAP_THRESHOLD) === (TAP_THRESHOLD - 1) }">
       <g transform='translate(-65, 300) rotate(180) scale(-1.2, 1.2)'>
         <g transform='translate(228.7894, 188.3042)'>
           <path d='M 0,0 C 0,53 -18.473,57.086 -47.5,57.086 H -95 V 31.414 h 47.5 c 13.267,0 23.454,3.179 23.454,-31.414 0,-34.593 -11.518,-31.414 -23.454,-31.414 H -95 v -25.811 c 23,0 26.086,1.593 31.71,-9.193 l 37.43,-79.497 H 0 c 0,0 -40.045,83.967 -42.28,88.621 C -27.399,-57.294 0,-58.82 0,0' />
@@ -17,9 +17,9 @@
     <img
       src="/qr-code.png"
       alt="QR code"
-      width="255"
-      height="255"
-      :class="{ hidden: taps < TAP_THRESHOLD }">
+      width="500"
+      height="500"
+      :class="{ hidden: (taps % TAP_THRESHOLD) !== (TAP_THRESHOLD - 1) }">
   </div>
 </template>
 
@@ -32,15 +32,16 @@ svg, img
   width: 100%
   height: 100%
   object-fit: contain
-  transition: opacity 1.2s
+  transition: 500ms
   &.hidden
     opacity: 0
+    scale: .25
 path
   fill: var(--color-splash-mild)
 </style>
 
 <script>
-const TAP_THRESHOLD = 3;
+const TAP_THRESHOLD = 4;
 
 export default {
   data() {

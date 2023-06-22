@@ -5,7 +5,23 @@
     </div>
 
     <section class='flex col'>
-      <nuxt-content :document='intro' />
+      <h1>Hello, I&apos;m Rylan</h1>
+      <p>
+        I&apos;m a web developer that is passionate about programming, art, and coffee.
+        This site represents a small selection of my personal and professional work.
+        Feel free to reach out via <a href="mailto:rylanschubkegel@gmail.com" target="_blank">email</a>
+        or <a href="https://github.com/rschubkegel/" target="_blank">LinkedIn</a>, I would love to connect!
+      </p>
+      <hr>
+      <div class="table-of-contents">
+        <a
+          v-for="header in headers.filter(h => h.level === 2)"
+          :href="`#${ header.id }`"
+          @click.prevent="scrollToId(header.id)">
+          {{ toCapsCase(header.text) }}
+        </a>
+      </div>
+      <hr>
     </section>
 
     <PreviewGroup v-for="group in groups" :to='group.href' :key="group.name">
@@ -17,6 +33,8 @@
 
 <script>
 import createHeaderIds from '../assets/js/CreateHeaderIds'
+import scrollToElement from '../assets/js/ScrollToElement'
+import toCapsCase from '../assets/js/CapsCase'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
@@ -24,7 +42,6 @@ gsap.registerPlugin(ScrollTrigger)
 export default {
   async asyncData ({ $content }) {
     return {
-      intro: await $content('intro').fetch(),
       groups: [
         {
           name: 'Web Dev',
@@ -51,7 +68,7 @@ export default {
         },
         {
           name: 'Visual Art',
-          href: '/games',
+          href: '/art',
           previews: [
             await $content('art/painting').fetch(),
             await $content('art/typography').fetch()
@@ -73,26 +90,19 @@ export default {
     }
   },
   mounted() {
-    this.headers = createHeaderIds([2])
+    this.headers = createHeaderIds([2,3])
   },
   methods: {
-    scrollTo(id) {
-      window.scroll({ top: this.getTop(id) - 24, behavior: 'smooth' })
+    scrollToId(id) {
+      scrollToElement(document.getElementById(id))
     },
-    getTop(id) {
-      let el = document.getElementById(id)
-      let top = 0
-      while (el) {
-        top += el.offsetTop
-        el = el.parentElement
-      }
-      return top
-    }
+    toCapsCase
   }
 }
 </script>
 
 <style lang='sass' scoped>
+
 #logo
   width: 8rem
   height: 8rem
@@ -107,4 +117,27 @@ export default {
   display: flex
   flex-direction: column
   gap: 1rem
+
+h1
+  margin-bottom: .5em
+
+hr
+  border-bottom: none
+  margin: 1.5rem 0
+  &:first-child
+    margin-top: 2.5rem
+  &:last-child
+    margin-bottom: 0
+
+.table-of-contents
+  display: flex
+  justify-content: space-between
+  a
+    transition: 200ms
+  &:hover a:not(:hover)
+    opacity: .5
+  @media (max-width: 576px)
+    flex-direction: column
+    gap: .5rem
+    align-items: center
 </style>
