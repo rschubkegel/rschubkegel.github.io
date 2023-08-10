@@ -1,4 +1,11 @@
 /*!
+ * Vue.js v2.7.14
+ * (c) 2014-2022 Evan You
+ * Released under the MIT License.
+ */
+
+
+/*!
  * Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2022 Fonticons, Inc.
@@ -18,48 +25,41 @@
 
 
 /*!
- * CSSPlugin 3.11.1
+ * CSSPlugin 3.12.2
  * https://greensock.com
  *
- * Copyright 2008-2022, GreenSock. All rights reserved.
+ * Copyright 2008-2023, GreenSock. All rights reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
 
 /*!
- * GSAP 3.11.1
+ * GSAP 3.12.2
  * https://greensock.com
  *
- * @license Copyright 2008-2022, GreenSock. All rights reserved.
+ * @license Copyright 2008-2023, GreenSock. All rights reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
 
 /*!
- * Observer 3.11.1
+ * Observer 3.12.2
  * https://greensock.com
  *
- * @license Copyright 2008-2022, GreenSock. All rights reserved.
+ * @license Copyright 2008-2023, GreenSock. All rights reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
 
 /*!
- * ScrollTrigger 3.11.1
+ * ScrollTrigger 3.12.2
  * https://greensock.com
  *
- * @license Copyright 2008-2022, GreenSock. All rights reserved.
+ * @license Copyright 2008-2023, GreenSock. All rights reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
-
-
-/*!
- * Vue.js v2.7.10
- * (c) 2014-2022 Evan You
- * Released under the MIT License.
- */
