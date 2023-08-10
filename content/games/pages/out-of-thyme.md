@@ -1,3 +1,21 @@
+### The Links
+
+- [Out of Thyme](https://supergobo.itch.io/out-of-thyme) (play the game)
+- [Submission page](https://itch.io/jam/mini-jame-gam-20/rate/2205815) (see other jammers' comments on my game)
+- [Jam results](https://itch.io/jam/mini-jame-gam-20/results) (see the rankings)
+
+### The Tools
+
+Here are the tools I chose to develop with:
+
+- Godot 4 (game engine, coding)
+- Krita (art)
+- Audacity (sound editing)
+- Aseprite (when didn't know how to do something in Krita)
+- FL Studio (when I didn't know how to do something in Audacity)
+
+### The Process
+
 I woke up around 7 on Friday and immediately checked the theme: *out of time*. In addition to the theme, a special item had to be incorporated: *organ (the instrument)*. I had no ideas, so the first step was brainstorming.
 
 Within a couple hours, I was actively sketching out game concepts with several friends. There were several good ideas, but the ones i resonated with most were action arcade games.
@@ -43,6 +61,8 @@ I submitted my entry 1 minute and 48 seconds before the deadline. I worked ~40 h
   <responsive-img source="/images/games/out-of-thyme/game-gif.gif"></responsive-img>
 </image-row>
 
+### The Results
+
 I feel proud of what I accomplished. Even though it is a small arcade game, I was able to polish it more than previous entries. The game mechanics made sense, were easy to learn, and hard to master. I included hints to help out new players and easily-readable animations when something important happens. The UI was tabbable so you don't need to touch a mouse and break your rhythm. The win screen is animated and interesting...but so is the lose screen (which players might see more often!).
 
 <image-row>
@@ -52,7 +72,3 @@ I feel proud of what I accomplished. Even though it is a small arcade game, I wa
 Even though these seem like obvious additions in retrospect, it's difficult to prioritize the "smaller" items that make a game feel intuitive when under a time crunch. I am happy with what I was able to accomplish...and the 2st place ranking was nice too!
 
 Feel free to play the game for yourself and let me know what you think!
-
-- [Out of Thyme](https://supergobo.itch.io/out-of-thyme) (play the game)
-- [Submission page](https://itch.io/jam/mini-jame-gam-20/rate/2205815) (see other jammers' comments on my game)
-- [Jam results](https://itch.io/jam/mini-jame-gam-20/results) (see the rankings)
