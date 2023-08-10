@@ -106,3 +106,8 @@ img.full-h
 
 .color-fg-bold
   color: var(--color-fg-bold)
+
+
+@media (prefers-color-scheme: light)
+  .invert-when-light
+    filter: invert(100%) hue-rotate(180deg)

@@ -62,8 +62,8 @@ export default {
           name: 'Games',
           href: '/games',
           previews: [
-            await $content('games/creature-games').fetch(),
-            await $content('games/earth-defense').fetch()
+            await $content('games/summaries/out-of-thyme').fetch(),
+            await $content('games/summaries/creature-games').fetch(),
           ]
         },
         {
