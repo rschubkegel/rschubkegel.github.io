@@ -9,7 +9,7 @@
 
 
 <template>
-  <section>
+  <section :id="title.toLowerCase().replaceAll(' ', '-')">
     <header class="sticky-header">
       <h2>{{ title }}</h2>
     </header>
@@ -29,7 +29,7 @@
     margin-bottom: 1rem;
     .sticky-header {
       position: sticky;
-      top: -1px;
+      top: 3rem;
       background-color: var(--color-bg-bold);
       border: 1px solid var(--color-bg-mild);
       border-left-width: 0px;

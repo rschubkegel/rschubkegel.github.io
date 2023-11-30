@@ -27,6 +27,15 @@
       </p>
     </section>
 
+    <!-- TABLE OF CONTENTS -->
+    <section class="table-of-contents">
+      <ul>
+        <li v-for="(_v, k) in contentSections">
+          <a :href="`#${ k.toLowerCase().replaceAll(' ', '-') }`">{{ k }}</a>
+        </li>
+      </ul>
+    </section>
+
     <!-- CONTENT SECTIONS -->
     <HomeSection
       v-for="(v, k) in contentSections"
@@ -47,5 +56,21 @@
     width: max-content;
     margin: auto;
     margin-top: 4rem;
+  }
+  .table-of-contents {
+    z-index: 1;
+    position: sticky;
+    top: -1px;
+    background-color: var(--color-bg-bold);
+    outline: 1px solid var(--color-bg-bold);
+    margin: 2rem 0 1rem;
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+      margin: 0;
+      padding: 1rem 0;
+    }
   }
 </style>
