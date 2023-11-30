@@ -1,49 +1,39 @@
 <template>
-  <footer id='footer' class='flex col center gap1'>
+  <footer id='footer' class='flex row between gap1'>
+    <div id='footer-copyright'>© Rylan Schubkegel {{new Date().getFullYear()}}</div>
     <div class='flex gap1 social'>
       <a href='https://github.com/rschubkegel/' target="_blank">
-        <fa :icon='faGithub' style='height: 1.5em' />
+        <IconGitHub />
       </a>
       <a href='https://www.linkedin.com/in/rschubkegel/' target="_blank">
-        <fa :icon='faLinkedin' style='height: 1.5em' />
+        <IconLinkedIn />
       </a>
       <a href='https://www.instagram.com/theryguydraws/' target="_blank">
-        <fa :icon='faInstagram' style='height: 1.5em' />
+        <IconInstagram />
       </a>
       <a href='https://supergobo.itch.io/' target="_blank">
-        <fa :icon='faItchIo' style='height: 1.5em' />
+        <IconItch />
       </a>
     </div>
-    <div id='footer-copyright'>© Rylan Schubkegel {{new Date().getFullYear()}}</div>
   </footer>
 </template>
 
-<script>
-import { faGithub, faLinkedin, faInstagram, faItchIo } from '@fortawesome/free-brands-svg-icons'
-
-export default {
-  computed: {
-    faGithub() { return faGithub },
-    faLinkedin() { return faLinkedin },
-    faInstagram() { return faInstagram },
-    faItchIo() { return faItchIo },
-  }
-}
-</script>
-
 <style lang='sass' scoped>
-#footer
-  margin-top: 2rem
-  @include break-md
-    flex-direction: row-reverse
-    justify-content: space-between
+  #footer
+    padding: 1rem
+    margin: 1rem auto 0
+    max-width: var(--content-w)
 
-  svg
-    color: var(--color-fg-mild)
-    &:hover
-      color: var(--color-fg-bold)
+    svg
+      width: 1.5em
+      height: 1.5em
+      color: var(--color-fg-mild)
+      &:hover
+        color: var(--color-fg-bold)
+      :deep(path)
+        fill: currentColor
 
-#footer-copyright
-  color: var(--color-fg-mild)
-  font-weight: 300
+    #footer-copyright
+      color: var(--color-fg-mild)
+      font-weight: 300
 </style>

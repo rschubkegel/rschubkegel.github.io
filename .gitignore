@@ -1,8 +1,24 @@
-node_modules/
-.cache/
+# Nuxt dev/build outputs
+.output
+.data
 .nuxt
-public
+.nitro
+.cache
 dist
 
-# this will be programatically populated by optimize_images.mjs
-static/images/
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example

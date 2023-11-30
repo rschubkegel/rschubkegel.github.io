@@ -1,14 +1,4 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS",
-    "allowJs": true,
-    "noEmit": true
-  },
-  "include": [
-    "./pages/**/*.vue",
-    "./components/**/*.vue",
-    "./layouts/**/*.vue",
-    "./assets/**/*.js",
-  ]
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json"
 }

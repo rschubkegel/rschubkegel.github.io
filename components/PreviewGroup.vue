@@ -44,9 +44,6 @@ export default {
   padding: 1rem 0
   z-index: 5
 
-  @include break-md
-    flex-direction: row
-
 h2
   font-weight: 700
   text-transform: uppercase

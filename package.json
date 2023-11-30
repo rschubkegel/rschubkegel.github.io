@@ -1,30 +1,18 @@
 {
-  "name": "rschubkegel",
-  "version": "1.0.0",
+  "name": "nuxt-app",
   "private": true,
-  "author": "Rylan Schubkegel",
-  "license": "MIT",
   "scripts": {
-    "optimize": "node optimize_images.mjs ./assets/images/ ./static/images/ --clean --resize",
-    "dev": "nuxt",
-    "prebuild": "node optimize_images.mjs ./assets/images/ ./static/images/ --clean --resize",
     "build": "nuxt build",
-    "pregenerate": "node optimize_images.mjs ./assets/images/ ./static/images/ --clean --resize",
+    "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "start": "nuxt start"
-  },
-  "dependencies": {
-    "nuxt": "^2.15.8"
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.2.0",
-    "@fortawesome/free-solid-svg-icons": "^6.2.0",
-    "@nuxt/content": "^1",
-    "@nuxtjs/fontawesome": "^1.1.2",
-    "@nuxtjs/style-resources": "^1.2.1",
-    "gsap": "^3.11.1",
-    "sass": "^1.54.9",
-    "sass-loader": "10",
-    "sharp": "^0.31.0"
+    "@nuxt/content": "^2.8.2",
+    "@nuxt/devtools": "latest",
+    "@nuxt/image": "^1.1.0",
+    "nuxt": "^3.7.1",
+    "sass": "^1.66.1"
   }
 }
