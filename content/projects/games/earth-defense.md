@@ -1,6 +1,7 @@
 ---
 name: Earth Defense
 date: 2021-12-01
+link: https://supergobo.itch.io/earth-defense/
 ---
 
 Earth Defense was one of the earliest games I finished. It was originally made in the [XNA](https://en.wikipedia.org/wiki/Microsoft_XNA) framework and I later remade it using [Unity](https://unity.com/).

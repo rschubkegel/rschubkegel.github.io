@@ -1,6 +1,7 @@
 ---
 title: Voluntime
 date: 2022-05-15
+home: false
 ---
 
 Voluntime is 1st place winner of [George Fox University's](https://www.georgefox.edu/) second annual Code Jam, a 30-hour coding competition. Voluntime is a platform that connects volunteers to service events, allowing people to easily find ways to help their community. I designed the front-end in Figma and implemented it using React and Material UI.

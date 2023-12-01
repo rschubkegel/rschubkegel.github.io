@@ -49,6 +49,9 @@ a
 img
   max-width: 100%
 
+li
+  list-style-position: inside
+
 
 //////// GLOBAL ID STYLES ////////
 #content
@@ -98,6 +101,28 @@ img.full-h
   width: auto
   height: 100%
 
+.sticky-header
+  z-index: 10
+  position: sticky
+  top: -1px
+  background-color: var(--color-bg-bold)
+  border-bottom: 1px solid var(--color-bg-mild)
+  padding-top: 1rem
+  padding-bottom: 1rem
+  @for $index from 1 through 3
+    h#{$index}
+      margin-top: 0
+
+.pretty-header
+  font-weight: 700
+  text-transform: uppercase
+  transition: 500ms
+  width: max-content // so hover effect only applies when over the item
+  &:hover
+    // text-shadow: 2px -1px #f00d, -2px 1px #00fd // chromatic abberation
+    text-shadow: -4px 4px var(--color-splash-mild)
+    translate: 2px -2px
+    transition: 200ms
 
 //////// COLOR UTILITY CLASSES ////////
 .color-fg-mild

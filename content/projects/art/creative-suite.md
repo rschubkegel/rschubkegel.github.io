@@ -11,7 +11,7 @@ ARTD 110 taught the fundamentals of Adobe Creative Cloud using Photoshop, Illust
   <content-img src='/images/school/creative-suite/business-card-1.png'></content-img>
 </content-img-row>
 
-One of the projects I'm most proud of was a set of Spotify playlist covers. I have continued adding to the collection after school ended, with a running total of more than 30 images.
+One of the projects I'm most proud of was a set of [Spotify playlist covers](https://open.spotify.com/user/213u4fxzegwrbttorspgre2gq/playlists). I have continued adding to the collection after school ended, with a running total of more than 30 images.
 
 <div style='display: grid; grid-template-columns: repeat(9, 1fr); gap: .1rem; margin-top: 1rem;'>
   <content-img src='/images/school/creative-suite/playlist/1.jpg'></content-img>

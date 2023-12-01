@@ -1,6 +1,7 @@
 ---
 title: Novella2020.com
 date: 2023-01-01
+link: https://novella2020.com/
 ---
 
 [Novella](https://novella2020.com/) tells a _story_ with every sneaker by designing each pair after a unique artisan. I built the entire frontend using [Vue](https://vuejs.org/), [Liquid](https://shopify.dev/docs/api/liquid), and [GreenSock](https://greensock.com/).
