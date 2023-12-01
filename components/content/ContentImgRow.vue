@@ -10,7 +10,7 @@
   onMounted(() => {
     const images = Array.from(container.value?.querySelectorAll('img') ?? ([] as HTMLImageElement[]))
     Promise
-      .all(images.map(resolveOnLoad))
+      .all(images.filter(img => !img.naturalWidth).map(resolveOnLoad))
       .then(() => images.forEach(img => {
         const aspect = img.naturalWidth / img.naturalHeight
         img.style.flexBasis = `${ aspect * 100 }%`
