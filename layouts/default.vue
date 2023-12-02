@@ -1,6 +1,6 @@
 <template>
   <header>
-    <a href="/">
+    <a href="/" title="Home">
       <TheLogo class="logo" :taps-for-qr="0" />
     </a>
     <SocialIcons class="icons" />

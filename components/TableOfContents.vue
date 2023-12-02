@@ -75,6 +75,7 @@
         hr {
           margin-top: -.75em;
           border-color: var(--color-bg-mild);
+          border-top-width: 0;
         }
       }
     }

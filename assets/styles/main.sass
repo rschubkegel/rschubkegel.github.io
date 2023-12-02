@@ -16,14 +16,18 @@
   --spacing: 1rem
   --content-w: 42rem
   --sticky-header-top: -1px
+  --border-radius: .25rem
 
 //////// TAG DEFAULTS ////////
 body
   background-color: var(--color-bg-bold)
   margin: 0
+  overflow-x: hidden
 
 h1
   text-align: center
+h2, h3
+  text-transform: uppercase
 
 @for $index from 1 through 3
   h#{$index}
@@ -33,6 +37,7 @@ h1
     line-height: 1
     margin-top: 1em
     margin-bottom: .5em
+    letter-spacing: .02em
 
 p
   font-family: Lustria, Georgia, 'Times New Roman', Times serif
@@ -54,6 +59,7 @@ a
 
 img
   max-width: 100%
+  border-radius: var(--border-radius)
 
 li
   list-style-position: inside

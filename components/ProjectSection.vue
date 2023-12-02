@@ -37,18 +37,12 @@
   <section :id="id">
     <header class="sticky-header">
       <h2 :class="{ 'pretty-header': Boolean(link) }">
-        <a v-if="link" :href="link" target="_blank">{{ title }}</a>
+        <a v-if="content.link" :href="content.link" target="_blank">{{ content.title }}</a>
+        <a v-else-if="content.page" :href="content.page">{{ content.title }}</a>
         <span v-else>{{ title }}</span>
       </h2>
     </header>
-    <div>
-      <h3 :class="{ 'pretty-header': content.link || content.page }">
-        <a v-if="content.link" :href="content.link" target="_blank">{{ content.title }}</a>
-        <a v-else-if="content.page" :href="content.page">{{ content.title }}</a>
-        <span v-else>{{ content.title }}</span>
-      </h3>
-      <ContentRenderer :value="content" :excerpt="Boolean(content.excerpt)" />
-    </div>
+    <ContentRenderer :value="content" :excerpt="Boolean(content.excerpt)" />
   </section>
 </template>
 
