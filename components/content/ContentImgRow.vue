@@ -28,13 +28,14 @@
   .image-row {
     display: flex;
     gap: var(--spacing);
-    max-width: 100%;
+    max-width: var(--content-w);
     + .image-row {
       margin-top: var(--spacing);
     }
     :deep(img) {
-      flex: 1;
+      flex-shrink: 1;
       width: 100%;
+      height: auto;
       height: fit-content;
     }
   }
