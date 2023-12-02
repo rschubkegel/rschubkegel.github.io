@@ -31,7 +31,9 @@
 <template>
   <div id="table-of-contents">
     <div class="on-this-page decorated">
-      <em>On this page:</em>
+      <em>
+        <span>On this page:</span>
+      </em>
       <hr>
     </div>
     <ul>
@@ -43,7 +45,9 @@
     </ul>
     <div class="pinned">
       <div class="on-this-page">
-        <em>On this page:</em>
+        <em>
+          <span>On this page:</span>
+        </em>
       </div>
       <ul>
         <li v-for="title in sectionTitles">
@@ -65,6 +69,9 @@
     .on-this-page {
       em {
         font-weight: 100;
+        span {
+          opacity: .5;
+        }
       }
       &.decorated {
         em {
@@ -89,9 +96,6 @@
       top: var(--spacing);
       right: var(--spacing);
       text-align: right;
-      .on-this-page em {
-        opacity: .5;
-      }
       ul {
         display: flex;
         flex-direction: column;
