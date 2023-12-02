@@ -38,11 +38,11 @@
   #gradient-overlay {
     mix-blend-mode: color-dodge;
     &.first {
-      background: radial-gradient(ellipse at 15% 75%, rgba(78,168,89,1) 0%, rgba(65,68,62,0) 45%);
+      background: radial-gradient(ellipse at 5% 85%, rgba(78,168,89,1) 0%, rgba(65,68,62,0) 50%);
       opacity: .25;
     }
     &.second {
-      background: radial-gradient(ellipse at 85% 15%, rgba(78,168,89,1) 0%, rgba(65,68,62,0) 35%);
+      background: radial-gradient(ellipse at 95% 5%, rgba(78,168,89,1) 0%, rgba(65,68,62,0) 35%);
       opacity: .15;
     }
   }

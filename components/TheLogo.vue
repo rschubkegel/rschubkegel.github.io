@@ -67,6 +67,9 @@
       scale: .25;
     }
   }
+  img {
+    scale: 1.5;
+  }
   path {
     fill: var(--color-splash-mild);
   }
