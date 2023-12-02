@@ -66,43 +66,10 @@ li
 
 
 //////// LAYOUT UTILITY CLASSES ////////
-.flex
-  display: flex
-  &.center
-    justify-content: center
-    align-items: center
-  &.between
-    justify-content: space-between
-  &.col
-    flex-direction: column
-
-.grid
-  display: grid
-  &.center
-    place-items: center
-  @for $index from 1 through 10
-    &.col#{$index}
-      grid-template-columns: repeat(#{$index}, 1fr)
-  @for $index from 2 through 2
-    &.expand-md#{$index}
-        @include break-md
-          grid-template-columns: repeat(#{$index}, 1fr)
-  @for $index from 2 through 2
-    &.expand-lg#{$index}
-        @include break-lg
-          grid-template-columns: repeat(#{$index}, 1fr)
-
-@for $index from 1 through 4
-  .gap#{$index}
-    gap: calc(var(--spacing) * #{$index})
-
-img.full-w
-  width: 100%
-  height: auto
-
-img.full-h
-  width: auto
-  height: 100%
+.collapse-when-small
+  // WARNING: hard-coded (see :root vars)
+  @media (max-width: 42rem)
+    grid-template-columns: 1fr !important
 
 .sticky-header
   z-index: 10

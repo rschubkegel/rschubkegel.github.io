@@ -8,7 +8,7 @@ Earth Defense was one of the earliest games I finished. It was originally made i
 
 The game is available to play online or download for Windows on [Itch.io](https://supergobo.itch.io/earth-defense).
 
-<content-img-row>
+<content-img-row collapse>
   <content-img src="/images/games/ED2.png"></content-img>
   <content-img src="/images/games/ED.png"></content-img>
 </content-img-row>

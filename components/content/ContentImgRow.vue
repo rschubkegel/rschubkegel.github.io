@@ -1,4 +1,8 @@
 <script setup lang="ts">
+  defineProps<{
+    collapse?: boolean;
+  }>()
+
   const container = ref<HTMLElement>()
 
   function resolveOnLoad(img: HTMLImageElement) {
@@ -9,7 +13,7 @@
 
   onMounted(() => {
     const images = Array.from(container.value?.querySelectorAll('img') ?? ([] as HTMLImageElement[]))
-    if (container.value) container.value.style.gridTemplateColumns = images.map(_img => '1fr').join(' ')
+    if (container.value) container.value.style.setProperty('--columns', images.map(_img => '1fr').join(' '))
     Promise
       .all(images.filter(img => !img.naturalWidth).map(resolveOnLoad))
       .then(() => {
@@ -19,14 +23,15 @@
         // })
         if (container.value) {
           const ratios = images.map(({ naturalWidth, naturalHeight }) =>  naturalWidth / naturalHeight)
-          container.value.style.gridTemplateColumns = ratios.map(r => `${r}fr`).join(' ')
+          // container.value.style.gridTemplateColumns = ratios.map(r => `${r}fr`).join(' ')
+          container.value.style.setProperty('--columns', ratios.map(r => `${r}fr`).join(' '))
         }
       })
   })
 </script>
 
 <template>
-  <div ref="container" class="image-row">
+  <div ref="container" class="image-row" :class="{ collapse }">
     <slot></slot>
   </div>
 </template>
@@ -34,9 +39,17 @@
 <style scoped lang="scss">
   .image-row {
     // display: flex;
+    --columns: 1fr;
     display: grid;
+    grid-template-columns: var(--columns);
     gap: var(--spacing);
     max-width: var(--content-w);
+    &.collapse {
+      // WARNING: hard-coded (see :root vars)
+      @media (max-width: 42rem) {
+        --columns: 1fr !important;
+      }
+    }
     + .image-row {
       margin-top: var(--spacing);
     }

@@ -6,7 +6,7 @@ page: /games/out-of-thyme
 
 An arcade game made for the weekend-long [Mini Jame Gam #20](https://itch.io/jam/mini-jame-gam-20) made in Godot. The theme was **out of time** and must include the special object, an **organ (the musical instrument)**. Out of 47 entries _Out of Thyme_ was ranked 2nd overall, and was the highest ranking solo entry.
 
-<content-img-row>
+<content-img-row collapse>
   <content-img src="/images/games/out-of-thyme/Untitled-2023-07-07-1953(2).png" class="invert-when-light"></content-img>
   <content-img src="/images/games/out-of-thyme/20230808225229.png"></content-img>
 </content-img-row>
@@ -73,9 +73,9 @@ Day 3 was all about polish: adding outlines to sprites, making the sky change co
 
 I submitted my entry 1 minute and 48 seconds before the deadline. I worked ~40 hours in 3 days and drank lots of coffee. After hitting "submit," there was a *huge* feeling of accomplishment that overcame me. I got to relax, play other submissions, and debrief with my friends about our experience. It wasn't long before we starting talking about the next game jam...once we had all mentally & physically recovered, that is.
 
-<content-img-row>
+<content-img-row collapse>
   <content-img src="/images/games/out-of-thyme/20230808225229.png"></content-img>
-  <content-img src="/images/games/out-of-thyme/game-gif.gif"></content-img>
+  <img src="/images/games/out-of-thyme/game-gif.gif" alt="">
 </content-img-row>
 
 ### The Results
@@ -83,7 +83,7 @@ I submitted my entry 1 minute and 48 seconds before the deadline. I worked ~40 h
 I feel proud of what I accomplished. Even though it is a small arcade game, I was able to polish it more than previous entries. The game mechanics made sense, were easy to learn, and hard to master. I included hints to help out new players and easily-readable animations when something important happens. The UI was tabbable so you don't need to touch a mouse and break your rhythm. The win screen is animated and interesting...but so is the lose screen (which players might see more often!).
 
 <content-img-row>
-  <content-img src="/images/games/out-of-thyme/lose.gif"></content-img>
+  <img src="/images/games/out-of-thyme/lose.gif" alt="">
 </content-img-row>
 
 Even though these seem like obvious additions in retrospect, it's difficult to prioritize the "smaller" items that make a game feel intuitive when under a time crunch. I am happy with what I was able to accomplish...and the 2st place ranking was nice too!

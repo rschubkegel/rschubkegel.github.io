@@ -50,5 +50,6 @@
     // --sticky-header-top: calc((var(--spacing) * 2) + 2rem);
     max-width: var(--content-w);
     margin: auto;
+    padding: 0 var(--spacing);
   }
 </style>
