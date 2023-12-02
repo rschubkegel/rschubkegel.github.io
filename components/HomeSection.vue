@@ -1,16 +1,38 @@
 <script setup lang="ts">
   import { ParsedContent } from '@nuxt/content/dist/runtime/types';
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
 
-  defineProps<{
+  const emit = defineEmits<{
+    (e: 'enter'): void;
+    (e: 'leave'): void;
+    (e: 'enterBack'): void;
+    (e: 'leaveBack'): void;
+  }>();
+
+  const props = defineProps<{
     title: string;
     content: ParsedContent[] | null;
     page?: string;
   }>();
+
+  const id = props.title.toLowerCase().replaceAll(' ', '-');
+
+  onMounted(() => {
+    ScrollTrigger.create({
+      trigger: `#${ id }`,
+      onEnter: () => emit('enter'),
+      onLeave: () => emit('leave'),
+      onEnterBack: () => emit('enterBack'),
+      onLeaveBack: () => emit('leaveBack'),
+    });
+  });
 </script>
 
 
 <template>
-  <section :id="title.toLowerCase().replaceAll(' ', '-')">
+  <section :id="id">
     <header class="sticky-header">
       <h2 :class="{ 'pretty-header': Boolean(page) }">
         <a v-if="page" :href="page">{{ title }}</a>
@@ -32,8 +54,5 @@
 <style scoped lang="scss">
   section:not(:last-child) {
     margin-bottom: 1rem;
-    .sticky-header {
-      top: 3rem;
-    }
   }
 </style>

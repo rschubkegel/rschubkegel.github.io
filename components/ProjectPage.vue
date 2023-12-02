@@ -34,9 +34,6 @@
 
 
 <style scoped lang="scss">
-  .sticky-header {
-    top: 3rem;
-  }
   section:not(:last-child) {
     margin-bottom: 1rem;
   }
