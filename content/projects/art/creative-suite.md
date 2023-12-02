@@ -1,5 +1,5 @@
 ---
-title: Creative Suite Fundamentals
+title: Creative Suite Class
 date: 2019-12-15
 ---
 

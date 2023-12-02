@@ -47,9 +47,6 @@
       ease: 'linear',
       scrollTrigger: 'h1'
     });
-    document
-      .querySelectorAll('img')
-      .forEach(img => img.addEventListener('load', ScrollTrigger.refresh));
   });
 </script>
 
@@ -58,7 +55,7 @@
 
   <!-- LOGO -->
   <section class="logo-container">
-    <TheLogo id="logo" />
+    <TheLogo id="logo" :taps-for-qr="3" />
   </section>
 
   <!-- INTRO -->
@@ -96,12 +93,9 @@
 
 
 <style scoped lang="scss">
-  h1 {
-    text-align: center;
-  }
   .logo-container {
     width: max-content;
     margin: auto;
-    margin-top: 4rem;
+    margin-top: calc(var(--spacing) * 4);
   }
 </style>

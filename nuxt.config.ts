@@ -3,9 +3,13 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/logo.svg' }
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/logo.svg'
+        }
       ],
-      title: 'rschubkegel | a portfolio'
+      title: 'rschubkegel: The Portfolio'
     }
   },
   components: [

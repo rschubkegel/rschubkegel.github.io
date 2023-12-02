@@ -1,7 +1,26 @@
-<script setup>
-  const TAP_THRESHOLD = 4
-  const taps = ref(0)
-  const isQrVisible = computed(() => (taps.value % TAP_THRESHOLD) === (TAP_THRESHOLD - 1))
+<script setup lang="ts">
+  const props = defineProps<{
+    /**
+     * If set to a positive number, the logo will transform into a QR code
+     * when tapped the specified number of times.
+     */
+    tapsForQr: 0;
+  }>();
+
+  const taps = ref(0);
+
+  const isQrVisible = ref(false);
+
+  watch(taps, value => {
+    if (props.tapsForQr > 0) {
+      if (value >= Math.max(props.tapsForQr, 0)) {
+        isQrVisible.value = true;
+        taps.value = -1;
+      } else if (value === 0) {
+        isQrVisible.value = false;
+      }
+    }
+  });
 </script>
 
 <template>

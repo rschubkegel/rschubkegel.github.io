@@ -1,39 +1,31 @@
 <template>
-  <footer id='footer' class='flex row between gap1'>
+  <footer id='footer'>
     <div id='footer-copyright'>© Rylan Schubkegel {{new Date().getFullYear()}}</div>
-    <div class='flex gap1 social'>
-      <a href='https://github.com/rschubkegel/' target="_blank">
-        <IconGitHub />
-      </a>
-      <a href='https://www.linkedin.com/in/rschubkegel/' target="_blank">
-        <IconLinkedIn />
-      </a>
-      <a href='https://www.instagram.com/theryguydraws/' target="_blank">
-        <IconInstagram />
-      </a>
-      <a href='https://supergobo.itch.io/' target="_blank">
-        <IconItch />
-      </a>
-    </div>
+    <!-- <SocialIcons /> -->
   </footer>
 </template>
 
 <style lang='sass' scoped>
   #footer
-    padding: 1rem
-    margin: 1rem auto 0
-    max-width: var(--content-w)
+    display: flex
+    gap: var(--spacing)
+    justify-content: center
+    padding: var(--spacing)
+    margin: var(--spacing) auto 0
 
-    svg
+    :deep(svg)
+      display: flex
+      gap: var(--spacing)
+      align-items: center
       width: 1.5em
       height: 1.5em
-      color: var(--color-fg-mild)
+      color: var(--color-bg-mild)
       &:hover
-        color: var(--color-fg-bold)
-      :deep(path)
+        color: var(--color-fg-mild)
+      path
         fill: currentColor
 
     #footer-copyright
-      color: var(--color-fg-mild)
+      color: var(--color-bg-mild)
       font-weight: 300
 </style>

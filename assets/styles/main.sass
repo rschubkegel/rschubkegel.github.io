@@ -13,11 +13,17 @@
   font-size: 12pt
   color: var(--color-fg-mild)
   font-family: Poppins, Arial, Helvetica, sans-serif
+  --spacing: 1rem
   --content-w: 42rem
+  --sticky-header-top: -1px
 
 //////// TAG DEFAULTS ////////
 body
   background-color: var(--color-bg-bold)
+  margin: 0
+
+h1
+  text-align: center
 
 @for $index from 1 through 3
   h#{$index}
@@ -53,15 +59,6 @@ li
   list-style-position: inside
 
 
-//////// GLOBAL ID STYLES ////////
-#content
-  position: relative
-  box-sizing: content-box
-  padding: 2rem
-  max-width: 40rem
-  margin: auto
-
-
 //////// LAYOUT UTILITY CLASSES ////////
 .flex
   display: flex
@@ -91,7 +88,7 @@ li
 
 @for $index from 1 through 4
   .gap#{$index}
-    gap: #{$index}rem
+    gap: calc(var(--spacing) * #{$index})
 
 img.full-w
   width: 100%
@@ -104,11 +101,11 @@ img.full-h
 .sticky-header
   z-index: 10
   position: sticky
-  top: -1px
+  top: var(--sticky-header-top)
   background-color: var(--color-bg-bold)
   border-bottom: 1px solid var(--color-bg-mild)
-  padding-top: 1rem
-  padding-bottom: 1rem
+  padding-top: var(--spacing)
+  padding-bottom: var(--spacing)
   @for $index from 1 through 3
     h#{$index}
       margin-top: .25em

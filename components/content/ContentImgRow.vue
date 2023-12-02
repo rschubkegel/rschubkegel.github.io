@@ -27,10 +27,10 @@
 <style scoped lang="scss">
   .image-row {
     display: flex;
-    gap: 1rem;
+    gap: var(--spacing);
     max-width: 100%;
     + .image-row {
-      margin-top: 1rem;
+      margin-top: var(--spacing);
     }
     :deep(img) {
       flex: 1;

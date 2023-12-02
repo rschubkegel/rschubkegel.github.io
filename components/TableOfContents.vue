@@ -29,8 +29,8 @@
 </script>
 
 <template>
-  <section id="table-of-contents">
-    <div id="on-this-page">
+  <div id="table-of-contents">
+    <div class="on-this-page decorated">
       <em>On this page:</em>
       <hr>
     </div>
@@ -41,46 +41,61 @@
         </slot>
       </li>
     </ul>
-    <ul class="pinned">
-      <li v-for="title in sectionTitles">
-        <slot :title="title" :href="sectionId(title)" :visible="visibleSections.includes(title)">
-          <a :href="sectionId(title)" :class="{ visible: visibleSections.includes(title) }">{{ title }}</a>
-        </slot>
-      </li>
-    </ul>
-  </section>
+    <div class="pinned">
+      <div class="on-this-page">
+        <em>On this page:</em>
+      </div>
+      <ul>
+        <li v-for="title in sectionTitles">
+          <slot :title="title" :href="sectionId(title)" :visible="visibleSections.includes(title)">
+            <a :href="sectionId(title)" :class="{ visible: visibleSections.includes(title) }">{{ title }}</a>
+          </slot>
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 
 <style scoped lang="scss">
   #table-of-contents {
     background-color: var(--color-bg-bold);
-    // background-color: var(--color-bg-mild);
     text-align: center;
-    padding: 1rem 0;
-    #on-this-page {
+    padding: var(--spacing) 0;
+    .on-this-page {
       em {
         font-weight: 100;
-        background: var(--color-bg-bold);
-        padding: 0 1rem;
-        z-index: 1;
       }
-      hr {
-        margin-top: -.75rem;
-        border-color: var(--color-bg-mild);
+      &.decorated {
+        em {
+          background: var(--color-bg-bold);
+          z-index: 1;
+          padding: 0 var(--spacing);
+        }
+        hr {
+          margin-top: -.75em;
+          border-color: var(--color-bg-mild);
+        }
       }
     }
     ul {
       list-style: none;
-      margin: 1rem 0 0;
-      &.pinned {
-        position: fixed;
-        top: 1rem;
-        right: 2rem;
+      margin: var(--spacing) 0 0;
+      line-height: 2;
+    }
+    .pinned {
+      position: fixed;
+      top: var(--spacing);
+      right: var(--spacing);
+      text-align: right;
+      .on-this-page em {
+        opacity: .5;
+      }
+      ul {
         display: flex;
         flex-direction: column;
         align-items: end;
-        gap: 1rem;
+        gap: var(--spacing);
         line-height: 1;
         :deep(a).visible {
           color: var(--color-splash-mild);

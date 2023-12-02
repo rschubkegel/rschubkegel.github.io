@@ -13,8 +13,8 @@
 
   const props = defineProps<{
     title: string;
-    content: ParsedContent[] | null;
-    page?: string;
+    content: ParsedContent;
+    link?: string;
   }>();
 
   const id = props.title.toLowerCase().replaceAll(' ', '-');
@@ -36,18 +36,18 @@
 <template>
   <section :id="id">
     <header class="sticky-header">
-      <h2 :class="{ 'pretty-header': Boolean(page) }">
-        <a v-if="page" :href="page">{{ title }}</a>
+      <h2 :class="{ 'pretty-header': Boolean(link) }">
+        <a v-if="link" :href="link" target="_blank">{{ title }}</a>
         <span v-else>{{ title }}</span>
       </h2>
     </header>
-    <div v-for="data in content">
-      <h3 :class="{ 'pretty-header': data.link || data.page }">
-        <a v-if="data.link" :href="data.link" target="_blank">{{ data.title }}</a>
-        <a v-else-if="data.page" :href="data.page">{{ data.title }}</a>
-        <span v-else>{{ data.title }}</span>
+    <div>
+      <h3 :class="{ 'pretty-header': content.link || content.page }">
+        <a v-if="content.link" :href="content.link" target="_blank">{{ content.title }}</a>
+        <a v-else-if="content.page" :href="content.page">{{ content.title }}</a>
+        <span v-else>{{ content.title }}</span>
       </h3>
-      <ContentRenderer :value="data" :excerpt="Boolean(data.excerpt)" />
+      <ContentRenderer :value="content" :excerpt="Boolean(content.excerpt)" />
     </div>
   </section>
 </template>
