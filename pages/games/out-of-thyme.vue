@@ -25,7 +25,7 @@
 </template>
 
 
-<style scoped>
+<style scoped lang="scss">
   /* WARNING: copied from ProjectPage.vue */
   a {
     line-height: 1;
