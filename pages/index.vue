@@ -41,12 +41,22 @@
   }
 
   onMounted(() => {
-    gsap.to('h1', {
-      duration: 2.5,
-      text: "Hello world, I'm Rylan",
-      ease: 'linear',
-      scrollTrigger: 'h1'
-    });
+    // WARNING: hard-coded (see :root vars)
+    gsap.matchMedia().add(
+      {
+        isMobile: '(max-width: 42rem)',
+        isDesktop: '(min-width: 42rem)'
+      },
+      context => {
+        const { isMobile } = context.conditions;
+        gsap.to('h1', {
+          duration: 2.5,
+          text: `${ isMobile ? "Hi" : "Hello world" }, I'm Rylan`,
+          ease: 'linear',
+          scrollTrigger: 'h1'
+        });
+      }
+    );
   });
 </script>
 

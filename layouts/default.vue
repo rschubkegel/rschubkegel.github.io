@@ -3,7 +3,7 @@
     <a href="/" title="Home">
       <TheLogo class="logo" :taps-for-qr="0" />
     </a>
-    <SocialIcons class="icons" />
+    <SocialIcons id="header-icons" />
   </header>
   <main class="container">
     <slot></slot>
@@ -25,31 +25,46 @@
     flex-direction: column;
     align-items: center;
     gap: var(--spacing);
+
+    // WARNING: hard-coded (see :root vars)
+    @media (max-width: 42rem) {
+      display: none;
+    }
+
     .logo {
       width: 2rem;
       height: 2rem;
     }
-    .icons {
+
+    #header-icons {
       left: var(--spacing);
       display: flex;
       flex-direction: column;
+
       :deep(svg) {
         width: 1.5rem;
         height: 1.5rem;
         color: var(--color-bg-mild);
+
         &:hover {
           color: var(--color-fg-mild);
         }
+
         path {
           fill: currentColor;
         }
       }
     }
   }
+
   .container {
-    // --sticky-header-top: calc((var(--spacing) * 2) + 2rem);
     max-width: var(--content-w);
     margin: auto;
     padding: 0 var(--spacing);
+
+    // WARNING: hard-coded (see :root vars)
+    @media (max-width: 42rem) {
+      --sticky-header-top: 2rem;
+    }
   }
 </style>
