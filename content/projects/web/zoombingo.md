@@ -8,7 +8,7 @@ What happens when you are a web developer whose family keeps in touch with Zoom 
 
 The app was built with [React](https://reactjs.org/) on the frontend, a [Node.js](https://nodejs.org/en/) server on the backend, [MongoDB](https://www.mongodb.com/) for the database, and [Heroku](https://www.heroku.com/) for deployment.
 
-<content-img-row>
+<content-img-row collapse>
   <content-img src="/images/games/zoombingo/home.png"></content-img>
   <content-img src="/images/games/zoombingo/board.png"></content-img>
   <content-img src="/images/games/zoombingo/lobby.png"></content-img>

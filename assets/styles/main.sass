@@ -88,13 +88,24 @@ li
 .pretty-header
   font-weight: 700
   text-transform: uppercase
-  transition: 500ms
-  width: max-content // so hover effect only applies when over the item
-  &:hover
-    // text-shadow: 2px -1px #f00d, -2px 1px #00fd // chromatic abberation
-    text-shadow: -4px 4px var(--color-splash-mild)
-    translate: 2px -2px
-    transition: 200ms
+  position: relative
+  a
+    display: inline-block
+    transition: 500ms
+    &:hover
+      // text-shadow: 2px -1px #f00d, -2px 1px #00fd // chromatic abberation
+      text-shadow: -4px 4px var(--color-splash-mild)
+      translate: 2px -2px
+      transition: 200ms
+      svg
+        opacity: 1
+    svg
+      fill: currentColor
+      transition: inherit
+      opacity: .5
+      height: .75em
+      width: auto
+      margin-left: .25rem
 
 //////// COLOR UTILITY CLASSES ////////
 .color-fg-mild

@@ -14,6 +14,7 @@
   const props = defineProps<{
     title: string;
     content: ParsedContent[] | null;
+    link?: string;
     page?: string;
   }>();
 
@@ -36,15 +37,28 @@
 <template>
   <section :id="id">
     <header class="sticky-header">
-      <h2 :class="{ 'pretty-header': Boolean(page) }">
-        <a v-if="page" :href="page">{{ title }}</a>
+      <h2 :class="{ 'pretty-header': link || page }">
+        <a v-if="link" :href="link" target="_blank">
+          {{ title }}
+          <IconExternalLink />
+        </a>
+        <a v-else-if="page" :href="page">
+          {{ title }}
+          <IconEye />
+        </a>
         <span v-else>{{ title }}</span>
       </h2>
     </header>
     <div v-for="data in content">
       <h3 :class="{ 'pretty-header': data.link || data.page }">
-        <a v-if="data.link" :href="data.link" target="_blank">{{ data.title }}</a>
-        <a v-else-if="data.page" :href="data.page">{{ data.title }}</a>
+        <a v-if="data.link" :href="data.link" target="_blank">
+          {{ data.title }}
+          <IconExternalLink />
+        </a>
+        <a v-else-if="data.page" :href="data.page">
+          {{ data.title }}
+          <IconEye />
+        </a>
         <span v-else>{{ data.title }}</span>
       </h3>
       <ContentRenderer :value="data" :excerpt="Boolean(data.excerpt)" />
