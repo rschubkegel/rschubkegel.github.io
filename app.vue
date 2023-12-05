@@ -6,7 +6,7 @@
   onMounted(() => {
     document
       .querySelectorAll('img')
-      .forEach(img => img.addEventListener('load', ScrollTrigger.refresh));
+      .forEach(img => img.addEventListener('load', () => ScrollTrigger.refresh()));
   });
 </script>
 

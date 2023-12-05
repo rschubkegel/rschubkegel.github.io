@@ -6,7 +6,7 @@
   withDefaults(
     defineProps<{
       sectionTitles: string[];
-      sectionId: (title: string) => string;
+      sectionId?: (title: string) => string;
       visibleSections: string[];
     }>(),
     {
@@ -161,7 +161,7 @@
       ul {
         display: flex;
         flex-direction: column;
-        align-items: end;
+        align-items: flex-end;
         gap: var(--spacing);
         line-height: 1;
 
