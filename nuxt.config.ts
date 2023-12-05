@@ -12,13 +12,18 @@ export default defineNuxtConfig({
       title: 'rschubkegel: The Portfolio'
     }
   },
+  build: {
+    transpile: ['gsap']
+  },
   components: [
     {
       path: '~/components',
       extensions: ['.vue']
     }
   ],
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true
+  },
   modules: ['@nuxt/content', '@nuxt/image'],
-  ssr: false
+  ssr: true
 })
