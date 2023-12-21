@@ -32,7 +32,7 @@
   #noise-overlay {
     background-image: url('/images/static.png');
     background-repeat: repeat;
-    background-size: 600px;
+    background-size: 200px;
     opacity: .05;
   }
   #gradient-overlay {
