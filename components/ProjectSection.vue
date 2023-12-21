@@ -1,14 +1,10 @@
 <script setup lang="ts">
   import { ParsedContent } from '@nuxt/content/dist/runtime/types';
-  import gsap from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  gsap.registerPlugin(ScrollTrigger);
+  import { stringToId } from '~/utils/StringToId';
 
   const emit = defineEmits<{
     (e: 'enter'): void;
     (e: 'leave'): void;
-    (e: 'enterBack'): void;
-    (e: 'leaveBack'): void;
   }>();
 
   const props = defineProps<{
@@ -16,18 +12,20 @@
     content: ParsedContent;
   }>();
 
-  const id = props.title.toLowerCase().replaceAll(' ', '-');
+  const id = stringToId(props.title);
+
+  function handleObserverEntries(entries: IntersectionObserverEntry[]) {
+    if (entries.at(0)?.isIntersecting) emit('enter');
+    else emit('leave');
+  }
 
   onMounted(() => {
-    ScrollTrigger.create({
-      trigger: `#${ id }`,
-      start: 'top center+=200',
-      end: 'bottom center-=200',
-      onEnter: () => emit('enter'),
-      onLeave: () => emit('leave'),
-      onEnterBack: () => emit('enterBack'),
-      onLeaveBack: () => emit('leaveBack'),
-    });
+    const el = document.querySelector<HTMLElement>(`#${ id }`);
+    if (el) {
+      const observer = new IntersectionObserver(handleObserverEntries);
+      handleObserverEntries(observer.takeRecords());
+      observer.observe(el);
+    }
   });
 </script>
 

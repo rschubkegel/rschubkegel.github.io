@@ -25,7 +25,7 @@
     <h1>{{ title }}</h1>
     <a href="/">
       <IconLeftArrow />
-      <em>return home</em>
+      <em>home</em>
     </a>
   </section>
 
@@ -43,9 +43,7 @@
     :title="section.title ?? ''"
     :content="section"
     @enter="addSection(section.title ?? '')"
-    @enter-back="addSection(section.title ?? '')"
     @leave="removeSection(section.title ?? '')"
-    @leave-back="removeSection(section.title ?? '')"
   />
 
 </template>

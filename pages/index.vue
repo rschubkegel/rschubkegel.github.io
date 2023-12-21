@@ -81,8 +81,13 @@
 
   <!-- TABLE OF CONTENTS -->
   <TableOfContents :section-titles="contentSections.map(({ title }) => title)" :visible-sections="visibleSections">
-    <template #default="{ title, href, visible }">
-      <a :href="href" :class="{ visible: visible }">{{ title.replace('Development', 'Dev') }}</a>
+    <template #default="{ title, href, visible, onLinkClicked }">
+      <a
+        :href="href"
+        :class="{ visible: visible }"
+        @click="onLinkClicked">
+        {{ title.replace('Development', 'Dev') }}
+      </a>
     </template>
   </TableOfContents>
 
@@ -94,15 +99,16 @@
     :content="section.content.value"
     :page="section.page"
     @enter="addSection(section.title)"
-    @enter-back="addSection(section.title)"
     @leave="removeSection(section.title)"
-    @leave-back="removeSection(section.title)"
   />
 
 </template>
 
 
 <style scoped lang="scss">
+  h1 {
+    min-height: 3rem; // prevent CLS
+  }
   .logo-container {
     width: max-content;
     margin: auto;

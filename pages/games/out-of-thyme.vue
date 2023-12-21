@@ -10,7 +10,7 @@
     <h1>Out of Thyme</h1>
     <a href="/games">
       <IconLeftArrow />
-      <em>return to games</em>
+      <em>games</em>
     </a>
   </section>
 

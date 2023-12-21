@@ -1,6 +1,9 @@
 <script setup lang="ts">
   import gsap from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { replaceLocation } from '~/utils/ReplaceLocation';
+import scrollToElement from '~/utils/ScrollToElement';
+  import { stringToId } from '~/utils/StringToId';
   gsap.registerPlugin(ScrollTrigger);
 
   withDefaults(
@@ -10,7 +13,7 @@
       visibleSections: string[];
     }>(),
     {
-      sectionId: (title: string) => `#${ title.toLowerCase().replaceAll(' ', '-') }`
+      sectionId: (title: string) => `#${ stringToId(title) }`
     }
   );
 
@@ -19,6 +22,13 @@
       top: 0,
       behavior: 'smooth'
     });
+  }
+
+  function onLinkClicked(event: MouseEvent) {
+    event.preventDefault();
+    replaceLocation((event.target as HTMLLinkElement).href);
+    const id = /#.+/.exec((event.target as HTMLLinkElement).href)?.at(0);
+    if (id) scrollToElement(document.querySelector(id));
   }
 
   onMounted(() => {
@@ -41,11 +51,14 @@
         ScrollTrigger.create({
           trigger: '#table-of-contents ul:first-of-type',
           start,
-          animation: gsap.from(target, {
-            ease: 'sine.inOut',
-            duration: isMobile ? 0 : 1,
+          animation: gsap.fromTo(target, {
             opacity: 0,
             pointerEvents: 'none'
+          }, {
+            ease: 'sine.inOut',
+            duration: isMobile ? 0 : 1,
+            opacity: 1,
+            pointerEvents: 'all'
           }),
           toggleActions: 'play none none reverse'
         });
@@ -66,8 +79,8 @@
     </div>
     <ul>
       <li v-for="title in sectionTitles">
-        <slot :title="title" :href="sectionId(title)">
-          <a :href="sectionId(title)">{{ title }}</a>
+        <slot :title="title" :href="sectionId(title)" :onLinkClicked="onLinkClicked">
+          <a :href="sectionId(title)" @click="onLinkClicked">{{ title }}</a>
         </slot>
       </li>
     </ul>
@@ -82,8 +95,17 @@
       </div>
       <ul>
         <li v-for="title in sectionTitles">
-          <slot :title="title" :href="sectionId(title)" :visible="visibleSections.includes(title)">
-            <a :href="sectionId(title)" :class="{ visible: visibleSections.includes(title) }">{{ title }}</a>
+          <slot
+            :title="title"
+            :href="sectionId(title)"
+            :onLinkClicked="onLinkClicked"
+            :visible="visibleSections.includes(title)">
+            <a
+              :href="sectionId(title)"
+              :class="{ visible: visibleSections.includes(title) }"
+              @click="onLinkClicked">
+              {{ title }}
+            </a>
           </slot>
         </li>
       </ul>
@@ -143,6 +165,7 @@
       right: 0;
       padding: var(--spacing);
       text-align: right;
+      opacity: 0;
 
       .background {
         position: absolute;
@@ -197,4 +220,4 @@
       }
     }
   }
-</style>
+</style>~/utils/ReplaceLocation
