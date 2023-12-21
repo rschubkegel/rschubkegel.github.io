@@ -1,6 +1,7 @@
 ---
 title: Web Design Class
 date: 2021-01-20
+home: false
 ---
 
 The ARTD 270 class from college focused on UI design, page layout, and usability—and it effectively kickstarted my interest in web design.
