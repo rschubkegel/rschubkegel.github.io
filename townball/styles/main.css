@@ -1,0 +1,73 @@
+/*
+ * Bootstrap breakpoints:
+ * sm  ≥ 576px
+ * md  ≥ 768px
+ * lg  ≥ 992px
+ * xl  ≥ 1200px
+ * xxl ≥ 1400px
+ */
+
+:root {
+  --spacing: 1rem;
+  --sp-half: 0.5rem;
+  --sp-1: var(--spacing);
+  --sp-2: calc(var(--spacing) * 2);
+  --sp-4: calc(var(--spacing) * 4);
+  --content-width: 768px;
+  --border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: 'Public Sans', sans-serif;
+  background: var(--bg);
+  color: var(--fg-bold);
+  max-width: 100vw;
+  max-width: 100dvw;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+main {
+  margin: auto;
+  max-width: var(--content-width);
+}
+
+a {
+  color: var(--red);
+}
+
+a:is(:hover, :focus, :active) {
+  color: var(--red-bold);
+}
+
+a.cta {
+  display: block;
+  background-color: var(--red);
+  color: white;
+  padding: 1em;
+  border-radius: var(--border-radius);
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 48px;
+  font-family: 'Big Shoulders Text', sans-serif;
+}

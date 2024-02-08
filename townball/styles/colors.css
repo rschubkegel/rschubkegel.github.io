@@ -1,0 +1,41 @@
+/*
+ * Colors should have a "base" color that uses a memorable, descriptive name.
+ * Color variants should use the following adjectives to describe thier shade:
+ *
+ * - `bold` describes a more intense/vibrant color
+ * - `mild` describes a more subtle/muted color
+ */
+
+:root {
+  /* background */
+  --bg: #ebebeb;
+  --bg-mild: #e4dfdf;
+  --bg-bold: #ffffff;
+  /* foreground */
+  --fg: #272727;
+  --fg-mild: #494848;
+  --fg-bold: #171616;
+  /* accent */
+  --red: #c94d4d;
+  --red-mild: #e87a7a;
+  --red-bold: #bc3535;
+  --highlight: #fdea3eaa;
+  /* shadow */
+  --shadow: #0003;
+
+  @media (prefers-color-scheme: dark) and (max-width: 1px) {
+    /* background */
+    --bg: #323232;
+    --bg-mild: #464545;
+    --bg-bold: #1a1a1a;
+    /* foreground */
+    --fg: #efefea;
+    --fg-mild: #d4c8c7;
+    --fg-bold: #ffffff;
+    /* accent */
+    --red: #f84545;
+    --red-mild: #c11b1b;
+    --red-bold: #ff7171;
+    --highlight: #fdea3e44;
+  }
+}
