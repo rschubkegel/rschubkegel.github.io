@@ -61,7 +61,7 @@
 
   <!-- LOGO -->
   <section class="logo-container">
-    <TheLogo id="logo" :taps-for-qr="3" />
+    <TheLogo id="logo" :taps-for-qr="1" />
   </section>
 
   <!-- INTRO -->
