@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import gsap from 'gsap';
+
   const props = defineProps<{
     /**
      * If set to a positive number, the logo will transform into a QR code
@@ -9,10 +11,31 @@
 
   const taps = ref(0);
 
+  const container = ref<SVGElement>();
+
   const isQrVisible = ref(false);
+
+  const animatePulse = (scale = 1.05) => {
+    if (!container.value) return;
+    gsap
+      .timeline()
+      .to(container.value, {
+        scale,
+        duration: 0.1,
+        ease: 'power1.out',
+      })
+      .to(container.value, {
+        scale: 1,
+        duration: 0.3,
+        ease: 'power3.out',
+      });
+  };
 
   watch(taps, value => {
     if (props.tapsForQr > 0) {
+      if (value > 0 && value < props.tapsForQr) {
+        animatePulse(1 + Math.max(0, (value / props.tapsForQr) * 0.3));
+      }
       if (value >= Math.max(props.tapsForQr, 0)) {
         isQrVisible.value = true;
         taps.value = -1;
@@ -24,27 +47,9 @@
 </script>
 
 <template>
-  <div class="qr-logo" @click="taps++">
-    <svg
-      viewBox='0 0 220 255'
-      width='220'
-      height='255'
-      :class="{ hidden: isQrVisible }">
-      <g transform='translate(-65, 300) rotate(180) scale(-1.2, 1.2)'>
-        <g transform='translate(228.7894, 188.3042)'>
-          <path d='M 0,0 C 0,53 -18.473,57.086 -47.5,57.086 H -95 V 31.414 h 47.5 c 13.267,0 23.454,3.179 23.454,-31.414 0,-34.593 -11.518,-31.414 -23.454,-31.414 H -95 v -25.811 c 23,0 26.086,1.593 31.71,-9.193 l 37.43,-79.497 H 0 c 0,0 -40.045,83.967 -42.28,88.621 C -27.399,-57.294 0,-58.82 0,0' />
-        </g>
-        <g transform='translate(133.7903, 68.0303)'>
-          <path d='m 0,0 v -25.86 h -25.859 c -7.141,0 -13.601,2.9 -18.281,7.58 -4.679,4.679 -7.58,11.139 -7.58,18.28 v 48.54 c 0,7.89 -3.389,14.279 -11.28,14.279 H -74.58 V 88.68 H -63 c 7.891,0 11.28,6.39 11.28,14.28 v 48.54 c 0,7.14 2.901,13.6 7.58,18.28 4.68,4.68 11.14,7.58 18.281,7.58 V 88.68 c 0,-3.57 -1.451,-6.8 -3.79,-9.14 -2.341,-2.34 -5.571,-3.79 -9.141,-3.79 3.57,0 6.8,-1.45 9.141,-3.79 2.339,-2.34 3.79,-5.57 3.79,-9.141 V 14.14 C -25.859,6.33 -19.529,0 -11.72,0 Z' />
-        </g>
-      </g>
-    </svg>
-    <img
-      src="/qr-code.png"
-      alt="QR code"
-      width="500"
-      height="500"
-      :class="{ hidden: !isQrVisible }">
+  <div ref="container" class="qr-logo" @click="taps++">
+    <IconRylan :class="{ hidden: isQrVisible }" />
+    <IconQR :class="{ hidden: !isQrVisible }" />
   </div>
 </template>
 
@@ -54,23 +59,31 @@
     width: 8rem;
     height: 8rem;
     cursor: pointer;
-  }
-  svg, img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: 500ms;
-    &.hidden {
-      opacity: 0;
-      scale: .25;
+
+    svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: 300ms;
+
+      &.hidden {
+        opacity: 0;
+        scale: .25;
+
+        &:nth-child(even) {
+          translate: 0 2rem;
+        }
+
+        &:nth-child(odd) {
+          translate: 0 -2rem;
+        }
+      }
     }
-  }
-  img {
-    scale: 1.5;
-  }
-  path {
-    fill: var(--color-splash-mild);
+
+    :deep(path) {
+      fill: var(--color-splash-mild);
+    }
   }
 </style>
