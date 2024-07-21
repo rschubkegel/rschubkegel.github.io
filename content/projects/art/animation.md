@@ -14,24 +14,24 @@ Some of my favorite animations are compiled here for you enjoyment!
 
 
 <content-img-row>
-  <img src='/images/school/animations/walk-cycle.gif' alt='' loading='lazy' />
-  <img src='/images/school/animations/zoetrope.gif' alt='' loading='lazy' />
-  <img src='/images/school/animations/circle-boogie.gif' alt='' loading='lazy' />
+  <content-img src="/images/school/animations/walk-cycle.gif"></content-img>
+  <content-img src="/images/school/animations/zoetrope.gif"></content-img>
+  <content-img src="/images/school/animations/circle-boogie.gif"></content-img>
 </content-img-row>
 
 <content-img-row>
-  <img src='/images/school/animations/six-ft-apart.gif' alt='' loading='lazy' />
-  <img src='/images/school/animations/jack-in-the-box.gif' alt='' loading='lazy' />
+  <content-img src="/images/school/animations/six-ft-apart.gif"></content-img>
+  <content-img src="/images/school/animations/jack-in-the-box.gif"></content-img>
 </content-img-row>
 
 <content-img-row>
-  <img src='/images/school/animations/fire-paper.gif' alt='' loading='lazy' />
-  <img src='/images/school/animations/explosion.gif' alt='' loading='lazy' />
-  <img src='/images/school/animations/fire.gif' alt='' loading='lazy' />
+  <content-img src='/images/school/animations/fire-paper.gif'></content-img>
+  <content-img src='/images/school/animations/explosion.gif'></content-img>
+  <content-img src='/images/school/animations/fire.gif'></content-img>
 </content-img-row>
 
 <content-img-row>
-  <img src='/images/school/animations/bunny.gif' alt='' loading='lazy' />
-  <img src='/images/school/animations/monty-python.gif' alt='' loading='lazy' />
-  <img src='/images/school/animations/wave.gif' alt='' loading='lazy' />
+  <content-img src='/images/school/animations/bunny.gif'></content-img>
+  <content-img src='/images/school/animations/monty-python.gif'></content-img>
+  <content-img src='/images/school/animations/wave.gif'></content-img>
 </content-img-row>

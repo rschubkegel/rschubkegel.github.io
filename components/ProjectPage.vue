@@ -1,9 +1,7 @@
 <script setup lang="ts">
-  import { ParsedContent } from '@nuxt/content/dist/runtime/types';
-
   defineProps<{
     title: string;
-    content: ParsedContent[];
+    content: any[];
   }>();
 
   const visibleSections = ref<string[]>([]);

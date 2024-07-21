@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import { ParsedContent } from '@nuxt/content/dist/runtime/types';
   import { stringToId } from '~/utils/StringToId';
 
   const emit = defineEmits<{
@@ -9,7 +8,7 @@
 
   const props = defineProps<{
     title: string;
-    content: ParsedContent[] | null;
+    content: any[] | null;
     link?: string;
     page?: string;
   }>();

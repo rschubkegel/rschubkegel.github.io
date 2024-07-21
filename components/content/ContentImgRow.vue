@@ -1,54 +1,49 @@
 <script setup lang="ts">
-  defineProps<{
-    collapse?: boolean;
-  }>()
+  defineProps<{ collapse?: boolean }>()
 
   const container = ref<HTMLElement>()
 
-  function resolveOnLoad(img: HTMLImageElement) {
-    return new Promise<void>((resolve, _) => {
-      img.addEventListener('load', () => resolve())
-    })
-  }
+  const children = computed(() => Array.from(container.value?.children ?? []))
 
-  onMounted(() => {
-    const children = Array.from(container.value?.children ?? [])
-    const images = children.filter(el => el.matches('img')) as HTMLImageElement[]
-    if (container.value) container.value.style.setProperty('--columns', children.map(_img => '1fr').join(' '))
-    Promise
-      .all(images.filter(img => !img.naturalWidth).map(resolveOnLoad))
-      .then(() => {
-        if (container.value) {
-          const ratios = images.map(({ naturalWidth, naturalHeight }) =>  naturalWidth / naturalHeight)
-          container.value.style.setProperty('--columns', ratios.map(r => `${r}fr`).join(' '))
-        }
-      })
-  })
+  const columns = computed(
+    () =>
+      children.value.map(img => {
+        if (img.matches('img')) {
+          const width = (img as HTMLImageElement).width
+          const height = (img as HTMLImageElement).height
+          if (height === 0) return '1fr'
+          const ratio = width / height
+          return `${ ratio }fr`
+        } else return '1fr'
+      }).join(' ')
+  )
 </script>
 
 <template>
-  <div ref="container" class="image-row" :class="{ collapse }">
+  <div ref="container" class="image-row" :class="{ collapse }" :style="{ '--columns': columns }">
     <slot></slot>
   </div>
 </template>
 
 <style scoped lang="scss">
   .image-row {
-    // display: flex;
     --columns: 1fr;
     display: grid;
     grid-template-columns: var(--columns);
     gap: var(--spacing);
     max-width: var(--content-w);
+
     &.collapse {
       // WARNING: hard-coded (see :root vars)
       @media (max-width: 42rem) {
         --columns: 1fr !important;
       }
     }
+
     + .image-row {
       margin-top: var(--spacing);
     }
+
     :deep(img) {
       flex-shrink: 1;
       width: 100%;

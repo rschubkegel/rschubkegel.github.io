@@ -75,7 +75,7 @@ I submitted my entry 1 minute and 48 seconds before the deadline. I worked ~40 h
 
 <content-img-row collapse>
   <content-img src="/images/games/out-of-thyme/20230808225229.png"></content-img>
-  <img src="/images/games/out-of-thyme/game-gif.gif" alt="">
+  <content-img src="/images/games/out-of-thyme/game-gif.gif"></content-img>
 </content-img-row>
 
 ### The Results
@@ -83,7 +83,7 @@ I submitted my entry 1 minute and 48 seconds before the deadline. I worked ~40 h
 I feel proud of what I accomplished. Even though it is a small arcade game, I was able to polish it more than previous entries. The game mechanics made sense, were easy to learn, and hard to master. I included hints to help out new players and easily-readable animations when something important happens. The UI was tabbable so you don't need to touch a mouse and break your rhythm. The win screen is animated and interesting...but so is the lose screen (which players might see more often!).
 
 <content-img-row>
-  <img src="/images/games/out-of-thyme/lose.gif" alt="">
+  <content-img src="/images/games/out-of-thyme/lose.gif"></content-img>
 </content-img-row>
 
 Even though these seem like obvious additions in retrospect, it's difficult to prioritize the "smaller" items that make a game feel intuitive when under a time crunch. I am happy with what I was able to accomplish...and the 2st place ranking was nice too!

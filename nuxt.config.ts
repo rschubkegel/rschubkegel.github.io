@@ -24,6 +24,9 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true
   },
+  image: {
+    domains: ['d1qgpo4v0a11d.cloudfront.net'],
+  },
   modules: ['@nuxt/content', '@nuxt/image'],
   ssr: true
 })
