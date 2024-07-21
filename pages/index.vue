@@ -10,10 +10,6 @@
       content: await useAsyncData(() => queryContent('/projects/web').where({ home: { $ne: false } }).sort({ date: -1 }).find()).then(({ data }) => data),
       page: '/web',
     },
-    // {
-    //   title: 'Engineering',
-    //   content: await useAsyncData(() => queryContent('/projects/engineering').where({ home: { $ne: false } }).sort({ date: -1 }).find()).then(({ data }) => data),
-    // },
     {
       title: 'Game Development',
       content: await useAsyncData(() => queryContent('/projects/games').where({ home: { $ne: false } }).sort({ date: -1 }).find()).then(({ data }) => data),

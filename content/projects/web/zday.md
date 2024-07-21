@@ -2,6 +2,7 @@
 title: Zday Simulator
 date: 2023-11-01
 link: https://zdaysimulator.com/
+home: false
 ---
 
 ZDay: Surival Simulator is the first iOS game that I worked on. I was responsible for the web portal, which enables administrators to manage stories, items, users, and more.
