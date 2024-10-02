@@ -3,11 +3,11 @@
 
   const container = ref<HTMLElement>()
 
-  const children = computed(() => Array.from(container.value?.children ?? []))
+  const images = computed(() => Array.from(container.value?.querySelectorAll('img') ?? []))
 
   const columns = computed(
     () =>
-      children.value.map(img => {
+      images.value.map(img => {
         if (img.matches('img')) {
           const width = (img as HTMLImageElement).width
           const height = (img as HTMLImageElement).height

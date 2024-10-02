@@ -66,6 +66,6 @@
 
 <style scoped lang="scss">
   section:not(:last-child) {
-    margin-bottom: var(--spacing);
+    margin-bottom: calc(var(--spacing) * 1.25);
   }
 </style>
