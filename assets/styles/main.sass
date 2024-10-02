@@ -94,9 +94,10 @@ li
     transition: 500ms
     &:hover
       // text-shadow: 2px -1px #f00d, -2px 1px #00fd // chromatic abberation
-      text-shadow: -4px 4px var(--color-splash-mild)
-      translate: 2px -2px
+      text-shadow: -0.10em 0.10em color-mix(in srgb, var(--color-splash-bold), var(--color-bg-mild) 60%)
+      translate: 0.05em -0.05em
       transition: 200ms
+      filter: saturate(1.5)
       svg
         opacity: 1
     svg
