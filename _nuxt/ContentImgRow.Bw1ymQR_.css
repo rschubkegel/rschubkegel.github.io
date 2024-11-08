@@ -1,0 +1,1 @@
+.image-row[data-v-8a99a5b6]{--columns:1fr;display:grid;gap:var(--spacing);grid-template-columns:var(--columns);max-width:var(--content-w)}@media (max-width:42rem){.image-row.collapse[data-v-8a99a5b6]{--columns:1fr!important}}.image-row+.image-row[data-v-8a99a5b6]{margin-top:var(--spacing)}.image-row[data-v-8a99a5b6] img{flex-shrink:1;height:auto;width:100%}
