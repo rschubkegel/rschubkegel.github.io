@@ -1,7 +1,10 @@
 <script setup lang="ts">
+  import type { ParsedContent } from '@nuxt/content'
+
   defineProps<{
     title: string;
-    content: any[];
+    intro?: ParsedContent | null;
+    content: ParsedContent[];
   }>();
 
   const visibleSections = ref<string[]>([]);
@@ -26,6 +29,9 @@
       <em>home</em>
     </a>
   </section>
+
+  <!-- INTRODUCTION -->
+  <ContentRenderer v-if="intro" :value="intro" />
 
   <!-- TABLE OF CONTENTS -->
   <TableOfContents

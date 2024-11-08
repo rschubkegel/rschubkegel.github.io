@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  const content = await useAsyncData(() => queryContent('/projects/engineering').sort({ date: -1 }).find()).then(({ data }) => data);
+  const content = await useAsyncData(() => queryContent('/categories/engineering').sort({ date: -1 }).find()).then(({ data }) => data);
 </script>
 
 

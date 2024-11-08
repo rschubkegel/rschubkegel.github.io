@@ -9,22 +9,22 @@
   const contentSections = [
     {
       title: 'Web Development',
-      content: await useAsyncData(() => queryContent('/projects/web').where({ home: { $ne: false } }).sort({ date: -1 }).find()).then(({ data }) => data),
+      content: await useAsyncData(() => queryContent('/categories/web').where({ home: { $ne: false } }).sort({ date: -1 }).find()).then(({ data }) => data),
       page: '/web',
     },
     {
       title: 'Game Development',
-      content: await useAsyncData(() => queryContent('/projects/games').where({ home: { $ne: false } }).sort({ date: -1 }).find()).then(({ data }) => data),
+      content: await useAsyncData(() => queryContent('/categories/games').where({ home: { $ne: false } }).sort({ date: -1 }).find()).then(({ data }) => data),
       page: '/games',
     },
     {
       title: 'Visual Art',
-      content: await useAsyncData(() => queryContent('/projects/art').where({ home: { $ne: false } }).sort({ date: -1 }).find()).then(({ data }) => data),
+      content: await useAsyncData(() => queryContent('/categories/art').where({ home: { $ne: false } }).sort({ date: -1 }).find()).then(({ data }) => data),
       page: '/art',
     },
     {
       title: 'Music',
-      content: await useAsyncData(() => queryContent('/projects/music').where({ home: { $ne: false } }).sort({ date: -1 }).find()).then(({ data }) => data),
+      content: await useAsyncData(() => queryContent('/categories/music').where({ home: { $ne: false } }).sort({ date: -1 }).find()).then(({ data }) => data),
     },
   ];
 

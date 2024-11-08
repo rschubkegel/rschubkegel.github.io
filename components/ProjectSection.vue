@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import type { ParsedContent } from '@nuxt/content'
   import { stringToId } from '~/utils/StringToId';
 
   const emit = defineEmits<{
@@ -8,7 +9,7 @@
 
   const props = defineProps<{
     title: string;
-    content: any;
+    content: ParsedContent;
   }>();
 
   const id = stringToId(props.title);
