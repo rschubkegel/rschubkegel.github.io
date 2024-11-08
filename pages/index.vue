@@ -4,6 +4,8 @@
   import { TextPlugin } from 'gsap/TextPlugin';
   gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
+  const intro = await useAsyncData(() => queryContent('/intro').findOne()).then(({ data }) => data);
+
   const contentSections = [
     {
       title: 'Web Development',
@@ -67,12 +69,7 @@
   <!-- INTRO -->
   <section>
     <h1></h1>
-    <p>
-      I&apos;m a web developer that is passionate about programming, art, and coffee.
-      This site represents a small selection of my personal and professional work.
-      Feel free to connect on <a href="https://github.com/rschubkegel/" target="_blank">LinkedIn</a>
-      for service inquiries or just to chat!
-    </p>
+    <ContentRenderer :value="intro" />
   </section>
 
   <!-- TABLE OF CONTENTS -->
