@@ -48,7 +48,6 @@
       flex-shrink: 1;
       width: 100%;
       height: auto;
-      height: fit-content;
     }
   }
 </style>
