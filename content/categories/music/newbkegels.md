@@ -2,6 +2,7 @@
 title: The Newbkegels
 date: 2022-06-20
 link: https://open.spotify.com/artist/4mzQ1hTJMFwUmPAFJdgUXk?si=GAEzIycrSi651qTNHhHSIA
+home: false
 ---
 
 Since I got married in 2020, my wife and I have enjoyed making music together. It's difficult to find time to finish a song together, but the few we _have_ completed are available on [Bandcamp](https://thenewbkegels.bandcamp.com/).

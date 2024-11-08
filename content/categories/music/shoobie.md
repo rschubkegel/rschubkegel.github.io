@@ -2,6 +2,7 @@
 title: Shoobie Doobie
 date: 2019-07-01
 link: https://open.spotify.com/artist/6YrSdl1dy1dDxZETIxW7n5?si=vTG79pEIS9Gms3gbBvjcsg
+home: false
 ---
 
 Taken from the nickname my baseball coach gave me, this alias has been my go-to for music projects since 2013.

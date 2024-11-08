@@ -8,12 +8,12 @@
 
   const contentSections = [
     {
-      title: 'Web Development',
+      title: 'Web Dev',
       content: await useAsyncData(() => queryContent('/categories/web').where({ home: { $ne: false } }).sort({ date: -1 }).find()).then(({ data }) => data),
       page: '/web',
     },
     {
-      title: 'Game Development',
+      title: 'Game Dev',
       content: await useAsyncData(() => queryContent('/categories/games').where({ home: { $ne: false } }).sort({ date: -1 }).find()).then(({ data }) => data),
       page: '/games',
     },
@@ -25,6 +25,7 @@
     {
       title: 'Music',
       content: await useAsyncData(() => queryContent('/categories/music').where({ home: { $ne: false } }).sort({ date: -1 }).find()).then(({ data }) => data),
+      page: '/music',
     },
   ];
 
