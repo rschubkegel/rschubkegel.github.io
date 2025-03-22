@@ -1,0 +1,24 @@
+<h1 style="opacity: 0">
+	<slot></slot>
+</h1>
+
+<script>
+	import gsap from 'gsap'
+	import { TextPlugin } from 'gsap/TextPlugin';
+	gsap.registerPlugin(TextPlugin);
+
+	const h1 = document.querySelector('h1')
+	if (h1?.textContent) {
+		h1.style.opacity = ''
+		h1.style.minHeight = h1.clientHeight + 'px'
+		gsap
+			.timeline()
+			.set(h1, { textContent: '' })
+			.to(h1, {
+				text: h1.textContent,
+				duration: 2.5,
+				ease: 'linear',
+				scrollTrigger: 'h1'
+			})
+	}
+</script>

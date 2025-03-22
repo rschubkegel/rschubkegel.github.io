@@ -1,0 +1,28 @@
+<div class="project-header">
+	<slot />
+	<div class="links">
+		<!-- Internal link to another page on this site -->
+		<slot name="page" />
+		<!-- External link -->
+		<slot name="link" />
+	</div>
+</div>
+
+<style lang="scss">
+	.project-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: calc(var(--spacing) * 2);
+
+		:global(h1), :global(h2), :global(h3) {
+			margin-top: 0;
+		}
+
+		.links {
+			display: flex;
+			gap: var(--spacing);
+			align-items: center;
+		}
+	}
+</style>

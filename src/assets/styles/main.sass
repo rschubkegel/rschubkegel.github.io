@@ -1,0 +1,138 @@
+@use './colors'
+@use './breakpoints'
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,700&display=swap')
+
+
+//////// MIXINS ////////
+
+@mixin primary-link
+  color: var(--color-primary-muted)
+  border-bottom: .15em solid transparent
+  transition: var(--transition)
+  &:is(:hover, :focus)
+    transition: 100ms
+    color: var(--color-primary-strong)
+    border-bottom-color: var(--color-primary-muted)
+
+
+//////// RESET AND GLOBALS ////////
+
+*
+  font-family: inherit
+  font-size: inherit
+  color: inherit
+  margin: 0
+  padding: 0
+  overscroll-behavior: none
+  box-sizing: border-box
+
+:root
+  font-size: 12pt
+  color: var(--color-fg-muted)
+  font-family: Poppins, Arial, Helvetica, sans-serif
+  --spacing: 1rem
+  --content-width: 65ch
+  --sticky-header-top: -1px
+  --border-radius: .25rem
+  --transition: 250ms
+  --transition-short: calc(var(--transition) * 0.3)
+
+
+//////// TAG DEFAULTS ////////
+
+h1
+  font-size: 3.2rem
+  color: var(--color-fg-strong)
+  font-weight: 700
+  line-height: 1
+  letter-spacing: .015em
+  margin-top: calc(var(--spacing) * 2)
+
+h2
+  font-size: 2.3rem
+  color: var(--color-fg-strong)
+  font-weight: 600
+  line-height: 1
+  letter-spacing: .015em
+  margin-top: calc(var(--spacing) * 2)
+
+  a
+    transition: color var(--transition)
+
+    &:hover
+      color: var(--color-primary-muted)
+      transition-duration: var(--transition-short)
+
+h3
+  font-size: 2rem
+  color: var(--color-fg-muted)
+  font-weight: 500
+  line-height: 1
+  letter-spacing: .015em
+  margin-top: calc(var(--spacing) * 1.5)
+
+p, ul, ol
+  font-family: Open Sans, Arial, Helvetica, sans-serif
+  line-height: 1.6
+  margin: var(--spacing) 0
+
+a
+  text-decoration: none
+  &:is(:hover, :focus)
+    color: var(--color-fg-strong)
+    outline: none
+
+p a, ul a, ol a, figure a
+  @include primary-link
+
+hr
+  border: none
+  height: 1px
+  background: color-mix(in srgb, var(--color-bg-muted), var(--color-fg-muted) 30%)
+  margin: calc(var(--spacing) * 2) 0
+
+figure
+  margin: 0
+
+  figcaption
+    text-align: center
+    margin: 0
+
+img
+  border-radius: var(--border-radius)
+  width: 100%
+  height: auto
+
+li
+  list-style-position: inside
+
+button
+  appearance: none
+  background: none
+  border: none
+  font-family: inherit
+  font-size: inherit
+  cursor: pointer
+
+
+//////// LAYOUT UTILITY CLASSES ////////
+
+.collapse-when-small
+  // WARNING: hard-coded (see :root vars)
+  @media (max-width: 42rem)
+    grid-template-columns: 1fr !important
+
+
+//////// COLOR UTILITY CLASSES ////////
+
+@media (prefers-color-scheme: light)
+  .invert-when-light
+    filter: invert(100%) hue-rotate(180deg)
+
+
+//////// GLOBAL STYLE CLASSES ////////
+
+.note
+  font-style: italic;
+  margin-left: 0.4em;
+  opacity: 0.35;

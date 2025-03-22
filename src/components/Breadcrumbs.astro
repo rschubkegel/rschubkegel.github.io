@@ -1,0 +1,40 @@
+---
+const { pathname } = Astro.url
+const segments = ['/'].concat(pathname.split('/').filter(Boolean)).slice(0, -1)
+const links = segments.map((segment, index) => {
+	const path = segments.slice(1, index + 1).join('/')
+	return {
+		text: segment,
+		path: `/${path}`,
+	}
+})
+---
+
+{Boolean(segments.length) && (
+	<nav>
+		{links.map(({ text, path }) => (
+			<a href={path}>{text}</a>
+		))}
+	</nav>
+)}
+{segments.length === 1 && (
+	<span class="note">&larr; Home page</span>
+)}
+
+<style lang="scss">
+	nav {
+		display: inline-flex;
+		gap: calc(var(--spacing) / 2);
+
+		a {
+			background-color: var(--color-bg-muted);
+			padding: 0.1em 0.5em;
+			border-radius: var(--border-radius);
+
+			&:hover {
+				background-color: color-mix(in srgb, var(--color-primary-strong), var(--color-bg-strong) 80%);
+				color: color-mix(in srgb, var(--color-primary-strong), var(--color-bg-strong) 20%);
+			}
+		}
+	}
+</style>

@@ -1,0 +1,57 @@
+---
+import IconGitHub from '@components/IconGitHub.astro';
+import IconInstagram from '@components/IconInstagram.astro';
+import IconItch from '@components/IconItch.astro';
+import IconLinkedIn from '@components/IconLinkedIn.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+---
+
+<header>
+	<div>
+		<slot name="left">
+			<Breadcrumbs />
+		</slot>
+	</div>
+	<div>
+		<slot name="right">
+			<div class="website-links">
+				<a href='https://github.com/rschubkegel/' target="_blank" title="GitHub">
+					<IconGitHub />
+				</a>
+				<a href='https://www.linkedin.com/in/rschubkegel/' target="_blank" title="LinkedIn">
+					<IconLinkedIn />
+				</a>
+				<a href='https://www.instagram.com/theryguydraws/' target="_blank" title="Instagram">
+					<IconInstagram />
+				</a>
+				<a href='https://supergobo.itch.io/' target="_blank" title="Itch.io">
+					<IconItch />
+				</a>
+			</div>
+		</slot>
+	</div>
+</header>
+
+<style lang="scss">
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: var(--spacing);
+
+		@media (min-width: 65rem) {
+			margin-bottom: calc(var(--spacing) * -2);
+		}
+
+		.website-links {
+			display: flex;
+			gap: var(--spacing);
+
+			:global(svg) {
+				width: auto;
+				height: 1.5rem;
+				fill: var(--color-fg-muted);
+			}
+		}
+	}
+</style>

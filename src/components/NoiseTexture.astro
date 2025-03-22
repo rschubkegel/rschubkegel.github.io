@@ -1,0 +1,16 @@
+---
+import staticImage from '@assets/images/static.png'
+---
+
+<div class="noise-texture" style={`background-image: url('${staticImage.src}')`}></div>
+
+<style lang="scss">
+	.noise-texture {
+		width: 100%;
+		height: 100%;
+
+		// background-image is set by inline styles
+		background-repeat: repeat;
+		background-size: 200px;
+	}
+</style>

@@ -1,0 +1,107 @@
+---
+layout: "@layouts/BaseLayout.astro"
+title: Visual Art
+description: "Paintings, graphic design, animations; the lifeblood of my creative endevours."
+---
+
+import FlexBasedImage from '@components/FlexBasedImage.astro'
+import ProjectHeader from '@components/ProjectHeader.astro'
+
+# {frontmatter.title}
+
+My first love (of hobbies) was art. My first canvas was my brother who I painted when I was still a toddler.
+
+Since then I developed a love of drawing, painting, graphic design, and animation.
+
+This is a small collection of my work.
+
+---
+
+import kulshanMountainImage from '@assets/images/paintings/kulshan-insta.jpg'
+import orangesImage from '@assets/images/paintings/oranges-insta.jpg'
+import frenchPressImage from '@assets/images/paintings/french-press-insta.jpg'
+
+<ProjectHeader>
+	## Painting
+</ProjectHeader>
+
+One of my favorite forms of R&R is traditional painting. I've tried watercolor and gouache, but my favorite medium is acrylic. _Occasionally_, I share my work on [Instagram](https://www.instagram.com/theryguydraws/).
+
+<FlexBasedImage src={kulshanMountainImage} alt="Kulshan Mountain painting" />
+
+<div style="display:flex;gap:var(--spacing);margin-top:var(--spacing)">
+	<FlexBasedImage src={orangesImage} alt="Oranges painting" />
+	<FlexBasedImage src={frenchPressImage} alt="French Press painting" />
+</div>
+
+import twentySeventhLetterImage from '@assets/images/school/typography/twenty-seventh-letter.jpg'
+import anatomy1Image from '@assets/images/school/typography/anatomy/1.png'
+import anatomy2Image from '@assets/images/school/typography/anatomy/2.png'
+import anatomy4Image from '@assets/images/school/typography/anatomy/4.png'
+import anatomy8Image from '@assets/images/school/typography/anatomy/8.png'
+
+<ProjectHeader>
+	## [Typography Class](/visual-art/typography-class)
+</ProjectHeader>
+
+A college class that explored type anatomy, page layout, hierarchy, and more.
+
+<div style="display:flex;gap:var(--spacing);margin-top:var(--spacing)">
+	<div style="display:grid;gap:var(--spacing);grid-template-columns:repeat(2,1fr);flex-basis:100%">
+		<FlexBasedImage src={anatomy2Image} alt="Design based on type anatomy" />
+		<FlexBasedImage src={anatomy1Image} alt="Design based on type anatomy" />
+		<FlexBasedImage src={anatomy4Image} alt="Design based on type anatomy" />
+		<FlexBasedImage src={anatomy8Image} alt="Design based on type anatomy" />
+	</div>
+	<FlexBasedImage src={twentySeventhLetterImage} alt="Twenty Seventh Letter graphic" />
+</div>
+
+import coastersImage from '@assets/images/school/creative-suite/coasters-3.png'
+import nauticalIconsImage from '@assets/images/school/creative-suite/nautical-icons.png'
+import playlist1Image from '@assets/images/school/creative-suite/playlist/1.jpg'
+import playlist2Image from '@assets/images/school/creative-suite/playlist/2.jpg'
+import playlist3Image from '@assets/images/school/creative-suite/playlist/3.jpg'
+import playlist4Image from '@assets/images/school/creative-suite/playlist/4.jpg'
+import playlist5Image from '@assets/images/school/creative-suite/playlist/5.jpg'
+import playlist6Image from '@assets/images/school/creative-suite/playlist/6.jpg'
+import playlist7Image from '@assets/images/school/creative-suite/playlist/7.jpg'
+import playlist8Image from '@assets/images/school/creative-suite/playlist/8.jpg'
+import playlist9Image from '@assets/images/school/creative-suite/playlist/9.jpg'
+
+<ProjectHeader>
+	## [Creative Suite Class](/visual-art/creative-suite-class)
+</ProjectHeader>
+
+The college class that introduced me to the fundamentals of design software.
+
+<div style="display:flex;gap:var(--spacing);margin-top:var(--spacing)">
+	<FlexBasedImage src={coastersImage} alt="Coaster design" />
+	<FlexBasedImage src={nauticalIconsImage} alt="Nautical icons" />
+	<div style="display:grid;gap:var(--border-radius);grid-template-columns:repeat(3,1fr);flex-basis:100%">
+		<FlexBasedImage src={playlist1Image} alt="Pink and purple Spotify playlist cover" />
+		<FlexBasedImage src={playlist2Image} alt="Pink and purple Spotify playlist cover" />
+		<FlexBasedImage src={playlist3Image} alt="Pink and purple Spotify playlist cover" />
+		<FlexBasedImage src={playlist4Image} alt="Pink and purple Spotify playlist cover" />
+		<FlexBasedImage src={playlist5Image} alt="Pink and purple Spotify playlist cover" />
+		<FlexBasedImage src={playlist6Image} alt="Pink and purple Spotify playlist cover" />
+		<FlexBasedImage src={playlist7Image} alt="Pink and purple Spotify playlist cover" />
+		<FlexBasedImage src={playlist8Image} alt="Pink and purple Spotify playlist cover" />
+		<FlexBasedImage src={playlist9Image} alt="Pink and purple Spotify playlist cover" />
+	</div>
+</div>
+
+import walkImage from '@assets/images/school/animations/walk-cycle.gif'
+import firePaperImage from '@assets/images/school/animations/fire-paper.gif'
+import montyPythonImage from '@assets/images/school/animations/monty-python.gif'
+
+<ProjectHeader>
+	## [Animations](/visual-art/animation)
+</ProjectHeader>
+
+I love bringing drawings to life through animation. Some of my favorite animations are compiled here for you enjoyment!
+
+<div style="display:flex;gap:var(--spacing);margin-top:var(--spacing)">
+	<FlexBasedImage src={walkImage} alt="Hand-drawn walk cycle" />
+	<FlexBasedImage src={firePaperImage} alt="Fire animation made from cut construction paper" />
+	<FlexBasedImage src={montyPythonImage} alt="2D digital animation of angry green character with wavy eyebrows quoting Monty Python" />
+</div>

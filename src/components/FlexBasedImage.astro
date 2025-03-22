@@ -1,0 +1,27 @@
+---
+import type { ComponentProps } from 'astro/types';
+import { Image } from 'astro:assets'
+
+type PropsType = Omit<ComponentProps<typeof Image>, 'src'> & {
+	src: ImageMetadata;
+}
+
+const { src, ...props } = (Astro.props as PropsType)
+const ratio = src.width / src.height
+const flexBasisValue = ratio * 100
+const flexBasisString = `${flexBasisValue}%`
+let { style } = props
+switch (typeof style) {
+	case 'string':
+		style = (!style || style.endsWith(';')) ? style : `${style}; `
+		style += `flex-basis: ${flexBasisString}`
+		break
+	case 'object':
+		style = { ...style, flexBasis: flexBasisString }
+		break
+	default:
+		style = { flexBasis: flexBasisString }
+}
+---
+
+<Image {...(props as any)} src={src} style={style} />

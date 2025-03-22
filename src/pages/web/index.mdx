@@ -1,0 +1,152 @@
+---
+layout: "@layouts/BaseLayout.astro"
+title: Web Dev
+description: "Website projects that I've developed."
+---
+
+import { Image } from 'astro:assets'
+import FlexBasedImage from '@components/FlexBasedImage.astro'
+import IconExternalLink from '@components/IconExternalLink.astro'
+import IconInternalLink from '@components/IconInternalLink.astro'
+import ProjectHeader from '@components/ProjectHeader.astro'
+
+# {frontmatter.title}
+
+Website development has been the biggest part of my career so far and I am now invested in the ever-changing <abbr title="JavaScript">JS</abbr> ecosystem (for better or worse).
+
+---
+
+import landingImage from '@assets/images/silverpine/phoenix/silverpine-landing.gif'
+import servicesImage from '@assets/images/silverpine/phoenix/silverpine-services.gif'
+
+<ProjectHeader>
+	## [silverpine.com](/web/silverpine)
+	<Fragment slot="link">
+		<a href="https://silverpine.com/" target="_blank" title="View website">
+			<IconExternalLink />
+		</a>
+	</Fragment>
+</ProjectHeader>
+
+I migrated the website for [Silverpine](https://silverpine.com/) (my employer) from Squarespace to a custom site built with [Astro](https://astro.build/) & [Vue.js](https://vuejs.org/). In doing so, I was able to decrease the cumulative size of transferred assets from 33 MB to 4 MB (loading the home screen with empty cache). This resulted in noticably faster <abbr title="first contentful paint">FCP</abbr> and <abbr title="time to interactive">TTI</abbr> metrics.
+
+<div style="display:flex;gap:var(--spacing)">
+	<FlexBasedImage src={landingImage} alt="New landing page for silverpine.com" />
+	<FlexBasedImage src={servicesImage} alt="Services page for silverpine.com" />
+</div>
+
+import evergreenDashboardImage from '@assets/images/silverpine/evergreen/evergreen-1.png'
+import storyImage from '@assets/images/silverpine/evergreen/evergreen-2.png'
+import diagramImage from '@assets/images/silverpine/evergreen/evergreen-3.png'
+import complexDiagramImage from '@assets/images/silverpine/evergreen/evergreen-4.png'
+
+<ProjectHeader>
+	## [evergreen.ink](/web/evergreen)
+	<Fragment slot="link">
+		<a href="https://evergreen.ink/" target="_blank" title="View website">
+			<IconExternalLink />
+		</a>
+	</Fragment>
+</ProjectHeader>
+
+I built the frontend for [Evergreen.ink](https://evergreen.ink/), an interactive fiction writing platform made by [Big River Games](https://bigrivergames.com/). It allows users to write their own [choose-your-own-adventure](https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure) story with an intuitive interface, including a unique story diagram to visualize complex stories.
+
+<div style="display:flex;gap:var(--spacing)">
+	<FlexBasedImage src={evergreenDashboardImage} alt="Dashboard of user's stories" />
+	<FlexBasedImage src={storyImage} alt="Viewing a story in fullscreen" />
+	<FlexBasedImage src={diagramImage} alt="Diagram inside story editor" />
+</div>
+
+<ProjectHeader>
+	## novella2020.com
+	<Fragment slot="link">
+		<a href="https://novella2020.com/" target="_blank" title="View website">
+			<IconExternalLink />
+		</a>
+	</Fragment>
+</ProjectHeader>
+
+[Novella](https://novella2020.com/) tells a _story_ with every sneaker by designing each pair after a unique artisan. I built the entire frontend using [Vue](https://vuejs.org/), [Liquid](https://shopify.dev/docs/api/liquid), and [GreenSock](https://greensock.com/).
+
+<div style="display:flex;gap:var(--spacing)">
+	<Image src="https://d1qgpo4v0a11d.cloudfront.net/images/verses/chapter01/love-poem/tongue-words.webp" alt="" width={4096 / 4} height={3148 / 4} style={{ flexBasis: `${4096 / 3148 * 100}%` }} />
+	<Image src="https://d1qgpo4v0a11d.cloudfront.net/images/home/mobile-flatlay-top-1200w.webp" alt="" width={1200} height={915} style={{ flexBasis: `${1200 / 915 * 100}%` }} />
+	<Image src="https://d1qgpo4v0a11d.cloudfront.net/images/preface/outsole02-800w.webp" alt="" width={800} height={520} style={{ flexBasis: `${800 / 520 * 100}%` }} />
+</div>
+
+import storiesImage from '@assets/images/silverpine/zday/zday-admin-1.png'
+import resourcesImage from '@assets/images/silverpine/zday/zday-admin-2.png'
+import filteredResourcesImage from '@assets/images/silverpine/zday/zday-admin-3.png'
+import waterTowerImage from '@assets/images/silverpine/zday/zday-ios-1.png'
+import storySelectionImage from '@assets/images/silverpine/zday/zday-ios-2.png'
+import combatImage from '@assets/images/silverpine/zday/zday-ios-3.png'
+import gameOverImage from '@assets/images/silverpine/zday/zday-ios-4.png'
+
+<ProjectHeader>
+	## ZDay Web Admin
+</ProjectHeader>
+
+ZDay: Surival Simulator is the first iOS game that I worked on. I was responsible for the web admin, which enables game developers to manage stories, items, users, and more.
+
+<div style="display:flex;gap:var(--spacing)">
+  <FlexBasedImage src={storiesImage} alt="Story management page" />
+  <FlexBasedImage src={resourcesImage} alt="Resource management page" />
+  <FlexBasedImage src={filteredResourcesImage} alt="Resource management page with filtered results" />
+</div>
+
+I also helped with QA by testing stories, giving UI feedback, and reporting bugs.
+
+The app is available for free on [iOS](https://apps.apple.com/us/app/zday-simulator/id6462632835) and [Android](https://play.google.com/store/apps/details?id=com.bigrivergames.zday.simulator).
+
+<div style="display:flex;gap:var(--spacing)">
+  <FlexBasedImage src={waterTowerImage} alt="Water tower story" />
+  <FlexBasedImage src={storySelectionImage} alt="Story selection screen" />
+  <FlexBasedImage src={combatImage} alt="Zombie combat" />
+  <FlexBasedImage src={gameOverImage} alt="Game over screen with survival score" />
+</div>
+
+import loginImage from '@assets/images/school/voluntime/voluntime1.jpg'
+import voluntimeDashboardImage from '@assets/images/school/voluntime/voluntime2.jpg'
+
+## Voluntime
+
+Voluntime is 1st place winner of [George Fox University's](https://www.georgefox.edu/) second annual Code Jam, a 30-hour coding competition. Voluntime is a platform that connects volunteers to service events, allowing people to easily find ways to help their community. I designed the front-end in Figma and implemented it using React and Material UI.
+
+To learn more, check out the [Code Jam submission](https://devpost.com/software/top-secret-team-3-project-title) or the [GitHub organization](https://github.com/Voluntime).
+
+<div style="display:flex;gap:var(--spacing)">
+	<FlexBasedImage src={loginImage} alt="Login page for Voluntime" />
+	<FlexBasedImage src={voluntimeDashboardImage} alt="A user's volunteer feed" />
+</div>
+
+import homeImage from '@assets/images/games/zoombingo/home.png'
+import boardImage from '@assets/images/games/zoombingo/board.png'
+import lobbyImage from '@assets/images/games/zoombingo/lobby.png'
+
+## Zoombingo
+
+What happens when you are a web developer whose family keeps in touch with Zoom calls each week? In my case, I created a web app here you can play a game bingo while watching for peoples' individual quirks.
+
+The app was built with [React](https://reactjs.org/) on the frontend, a [Node.js](https://nodejs.org/en/) server on the backend, [MongoDB](https://www.mongodb.com/) for the database, and [Heroku](https://www.heroku.com/) for deployment.
+
+<div style="display:flex;gap:var(--spacing)">
+  <FlexBasedImage src={homeImage} alt="Home page" />
+  <FlexBasedImage src={boardImage} alt="Bingo board" />
+  <FlexBasedImage src={lobbyImage} alt="Game lobby" />
+</div>
+
+import bagelsImage from "@assets/images/school/web-design/bagels-banner.jpg"
+import styleTileImage from "@assets/images/school/web-design/style-tile.png"
+import virtualCardImage from "@assets/images/school/web-design/virtual-card-sketches.jpg"
+
+<ProjectHeader>
+	## Web Design Class
+</ProjectHeader>
+
+The ARTD 270 class from college focused on UI design, page layout, and usability—and it effectively kickstarted my interest in web design.
+
+<div style="display:flex;gap:var(--spacing)">
+	<FlexBasedImage src={bagelsImage} alt="Product page for bagels" />
+	<FlexBasedImage src={styleTileImage} alt="Style tile for a website redesign" />
+	<FlexBasedImage src={virtualCardImage} alt="Sketches for a virtual business card" />
+</div>

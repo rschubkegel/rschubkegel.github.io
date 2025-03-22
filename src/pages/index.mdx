@@ -1,0 +1,71 @@
+---
+layout: "@layouts/BaseLayout.astro"
+---
+
+import ProjectHeader from '@components/ProjectHeader.astro'
+import TheTypingHeader from '@components/TheTypingHeader.astro'
+import FlexBasedImage from '@components/FlexBasedImage.astro'
+
+<TheTypingHeader>Hello world, I'm Rylan</TheTypingHeader>
+
+I'm a web developer that is passionate about programming, art, and coffee. This site represents a small selection of my personal and professional work. Feel free to connect on [LinkedIn](https://github.com/rschubkegel/) for service inquiries or just to chat!
+
+---
+
+import { Image } from 'astro:assets'
+import landingImage from '@assets/images/silverpine/phoenix/silverpine-landing.gif'
+import loginImage from '@assets/images/school/voluntime/voluntime1.jpg'
+import complexDiagramImage from '@assets/images/silverpine/evergreen/evergreen-4.png'
+import conwayImage from '@assets/images/school/web-dev/conway.jpg'
+
+<ProjectHeader>
+	## [Web Development](/web)
+</ProjectHeader>
+
+I am a software developer by trade and I specialize in web development. Aside from [rschubkegel.com](/), I've collected some of the other projects I've worked on.
+
+<div style="display:flex;gap:var(--spacing);margin-top:var(--spacing)">
+	<FlexBasedImage src={landingImage} alt="New landing page for silverpine.com" />
+	<FlexBasedImage src={conwayImage} alt="Conway's Game of Life" />
+	<FlexBasedImage src={complexDiagramImage} alt="Story diagram in evergreen.ink" />
+</div>
+
+import outOfThymeGameplayImage from '@assets/images/games/out-of-thyme/gameplay-screenshot.png'
+import screenshot1 from '@assets/images/games/ED.png'
+
+<ProjectHeader>
+	## [Game Development](/games)
+</ProjectHeader>
+
+My interest in video games inspired me to study computer science in college. Game development remains one of my favorite hobbies since it combines my interest in software development, visual art, music production, and psychology.
+
+<div style="display:flex;gap:var(--spacing);margin-top:var(--spacing)">
+	<FlexBasedImage src={outOfThymeGameplayImage} alt="Screenshot of Out of Thyme game" />
+	<Image src="https://img.itch.zone/aW1nLzE3OTI1ODY1LmdpZg==/original/9VPM7%2F.gif" alt="Cutscene from The Memory Machine" width="520" height="280" style={{ flexBasis: `${(520 / 280) * 100}%` }} />
+	<FlexBasedImage src={screenshot1} alt="Screenshot of gameplay in Earth Defense" />
+</div>
+
+import twentySeventhLetterImage from '@assets/images/school/typography/twenty-seventh-letter.jpg'
+import frenchPressImage from '@assets/images/paintings/french-press-insta.jpg'
+import firePaperImage from '@assets/images/school/animations/fire-paper.gif'
+
+<ProjectHeader>
+	## [Visual Art](/visual-art)
+</ProjectHeader>
+
+My longest-standing hobby is visual art. This is a small collection of my paintings, digital designs, and animations.
+
+<div style="display:flex;gap:var(--spacing);margin-top:var(--spacing)">
+	<FlexBasedImage src={frenchPressImage} alt="French Press painting" />
+	<FlexBasedImage src={twentySeventhLetterImage} alt="Twenty Seventh Letter graphic" />
+	<FlexBasedImage src={firePaperImage} alt="Fire animation made from cut construction paper" />
+</div>
+
+<ProjectHeader>
+	## [Music Production](/music)
+</ProjectHeader>
+
+I love listening to and producing electronic music. I've composed hundreds of songs and discovered my own unique sound.
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/6YrSdl1dy1dDxZETIxW7n5?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/4mzQ1hTJMFwUmPAFJdgUXk?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

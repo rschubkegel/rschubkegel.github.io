@@ -1,0 +1,100 @@
+---
+layout: "@layouts/BaseLayout.astro"
+title: Video Games
+description: "Video games that I've developed."
+---
+
+import { Image } from 'astro:assets'
+import FlexBasedImage from '@components/FlexBasedImage.astro'
+import IconExternalLink from '@components/IconExternalLink.astro'
+import ProjectHeader from '@components/ProjectHeader.astro'
+
+# {frontmatter.title}
+
+My passion for games started with the Nintendo GameCube which I **loved** playing with my older brother. I would dream about making my own games, creating experiences that didn't exist yet. Late in middle school I started making games with [Scratch](https://scratch.mit.edu/), then graduated to [XNA](https://en.wikipedia.org/wiki/Microsoft_XNA) in high school. Before graduating I had created several small game with [Unity](https://unity.com/) and developed a passion for game design.
+
+To this day, I still love making games since they provide a unique opportunity to blend my interests of programming, art, music, and psychology. I hope you enjoy one or more of the projects I've made!
+
+---
+
+import theCreature from '@assets/images/games/creature-2.png'
+
+<ProjectHeader>
+	## Creature Games
+	<Fragment slot="link">
+		<a href="https://www.creaturegamesstudio.com/" target="_blank" title="View website">
+			<IconExternalLink />
+		</a>
+	</Fragment>
+</ProjectHeader>
+
+I am a co-founder of Creature Games Studios, a small group of video game enthusiasts making games in our spare time.
+
+The group was formed when creating [The Creature](https://www.creaturegamesstudio.com/games/the-creature/) for the [Week Sauce Game Jam](https://itch.io/jam/weeksauce-3), and we enjoyed it enough to keep making games!
+
+<div style="display:flex;gap:var(--spacing)">
+	<figure style={{ flexBasis: `${(1920 / 1080) * 100}%` }}>
+		<Image src="https://www.creaturegamesstudio.com/the-memory-machine/morgan.jpg" alt="Game dialogue between Morgan and Arthur" width="1920" height="1080" />
+		<figcaption>
+			<a href="https://www.creaturegamesstudio.com/games/the-memory-machine/" target="_blank">The Memory Machine</a>
+		</figcaption>
+	</figure>
+	<figure style={{ flexBasis: `${(theCreature.width / theCreature.height) * 100}%` }}>
+		<Image src={theCreature} alt="Platforming challenge from The Creature" />
+		<figcaption>
+			<a href="https://www.creaturegamesstudio.com/" target="_blank">Creature Games Studio</a>
+		</figcaption>
+	</figure>
+</div>
+
+Our latest release, _The Memory Machine_, is available on Steam. Go wishlist it now!
+
+<iframe src="https://store.steampowered.com/widget/3242910/" frameborder="0" width="646" height="190" style="width: 100%"></iframe>
+
+<ProjectHeader>
+	## Game Jams
+</ProjectHeader>
+
+import BBBImage from '@assets/images/games/BBB.png'
+import finalIdeaImage from '@assets/images/games/out-of-thyme/final-idea.png'
+import gameplayImage from '@assets/images/games/out-of-thyme/gameplay-screenshot.png'
+import priestImage from '@assets/images/games/priest-1.jpg'
+
+I have entered several game jams, which limit the amount of time you are committed to working on a game. It's a helpful practice in project management and prioritization, but it's also invigorating to overload my creativity under the pressure of a time limit.
+
+I have entered several game jams on my own, including the worldwide [Ludum Dare](https://ldjam.com/) where my game, [Judgement of Priest](https://supergobo.itch.io/judgement-of-a-priest?secret=y8iE62XuowSe3dRCjaB3YANzE8), placed 27th for audio and 39th for graphics out of 761 competition entries.
+
+<div style="display:flex;gap:var(--spacing)">
+  <FlexBasedImage src={priestImage} alt="Screenshot from Judgement of Priest" />
+  <FlexBasedImage src={BBBImage} alt="Screenshot from Bok Bok Beats" />
+</div>
+
+Most recently I made an arcade game made for the weekend-long [Mini Jame Gam #20](https://itch.io/jam/mini-jame-gam-20). The theme was **out of time** and must include the "special object," an **organ** (the musical instrument). Out of 47 entries _Out of Thyme_ was ranked 2nd overall, and was the highest ranking solo entry.
+
+<div style="display:flex;gap:var(--spacing)">
+	<FlexBasedImage src={finalIdeaImage} alt="The sketch that inspired the gameplay" class="invert-when-light" />
+	<FlexBasedImage src={gameplayImage} alt="Screenshot of the final game" />
+</div>
+
+Make sure to [play the game](https://supergobo.itch.io/out-of-thyme) or read about my development process in the [post-mortem](/games/out-of-thyme).
+
+<ProjectHeader>
+	## Earth Defense
+	<Fragment slot="link">
+		<a href="https://supergobo.itch.io/earth-defense/" target="_blank" title="Play on Itch.io">
+			<IconExternalLink />
+		</a>
+	</Fragment>
+</ProjectHeader>
+
+import screenshot1 from '@assets/images/games/ED.png'
+import screenshot2 from '@assets/images/games/ED2.png'
+
+Earth Defense was one of the earliest games I finished. It was originally made in the [XNA](https://en.wikipedia.org/wiki/Microsoft_XNA) framework and I later remade it using [Unity](https://unity.com/).
+
+The game is available to play online or download for Windows on [Itch.io](https://supergobo.itch.io/earth-defense).
+
+<div style="display:flex;gap:var(--spacing)">
+  <FlexBasedImage src={screenshot2} alt="Screenshot of level selection in Earth Defense" />
+  <FlexBasedImage src={screenshot1} alt="Screenshot of gameplay in Earth Defense" />
+</div>

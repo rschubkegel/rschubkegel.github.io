@@ -1,0 +1,188 @@
+<div class="mesh-gradient"></div>
+
+<style lang="scss">
+	.mesh-gradient {
+		--mesh-background-blur: 50px;
+		--mesh-background-color: var(--color-bg-strong);
+		--accent-1: #ffff4d;
+		--accent-2: #66f2d1;
+		--mesh-color-0: var(--color-bg-strong);
+		--mesh-color-1: var(--color-bg-strong);
+		--mesh-color-2: var(--color-bg-strong);
+		--mesh-color-3: color-mix(in srgb, var(--color-bg-strong), var(--color-primary-strong) 15%);
+		--pre-mesh-color-4: color-mix(in srgb, var(--color-bg-strong), var(--color-primary-strong) 15%);
+		--mesh-color-4: color-mix(in srgb, var(--pre-mesh-color-4), var(--accent-2) 10%);
+		--pre-mesh-color-5: color-mix(in srgb, var(--color-bg-strong), var(--color-primary-strong) 10%);
+		--mesh-color-5: color-mix(in srgb, var(--pre-mesh-color-5), var(--accent-1) 10%);
+		--mesh-color-6: color-mix(in srgb, var(--color-bg-strong), var(--color-primary-strong) 25%);
+
+		width: 100%;
+		height: 100%;
+
+		background:
+			radial-gradient(at var(--gx-0) var(--gy-0), var(--mesh-color-0) 0px, transparent 35%),
+			radial-gradient(at var(--gx-1) var(--gy-1), var(--mesh-color-1) 0px, transparent 35%),
+			radial-gradient(at var(--gx-2) var(--gy-2), var(--mesh-color-2) 0px, transparent 20%),
+			radial-gradient(at var(--gx-3) var(--gy-3), var(--mesh-color-3) 0px, transparent 30%),
+			radial-gradient(at var(--gx-4) var(--gy-4), var(--mesh-color-4) 0px, transparent 60%),
+			radial-gradient(at var(--gx-5) var(--gy-5), var(--mesh-color-5) 0px, transparent 50%),
+			radial-gradient(at var(--gx-6) var(--gy-6), var(--mesh-color-6) 0px, transparent 50%),
+			var(--mesh-background-color);
+
+		filter: contrast(0.8) brightness(1.1) blur(var(--mesh-background-blur));
+
+		@media (prefers-color-scheme: dark) {
+			--accent-1: #c4a421;
+			--accent-2: #307989;
+			filter: contrast(0.8) brightness(0.7) blur(var(--mesh-background-blur));
+		}
+	}
+</style>
+
+<script>
+	import gsap from 'gsap'
+
+	const MIN_DURATION = 2
+	const MAX_DURATION = 5
+
+	function randomDuration() {
+		return Math.random() * (MAX_DURATION - MIN_DURATION) + MIN_DURATION
+	}
+
+	function randomBoolean() {
+		return Math.random() > 0.5
+	}
+
+	const DEFAULTS = {
+		ease: 'power2.inOut',
+		repeat: -1,
+		yoyo: true,
+	}
+
+	gsap.fromTo('.mesh-gradient', {
+		'--gx-0': '40%',
+	}, {
+		'--gx-0': '60%',
+		duration: randomDuration(),
+		reversed: randomBoolean(),
+		...DEFAULTS,
+	})
+
+	gsap.fromTo('.mesh-gradient', {
+		'--gy-0': '40%',
+	}, {
+		'--gy-0': '65%',
+		duration: randomDuration(),
+		reversed: randomBoolean(),
+		...DEFAULTS,
+	})
+
+	gsap.fromTo('.mesh-gradient', {
+		'--gx-1': '35%',
+	}, {
+		'--gx-1': '50%',
+		duration: randomDuration(),
+		reversed: randomBoolean(),
+		...DEFAULTS,
+	})
+
+	gsap.fromTo('.mesh-gradient', {
+		'--gy-1': '80%',
+	}, {
+		'--gy-1': '100%',
+		duration: randomDuration(),
+		reversed: randomBoolean(),
+		...DEFAULTS,
+	})
+
+	gsap.fromTo('.mesh-gradient', {
+		'--gx-2': '0%',
+	}, {
+		'--gx-2': '20%',
+		duration: randomDuration(),
+		reversed: randomBoolean(),
+		...DEFAULTS,
+	})
+
+	gsap.fromTo('.mesh-gradient', {
+		'--gy-2': '25%',
+	}, {
+		'--gy-2': '45%',
+		duration: randomDuration(),
+		reversed: randomBoolean(),
+		...DEFAULTS,
+	})
+
+	gsap.fromTo('.mesh-gradient', {
+		'--gx-3': '30%',
+	}, {
+		'--gx-3': '55%',
+		duration: randomDuration(),
+		reversed: randomBoolean(),
+		...DEFAULTS,
+	})
+
+	gsap.fromTo('.mesh-gradient', {
+		'--gy-3': '40%',
+	}, {
+		'--gy-3': '65%',
+		duration: randomDuration(),
+		reversed: randomBoolean(),
+		...DEFAULTS,
+	})
+
+	gsap.fromTo('.mesh-gradient', {
+		'--gx-4': '10%',
+	}, {
+		'--gx-4': '40%',
+		duration: randomDuration(),
+		reversed: randomBoolean(),
+		...DEFAULTS,
+	})
+
+	gsap.fromTo('.mesh-gradient', {
+		'--gy-4': '80%',
+	}, {
+		'--gy-4': '100%',
+		duration: randomDuration(),
+		reversed: randomBoolean(),
+		...DEFAULTS,
+	})
+
+	gsap.fromTo('.mesh-gradient', {
+		'--gx-5': '35%',
+	}, {
+		'--gx-5': '60%',
+		duration: randomDuration(),
+		reversed: randomBoolean(),
+		...DEFAULTS,
+	})
+
+	gsap.fromTo('.mesh-gradient', {
+		'--gy-5': '15%',
+	}, {
+		'--gy-5': '45%',
+		duration: randomDuration(),
+		reversed: randomBoolean(),
+		...DEFAULTS,
+	})
+
+	gsap.fromTo('.mesh-gradient', {
+		'--gx-6': '70%',
+	}, {
+		'--gx-6': '100%',
+		duration: randomDuration(),
+		reversed: randomBoolean(),
+		...DEFAULTS,
+	})
+
+	gsap.fromTo('.mesh-gradient', {
+		'--gy-6': '40%',
+	}, {
+		'--gy-6': '80%',
+		duration: randomDuration(),
+		reversed: randomBoolean(),
+		...DEFAULTS,
+	})
+</script>
+

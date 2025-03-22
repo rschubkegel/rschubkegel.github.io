@@ -1,0 +1,42 @@
+---
+layout: "@layouts/ArticleLayout.astro"
+title: Typography Class
+date: 2020-12-15
+description: "An exploration of type anatomy, page layout, hierarchy, and other parts of typography."
+---
+
+import madeByHumansImage from '@assets/images/school/typography/made-by-humans.jpg'
+import twentySeventhLetterImage from '@assets/images/school/typography/twenty-seventh-letter.jpg'
+import anatomy1Image from '@assets/images/school/typography/anatomy/1.png'
+import anatomy2Image from '@assets/images/school/typography/anatomy/2.png'
+import anatomy3Image from '@assets/images/school/typography/anatomy/3.png'
+import anatomy4Image from '@assets/images/school/typography/anatomy/4.png'
+import anatomy5Image from '@assets/images/school/typography/anatomy/5.png'
+import anatomy6Image from '@assets/images/school/typography/anatomy/6.png'
+import anatomy7Image from '@assets/images/school/typography/anatomy/7.png'
+import anatomy8Image from '@assets/images/school/typography/anatomy/8.png'
+import anatomy9Image from '@assets/images/school/typography/anatomy/9.png'
+import anatomy10Image from '@assets/images/school/typography/anatomy/10.png'
+import FlexBasedImage from '@components/FlexBasedImage.astro'
+
+# {frontmatter.title}
+
+ARTD 220 explored type anatomy, page layout, hierarchy, and other parts of typography. This was probably my favorite design class in college; I had no idea how rich the world of typography is!
+
+<div style="display:flex;gap:var(--border-radius)">
+	<FlexBasedImage src={madeByHumansImage} alt="Made by Humans event poster" />
+	<FlexBasedImage src={twentySeventhLetterImage} alt="Twenty Seventh Letter graphic" />
+</div>
+
+<div style="display:grid;gap:var(--border-radius);grid-template-columns:repeat(5,1fr);margin-top:var(--spacing)">
+	<FlexBasedImage src={anatomy2Image} alt="Design based on type anatomy" />
+	<FlexBasedImage src={anatomy1Image} alt="Design based on type anatomy" />
+	<FlexBasedImage src={anatomy3Image} alt="Design based on type anatomy" />
+	<FlexBasedImage src={anatomy4Image} alt="Design based on type anatomy" />
+	<FlexBasedImage src={anatomy5Image} alt="Design based on type anatomy" />
+	<FlexBasedImage src={anatomy7Image} alt="Design based on type anatomy" />
+	<FlexBasedImage src={anatomy8Image} alt="Design based on type anatomy" />
+	<FlexBasedImage src={anatomy6Image} alt="Design based on type anatomy" />
+	<FlexBasedImage src={anatomy9Image} alt="Design based on type anatomy" />
+	<FlexBasedImage src={anatomy10Image} alt="Design based on type anatomy" />
+</div>
