@@ -14,13 +14,13 @@ let { style } = props
 switch (typeof style) {
 	case 'string':
 		style = (!style || style.endsWith(';')) ? style : `${style}; `
-		style += `flex-basis: ${flexBasisString}`
+		style += `flex-basis: ${flexBasisString}; width: 0%`
 		break
 	case 'object':
-		style = { ...style, flexBasis: flexBasisString }
+		style = { ...style, flexBasis: flexBasisString, width: '0%' }
 		break
 	default:
-		style = { flexBasis: flexBasisString }
+		style = { flexBasis: flexBasisString, width: '0%' }
 }
 ---
 
