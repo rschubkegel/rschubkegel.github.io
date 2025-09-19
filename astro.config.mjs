@@ -7,5 +7,8 @@ import vue from '@astrojs/vue';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), vue()]
+  integrations: [mdx(), vue()],
+  server: {
+    port: 3000,
+  },
 });
