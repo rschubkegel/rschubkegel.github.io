@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) => new Date(b.data.published).getTime() - new Date(a.data.published).getTime());
+---
+
+<BaseLayout title="Blog" description="Blog posts about my experiences and learnings.">
+  <h1>Blog</h1>
+  
+  <p>I've written a few blog posts about my experiences and learnings.</p>
+
+  <div class="blog-posts">
+    {sortedPosts.map((post) => (
+      <a href={`/blog/${post.slug}`}>
+        <article class="blog-post" onclick={`window.location.href = '/blog/${post.slug}'`}>
+          <h2>{post.data.title}</h2>
+          <p class="post-meta">
+            Published on {new Date(post.data.published).toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })} by {post.data.author}
+            {post.data.featured && <span class="featured-badge">Featured</span>}
+          </p>
+          <p class="post-description">{post.data.description}</p>
+          <div class="post-tags">
+            {post.data.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        </article>
+      </a>
+    ))}
+    {sortedPosts.length === 0 && (
+      <div class="no-posts">
+        <h2>No posts yet</h2>
+        <p>Check back soon for new content!</p>
+      </div>
+    )}
+  </div>
+</BaseLayout>

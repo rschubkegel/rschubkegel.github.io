@@ -1,13 +1,17 @@
 ---
 interface Props {
-	frontmatter: Record<string, any>;
+	frontmatter?: Record<string, any>;
+	title?: string;
+	description?: string;
 }
 
 import BaseLayout from './BaseLayout.astro';
 
-const { frontmatter } = Astro.props;
+const { frontmatter, title, description } = Astro.props;
+const pageTitle = title || frontmatter?.title;
+const pageDescription = description || frontmatter?.description;
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={pageTitle} description={pageDescription}>
 	<slot />
 </BaseLayout>
