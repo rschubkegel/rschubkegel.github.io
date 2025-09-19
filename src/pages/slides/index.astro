@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const allSlides = await getCollection('slides');
+const sortedSlides = allSlides.sort((a, b) => new Date(b.data.published).getTime() - new Date(a.data.published).getTime());
+---
+
+<BaseLayout title="Slideshows" description="A collection of slideshows and presentations.">
+  <h1>Slideshows</h1>
+  
+  <p>Browse my slideshows and presentations.</p>
+
+  <div class="slides-list">
+    {sortedSlides.map((slide) => (
+      <a href={`/slides/${slide.slug}`}>
+        <article class="slide-summary" onclick={`window.location.href = '/slides/${slide.slug}'`}>
+          <h2>{slide.data.title}</h2>
+          <p class="slide-meta">
+            Published on {new Date(slide.data.published).toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })} by {slide.data.author}
+          </p>
+          <p class="slide-description">{slide.data.description}</p>
+          <div class="slide-tags">
+            {slide.data.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        </article>
+      </a>
+    ))}
+    {sortedSlides.length === 0 && (
+      <div class="no-slides">
+        <h2>No slideshows yet</h2>
+        <p>Check back soon for new presentations!</p>
+      </div>
+    )}
+  </div>
+</SlideshowLayout>

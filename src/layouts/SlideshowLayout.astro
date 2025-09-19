@@ -1,0 +1,29 @@
+---
+interface Props {
+	description?: string
+	frontmatter?: Record<string, any>
+	title?: string
+}
+
+import '@assets/styles/main.sass';
+import TheHead from '@components/TheHead.astro';
+
+const DEFAULT_TITLE = "Rylan Schubkegel's Portfolio"
+const DEFAULT_DESCRIPTION = "The pluralistic portfolio of professional and personal projects produced by Rylan Schubkegel."
+const { description: _description, frontmatter, title: _title } = Astro.props
+const description = _description || frontmatter?.description || DEFAULT_DESCRIPTION
+const title = _title || frontmatter?.title || DEFAULT_TITLE
+---
+
+<!doctype html>
+<html lang="en">
+<TheHead description={description} title={title}>
+	<slot name="head">
+		<link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css" />
+		<link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/black.css" />
+	</slot>
+</TheHead>
+<body>
+	<slot />
+</body>
+</html>

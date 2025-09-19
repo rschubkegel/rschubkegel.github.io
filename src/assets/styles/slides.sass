@@ -2,31 +2,30 @@
 @use './breakpoints'
 @use './content'
 
-//////// BLOG-SPECIFIC STYLES ////////
+//////// SLIDES-SPECIFIC STYLES ////////
 
-// Blog listing uses shared content styles
-.blog-posts
+// Slides listing uses shared content styles
+.slides-list
   @extend .content-list
 
-.blog-post
+.slide-summary
   @extend .content-item
 
-.post-meta
+.slide-meta
   @extend .content-meta
 
-.post-description
+.slide-description
   @extend .content-description
 
-.post-tags
+.slide-tags
   @extend .content-tags
 
-.no-posts
+.no-slides
   @extend .no-content
 
-// Individual blog post styles
-.blog-post-header
+// Individual slide styles
+.slide-header
   @extend .content-header
 
-.blog-post-content
+.slide-content
   @extend .content-body
-

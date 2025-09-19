@@ -1,12 +1,43 @@
 # Rylan Schubkegel's Portfolio
 
+My personal portfolio, built with [Astro](https://astro.build/).
+
+---
+
+## Slideshows
+
+Markdown files in the `src/content/slides` directory are converted to slideshows using [Reveal.js](https://revealjs.com/).
+
+This is an example slideshow:
+
+```md
+---
+title: "Test"
+description: "Test"
+published: "2024-01-15"
+author: "Rylan Schubkegel"
+tags: ["test"]
+---
+
+# Test
+
+Test
+
+---
+
+Slide 2
+
+```
+
 ---
 
 ## Blog
 
+Markdown files in the `src/content/blog` directory are converted to blog posts.
+
 This is an example blog post:
 
-```mdx
+```md
 ---
 title: "Getting Started with Astro"
 description: "A comprehensive guide to building modern web applications with Astro's content collections and component islands."
