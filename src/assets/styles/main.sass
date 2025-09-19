@@ -7,7 +7,7 @@
 
 //////// MIXINS ////////
 
-@mixin primary-link
+@mixin primary-default-link
   color: var(--color-primary-muted)
   border-bottom: .15em solid transparent
   transition: var(--transition)
@@ -15,6 +15,20 @@
     transition: 100ms
     color: var(--color-primary-strong)
     border-bottom-color: var(--color-primary-muted)
+
+@mixin primary-code-link
+  display: inline-block
+  color: var(--color-primary-strong)
+  border: .15em solid transparent
+  border-radius: var(--border-radius)
+  line-height: 1
+  transition: var(--transition)
+  &:is(:hover, :focus)
+    transition: 100ms
+    border-color: var(--color-primary-muted)
+  code
+    display: inline-block
+    color: inherit
 
 
 //////// RESET AND GLOBALS ////////
@@ -85,7 +99,10 @@ a
     outline: none
 
 p a, ul a, ol a, figure a
-  @include primary-link
+  &:has(code)
+    @include primary-code-link
+  &:not(:has(code))
+    @include primary-default-link
 
 hr
   border: none
@@ -115,6 +132,13 @@ button
   font-family: inherit
   font-size: inherit
   cursor: pointer
+
+code
+  font-family: 'Courier New', Courier, monospace
+  background: var(--color-bg-strong)
+  color: var(--color-fg-muted)
+  padding: 0.1rem 0.3rem
+  border-radius: var(--border-radius)
 
 
 //////// LAYOUT UTILITY CLASSES ////////

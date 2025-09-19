@@ -1,49 +1,3 @@
-# Rylan Schubkegel's Portfolio
-
-My personal portfolio, built with [Astro](https://astro.build/).
-
----
-
-## Projects
-
-Depending on the amount of detail I want to include, a project can be summarized as a collection in the `src/pages/collections/` directory or added as a page in the `src/pages/projects/` directory. Project pages are not automatically summarized in a collection, but they will show up in the `/projects` page (see [src/pages/projects/index.astro](./src/pages/projects/index.astro)).
-
----
-
-## Slideshows
-
-Markdown files in the `src/content/slides/` directory are converted to slideshows using [Reveal.js](https://revealjs.com/).
-
-This is an example slideshow:
-
-```md
----
-title: "Test"
-description: "Test"
-published: "2024-01-15"
-author: "Rylan Schubkegel"
-tags: ["test"]
----
-
-# Test
-
-Test
-
----
-
-Slide 2
-
-```
-
----
-
-## Blog
-
-Markdown files in the `src/content/blog/` directory are converted to blog posts.
-
-This is an example blog post:
-
-```md
 ---
 title: "Getting Started with Astro"
 description: "A comprehensive guide to building modern web applications with Astro's content collections and component islands."
@@ -78,4 +32,3 @@ Here's how you can get started with content collections in your Astro project.
 Astro provides a great developer experience with its content collections and component islands architecture. It's particularly well-suited for content-heavy websites and blogs like this one.
 
 Stay tuned for more posts about web development and my experiences building with modern tools!
-```

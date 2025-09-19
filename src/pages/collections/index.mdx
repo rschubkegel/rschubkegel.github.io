@@ -1,15 +1,15 @@
 ---
 layout: "@layouts/BaseLayout.astro"
+title: Project Collections
+description: "Collections of my projects."
 ---
 
-import ProjectHeader from '@components/ProjectHeader.astro'
-import TheTypingHeader from '@components/TheTypingHeader.astro'
 import FlexBasedImage from '@components/FlexBasedImage.astro'
-import ContributionMap from '@components/ContributionMap.vue'
+import ProjectHeader from '@components/ProjectHeader.astro'
 
-<TheTypingHeader>Hello world, I'm Rylan</TheTypingHeader>
+# {frontmatter.title}
 
-I'm a web developer that is passionate about programming, art, and coffee. This site represents a small selection of my personal and professional work. Feel free to connect on [LinkedIn](https://github.com/rschubkegel/) for service inquiries or just to chat!
+Many of my projects are interdisciplinary, combining my interests in programming, visual art, music production, and more. However, I've grouped them into the following collections for easier navigation.
 
 ---
 
@@ -65,3 +65,28 @@ My interest in video games inspired me to study computer science in college. Gam
 	<Image src="https://img.itch.zone/aW1nLzE3OTI1ODY1LmdpZg==/original/9VPM7%2F.gif" alt="Cutscene from The Memory Machine" width="520" height="280" style={{ flexBasis: `${(520 / 280) * 100}%` }} />
 	<FlexBasedImage src={screenshot1} alt="Screenshot of gameplay in Earth Defense" />
 </div>
+
+import twentySeventhLetterImage from '@assets/images/school/typography/twenty-seventh-letter.jpg'
+import frenchPressImage from '@assets/images/paintings/french-press-insta.jpg'
+import firePaperImage from '@assets/images/school/animations/fire-paper.gif'
+
+<ProjectHeader>
+	## [Visual Art](/collections/visual-art)
+</ProjectHeader>
+
+My longest-standing hobby is visual art. This is a small collection of my paintings, digital designs, and animations.
+
+<div style="display:flex;gap:var(--spacing);margin-top:var(--spacing)">
+	<FlexBasedImage src={frenchPressImage} alt="French Press painting" />
+	<FlexBasedImage src={twentySeventhLetterImage} alt="Twenty Seventh Letter graphic" />
+	<FlexBasedImage src={firePaperImage} alt="Fire animation made from cut construction paper" />
+</div>
+
+<ProjectHeader>
+	## [Music Production](/collections/music)
+</ProjectHeader>
+
+I love listening to and producing electronic music. I've composed hundreds of songs and discovered my own unique sound.
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/6YrSdl1dy1dDxZETIxW7n5?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/4mzQ1hTJMFwUmPAFJdgUXk?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
