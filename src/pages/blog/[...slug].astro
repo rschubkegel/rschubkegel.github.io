@@ -24,7 +24,6 @@ const { Content } = await post.render();
           month: 'long', 
           day: 'numeric' 
         })} by {post.data.author}
-        {post.data.featured && <span class="featured-badge">Featured</span>}
       </p>
       <div class="post-tags">
         {post.data.tags.map((tag) => (

@@ -22,7 +22,6 @@ const sortedPosts = allPosts.sort((a, b) => new Date(b.data.published).getTime()
               month: 'long', 
               day: 'numeric' 
             })} by {post.data.author}
-            {post.data.featured && <span class="featured-badge">Featured</span>}
           </p>
           <p class="post-description">{post.data.description}</p>
           <div class="post-tags">
