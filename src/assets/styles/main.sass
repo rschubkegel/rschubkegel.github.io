@@ -9,26 +9,24 @@
 
 @mixin primary-default-link
   color: var(--color-primary-muted)
-  border-bottom: .15em solid transparent
-  transition: var(--transition)
-  &:is(:hover, :focus)
-    transition: 100ms
+  @media (prefers-color-scheme: light)
     color: var(--color-primary-strong)
-    border-bottom-color: var(--color-primary-muted)
-
-@mixin primary-code-link
-  display: inline-block
-  color: var(--color-primary-strong)
-  border: .15em solid transparent
-  border-radius: var(--border-radius)
-  line-height: 1
-  transition: var(--transition)
+  text-decoration: underline
+  text-underline-offset: .14em
+  text-shadow: 0 0 0.5rem transparent
+  transition: color var(--transition), text-shadow calc(var(--transition) * 3)
   &:is(:hover, :focus)
-    transition: 100ms
-    border-color: var(--color-primary-muted)
-  code
-    display: inline-block
-    color: inherit
+    transition: color var(--transition-short), text-shadow var(--transition-short)
+    color: var(--color-primary-strong)
+    text-shadow: 0 0 0.5rem color-mix(in srgb, var(--color-primary-muted) 50%, transparent)
+    @media (prefers-color-scheme: light)
+      color: var(--color-primary-muted)
+      text-shadow: 0 0 0.5rem var(--color-bg-strong)
+  @media (prefers-color-scheme: light)
+    border-radius: var(--border-radius)
+    &:focus
+      background: color-mix(in srgb, var(--color-bg-strong) 75%, var(--color-primary-muted))
+    text-shadow: 0 0 0.5rem transparent !important
 
 
 //////// RESET AND GLOBALS ////////
@@ -98,9 +96,7 @@ a
     color: var(--color-fg-strong)
     outline: none
 
-p a, ul a, ol a, figure a
-  &:has(code)
-    @include primary-code-link
+:is(p, ul, ol, figure, h1, h2, h3) a
   &:not(:has(code))
     @include primary-default-link
 
@@ -140,6 +136,12 @@ code
   padding: 0.1rem 0.3rem
   border-radius: var(--border-radius)
 
+blockquote
+  font-style: italic
+  margin: var(--spacing) 0
+  padding-left: var(--spacing)
+  border-left: 2px solid var(--color-primary-muted)
+
 
 //////// LAYOUT UTILITY CLASSES ////////
 
@@ -162,3 +164,38 @@ code
   font-style: italic;
   margin-left: 0.4em;
   opacity: 0.35;
+
+.website-links-container
+  text-align: center
+
+  .website-links
+    display: flex
+    flex-direction: column
+    gap: var(--spacing)
+    justify-content: center
+
+    @media only screen and (min-width: 500px)
+      flex-direction: row
+
+    a
+      text-transform: uppercase
+      line-height: normal
+      font-size: 1.2rem
+      letter-spacing: 0.03em
+      padding: 0.8em
+      border-radius: var(--border-radius)
+      color: var(--color-primary-muted)
+      background-color: var(--color-bg-strong)
+
+      &:is(:hover, :focus)
+        color: var(--color-primary-strong)
+        background-color: color-mix(in srgb, var(--color-bg-strong), var(--color-primary-muted) 10%)
+        outline: 1px solid var(--color-bg-muted)
+
+      @media only screen and (min-width: 500px)
+        padding: 0.5em 1em
+        flex-basis: 100%
+
+    span
+      color: color-mix(in srgb, var(--color-bg-muted), var(--color-fg-muted) 30%)
+      font-weight: 100
