@@ -20,7 +20,7 @@ A game jam is a challenge to create a game in a limited amount of time.
 
 I like short, competitive game jams
 
-<img src="https://img.itch.zone/aW1hZ2UvODYxMjA4LzQ4Mzc0NzMucG5n/794x1000/OSwkGb.png" alt="Screenshot from Bok Bok Beats" style="height:60vh;width:auto;image-rendering:pixelated" />
+<img src="https://img.itch.zone/aW1hZ2UvODYxMjA4LzQ4Mzc0NzMucG5n/794x1000/OSwkGb.png" alt="Screenshot from Bok Bok Beats" style="width:auto;max-height:550px;image-rendering:pixelated" />
 
 ---
 
@@ -32,7 +32,7 @@ I like short, competitive game jams
 
 I get to make _everything_ (if I have time)
 
-<img src="https://img.itch.zone/aW1hZ2UvMjIwNTgxNS8xMzA1MTY0MS5wbmc=/794x1000/RPVeDn.png" alt="Screenshot from Out of Thyme" style="height:60vh;width:auto" />
+<img src="https://img.itch.zone/aW1hZ2UvMjIwNTgxNS8xMzA1MTY0MS5wbmc=/794x1000/RPVeDn.png" alt="Screenshot from Out of Thyme" style="width:auto;max-height:550px" />
 
 ---
 
@@ -44,7 +44,7 @@ I get to make _everything_ (if I have time)
 
 No client reviews. No unit tests. No pull requests.
 
-<img src="https://img.itch.zone/aW1hZ2UvMTQ1NTYwNC84NDk5MzAzLnBuZw==/original/b76X6i.png" alt="Screenshot from The Creature" style="height:60vh;width:auto" />
+<img src="https://img.itch.zone/aW1hZ2UvMTQ1NTYwNC84NDk5MzAzLnBuZw==/original/b76X6i.png" alt="Screenshot from The Creature" style="width:auto;max-height:550px" />
 
 ---
 

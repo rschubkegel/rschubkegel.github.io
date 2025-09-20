@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content"
 import SlideshowLayout from "@layouts/SlideshowLayout.astro"
+import "reveal.js/dist/reveal.css"
+import "reveal.js/dist/theme/black.css"
 
 export async function getStaticPaths() {
   const slides = await getCollection("slides")
@@ -13,6 +15,14 @@ export async function getStaticPaths() {
 const { slide } = Astro.props
 ---
 
+<script>
+  // @ts-ignore no declaration file
+  import Reveal from "reveal.js"
+  // @ts-ignore no declaration file
+  import Markdown from "reveal.js/plugin/markdown/markdown.esm.js"
+  new Reveal({ plugins: [Markdown] }).initialize()
+</script>
+
 <SlideshowLayout title={slide.data.title} description={slide.data.description}>
   <div class="reveal">
     <div class="slides">
@@ -23,16 +33,4 @@ const { slide } = Astro.props
       </section>
     </div>
   </div>
-  <script>
-    // @ts-ignore
-    import Reveal from "reveal.js"
-    // @ts-ignore
-    import Markdown from "reveal.js/plugin/markdown/markdown.esm.js"
-
-    let deck = new Reveal({
-      plugins: [Markdown],
-    })
-
-    deck.initialize()
-  </script>
 </SlideshowLayout>
