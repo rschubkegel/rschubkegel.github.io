@@ -4,12 +4,6 @@ My personal portfolio, built with [Astro](https://astro.build/).
 
 ---
 
-## Projects
-
-Depending on the amount of detail I want to include, a project can be summarized as a collection in the `src/pages/collections/` directory or added as a page in the `src/pages/projects/` directory. Project pages are not automatically summarized in a collection, but they will show up in the `/projects` page (see [src/pages/projects/index.astro](./src/pages/projects/index.astro)).
-
----
-
 ## Slideshows
 
 Markdown files in the `src/content/slides/` directory are converted to slideshows using [Reveal.js](https://revealjs.com/).

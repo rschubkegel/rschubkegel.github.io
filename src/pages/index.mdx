@@ -14,20 +14,14 @@ I'm a web developer that is passionate about programming, art, and coffee. This 
 ---
 
 <div class="website-links-container">
-
-<div class="website-links">
-	<a href="/collections">Collections</a>
-	<a href="/slides">Slideshows</a>
-	<a href="/projects">Projects</a>
-</div>
-
+	<div class="website-links">
+		<a href="https://hcc.rschubkegel.com/" target="_blank">HCC</a>
+		<a href="/blog">Blog</a>
+		<a href="/slides">Slideshows</a>
+	</div>
 </div>
 
 ---
-
-Check out a preview of my project collections below.
-
-When you want to see more, check out the [collections page](/collections).
 
 import { Image } from 'astro:assets'
 import landingImage from '@assets/images/silverpine/phoenix/silverpine-landing.gif'
@@ -36,7 +30,7 @@ import complexDiagramImage from '@assets/images/silverpine/evergreen/evergreen-4
 import conwayImage from '@assets/images/school/web-dev/conway.jpg'
 
 <ProjectHeader>
-	## [Web Development](/collections/web)
+	## [Web Development](/web)
 </ProjectHeader>
 
 I am a software developer by trade and I specialize in web development. Aside from [rschubkegel.com](/), I've collected some of the other projects I've worked on.
@@ -47,8 +41,28 @@ I am a software developer by trade and I specialize in web development. Aside fr
 	<FlexBasedImage src={complexDiagramImage} alt="Story diagram in evergreen.ink" />
 </div>
 
+import brokerBayScreenshot1 from '@assets/images/silverpine/brokerbay/dashboard.png'
+import brokerBayScreenshot2 from '@assets/images/silverpine/brokerbay/showings-loading.png'
+import brokerBayScreenshot3 from '@assets/images/silverpine/brokerbay/listing.png'
+
 <ProjectHeader>
-	## [Teaching](/collections/teaching)
+	## Mobile Development
+</ProjectHeader>
+
+I have become very proficient with [React Native](https://reactnative.dev/) by working on the [BrokerBay](https://www.brokerbay.com/) mobile app as a contractor through [Silverpine](https://silverpine.com/). I have spearheaded several initiatives to improve the app, including:
+
+- Speeding up average launch time by over 50% by refactoring <abbr title="asynchronous">async</abbr> logic
+- Optimizing <abbr title="time to interactive">TTI</abbr> metrics by implementing skeleton loader components
+- Adding frontend data caching using [Tanstack Query](https://tanstack.com/query/latest)
+
+<div style="display:flex;gap:var(--spacing);margin-top:var(--spacing)">
+	<FlexBasedImage src={brokerBayScreenshot1} alt="Screenshot of BrokerBay app on the home screen" />
+	<FlexBasedImage src={brokerBayScreenshot2} alt="Screenshot of BrokerBay app with loading skeletons" />
+	<FlexBasedImage src={brokerBayScreenshot3} alt="Screenshot of BrokerBay app on the listing screen" />
+</div>
+
+<ProjectHeader>
+	## [Teaching](/teaching)
 </ProjectHeader>
 
 I've taught some programming classes which has been a great way to practice my communications skills and review fundamental programming concepts.
@@ -57,11 +71,25 @@ Most recently I taught a high school elective at [Hill Creek Christian School](h
 
 I was also an online instructor at [Coding with Kids](https://www.codingwithkids.com/) for a summer where I taught camps and after-school classes in Python, C#, and Scratch.
 
+import cubeImage from '@assets/images/school/senior-design/cube.jpg'
+import prototypeImage from '@assets/images/school/servant-engineering/prototype.png'
+
+<ProjectHeader>
+	## [Engineering](/engineering)
+</ProjectHeader>
+
+I don't usually touch hardware with a ten foot pole, but I worked on a couple of projects in school that made me feel like a "real" engineer.
+
+<div style="display:flex;gap:var(--spacing);margin-bottom:var(--spacing)">
+	<FlexBasedImage src={cubeImage} alt="A cube in mixed reality" />
+	<FlexBasedImage src={prototypeImage} alt="Early physical prototype" />
+</div>
+
 import outOfThymeGameplayImage from '@assets/images/games/out-of-thyme/gameplay-screenshot.png'
 import screenshot1 from '@assets/images/games/ED.png'
 
 <ProjectHeader>
-	## [Game Development](/collections/games)
+	## [Game Development](/games)
 </ProjectHeader>
 
 My interest in video games inspired me to study computer science in college. Game development remains one of my favorite hobbies since it combines my interest in software development, visual art, music production, and psychology.
@@ -77,7 +105,7 @@ import frenchPressImage from '@assets/images/paintings/french-press-insta.jpg'
 import firePaperImage from '@assets/images/school/animations/fire-paper.gif'
 
 <ProjectHeader>
-	## [Visual Art](/collections/visual-art)
+	## [Visual Art](/visual-art)
 </ProjectHeader>
 
 My longest-standing hobby is visual art. This is a small collection of my paintings, digital designs, and animations.
@@ -87,3 +115,12 @@ My longest-standing hobby is visual art. This is a small collection of my painti
 	<FlexBasedImage src={twentySeventhLetterImage} alt="Twenty Seventh Letter graphic" />
 	<FlexBasedImage src={firePaperImage} alt="Fire animation made from cut construction paper" />
 </div>
+
+<ProjectHeader>
+	## [Music Production](/music)
+</ProjectHeader>
+
+I love listening to and producing electronic music. I've composed hundreds of songs and discovered my own unique sound.
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/6YrSdl1dy1dDxZETIxW7n5?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/4mzQ1hTJMFwUmPAFJdgUXk?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
